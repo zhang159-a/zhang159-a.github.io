@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>学习笔记</title>
   
-  
+  <subtitle>zhr的博客</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-20T05:49:15.649Z</updated>
+  <updated>2022-08-21T06:07:33.009Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/21/MarkText%20+%20picgo%20%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/"/>
+    <id>http://example.com/2022/08/21/MarkText%20+%20picgo%20%E9%85%8D%E7%BD%AE%E5%9B%BE%E5%BA%8A/</id>
+    <published>2022-08-21T05:49:24.938Z</published>
+    <updated>2022-08-21T06:07:33.009Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="MarkText-picgo-配置图床"><a href="#MarkText-picgo-配置图床" class="headerlink" title="MarkText + picgo 配置图床"></a>MarkText + picgo 配置图床</h1><h2 id="GitHub-作为图床"><a href="#GitHub-作为图床" class="headerlink" title="GitHub 作为图床"></a>GitHub 作为图床</h2><p>环境说明：</p><blockquote><p>MarkText：v0.17.1<br>Windows：11<br>picgo：1.5.0-alpha.0</p></blockquote><h3 id="1-安装npm、picgo"><a href="#1-安装npm、picgo" class="headerlink" title="1.安装npm、picgo"></a>1.安装npm、picgo</h3><ul><li><p>什么是 Node.js</p><ul><li><p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p></li><li><p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p></li></ul></li><li><p>什么是 npm</p><ul><li><p>npm 是 Node.js 的包管理工具.</p></li><li><p>为啥我们需要一个包管理工具呢？</p></li><li><p>因为我们在Node.js上开发时，会用到很多别人写的JavaScript代码。如果我们要使用别人写的某个包，每次都根据名称搜索一下官方网站，下载代码，解压，再使用，非常繁琐。于是一个集中管理的工具应运而生：大家都把自己开发的模块打包后放到npm官网上，如果要使用，直接通过npm安装就可以直接用，不用管代码存在哪，应该从哪下载。</p></li></ul></li><li><p>下载 Node.js </p></li></ul><p>官网下载可能访问失败，可以选择国内的镜像</p><p>&lt;<a href="http://nodejs.cn/">Node.js 中文网 (nodejs.cn)</a>&gt;</p><p>npm已经在 Node.js 安装的时候顺带装好了。我们可以在终端输入</p><p>查看 node 版本</p><p><code>node -v</code></p><p>查看 npm 版本</p><p><code>npm -v</code></p><ul><li>下载 picgo,全局安装</li></ul><p><code>npm insatll picgo -g</code></p><h3 id="2-GitHub创建仓库"><a href="#2-GitHub创建仓库" class="headerlink" title="2.GitHub创建仓库"></a>2.GitHub创建仓库</h3><ul><li>新建仓库</li></ul><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/08/21-14-06-13-github.png"></p><ul><li>获取 Token</li></ul><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/08/21-14-06-51-github.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;MarkText-picgo-配置图床&quot;&gt;&lt;a href=&quot;#MarkText-picgo-配置图床&quot; class=&quot;headerlink&quot; title=&quot;MarkText + picgo 配置图床&quot;&gt;&lt;/a&gt;MarkText + picgo 配置图床&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/08/21/GitHub%20%E3%80%81Git%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/"/>
+    <id>http://example.com/2022/08/21/GitHub%20%E3%80%81Git%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86/</id>
+    <published>2022-08-21T04:00:34.228Z</published>
+    <updated>2022-08-21T01:57:08.447Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="GitHub-、Git设置和取消代理"><a href="#GitHub-、Git设置和取消代理" class="headerlink" title="GitHub 、Git设置和取消代理"></a>GitHub 、Git设置和取消代理</h1><h2 id="主要是加速-git-clone-操作"><a href="#主要是加速-git-clone-操作" class="headerlink" title="主要是加速 git clone 操作"></a>主要是加速 git clone 操作</h2><ul><li>git 设置代理</li></ul><p><code>git config --global http.proxy http:127.0.0.1:[10810  这里面是你代理的端口号]</code></p><ul><li>git 取消代理</li></ul><p><code> git config --global --unset http.proxy</code></p><ul><li>针对 github.com 设置代理</li></ul><p><code>git config --global http.https://github.com.proxy http://127.0.0.1:[端口号]</code></p><ul><li>取消 github.com 代理</li></ul><p><code>git config --global --unset http.https://github.com.proxy</code></p><p><strong>注意</strong>：设置代理需要科学上网，可以在软件上查看，也可以在设置里查看</p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-20-image.png"></p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-29-image.png"></p><h2 id="ssh-连接-github-失败问题"><a href="#ssh-连接-github-失败问题" class="headerlink" title="ssh 连接 github 失败问题"></a>ssh 连接 github 失败问题</h2><p>设置公钥后，连接失败，显示22端口拒绝,更换为 443 端口</p><p><code>ssh git@github.com</code></p><p><code>ssh: connect to host github.com port 22: Connection refused</code></p><ol><li><p>在任意位置打开 Git Bash Here </p></li><li><p>创建 config 文件</p></li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure><ol start="3"><li>在里面添加</li></ol><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line"> Hostname ssh.github.com</span><br><span class="line"> Port 443</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;GitHub-、Git设置和取消代理&quot;&gt;&lt;a href=&quot;#GitHub-、Git设置和取消代理&quot; class=&quot;headerlink&quot; title=&quot;GitHub 、Git设置和取消代理&quot;&gt;&lt;/a&gt;GitHub 、Git设置和取消代理&lt;/h1&gt;&lt;h2 id=&quot;主</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hello world</title>
