@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/08/22/github-git-she-zhi-dai-li/</loc>
+    
+    <lastmod>2022-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/</loc>
+    
+    <lastmod>2022-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/20/hello-world/</loc>
+    
+    <lastmod>2022-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/</loc>
+    
+    <lastmod>2022-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/404/index.html</loc>
     
     <lastmod>2022-08-21</lastmod>
@@ -50,42 +86,6 @@
     <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2022-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/</loc>
-    
-    <lastmod>2022-08-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/08/20/hello-world-1/</loc>
-    
-    <lastmod>2022-08-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/08/20/hello-world/</loc>
-    
-    <lastmod>2022-08-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

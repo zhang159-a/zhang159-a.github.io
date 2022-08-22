@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Github、Git 设置代理</title>
+      <link href="/2022/08/22/github-git-she-zhi-dai-li/"/>
+      <url>/2022/08/22/github-git-she-zhi-dai-li/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="GitHub-、Git设置和取消代理"><a href="#GitHub-、Git设置和取消代理" class="headerlink" title="GitHub 、Git设置和取消代理"></a>GitHub 、Git设置和取消代理</h1><h2 id="主要是加速-git-clone-操作"><a href="#主要是加速-git-clone-操作" class="headerlink" title="主要是加速 git clone 操作"></a>主要是加速 git clone 操作</h2><ul><li>git 设置代理</li></ul><p><code>git config --global http.proxy http:127.0.0.1:[10810 这里面是你代理的端口号]</code></p><ul><li>git 取消代理</li></ul><p><code>git config --global --unset http.proxy</code></p><ul><li>针对 github.com 设置代理</li></ul><p><code>git config --global http.https://github.com.proxy http://127.0.0.1:[端口号]</code></p><ul><li>取消 github.com 代理</li></ul><p><code>git config --global --unset http.https://github.com.proxy</code></p><p><strong>注意</strong>：设置代理需要科学上网，可以在软件上查看，也可以在设置里查看</p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-20-image.png"></p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-29-image.png"></p><h2 id="ssh-连接-github-失败问题"><a href="#ssh-连接-github-失败问题" class="headerlink" title="ssh 连接 github 失败问题"></a>ssh 连接 github 失败问题</h2><p>设置公钥后，连接失败，显示22端口拒绝,更换为 443 端口</p><p><code>ssh git@github.com</code></p><p><code>ssh: connect to host github.com port 22: Connection refused</code></p><ol><li><p>在任意位置打开 Git Bash Here</p></li><li><p>创建 config 文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.ssh/config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li>在里面添加</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Host github.com Hostname ssh.github.com Port <span class="token number">443</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/"/>
       <url>/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/</url>
@@ -22,19 +35,6 @@
       <url>/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/</url>
       
         <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="GitHub-、Git设置和取消代理"><a href="#GitHub-、Git设置和取消代理" class="headerlink" title="GitHub 、Git设置和取消代理"></a>GitHub 、Git设置和取消代理</h1><h2 id="主要是加速-git-clone-操作"><a href="#主要是加速-git-clone-操作" class="headerlink" title="主要是加速 git clone 操作"></a>主要是加速 git clone 操作</h2><ul><li>git 设置代理</li></ul><p><code>git config --global http.proxy http:127.0.0.1:[10810  这里面是你代理的端口号]</code></p><ul><li>git 取消代理</li></ul><p><code> git config --global --unset http.proxy</code></p><ul><li>针对 github.com 设置代理</li></ul><p><code>git config --global http.https://github.com.proxy http://127.0.0.1:[端口号]</code></p><ul><li>取消 github.com 代理</li></ul><p><code>git config --global --unset http.https://github.com.proxy</code></p><p><strong>注意</strong>：设置代理需要科学上网，可以在软件上查看，也可以在设置里查看</p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-20-image.png"></p><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-29-image.png"></p><h2 id="ssh-连接-github-失败问题"><a href="#ssh-连接-github-失败问题" class="headerlink" title="ssh 连接 github 失败问题"></a>ssh 连接 github 失败问题</h2><p>设置公钥后，连接失败，显示22端口拒绝,更换为 443 端口</p><p><code>ssh git@github.com</code></p><p><code>ssh: connect to host github.com port 22: Connection refused</code></p><ol><li><p>在任意位置打开 Git Bash Here </p></li><li><p>创建 config 文件</p></li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.ssh/config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="3"><li>在里面添加</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Host github.com Hostname ssh.github.com Port <span class="token number">443</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2022/08/20/hello-world-1/"/>
-      <url>/2022/08/20/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>你好<br>!!!</p>]]></content>
       
       
       

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-21T06:07:33.009Z</updated>
+  <updated>2022-08-22T03:19:00.312Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Github、Git 设置代理</title>
+    <link href="http://example.com/2022/08/22/github-git-she-zhi-dai-li/"/>
+    <id>http://example.com/2022/08/22/github-git-she-zhi-dai-li/</id>
+    <published>2022-08-22T03:17:16.000Z</published>
+    <updated>2022-08-22T03:19:00.312Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="http://example.com/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/"/>
     <id>http://example.com/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/</id>
     <published>2022-08-21T05:49:24.938Z</published>
-    <updated>2022-08-21T06:07:33.009Z</updated>
+    <updated>2022-08-22T03:14:16.804Z</updated>
     
     
       
@@ -42,28 +63,7 @@
     <link href="http://example.com/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/"/>
     <id>http://example.com/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/</id>
     <published>2022-08-21T04:00:34.228Z</published>
-    <updated>2022-08-21T01:57:08.447Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hello world</title>
-    <link href="http://example.com/2022/08/20/hello-world-1/"/>
-    <id>http://example.com/2022/08/20/hello-world-1/</id>
-    <published>2022-08-20T05:47:54.000Z</published>
-    <updated>2022-08-20T05:49:15.649Z</updated>
+    <updated>2022-08-22T03:16:18.570Z</updated>
     
     
       
@@ -84,7 +84,7 @@
     <link href="http://example.com/2022/08/20/hello-world/"/>
     <id>http://example.com/2022/08/20/hello-world/</id>
     <published>2022-08-20T03:26:24.387Z</published>
-    <updated>2022-08-20T05:48:38.211Z</updated>
+    <updated>2022-08-22T03:14:19.963Z</updated>
     
     
       

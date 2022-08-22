@@ -4,9 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hello world, 学习笔记">
-    <meta name="description" content="你好!!!
-">
+    <meta name="keywords" content="Github、Git 设置代理, 学习笔记">
+    <meta name="description" content="GitHub 、Git设置和取消代理主要是加速 git clone 操作
+git 设置代理
+
+git config --global http.proxy http:127.0.0.1:[10810 这里面是你代理的端口号]
+
+git 取消">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hello world | 学习笔记</title>
+    <title>Github、Git 设置代理 | 学习笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -445,12 +449,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hello world</h1>
+                    <h1 class="description center-align post-title">Github、Git 设置代理</h1>
                 </div>
             </div>
         </div>
@@ -486,21 +490,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-20
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-20
+                    2022-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2
+                    200
                 </div>
                 
 
@@ -530,7 +534,42 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>你好<br>!!!</p>
+                <h1 id="GitHub-、Git设置和取消代理"><a href="#GitHub-、Git设置和取消代理" class="headerlink" title="GitHub 、Git设置和取消代理"></a>GitHub 、Git设置和取消代理</h1><h2 id="主要是加速-git-clone-操作"><a href="#主要是加速-git-clone-操作" class="headerlink" title="主要是加速 git clone 操作"></a>主要是加速 git clone 操作</h2><ul>
+<li>git 设置代理</li>
+</ul>
+<p><code>git config --global http.proxy http:127.0.0.1:[10810 这里面是你代理的端口号]</code></p>
+<ul>
+<li>git 取消代理</li>
+</ul>
+<p><code>git config --global --unset http.proxy</code></p>
+<ul>
+<li>针对 github.com 设置代理</li>
+</ul>
+<p><code>git config --global http.https://github.com.proxy http://127.0.0.1:[端口号]</code></p>
+<ul>
+<li>取消 github.com 代理</li>
+</ul>
+<p><code>git config --global --unset http.https://github.com.proxy</code></p>
+<p><strong>注意</strong>：设置代理需要科学上网，可以在软件上查看，也可以在设置里查看</p>
+<p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-20-image.png"></p>
+<p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-21-09-36-29-image.png"></p>
+<h2 id="ssh-连接-github-失败问题"><a href="#ssh-连接-github-失败问题" class="headerlink" title="ssh 连接 github 失败问题"></a>ssh 连接 github 失败问题</h2><p>设置公钥后，连接失败，显示22端口拒绝,更换为 443 端口</p>
+<p><code>ssh git@github.com</code></p>
+<p><code>ssh: connect to host github.com port 22: Connection refused</code></p>
+<ol>
+<li><p>在任意位置打开 Git Bash Here</p>
+</li>
+<li><p>创建 config 文件</p>
+</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">vim</span> ~/.ssh/config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ol start="3">
+<li>在里面添加</li>
+</ol>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Host github.com
+ Hostname ssh.github.com
+ Port <span class="token number">443</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -547,7 +586,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Zhr</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhr</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -557,7 +596,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/08/20/hello-world-1/">http://example.com/2022/08/20/hello-world-1/</a>
+                    <a href="http://example.com/2022/08/22/github-git-she-zhi-dai-li/">http://example.com/2022/08/22/github-git-she-zhi-dai-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -570,7 +609,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Zhr</a>
+                    <a href="/about" target="_blank">zhr</a>
                     !
                 </span>
             </div>
@@ -673,11 +712,50 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/">
+                <a href="/2022/08/22/github-git-she-zhi-dai-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Github、Git 设置代理">
+                        
+                        <span class="card-title">Github、Git 设置代理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            zhr
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/">
                     <div class="card-image">
                         
                         
@@ -693,45 +771,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhr
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/08/20/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-21
                             </span>
                         <span class="publish-author">
                             
@@ -880,7 +921,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">628</span>
+                        class="white-color">826</span>
             
             
             
