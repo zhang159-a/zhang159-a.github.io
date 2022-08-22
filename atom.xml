@@ -46,7 +46,7 @@
     <link href="http://example.com/2022/08/22/hexo-chang-yong-ming-ling-he-ming-ling-bie-ming-kuai-jie-she-zhi/"/>
     <id>http://example.com/2022/08/22/hexo-chang-yong-ming-ling-he-ming-ling-bie-ming-kuai-jie-she-zhi/</id>
     <published>2022-08-22T05:04:49.000Z</published>
-    <updated>2022-08-22T06:02:41.276Z</updated>
+    <updated>2022-08-22T06:27:39.362Z</updated>
     
     
       
@@ -62,7 +62,9 @@
     <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="hexo、快捷键" scheme="http://example.com/tags/hexo%E3%80%81%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+    <category term="快捷键" scheme="http://example.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
     
   </entry>
   
@@ -71,7 +73,7 @@
     <link href="http://example.com/2022/08/22/github-git-she-zhi-dai-li/"/>
     <id>http://example.com/2022/08/22/github-git-she-zhi-dai-li/</id>
     <published>2022-08-22T03:17:16.000Z</published>
-    <updated>2022-08-22T03:19:00.312Z</updated>
+    <updated>2022-08-22T06:27:56.676Z</updated>
     
     
       
@@ -84,6 +86,12 @@
     
     
     
+    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="Github" scheme="http://example.com/tags/Github/"/>
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
