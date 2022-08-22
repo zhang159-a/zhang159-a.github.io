@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/08/22/window-ru-he-da-kai-ming-ling-xing/"/>
+      <url>/2022/08/22/window-ru-he-da-kai-ming-ling-xing/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Window 如何打开命令行<span class="token key atrule">author</span><span class="token punctuation">:</span> zhr<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2022-08-22 14:30:12</span><span class="token key atrule">categories</span><span class="token punctuation">:</span> 问题总结<span class="token key atrule">tags</span><span class="token punctuation">:</span>         <span class="token punctuation">-</span> Window    <span class="token punctuation">-</span> 命令行    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="Window-如何打开命令行"><a href="#Window-如何打开命令行" class="headerlink" title="Window 如何打开命令行"></a>Window 如何打开命令行</h1><p><strong>命令行工具有两种 cmd 和 powershell。老一代命令行工具cmd.exe及Windows新一代命令行工具Windows powershell工具，允许管理人员通过命令行的方式来管理计算机。只是相对cmd.exe，powershell的功能要强大的多，可以让管理员更容易地控制系统管理和加速自动化。powershell 是 cmd 的升级版、补充版,增加了很多命令。</strong></p><h2 id="1-通过运行对话框打开"><a href="#1-通过运行对话框打开" class="headerlink" title="1. 通过运行对话框打开"></a>1. 通过运行对话框打开</h2><ul><li><p>win + R 打开运行对话框</p></li><li><p>输入 cmd / powershell</p></li></ul><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-20-58-image.png"></p><h2 id="2-通过开始菜单打开"><a href="#2-通过开始菜单打开" class="headerlink" title="2.通过开始菜单打开"></a>2.通过开始菜单打开</h2><ul><li><p>win + x ，或者在“开始”菜单上右键</p></li><li><p>选择命令提示符 / powershell</p></li></ul><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-21-16-image.png"></p><h2 id="3-在指定目录下打开"><a href="#3-在指定目录下打开" class="headerlink" title="3.在指定目录下打开"></a>3.在指定目录下打开</h2><h3 id="3-1-输入-cmd"><a href="#3-1-输入-cmd" class="headerlink" title="3.1 输入 cmd"></a>3.1 输入 cmd</h3><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-26-52-image.png"></p><h3 id="3-2-shift-鼠标右键"><a href="#3-2-shift-鼠标右键" class="headerlink" title="3.2 shift + 鼠标右键"></a>3.2 shift + 鼠标右键</h3><img src="file:///C:/Users/13975/AppData/Roaming/marktext/images/2022-08-18-23-28-03-image.png" title="" alt="" data-align="inline"><h2 id="4-以管理员的身份打开"><a href="#4-以管理员的身份打开" class="headerlink" title="4.以管理员的身份打开"></a>4.以管理员的身份打开</h2><h3 id="4-1-搜索"><a href="#4-1-搜索" class="headerlink" title="4.1 搜索"></a>4.1 搜索</h3><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-29-53-image.png"></p><h3 id="4-2-win-x"><a href="#4-2-win-x" class="headerlink" title="4.2 win + x"></a>4.2 win + x</h3><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-30-24-image.png"></p><h3 id="4-3-在开始菜单中查找-cmd"><a href="#4-3-在开始菜单中查找-cmd" class="headerlink" title="4.3 在开始菜单中查找 cmd"></a>4.3 在开始菜单中查找 cmd</h3><p><img src="C:\Users\13975\AppData\Roaming\marktext\images\2022-08-18-23-33-25-image.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Markdown 学习</title>
       <link href="/2022/08/22/markdown-xue-xi/"/>
       <url>/2022/08/22/markdown-xue-xi/</url>
