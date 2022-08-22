@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/08/22/window-ru-he-da-kai-ming-ling-xing/</loc>
+    <loc>http://example.com/2022/08/22/window-ru-he-da-kai-zhong-duan/</loc>
     
     <lastmod>2022-08-22</lastmod>
     
@@ -125,6 +125,20 @@
   
   <url>
     <loc>http://example.com/tags/Markdown/</loc>
+    <lastmod>2022-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Window/</loc>
+    <lastmod>2022-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/%E7%BB%88%E7%AB%AF/</loc>
     <lastmod>2022-08-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
