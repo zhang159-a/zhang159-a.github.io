@@ -1,7 +1,7 @@
+http://example.com/2022/08/22/hexo-chang-yong-ming-ling-he-ming-ling-bie-ming-kuai-jie-she-zhi/
+http://example.com/2022/08/22/markdown-xue-xi/
 http://example.com/2022/08/22/github-git-she-zhi-dai-li/
-http://example.com/2022/08/21/github-git-she-zhi-he-qu-xiao-dai-li/
 http://example.com/2022/08/20/hello-world/
-http://example.com/2022/08/21/marktext-picgo-pei-zhi-tu-chuang/
 http://example.com/404/index.html
 http://example.com/friends/index.html
 http://example.com/contact/index.html
@@ -9,3 +9,7 @@ http://example.com/about/index.html
 http://example.com/tags/index.html
 http://example.com/categories/index.html
 http://example.com/
+http://example.com/tags/Markdown/
+http://example.com/tags/hexo%E3%80%81%E5%BF%AB%E6%8D%B7%E9%94%AE/
+http://example.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/
+http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/
