@@ -565,8 +565,6 @@ hello, world<span aria-hidden="true" class="line-numbers-rows"><span></span><spa
 <span class="token operator">&gt;</span>.<span class="token punctuation">\</span>main.exe
 hello, world<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <h1 id="示例程序的结构"><a href="#示例程序的结构" class="headerlink" title="示例程序的结构"></a>示例程序的结构</h1><p><code>package main</code></p>
 <p>这一行代码定义了 Go 中的一个包 package。包是 Go 语言的基本组成单元，通常使用单个的小写单词命名，一个 Go 程序本质上就是一组包的集合。所有 Go 代码都有自己隶属的包，在这里我们的“hello，world”示例的所有代码都在一个名为 main 的包中。main 包在 Go 中是一个特殊的包，整个 Go 程序中仅允许存在一个名为 main 的包。</p>
 <p>main 包中的主要代码是一个名为 main 的函数： </p>
@@ -649,8 +647,6 @@ hello<span class="token punctuation">,</span> world<span aria-hidden="true" clas
   fasthttp<span class="token punctuation">.</span><span class="token function">ListenAndServe</span><span class="token punctuation">(</span><span class="token string">":8081"</span><span class="token punctuation">,</span> fastHTTPHandler<span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>这个示例创建了一个在 8081 端口监听的 http 服务，当我们向它发起请求后，这个服务会在终端标准输出上输出一段访问日志。</p>
 <p>你会看到，和“hello，world“相比，这个示例显然要复杂许多。但不用担心，你现在大可不必知道每行代码的功用，你只需要我们在这个稍微有点复杂的示例中引入了两个第三方依赖库，zap 和 fasthttp 就可以了。</p>
 <p>我们尝试一下使用编译“hello，world”的方法来编译“hellomodule”中的 main.go 源文件，go 编译器的输出结果是这样的：</p>
@@ -683,7 +679,7 @@ go <span class="token number">1.16</span><span aria-hidden="true" class="line-nu
 <p>比如，如果 hellomodule 下有子目录 pkg/pkg1，那么 pkg1 下面的包的导入路径就是由 module path（github.com/bigwhite/hellomodule）和包所在子目录的名字（pkg/pkg1）结合而成，也就是 github.com/bigwhite/hellomodule/pkg/pkg1。</p>
 <p>另外，go.mod 的最后一行是一个 Go 版本指示符，用于表示这个 module 是在某个特定的 Go 版本的 module 语义的基础上编写的。</p>
 <p><strong>有了 go.mod 后，是不是我们就可以构建 hellomodule 示例了呢？</strong></p>
-<pre class="line-numbers language-go" data-language="go"><div class="caption"><span>build main.go</span></div><code class="language-go">$<span class="token keyword">go</span> build main<span class="token punctuation">.</span><span class="token keyword">go</span>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go">$<span class="token keyword">go</span> build main<span class="token punctuation">.</span><span class="token keyword">go</span>
 main<span class="token punctuation">.</span><span class="token keyword">go</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">:</span> no required module provides <span class="token keyword">package</span> github<span class="token punctuation">.</span>com<span class="token operator">/</span>valyala<span class="token operator">/</span>fasthttp<span class="token punctuation">;</span> to add it<span class="token punctuation">:</span>
   <span class="token keyword">go</span> get github<span class="token punctuation">.</span>com<span class="token operator">/</span>valyala<span class="token operator">/</span>fasthttp
 main<span class="token punctuation">.</span><span class="token keyword">go</span><span class="token punctuation">:</span><span class="token number">5</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">:</span> no required module provides <span class="token keyword">package</span> <span class="token keyword">go</span><span class="token punctuation">.</span>uber<span class="token punctuation">.</span>org<span class="token operator">/</span>zap<span class="token punctuation">;</span> to add it<span class="token punctuation">:</span>
@@ -712,8 +708,6 @@ require <span class="token punctuation">(</span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> build main.go
 <span class="token variable">$ls</span>
 go.mod    go.sum    main*    main.go<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
 
 <p>这次我们成功构建出了可执行文件 main，运行这个文件，新开一个终端窗口，在新窗口中使用 curl 命令访问该 http 服务：curl localhost:8081/foo/bar，我们就会看到服务端输出如下日志：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$./main
@@ -878,18 +872,17 @@ go.mod    go.sum    main*    main.go<span aria-hidden="true" class="line-numbers
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/23/chu-kui-men-jing-yi-ge-go-cheng-xu-de-jie-gou-shi-zen-yang-de/">
+                <a href="/2022/08/23/goland-shi-yong-zhong-de-cuo-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="初窥门径: 一个Go程序的结构是怎样的?">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Goland 使用中的错误">
                         
-                        <span class="card-title">初窥门径: 一个Go程序的结构是怎样的?</span>
+                        <span class="card-title">Goland 使用中的错误</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -899,22 +892,21 @@ go.mod    go.sum    main*    main.go<span aria-hidden="true" class="line-numbers
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Go/" class="post-category">
-                                    Go
+                            <a href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-category">
+                                    问题总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1111,7 +1103,7 @@ go.mod    go.sum    main*    main.go<span aria-hidden="true" class="line-numbers
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">17.1k</span>
+                        class="white-color">17.2k</span>
             
             
             
