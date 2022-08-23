@@ -1,6 +1,6 @@
-http://example.com/2022/08/23/go-de-an-zhuang-wen-ti/
 http://example.com/2022/08/23/pei-hao-huan-jing-xuan-ze-yi-chong-zui-gua-he-ni-de-go-an-zhuang-fang-fa/
-http://example.com/2022/08/23/ju-jue-hello-and-bye-go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/
+http://example.com/2022/08/23/go-de-an-zhuang-wen-ti/
+http://example.com/2022/08/23/go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/
 http://example.com/2022/08/23/qian-shi-jin-sheng-ni-bu-de-bu-liao-jie-de-go-de-li-shi-he-xian-zhuang/
 http://example.com/2022/08/23/go-yu-yan-di-yi-ke/
 http://example.com/2022/08/23/ji-ben-jia-gou-yi-ge-jian-zhi-shu-ju-ku-bao-han-shi-me/
