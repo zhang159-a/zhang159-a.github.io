@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>基本架构：一个键值数据库包含什么?</title>
+      <link href="/2022/08/23/ji-ben-jia-gou-yi-ge-jian-zhi-shu-ju-ku-bao-han-shi-me/"/>
+      <url>/2022/08/23/ji-ben-jia-gou-yi-ge-jian-zhi-shu-ju-ku-bao-han-shi-me/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li><p>Redis 支持的 value 类型包括了 String、哈希表、列表、集合等</p></li><li><p>数据的基本操作</p><ul><li><p>PUT</p></li><li><p>GET</p></li><li><p>DELETE</p></li><li><p>SCAN，根据一段 key 的范围返回对应的 value 值</p></li></ul></li><li><p>键值对保存在内存</p></li></ul><p><strong>键值数据库的基本结构</strong></p><p><img src="https://static001.geekbang.org/resource/image/ec/d5/ec18bf4b8afef2fa8b99af252d95a2d5.jpg?wh=2360*3791"></p><h2 id="采用什么访问模式"><a href="#采用什么访问模式" class="headerlink" title="采用什么访问模式"></a>采用什么访问模式</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>这样学Redis</title>
+      <link href="/2022/08/23/zhe-yang-xue-redis/"/>
+      <url>/2022/08/23/zhe-yang-xue-redis/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>Reids 知识全景图</strong></p><p><img src="https://static001.geekbang.org/resource/image/79/e7/79da7093ed998a99d9abe91e610b74e7.jpg?wh=2001*1126"></p><p><strong>Redis问题画像图</strong></p><p><img src="https://static001.geekbang.org/resource/image/70/b4/70a5bc1ddc9e3579a2fcb8a5d44118b4.jpeg?wh=2048*1536"></p><p><strong>课程大纲</strong></p><p><img src="https://static001.geekbang.org/resource/image/13/7e/13946f7543f9eea58c9bd2b877826b7e.jpg?wh=750*4458"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Redis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git 学习和使用</title>
       <link href="/2022/08/22/git-xue-xi-he-shi-yong/"/>
       <url>/2022/08/22/git-xue-xi-he-shi-yong/</url>
