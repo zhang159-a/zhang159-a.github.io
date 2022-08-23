@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/08/23/pei-hao-huan-jing-xuan-ze-yi-chong-zui-gua-he-ni-de-go-an-zhuang-fang-fa/</loc>
+    
+    <lastmod>2022-08-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/23/ju-jue-hello-and-bye-go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/</loc>
+    
+    <lastmod>2022-08-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/23/qian-shi-jin-sheng-ni-bu-de-bu-liao-jie-de-go-de-li-shi-he-xian-zhuang/</loc>
+    
+    <lastmod>2022-08-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/23/go-yu-yan-di-yi-ke/</loc>
+    
+    <lastmod>2022-08-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/08/23/ji-ben-jia-gou-yi-ge-jian-zhi-shu-ju-ku-bao-han-shi-me/</loc>
     
     <lastmod>2022-08-23</lastmod>
@@ -151,6 +187,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/go/</loc>
+    <lastmod>2022-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/Markdown/</loc>
     <lastmod>2022-08-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -203,6 +246,13 @@
   
   <url>
     <loc>http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2022-08-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/Go/</loc>
     <lastmod>2022-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
