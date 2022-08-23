@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-23T11:16:01.839Z</updated>
+  <updated>2022-08-23T15:04:23.415Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>初窥门径: 一个Go程序的结构是怎样的?</title>
+    <link href="http://example.com/2022/08/23/chu-kui-men-jing-yi-ge-go-cheng-xu-de-jie-gou-shi-zen-yang-de/"/>
+    <id>http://example.com/2022/08/23/chu-kui-men-jing-yi-ge-go-cheng-xu-de-jie-gou-shi-zen-yang-de/</id>
+    <published>2022-08-23T11:20:02.000Z</published>
+    <updated>2022-08-23T15:04:23.415Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://example.com/categories/Go/"/>
+    
+    
+    <category term="go" scheme="http://example.com/tags/go/"/>
+    
+  </entry>
   
   <entry>
     <title>cd 命令的使用</title>
