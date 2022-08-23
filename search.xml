@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>cd 命令的使用</title>
+      <link href="/2022/08/23/cd-ming-ling-de-shi-yong/"/>
+      <url>/2022/08/23/cd-ming-ling-de-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><strong>cd : Change Directory 切换路径</strong></p><ul><li><p><code>cd /</code> 回到根目录</p></li><li><p><code>cd ..</code> 回到上一层目录</p></li><li><p>进入任意目录</p></li></ul><p>方法一：</p><ol><li><p>直接输入 [该目录所在盘区]:    进入该盘区目录</p></li><li><p>然后输入 cd [在盘区下相对路径]   进入该目录</p><p><img src="https://img-blog.csdnimg.cn/20190806125049779.PNG" alt="在这里插入图片描述"></p></li></ol><p>方法二:</p><p><code>cd /d [对应目录]</code></p><p><img src="https://img-blog.csdnimg.cn/2019080612540499.PNG" alt="在这里插入图片描述"></p><ul><li>显示 cd 帮助及用法</li></ul><p><code>cd/?</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 终端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>go 的安装问题</title>
       <link href="/2022/08/23/go-de-an-zhuang-wen-ti/"/>
       <url>/2022/08/23/go-de-an-zhuang-wen-ti/</url>
