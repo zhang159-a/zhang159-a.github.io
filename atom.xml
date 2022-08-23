@@ -63,11 +63,11 @@
   </entry>
   
   <entry>
-    <title>拒绝</title>
+    <title>Go语言的设计哲学是怎么一回事</title>
     <link href="http://example.com/2022/08/23/go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/"/>
     <id>http://example.com/2022/08/23/go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/</id>
     <published>2022-08-23T06:30:02.000Z</published>
-    <updated>2022-08-23T07:15:36.064Z</updated>
+    <updated>2022-08-23T08:19:00.935Z</updated>
     
     
       
@@ -312,9 +312,9 @@
     <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     
     
-    <category term="Git" scheme="http://example.com/tags/Git/"/>
-    
     <category term="Github" scheme="http://example.com/tags/Github/"/>
+    
+    <category term="Git" scheme="http://example.com/tags/Git/"/>
     
   </entry>
   
