@@ -1,5 +1,7 @@
-http://example.com/2022/08/26/yi-yuan-ji-lu-day02/
+http://example.com/2022/08/27/ji-xue-ji-lian-gou-jian-yi-ge-web-fu-wu/
+http://example.com/2022/08/27/ru-kou-han-shu-yu-bao-chu-shi-hua-gao-qing-go-cheng-xu-de-zhi-xing-ci-xu/
 http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/
+http://example.com/2022/08/26/yi-yuan-ji-lu-day02/
 http://example.com/2022/08/24/gou-jian-mo-shi-go-shi-zen-me-jie-jue-bao-yi-lai-guan-li-wen-ti-de/
 http://example.com/2022/08/23/biao-zhun-xian-xing-go-xiang-mu-de-bu-ju-biao-zhun-shi-shi-me/
 http://example.com/2022/08/24/yi-yuan-ji-lu-day01/
