@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-24T15:31:34.416Z</updated>
+  <updated>2022-08-26T13:03:03.340Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>医院记录 day02</title>
+    <link href="http://example.com/2022/08/26/yi-yuan-ji-lu-day02/"/>
+    <id>http://example.com/2022/08/26/yi-yuan-ji-lu-day02/</id>
+    <published>2022-08-26T12:12:32.000Z</published>
+    <updated>2022-08-26T13:03:03.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="日常小记" scheme="http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+    <category term="医院" scheme="http://example.com/tags/%E5%8C%BB%E9%99%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构建模式：Go Module的6类常规操作</title>
+    <link href="http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/"/>
+    <id>http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/</id>
+    <published>2022-08-24T15:35:20.000Z</published>
+    <updated>2022-08-26T12:12:55.287Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://example.com/categories/Go/"/>
+    
+    
+    <category term="go" scheme="http://example.com/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
     <title>构建模式：Go是怎么解决包依赖管理问题的？</title>
     <link href="http://example.com/2022/08/24/gou-jian-mo-shi-go-shi-zen-me-jie-jue-bao-yi-lai-guan-li-wen-ti-de/"/>
     <id>http://example.com/2022/08/24/gou-jian-mo-shi-go-shi-zen-me-jie-jue-bao-yi-lai-guan-li-wen-ti-de/</id>
     <published>2022-08-24T14:16:25.000Z</published>
-    <updated>2022-08-24T15:31:34.416Z</updated>
+    <updated>2022-08-24T15:35:49.123Z</updated>
     
     
       
@@ -46,7 +96,7 @@
     <link href="http://example.com/2022/08/24/yi-yuan-ji-lu-day01/"/>
     <id>http://example.com/2022/08/24/yi-yuan-ji-lu-day01/</id>
     <published>2022-08-24T13:45:19.000Z</published>
-    <updated>2022-08-24T13:52:35.106Z</updated>
+    <updated>2022-08-24T15:35:43.408Z</updated>
     
     
       
@@ -71,7 +121,7 @@
     <link href="http://example.com/2022/08/23/biao-zhun-xian-xing-go-xiang-mu-de-bu-ju-biao-zhun-shi-shi-me/"/>
     <id>http://example.com/2022/08/23/biao-zhun-xian-xing-go-xiang-mu-de-bu-ju-biao-zhun-shi-shi-me/</id>
     <published>2022-08-23T15:28:31.000Z</published>
-    <updated>2022-08-24T14:15:29.848Z</updated>
+    <updated>2022-08-24T15:35:45.528Z</updated>
     
     
       
@@ -471,27 +521,6 @@
     <category term="Git" scheme="http://example.com/tags/Git/"/>
     
     <category term="Github" scheme="http://example.com/tags/Github/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/08/20/hello-world/"/>
-    <id>http://example.com/2022/08/20/hello-world/</id>
-    <published>2022-08-20T03:26:24.387Z</published>
-    <updated>2022-08-22T03:14:19.963Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

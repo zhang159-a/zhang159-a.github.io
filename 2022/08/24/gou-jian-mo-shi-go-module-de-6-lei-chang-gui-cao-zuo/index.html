@@ -4,21 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown 学习, 学习笔记">
-    <meta name="description" content="1.语法**1.1 标题 **# 一级标题## 二级标题**1.2 列表 **
-
-无序列表使用 * 或 + 或 -
-有序列表使用数字加.标识，例如：1.
-无序列表
-二级列表项
-二级列表项
-三级列表项，按TAB缩进即可
-
-
-
-
-有序列表
-第一">
+    <meta name="keywords" content="构建模式：Go Module的6类常规操作, 学习笔记">
+    <meta name="description" content="通过上一节课的讲解，我们掌握了 Go Module 构建模式的基本概念和工作原理，也初步学会了如何通过 go mod 命令，将一个 Go 项目转变为一个 Go Module，并通过 Go Module 构建模式进行构建。
+但是，围绕一个 G">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -30,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Markdown 学习 | 学习笔记</title>
+    <title>构建模式：Go Module的6类常规操作 | 学习笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -457,12 +445,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown 学习</h1>
+                    <h1 class="description center-align post-title">构建模式：Go Module的6类常规操作</h1>
                 </div>
             </div>
         </div>
@@ -486,8 +474,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/go/">
+                                <span class="chip bg-color">go</span>
                             </a>
                         
                     </div>
@@ -498,8 +486,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                开发工具
+                            <a href="/categories/Go/" class="post-category">
+                                Go
                             </a>
                         
                     </div>
@@ -511,28 +499,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-22
+                    2022-08-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-22
+                    2022-08-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    9 分
                 </div>
                 
 
@@ -555,144 +543,87 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>1.语法</strong><br>**1.1 标题 **<br># 一级标题<br>## 二级标题<br>**1.2 列表 **</p>
-<ul>
-<li>无序列表使用 * 或 + 或 -</li>
-<li>有序列表使用数字加.标识，例如：1.</li>
-<li>无序列表<ul>
-<li>二级列表项</li>
-<li>二级列表项<ul>
-<li>三级列表项，按TAB缩进即可</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>有序列表<ol>
-<li>第一项</li>
-<li>第二项<br><strong>1.3 链接</strong><br><strong>快捷键 Ctrl + k</strong><br><strong>1.3.1 文字超链接</strong><br>[显示的名字](网站)<br><a target="_blank" rel="noopener" href="http://www.baidu.com/" title="百度一下">百度</a><br><strong>1.3.2 图像超链接</strong><br>![找不到图像文件时显示的文本](图像路径）<br><strong>1.3.3 索引超链接</strong><br>[显示名称][索引]<br>[索引]:对应的网站<br><a target="_blank" rel="noopener" href="http://www.baudu.com/">百度官网</a></li>
-</ol>
-</li>
-</ul>
-<p><strong>1.3.4 自动链接</strong><br>直接用一对尖括号包围即可<br>&lt;网站&gt;<br>电子邮件地址也可以这样做<br><a href="mailto:1397543199@qq.com">1397543199@qq.com</a><br><strong>1.4 代码</strong><br><strong>1.4.1 代码片段</strong><br><strong>段落上的一个函数或片段的代码可以用反引号(<code>切换为英文输入法，在键盘的左上角) 把它包起来，例如：**</code>print(“你好”)`<br>**1.4.2 代码区块**<br>**用三个```或者三个~~~都可以定义代码区块，还可以选择语言种类，对代码进行高亮显示，不过应该不能补全提示，所以建议在ide中编写完成后，复制粘贴</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+                <p>通过上一节课的讲解，我们掌握了 Go Module 构建模式的基本概念和工作原理，也初步学会了如何通过 go mod 命令，将一个 Go 项目转变为一个 Go Module，并通过 Go Module 构建模式进行构建。</p>
+<p>但是，围绕一个 Go Module，Go 开发人员每天要执行很多 Go 命令对其进行维护。这些维护又是怎么进行的呢？</p>
+<p>具体来说，维护 Go Module 无非就是对 Go Module 依赖包的管理。但在具体工作中还有很多情况，我们接下来会拆分成六个场景，层层深入给你分析。可以说，学好这些是每个 Go 开发人员成长的必经之路。</p>
+<p>我们首先来看一下日常进行 Go 应用开发时遇到的最为频繁的一个场景：<strong>为当前项目添加一个依赖包。</strong></p>
+<h1 id="为当前-module-添加一个依赖"><a href="#为当前-module-添加一个依赖" class="headerlink" title="为当前 module 添加一个依赖"></a>为当前 module 添加一个依赖</h1><p>在一个项目的初始阶段，我们会经常为项目引入第三方包，并借助这些包完成特定功能。即便是项目进入了稳定阶段，随着项目的演进，我们偶尔还需要在代码中引入新的第三方包。</p>
+<p>那么我们如何为一个 Go Module 添加一个新的依赖包呢？</p>
+<p>我们还是以上一节课中讲过的 module-mode 项目为例。如果我们要为这个项目增加一个新依赖：github.com/google/uuid，那需要怎么做呢？</p>
+<p>我们首先会更新源码，就像下面代码中这样：</p>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
-<p><strong>1.5 文本</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">文本分段，前后至少保留一个空行即可。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+  <span class="token string">"github.com/google/uuid"</span>
+  <span class="token string">"github.com/sirupsen/logrus"</span>
+<span class="token punctuation">)</span>
 
-<p><strong>1.5.1 加粗或斜体</strong><br><strong>加粗</strong> ** **<br><em>斜体</em> _ _<br><em><strong>粗斜体</strong></em> *** ***<br><em><strong>粗斜体</strong></em> ___ ___</p>
-<ul>
-<li><p>快捷键：Ctrl + B,可以快速添加加粗效果<br><strong>1.5.2 线条</strong></p>
-</li>
-<li><p>水平线：三个—,在这里不知道为什么加载不出来，别的编辑器可以<br>你好</p>
-</li>
-<li><p>删除线：前后各两个~~ ~~</p>
-<p><del>原价:100</del></p>
-</li>
-<li><p>下划线：和HTML的标签相同，，在这里不知道为什么加载不出来，别的编辑器可以</p>
-<p><u>你好</u></p>
-</li>
-</ul>
-<p><strong>1.5.3 符号或图标</strong></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3c168c88c2a94b6fbd6761bc91a7fc62~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b8256891606e4821a28dd7a244d1381c~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9506a3b069cb4cf48d98fc1f1a60cf15~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/14bca78a45b64fc28bd8059be12b9b36~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9dbd904891c74d9299d542c9a2fb9b7d~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p>更多图标写法可参考: <a target="_blank" rel="noopener" href="https://www.webfx.com/tools/emoji-cheat-sheet/">https://www.webfx.com/tools/emoji-cheat-sheet/</a></p>
-<p><strong>1.5.4 转义字符</strong></p>
-<p>使用反斜杠\插入语法中用到的特殊符号。</p>
-<p><img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b1d6fafb83a74ff5919539f4aa5dc8d2~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p>例如，如果你需要插入反斜杠，就连续输入两个\即可。<br>注：在内容中输入以上特殊符号的时候一定要注意转义，否则将导致内容显示不全，甚至排版混乱。</p>
-<p><strong>1.5.5 数学公式</strong></p>
-<p>这个我平时很少使用，就不在这记录了，需要的时候在网上查找</p>
-<p><strong>1.5.6 脚注</strong></p>
-<p>脚注是对文本的补充说明<br>Markdown 脚注的格式如下:</p>
-<p>[^要说明的文本]</p>
-<p><strong>eg</strong></p>
-<p>创建脚注格式类似这样<a href="%E4%BD%A0%E5%A5%BD%EF%BC%81%EF%BC%81%EF%BC%81">^hello</a>。</p>
-<p><strong>1.6 引用</strong></p>
-<p>区块引用是在段落开头使用&gt;符号，然后后面紧跟一个空格符号</p>
-<blockquote>
-<p>冬天来了，春天还会远吗?</p>
-</blockquote>
-<p><strong>1.7 表格</strong></p>
-<p>表格使用 | 来分割不同的单元格，使用 - 来分割表头和其他行</p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>年龄</th>
-<th>性别</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>张三</td>
-<td>19</td>
-<td>男</td>
-</tr>
-<tr>
-<td>李四</td>
-<td>18</td>
-<td>女</td>
-</tr>
-</tbody></table>
-<p><strong>1.8 样式</strong></p>
-<p>  Markdown 标记语言出现的目的不是替代 HTML，也不是发明一种更便捷的插入HTML标签的方式。它对应的只是HTML标签的一个很小的子集。</p>
-<p><strong>1.8.1 空格标记</strong></p>
-<p>HTML提供好几种空格实体，它们拥有不同的宽度，非断行空格(&nbsp;)是常规空格的宽度，可运行于所有的主流浏览器。</p>
-<ul>
-<li>&nbsp; 不换行空格，全称No-Break Space。</li>
-<li>  半角空格，全称En Space,占据的宽度正好是1/2个中文宽度，而且基本上不受字体的影响。</li>
-<li>  全角空格，全称Em Space,占据的宽度正好是1个中文宽度，而且基本上不受字体的影响。</li>
-<li>&amp;thsisp; 窄空格，全称Thin Space。占据的宽度比较小。</li>
-<li>‌ 零宽不连字，全称Zero Width Non Joiner,是一个不打印字符,抑制本来会发生的连字。</li>
-<li>‍ 零宽连字，全称Zero Width Joiner,产生连字的效果。</li>
-</ul>
-<p><strong>1.8.2 特殊样式，颜色</strong></p>
-<p>【样式的写法】</p>
-<p>不知道为什么，这里也没有效果</p>
-<p>红色的文字</p>
-<p><strong>1.10 图形</strong></p>
-<p><strong>1.10.1 流程图</strong></p>
-<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">graph</span> TD
-Start <span class="token arrow operator">--&gt;</span> Stop<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  logrus<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"hello, go module mode"</span><span class="token punctuation">)</span>
+  logrus<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>uuid<span class="token punctuation">.</span><span class="token function">NewString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">graph</span> TD
-A<span class="token text string">[模块A]</span> <span class="token arrow operator">--&gt;</span><span class="token label property">|A1|</span> B<span class="token text string">(模块B)</span>
-B <span class="token arrow operator">--&gt;</span> C<span class="token text string">{判断条件C}</span>
-C <span class="token arrow operator">--&gt;</span><span class="token label property">|条件C1|</span> D<span class="token text string">&gt;模块D]</span>
-C <span class="token arrow operator">--&gt;</span><span class="token label property">|条件C2|</span> E<span class="token text string">((模块E))</span>
-C <span class="token arrow operator">--&gt;</span><span class="token label property">|条件C3|</span> F<span class="token text string">["模块F(引号可转义特殊字符)"]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>新源码中，我们通过 import 语句导入了 github.com/google/uuid，并在 main 函数中调用了 uuid 包的函数 NewString。此时，如果我们直接构建这个 module，我们会得到一个错误提示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> build
+main.go:4:2: no required module provides package github.com/google/uuid<span class="token punctuation">;</span> to <span class="token function">add</span> it:
+  go get github.com/google/uuid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>1.10.2 时序图</strong></p>
-<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">sequenceDiagram</span>
-Alice<span class="token arrow operator">-&gt;&gt;</span>John<span class="token operator">:</span> Hello John, how are you?
-John<span class="token arrow operator">--&gt;&gt;</span>Alice<span class="token operator">:</span> Great!
-Alice<span class="token arrow operator">-)</span>John<span class="token operator">:</span> See you later!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Go 编译器提示我们，go.mod 里的 require 段中，没有哪个 module 提供了 github.com/google/uuid 包，如果我们要增加这个依赖，可以手动执行 go get 命令。那我们就来按照提示手工执行一下这个命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> get github.com/google/uuid
+go: downloading github.com/google/uuid v1.3.0
+go get: added github.com/google/uuid v1.3.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<p><strong>1.10.3 甘特图</strong></p>
-<pre class="line-numbers language-mermaid" data-language="mermaid"><code class="language-mermaid"><span class="token keyword">gantt</span>
-title A Gantt Diagram
-dateFormat  YYYY-MM-DD
-section Section
-A task           <span class="token operator">:</span>a1, 2014-01-01, 30d
-Another task     <span class="token operator">:</span>after a1  , 20d
-section Another
-Task in sec      <span class="token operator">:</span>2014-01-12  , 12d
-another task      <span class="token operator">:</span> 24d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>你会发现，go get 命令将我们新增的依赖包下载到了本地 module 缓存里，并在 go.mod 文件的 require 段中新增了一行内容：</p>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go">require <span class="token punctuation">(</span>
+  github<span class="token punctuation">.</span>com<span class="token operator">/</span>google<span class="token operator">/</span>uuid v1<span class="token punctuation">.</span><span class="token number">3.0</span> <span class="token comment">//新增的依赖</span>
+  github<span class="token punctuation">.</span>com<span class="token operator">/</span>sirupsen<span class="token operator">/</span>logrus v1<span class="token punctuation">.</span><span class="token number">8.1</span>
+<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/13292f82dd1d45f59c1138fe1bd34dc0~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><strong>2 使用的软件</strong></p>
-<p><strong>2.1 Typora</strong></p>
-<p>之前是免费的，界面简洁，功能强大，现在是收费的。</p>
-<p><strong>2.2 MarkText</strong></p>
-<p>开源免费，支持多个平台。</p>
-<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9cd9a9cb609241cbba108653769e7959~tplv-k3u1fbpfcp-watermark.image" alt="imagepng"></p>
-<p><strong>2.3 ide插件</strong></p>
-<p>VS Code, idea 等软件可以安装Markdown的插件。</p>
-<p>学习使用Markdown<br>草稿箱<br>theme: juejin</p>
-<hr>
+<p>这新增的一行表明，我们当前项目依赖的是 uuid 的 v1.3.0 版本。我们也可以使用 go mod tidy 命令，在执行构建前自动分析源码中的依赖变化，识别新增依赖项并下载它们：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> mod tidy
+go: finding module <span class="token keyword">for</span> package github.com/google/uuid
+go: found github.com/google/uuid <span class="token keyword">in</span> github.com/google/uuid v1.3.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>对于我们这个例子而言，手工执行 go get 新增依赖项，和执行 go mod tidy 自动分析和下载依赖项的最终效果，是等价的。但对于复杂的项目变更而言，逐一手工添加依赖项显然很没有效率，go mod tidy 是更佳的选择。</p>
+<p>到这里，我们已经了解了怎么为当前的 module 添加一个新的依赖。但是在日常开发场景中，我们需要对依赖的版本进行更改。那这又要怎么做呢？下面我们就来看看下面升、降级修改依赖版本的场景。</p>
+<h1 id="升级-降级依赖的版本"><a href="#升级-降级依赖的版本" class="headerlink" title="升级 / 降级依赖的版本"></a>升级 / 降级依赖的版本</h1><p>我们先以对依赖的版本进行降级为例，分析一下。</p>
+<p>在实际开发工作中，如果我们认为 Go 命令自动帮我们确定的某个依赖的版本存在一些问题，比如，引入了不必要复杂性导致可靠性下降、性能回退等等，我们可以手工将它降级为之前发布的某个兼容版本。</p>
+<p>那这个操作依赖于什么原理呢？</p>
+<p>答案就是我们上一节课讲过“语义导入版本”机制。我们再来简单复习一下，Go Module 的版本号采用了语义版本规范，也就是版本号使用 vX.Y.Z 的格式。其中 X 是主版本号，Y 为次版本号 (minor)，Z 为补丁版本号 (patch)。主版本号相同的两个版本，较新的版本是兼容旧版本的。如果主版本号不同，那么两个版本是不兼容的。</p>
+<p>有了语义版本号作为基础和前提，我们就可以从容地手工对依赖的版本进行升降级了，Go 命令也可以根据版本兼容性，自动选择出合适的依赖版本了。</p>
+<p>我们还是以上面提到过的 logrus 为例，logrus 现在就存在着多个发布版本，我们可以通过下面命令来进行查询：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> list -m -versions github.com/sirupsen/logrus
+github.com/sirupsen/logrus v0.1.0 v0.1.1 v0.2.0 v0.3.0 v0.4.0 v0.4.1 v0.5.0 v0.5.1 v0.6.0 v0.6.1 v0.6.2 v0.6.3 v0.6.4 v0.6.5 v0.6.6 v0.7.0 v0.7.1 v0.7.2 v0.7.3 v0.8.0 v0.8.1 v0.8.2 v0.8.3 v0.8.4 v0.8.5 v0.8.6 v0.8.7 v0.9.0 v0.10.0 v0.11.0 v0.11.1 v0.11.2 v0.11.3 v0.11.4 v0.11.5 v1.0.0 v1.0.1 v1.0.3 v1.0.4 v1.0.5 v1.0.6 v1.1.0 v1.1.1 v1.2.0 v1.3.0 v1.4.0 v1.4.1 v1.4.2 v1.5.0 v1.6.0 v1.7.0 v1.7.1 v1.8.0 v1.8.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在这个例子中，基于初始状态执行的 go mod tidy 命令，帮我们选择了 logrus 的最新发布版本 v1.8.1。如果你觉得这个版本存在某些问题，想将 logrus 版本降至某个之前发布的兼容版本，比如 v1.7.0，那么我们可以在项目的 module 根目录下，执行带有版本号的 go get 命令：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> get github.com/sirupsen/logrus@v1.7.0
+go: downloading github.com/sirupsen/logrus v1.7.0
+go get: downgraded github.com/sirupsen/logrus v1.8.1 <span class="token operator">=</span><span class="token operator">&gt;</span> v1.7.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>从这个执行输出的结果，我们可以看到，go get 命令下载了 logrus v1.7.0 版本，并将 go.mod 中对 logrus 的依赖版本从 v1.8.1 降至 v1.7.0。</p>
+<p><strong>当然我们也可以使用万能命令 go mod tidy 来帮助我们降级，但前提是首先要用 go mod edit 命令，明确告知我们要依赖 v1.7.0 版本，而不是 v1.8.1，这个执行步骤是这样的</strong>：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> mod edit -require<span class="token operator">=</span>github.com/sirupsen/logrus@v1.7.0
+<span class="token variable">$go</span> mod tidy       
+go: downloading github.com/sirupsen/logrus v1.7.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>降级后，我们再假设 logrus v1.7.1 版本是一个安全补丁升级，修复了一个严重的安全漏洞，而且我们必须使用这个安全补丁版本，这就意味着我们需要将 logrus 依赖从 v1.7.0 升级到 v1.7.1。</p>
+<p>我们可以使用与降级同样的步骤来完成升级，这里我只列出了使用 go get 实现依赖版本升级的命令和输出结果，你自己动手试一下。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token variable">$go</span> get github.com/sirupsen/logrus@v1.7.1
+go: downloading github.com/sirupsen/logrus v1.7.1
+go get: upgraded github.com/sirupsen/logrus v1.7.0 <span class="token operator">=</span><span class="token operator">&gt;</span> v1.7.1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>好了，到这里你就学会了如何对项目依赖包的版本进行升降级了。</p>
+<p>但是你可能会发现一个问题，在前面的例子中，Go Module 的依赖的主版本号都是 1。根据我们上节课中学习的语义导入版本的规范，在 Go Module 构建模式下，当依赖的主版本号为 0 或 1 的时候，我们在 Go 源码中导入依赖包，不需要在包的导入路径上增加版本号，也就是：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">import</span> github.com/user/repo/v0 等价于 <span class="token function">import</span> github.com/user/repo
+<span class="token function">import</span> github.com/user/repo/v1 等价于 <span class="token function">import</span> github.com/user/repo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>但是，如果我们要依赖的 module 的主版本号大于 1，这又要怎么办呢？接着我们就来看看这个场景下该如何去做。</p>
+<h1 id="添加一个主版本号大于-1-的依赖"><a href="#添加一个主版本号大于-1-的依赖" class="headerlink" title="添加一个主版本号大于 1 的依赖"></a>添加一个主版本号大于 1 的依赖</h1><p>这里，我们还是先来回顾一下，上节课我们讲的语义版本规则中对主版本号大于 1 情况有没有相应的说明。</p>
+<p>有的。语义导入版本机制有一个原则：如果新旧版本的包使用相同的导入路径，那么新包与旧包是兼容的。也就是说，如果新旧两个包不兼容，那么我们就应该采用不同的导入路径。</p>
+<p>按照语义版本规范，如果我们要为项目引入主版本号大于 1 的依赖，比如 v2.0.0，那么由于这个版本与 v1、v0 开头的包版本都不兼容，我们在导入 v2.0.0 包时，不能再直接使用 github.com/user/repo，而要使用像下面代码中那样不同的包导入路径：</p>
+<p><code>import github.com/user/repo/v2/xxx</code></p>
+<p>也就是说，如果我们要为 Go 项目添加主版本号大于 1 的依赖，我们就需要使用“语义导入版本”机制，在声明它的导入路径的基础上，加上版本号信息。我们以“向 module-mode 项目添加 github.com/go-redis/redis 依赖包的 v7 版本”为例，看看添加步骤。</p>
+<p>首先，我们在源码中，以空导入的方式导入 v7 版本的 github.com/go-redis/redis 包：</p>
 
                 
             </div>
@@ -719,7 +650,7 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/08/22/markdown-xue-xi/">http://example.com/2022/08/22/markdown-xue-xi/</a>
+                    <a href="http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/">http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -757,8 +688,8 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/go/">
+                                    <span class="chip bg-color">go</span>
                                 </a>
                             
                         </div>
@@ -843,13 +774,13 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/22/window-ru-he-da-kai-zhong-duan/">
+                <a href="/2022/08/26/yi-yuan-ji-lu-day02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Window 如何打开终端">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="医院记录 day02">
                         
-                        <span class="card-title">Window 如何打开终端</span>
+                        <span class="card-title">医院记录 day02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -860,14 +791,14 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-26
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-category">
-                                    问题总结
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/" class="post-category">
+                                    日常小记
                                 </a>
                             
                             
@@ -877,12 +808,8 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Window/">
-                        <span class="chip bg-color">Window</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BB%88%E7%AB%AF/">
-                        <span class="chip bg-color">终端</span>
+                    <a href="/tags/%E5%8C%BB%E9%99%A2/">
+                        <span class="chip bg-color">医院</span>
                     </a>
                     
                 </div>
@@ -896,13 +823,13 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/22/hexo-chang-yong-ming-ling-he-ming-ling-bie-ming-kuai-jie-she-zhi/">
+                <a href="/2022/08/24/gou-jian-mo-shi-go-shi-zen-me-jie-jue-bao-yi-lai-guan-li-wen-ti-de/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="hexo 常用命令和命令别名快捷设置">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="构建模式：Go是怎么解决包依赖管理问题的？">
                         
-                        <span class="card-title">hexo 常用命令和命令别名快捷设置</span>
+                        <span class="card-title">构建模式：Go是怎么解决包依赖管理问题的？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -913,14 +840,14 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-category">
-                                    问题总结
+                            <a href="/categories/Go/" class="post-category">
+                                    Go
                                 </a>
                             
                             
@@ -930,12 +857,8 @@ another task      <span class="token operator">:</span> 24d<span aria-hidden="tr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/">
-                        <span class="chip bg-color">快捷键</span>
+                    <a href="/tags/go/">
+                        <span class="chip bg-color">go</span>
                     </a>
                     
                 </div>
