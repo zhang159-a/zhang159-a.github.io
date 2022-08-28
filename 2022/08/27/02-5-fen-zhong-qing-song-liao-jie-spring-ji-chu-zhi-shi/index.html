@@ -4,23 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git 学习和使用, 学习笔记">
-    <meta name="description" content="Git分布式版本控制工具
-git 命令总结
-1、目标
-了解 Git 基本概念
+    <meta name="keywords" content="02 5分钟轻松了解Spring基础知识, 学习笔记">
+    <meta name="description" content="在进行“传统的”Java 编程时，对象与对象之间的关系都是紧密耦合的，例如服务类 Service 使用组件 ComponentA，则可能写出这样的代码：
 
-概述 Git 工作流程
-
-使用 Git 常用命令
-
-熟悉 Git 代码托管服务
-
-能够使用 idea 操作 Git
-
-
-2、概述2.1、开发中的实际场景
-备份，">
+public class Service {
+    private Compone">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -32,7 +20,7 @@ git 命令总结
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git 学习和使用 | 学习笔记</title>
+    <title>02 5分钟轻松了解Spring基础知识 | 学习笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -459,12 +447,12 @@ git 命令总结
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git 学习和使用</h1>
+                    <h1 class="description center-align post-title">02 5分钟轻松了解Spring基础知识</h1>
                 </div>
             </div>
         </div>
@@ -488,8 +476,8 @@ git 命令总结
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/spring/">
+                                <span class="chip bg-color">spring</span>
                             </a>
                         
                     </div>
@@ -500,8 +488,8 @@ git 命令总结
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                开发工具
+                            <a href="/categories/Spring/" class="post-category">
+                                Spring
                             </a>
                         
                     </div>
@@ -513,28 +501,28 @@ git 命令总结
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-22
+                    2022-08-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-22
+                    2022-08-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    6 分
                 </div>
                 
 
@@ -557,355 +545,134 @@ git 命令总结
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Git分布式版本控制工具</p>
-<p><strong>git 命令总结</strong></p>
-<h2 id="1、目标"><a href="#1、目标" class="headerlink" title="1、目标"></a>1、目标</h2><ul>
-<li><p>了解 Git 基本概念</p>
-</li>
-<li><p>概述 Git 工作流程</p>
-</li>
-<li><p>使用 Git 常用命令</p>
-</li>
-<li><p>熟悉 Git 代码托管服务</p>
-</li>
-<li><p>能够使用 idea 操作 Git</p>
-</li>
-</ul>
-<h1 id="2、概述"><a href="#2、概述" class="headerlink" title="2、概述"></a>2、概述</h1><h2 id="2-1、开发中的实际场景"><a href="#2-1、开发中的实际场景" class="headerlink" title="2.1、开发中的实际场景"></a>2.1、开发中的实际场景</h2><ul>
-<li><p>备份，及时进行备份，防止丢失修改</p>
-</li>
-<li><p>代码还原，可以进行代码还原，记录修改记录</p>
-</li>
-<li><p>协同开发，创建分支，可以多人协同开发，进行合并</p>
-</li>
-<li><p>追溯问题代码的编写人和编写时间。可以查看日志，进行问题查看.</p>
-</li>
-</ul>
-<h2 id="2-2、版本控制器的方式"><a href="#2-2、版本控制器的方式" class="headerlink" title="2.2、版本控制器的方式"></a>2.2、版本控制器的方式</h2><ul>
-<li><p>集中式版本控制工具</p>
-<p>集中式版本控制工具，版本库是集中存放在中央服务器中，团队里的成员从中央服务器下载代码，是必须联网才能工作，个人修改后然后提交到中央版本库。</p>
-<p>  举例：SVN和CVS</p>
-</li>
-<li><p>分布式版本控制工具</p>
-<p>分布式版本控制系统没有”中央服务器“，每个人的电脑上都是一个完整的版本库，这样工作的时候，不需要联网。多人协作只需要各自的修改推送给对方，就能相互看到对方的修改了。</p>
-</li>
-</ul>
-<h2 id="2-3、Git工作流程图"><a href="#2-3、Git工作流程图" class="headerlink" title="2.3、Git工作流程图"></a>2.3、Git工作流程图</h2><h1 id="3、Git安装与常用命令"><a href="#3、Git安装与常用命令" class="headerlink" title="3、Git安装与常用命令"></a>3、Git安装与常用命令</h1><h2 id="3-1、Git-环境配置"><a href="#3-1、Git-环境配置" class="headerlink" title="3.1、Git 环境配置"></a>3.1、Git 环境配置</h2><h3 id="3-1-1-下载与安装"><a href="#3-1-1-下载与安装" class="headerlink" title="3.1.1 下载与安装"></a>3.1.1 下载与安装</h3><p>下载地址：<a target="_blank" rel="noopener" href="https://git-scm.com/download">https://git-scm.com/download</a></p>
-<p>安装完成后，在桌面或者是文件夹，点击鼠标右键，可以看到两个图标</p>
-<ul>
-<li><p>Git GUI Here: 图形界面工具</p>
-</li>
-<li><p>Git Bash: Git 提供的命令行工具</p>
-</li>
-</ul>
-<h3 id="3-1-2-基本配置"><a href="#3-1-2-基本配置" class="headerlink" title="3.1.2 基本配置"></a>3.1.2 基本配置</h3><ul>
-<li>设置用户名称和email地址<ol>
-<li><p>打开Git Bash</p>
-</li>
-<li><p>设置用户信息</p>
-</li>
-</ol>
-</li>
-</ul>
-<p>git config –global user.name “zzu”</p>
-<p>git config –global user.email “”</p>
-<h3 id="3-1-3-为常用指令配置别名"><a href="#3-1-3-为常用指令配置别名" class="headerlink" title="3.1.3 为常用指令配置别名"></a>3.1.3 为常用指令配置别名</h3><ol>
-<li><p>打开用户目录，创建 .bashrc 文件</p>
-<p><code>touch ~/.bashrc</code></p>
-</li>
-<li><p>在 .bashrc文件中输入你想要设置的命令</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">一些linux的命令都可以在这里使用
-<span class="token comment">#用于输出git提交日志</span>
-<span class="token builtin class-name">alias</span> git-log<span class="token operator">=</span><span class="token string">'git log --pretty=online --all --graph --abbrev-commit'</span>
-<span class="token comment">#用于输出当前目录所有文件和基本信息</span>
-<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -al'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>打开 gitBash, 执行 source ~/.bashrc</p>
-<p><code>source ~/.bashrc</code></p>
-</li>
-</ol>
-<h3 id="3-1-4-解决-GitBash-乱码问题"><a href="#3-1-4-解决-GitBash-乱码问题" class="headerlink" title="3.1.4 解决 GitBash 乱码问题"></a>3.1.4 解决 GitBash 乱码问题</h3><ol>
-<li><p>打开 GitBash 执行下面命令</p>
-<p><code>git config --global core.quotepath false</code></p>
-</li>
-<li><p>. ${git_home}/etc/bash.bashrc 文件最后加入下面两行</p>
-<p><strong>Linux export 命令用于设置或显示环境变量。</strong></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LANG</span></span><span class="token operator">=</span><span class="token string">"zh_CN.UTF-8"</span>
-<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">LC_ALL</span></span><span class="token operator">=</span><span class="token string">"zh_CN.UTF-8"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-</ol>
-<h2 id="3-2、获取本地仓库"><a href="#3-2、获取本地仓库" class="headerlink" title="3.2、获取本地仓库"></a>3.2、获取本地仓库</h2><ol>
-<li><p>选择一个空目录作为我们的本地仓库</p>
-</li>
-<li><p>进入这个目录，点击右键打开Git Bash Here窗口</p>
-</li>
-<li><p>执行命令 git init, 初始化仓库</p>
-</li>
-<li><p>创建成功后出现隐藏目录.git</p>
-</li>
-</ol>
-<h2 id="3-3、基础操作命令"><a href="#3-3、基础操作命令" class="headerlink" title="3.3、基础操作命令"></a>3.3、基础操作命令</h2><p><strong>Git 会对仓库中的文件进行状态记录，每一个文件都会有几个状态</strong></p>
-<ol>
-<li><p>git add (工作区 –&gt; 暂存区)</p>
-</li>
-<li><p>git commit (暂存区 –&gt; 本地仓库)</p>
-</li>
-<li><p>git status 查看修改的状态</p>
-</li>
-<li><p>git add . 使用通配符，将工作区的多个文件的修改添加到暂存区</p>
-</li>
-<li><p>git commit -m ‘注释内容’</p>
-</li>
-<li><p>git log [option] 查看提交记录</p>
-<ul>
-<li>options<ul>
-<li><p>-all 显示所有分支</p>
-</li>
-<li><p>–pretty=oneline 将提交信息显示为一行</p>
-</li>
-<li><p>–abbrev-commit 输出结果更加简短</p>
-</li>
-<li><p>–graph 以图的形式显示</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>git reset –hard commmitID 版本回退，进行版本切换</p>
-<ul>
-<li><p>commmitID 可以使用 git log 指令查看</p>
-</li>
-<li><p>如何查看已经删除的记录</p>
-<ul>
-<li>git reflog</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="3-4、编辑-gitignore文件"><a href="#3-4、编辑-gitignore文件" class="headerlink" title="3.4、编辑 .gitignore文件"></a>3.4、编辑 .gitignore文件</h2><p>并不是所有的文件都需要 git 的管理，比如日志文件，还有编译过程中生成的临时文件等。在这种情况下，我们可以创建一个 .gitignore 文件，列出要忽略的文件模式。</p>
-<pre class="line-numbers language-none"><code class="language-none">HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+                <p>在进行“传统的”Java 编程时，对象与对象之间的关系都是紧密耦合的，例如服务类 Service 使用组件 ComponentA，则可能写出这样的代码：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Service</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">ComponentA</span> component <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ComponentA</span><span class="token punctuation">(</span><span class="token string">"first component"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
+<p>在没有 Spring 之前，你应该会觉得这段代码并没有多大问题，毕竟大家都这么写，而且也没有什么更好的方式。就像只有一条大路可走时，大家都朝一个方向走，你大概率不会反思是不是有捷径。</p>
+<p>而随着项目的开发推进，你会发现检验一个方式好不好的硬性标准之一，就是看它有没有拥抱变化的能力。假设有一天，我们的 ComponentA 类的构造器需要更多的参数了，你会发现，上述代码到处充斥着这行需要改进的代码：</p>
+<p><code>private ComponentA component = new ComponentA("first component");</code></p>
+<p>此时你可能会想了，那我用下面这种方式来构造 Service 就可以了吧？</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Service</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">ComponentA</span> component；
+    <span class="token keyword">public</span> <span class="token class-name">Service</span><span class="token punctuation">(</span><span class="token class-name">ComponentA</span> component<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>component <span class="token operator">=</span> component<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-### VS Code ###
-.vscode/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然不行，你忽略了一点，你在构建 Service 对象的时候，不还得使用 new 关键字来构建 Component？需要修改的调用处并不少！</p>
+<p>很明显，这是一个噩梦。那么，除了这点，还有没有别的不好的地方呢？上面说的是非单例的情况，如果 ComponentA 本身是一个单例，会不会好些？毕竟我们可能找一个地方 new 一次 ComponentA 实例就足够了，但是你可能会发现另外一些问题。</p>
+<p>下面是一段用“双重检验锁”实现的 CompoentA 类：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ComponentA</span><span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> <span class="token class-name">ComponentA</span> INSTANCE<span class="token punctuation">;</span>  
+     
+    <span class="token keyword">private</span> <span class="token class-name">ComponentA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>  
+     
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ComponentA</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>INSTANCE<span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">ComponentA</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>INSTANCE<span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                    INSTANCE<span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ComponentA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">return</span> INSTANCE<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="3-5、分支"><a href="#3-5、分支" class="headerlink" title="3.5、分支"></a>3.5、分支</h2><p>几乎所有的版本控制系统都已某种形式支持分支。使用分支意味着你可以把你的工作从主线上分离开来进行重大的Bug修改、开发新的功能，以免影响开发主线。</p>
-<h3 id="3-5-1、查看本地分支"><a href="#3-5-1、查看本地分支" class="headerlink" title="3.5.1、查看本地分支"></a>3.5.1、查看本地分支</h3><ul>
-<li>git branch</li>
-</ul>
-<h3 id="3-5-2、创建本地分支"><a href="#3-5-2、创建本地分支" class="headerlink" title="3.5.2、创建本地分支"></a>3.5.2、创建本地分支</h3><ul>
-<li>git branch 分支名</li>
-</ul>
-<h3 id="3-5-3、切换分支"><a href="#3-5-3、切换分支" class="headerlink" title="3.5.3、切换分支"></a>3.5.3、切换分支</h3><ul>
-<li><p>git checkout 分支名</p>
-</li>
-<li><p>git checkout -b 分支名 (切换到一个不存在的分支，创建并切换)</p>
-</li>
-</ul>
-<h3 id="3-5-4、合并分支"><a href="#3-5-4、合并分支" class="headerlink" title="3.5.4、合并分支"></a>3.5.4、合并分支</h3><ul>
-<li>git merge 分支名 (合并到当前分支)</li>
-</ul>
-<h3 id="3-5-5、删除分支"><a href="#3-5-5、删除分支" class="headerlink" title="3.5.5、删除分支"></a>3.5.5、删除分支</h3><p><strong>不能删除当前分支，只能删除其他分支</strong></p>
+<p>其实写了这么多代码，最终我们只是要一个单例而已。而且假设我们有 ComponentB、ComponentC、ComponentD 等，那上面的重复性代码不都得写一遍？也是烦的不行，不是么？</p>
+<p>除了上述两个典型问题，还有不易于测试、不易扩展功能（例如支持 AOP）等缺点。说白了，所有问题的根源（之一）<strong>就是对象与对象之间耦合性太强了。</strong></p>
+<h1 id="所以-Spring-的引入，解决了上面这些零零种种的问题。那么它是怎么解决的呢？"><a href="#所以-Spring-的引入，解决了上面这些零零种种的问题。那么它是怎么解决的呢？" class="headerlink" title="所以 Spring 的引入，解决了上面这些零零种种的问题。那么它是怎么解决的呢？"></a>所以 Spring 的引入，解决了上面这些零零种种的问题。那么它是怎么解决的呢？</h1><p>这里套用一个租房的场景。我们为什么喜欢通过中介来租房子呢？因为省事呀，只要花点小钱就不用与房东产生直接的“纠缠”了。</p>
+<p>Spring 就是这个思路，它就像一个“中介”公司。当你需要一个依赖的对象（房子）时，你直接把你的需求告诉 Spring（中介）就好了，它会帮你搞定这些依赖对象，按需创建它们，而无需你的任何额外操作。</p>
+<p>不过，在 Spring 中，房东和租房者都是对象实例，只不过换了一个名字叫 Bean 而已。</p>
+<p>可以说，通过一套稳定的生产流程，作为“中介”的 Spring 完成了生产和预装（牵线搭桥）这些 Bean 的任务。此时，你可能想了解更多。例如，如果一个 Bean（租房者）需要用到另外一个 Bean（房子）时，具体是怎么操作呢？</p>
+<p>本质上只能从 Spring“中介”里去找，有时候我们直接根据名称（小区名）去找，有时候则根据类型（户型），各种方式不尽相同。你就把 Spring 理解成一个 Map 型的公司即可，实现如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BeanFactory</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Bean</span><span class="token punctuation">&gt;</span></span> beanMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Bean</span> <span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> beanMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如上述代码所示，Bean 所属公司提供了对于 Map 的操作来完成查找，找到 Bean 后装配给其它对象，这就是依赖查找、自动注入的过程。</p>
+<p>那么回过头看，这些 Bean 又是怎么被创建的呢？</p>
+<p>对于一个项目而言，不可避免会出现两种情况：一些对象是需要 Spring 来管理的，另外一些（例如项目中其它的类和依赖的 Jar 中的类）又不需要。所以我们得有一个办法去标识哪些是需要成为 Spring Bean，因此各式各样的注解才应运而生，例如 <strong>Component 注解</strong>等。</p>
+<p>那有了这些注解后，谁又来做“发现”它们的工作呢？直接配置指定自然不成问题，但是很明显“自动发现”更让人省心。此时，我们往往需要一个扫描器，可以模拟写下这样一个扫描器：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnnotationScan</span> <span class="token punctuation">{</span>
+    
+    <span class="token comment">//通过扫描包名来找到Bean</span>
+    <span class="token keyword">void</span> <span class="token function">scan</span><span class="token punctuation">(</span><span class="token class-name">String</span> packages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token comment">//</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>有了扫描器，我们就知道哪些类是需要成为 Bean。</p>
+<p>那怎么实例化为 Bean（也就是一个对象实例而已）呢？很明显，只能通过反射来做了。不过这里面的方式可能有多种：</p>
 <ul>
-<li><p>git branch -d 分支名 (删除分支时，需要做各种检查)</p>
+<li><p>java.lang.Class.newInsance()</p>
 </li>
-<li><p>git branch -D 分支名 (不做任何检查，强制删除)</p>
+<li><p>java.lang.reflect.Constructor.newInstance()</p>
 </li>
-</ul>
-<h3 id="3-5-6、解决冲突"><a href="#3-5-6、解决冲突" class="headerlink" title="3.5.6、解决冲突"></a>3.5.6、解决冲突</h3><p><strong>不同的分支对同一个文件进行修改，在进行合并时，可能会存在冲突，这个时候需要手动解决冲突</strong></p>
-<ol>
-<li><p>处理文件冲突的地方,进行文件编辑，选择你想要留下的修改</p>
-</li>
-<li><p>将文件加入暂存区(add)</p>
-</li>
-<li><p>提交到仓库(commit)</p>
-</li>
-</ol>
-<h3 id="3-5-7、开发中分支使用的原则和流程"><a href="#3-5-7、开发中分支使用的原则和流程" class="headerlink" title="3.5.7、开发中分支使用的原则和流程"></a>3.5.7、开发中分支使用的原则和流程</h3><ul>
-<li><p>master 生产分支</p>
-</li>
-<li><p>develop 开发分支</p>
-</li>
-<li><p>feature/xxxx分支</p>
-</li>
-<li><p>hotfix/xxxx分支</p>
-</li>
-<li><p>test分支</p>
-</li>
-<li><p>pre分支</p>
+<li><p>ReflectionFactory.newConstructorForSerialization()</p>
 </li>
 </ul>
-<h1 id="4、Git远程仓库"><a href="#4、Git远程仓库" class="headerlink" title="4、Git远程仓库"></a>4、Git远程仓库</h1><h2 id="4-1、常见的远程仓库"><a href="#4-1、常见的远程仓库" class="headerlink" title="4.1、常见的远程仓库"></a>4.1、常见的远程仓库</h2><ul>
-<li><p>github <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a>是一个面向开源及私有软件项目的托管平台，只支持 Git 作为唯一的版本库格式进行托管。服务器在国外，访问不稳定。</p>
-</li>
-<li><p>码云 <a target="_blank" rel="noopener" href="https://gitee.com/">https://gitee.com/</a> 是国内的一个代码托管平台，由于服务器在国内，访问快，稳定。</p>
-</li>
-<li><p>GitLab <a target="_blank" rel="noopener" href="https://about.gitlab.com/">https://about.gitlab.com/</a> 是一个用于仓库管理系统的开源项目， 一般用于在企业、学校等内部网络搭建 git 私服。</p>
-</li>
-</ul>
-<h2 id="4-2、注册码云"><a href="#4-2、注册码云" class="headerlink" title="4.2、注册码云"></a>4.2、注册码云</h2><ul>
-<li>注册码云账号 <a target="_blank" rel="noopener" href="https://gitee.com/signup">注册 - Gitee.com</a></li>
-</ul>
-<h2 id="4-3、创建远程仓库"><a href="#4-3、创建远程仓库" class="headerlink" title="4.3、创建远程仓库"></a>4.3、创建远程仓库</h2><p><strong>仓库创建后可以查看仓库的地址</strong></p>
-<h2 id="4-4、配置SSH公钥"><a href="#4-4、配置SSH公钥" class="headerlink" title="4.4、配置SSH公钥"></a>4.4、配置SSH公钥</h2><ol>
-<li><p>打开 Git Bash Here ，生成 SSH 公钥</p>
-<ul>
-<li><p>ssh-keygen -t rsa</p>
-</li>
-<li><p>不断回车</p>
-<ul>
-<li>如果公钥已经存在，则自动覆盖</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Gitee 设置账户公钥</p>
-<ul>
-<li>获取公钥<ul>
-<li>cat ~/.ssh/id_rsa.pub</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>验证是否配置成功</p>
-<ul>
-<li>ssh -T <a href="mailto:git@gitee.com">git@gitee.com</a></li>
-</ul>
-</li>
-</ol>
-<h2 id="4-5、操作远程仓库"><a href="#4-5、操作远程仓库" class="headerlink" title="4.5、操作远程仓库"></a>4.5、操作远程仓库</h2><h3 id="4-5-1、添加远程仓库"><a href="#4-5-1、添加远程仓库" class="headerlink" title="4.5.1、添加远程仓库"></a>4.5.1、添加远程仓库</h3><p><strong>需要先创建一个本地仓库，然后与远程仓库进行连接</strong></p>
-<ul>
-<li>命令：git remote add &lt;远端名称&gt; &lt;仓库路径&gt;<ul>
-<li><p>远端名称，默认是 origin,取决于远端服务器设置</p>
-</li>
-<li><p>仓库路径，从远端服务器获取此 URL</p>
-</li>
-<li><p><code>git remote add origin https://gitee.com/z1397543194/reggie_take_out.git</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-5-2、查看远程仓库"><a href="#4-5-2、查看远程仓库" class="headerlink" title="4.5.2、查看远程仓库"></a>4.5.2、查看远程仓库</h3><ul>
-<li>命令：git remote</li>
-</ul>
-<h3 id="4-5-3、推送到远程仓库"><a href="#4-5-3、推送到远程仓库" class="headerlink" title="4.5.3、推送到远程仓库"></a>4.5.3、推送到远程仓库</h3><ul>
-<li>命令：git push [-f] [–set-upstream] [远端名称 [本地分支名][:远端分支名]]<ul>
-<li><p><code>git push origin master</code> 如果远程分支名和本地分支名称统统，则可以只写本地分支</p>
-</li>
-<li><p>-f 表示强制覆盖</p>
-</li>
-<li><p>–set-upstream 推送到远端的同时并且建立起和远端分支的关联关系。</p>
-<ul>
-<li><code>git push --set-upstream origin master</code></li>
-</ul>
-</li>
-<li><p>如果当前分支已经和远端分支关联,则可以省略分支名和远端名</p>
-<ul>
-<li>git push 将master分支推送到已关联的远端分支</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-5-4、查看本地分支与远程分支的关联关系"><a href="#4-5-4、查看本地分支与远程分支的关联关系" class="headerlink" title="4.5.4、查看本地分支与远程分支的关联关系"></a>4.5.4、查看本地分支与远程分支的关联关系</h3><ul>
-<li>命令：<code>git branch -vv</code></li>
-</ul>
-<h3 id="4-5-5、从远程仓库克隆"><a href="#4-5-5、从远程仓库克隆" class="headerlink" title="4.5.5、从远程仓库克隆"></a>4.5.5、从远程仓库克隆</h3><ul>
-<li>命令： git clone &lt;仓库路径&gt; [本地目录]<ul>
-<li>本地目录可以省略，会自动生成一个目录</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-5-6、从远程仓库中抓取和拉取"><a href="#4-5-6、从远程仓库中抓取和拉取" class="headerlink" title="4.5.6、从远程仓库中抓取和拉取"></a>4.5.6、从远程仓库中抓取和拉取</h3><ul>
-<li><p>抓取命令：<code>git fetch [remote name] [branch name]</code></p>
-<ul>
-<li><p>将仓库里的更新都抓取到本地，不会进行合并</p>
-</li>
-<li><p>如果不指定远端名称和分支名，则抓取所有分支</p>
-</li>
-</ul>
-</li>
-<li><p>拉取命令：<code>git pull [remote name] [branch name]</code></p>
-<ul>
-<li><p>将远端仓库的修改拉到本地并自动进行合并，==&gt;fetch + merge</p>
-</li>
-<li><p>如果不指定远端名称和分支名，则抓取并更新所有分支</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-5-7、解决合并冲突"><a href="#4-5-7、解决合并冲突" class="headerlink" title="4.5.7、解决合并冲突"></a>4.5.7、解决合并冲突</h3><p>在一段时间，A、B用户修改了同一个文件，且修改了同一行位置的代码，此时会发生合并冲突。<br>A用户在本地修改代码后优先推送到远程仓库，此时B用户在本地修订代码，提交到本地仓库后，也需要推送到远程仓库，此时B用户晚于A用户，故需要先拉取远程仓库的提交，经过合并后才能推送到远端分支,如下图所示。</p>
-<h1 id="5、在-Idea-中使用-Git"><a href="#5、在-Idea-中使用-Git" class="headerlink" title="5、在 Idea 中使用 Git"></a>5、在 Idea 中使用 Git</h1><h2 id="5-1、在-Idea-中配置-Git"><a href="#5-1、在-Idea-中配置-Git" class="headerlink" title="5.1、在 Idea 中配置 Git"></a>5.1、在 Idea 中配置 Git</h2><h2 id="5-2、操作-Git"><a href="#5-2、操作-Git" class="headerlink" title="5.2、操作 Git"></a>5.2、操作 Git</h2><h3 id="5-2-1、创建远程仓库，使用码云"><a href="#5-2-1、创建远程仓库，使用码云" class="headerlink" title="5.2.1、创建远程仓库，使用码云"></a>5.2.1、创建远程仓库，使用码云</h3><h3 id="5-2-2、初始化本地仓库"><a href="#5-2-2、初始化本地仓库" class="headerlink" title="5.2.2、初始化本地仓库"></a>5.2.2、初始化本地仓库</h3><ul>
-<li><p>在 idea 中创建</p>
-</li>
-<li><p>在目录中，执行 git init</p>
-</li>
-</ul>
-<h3 id="5-2-3、设置远程仓库-或者克隆仓库"><a href="#5-2-3、设置远程仓库-或者克隆仓库" class="headerlink" title="5.2.3、设置远程仓库,或者克隆仓库"></a>5.2.3、设置远程仓库,或者克隆仓库</h3><h3 id="5-2-4、Git-的操作"><a href="#5-2-4、Git-的操作" class="headerlink" title="5.2.4、Git 的操作"></a>5.2.4、Git 的操作</h3><p><strong>git pull + merge / git add + commit / git push</strong></p>
-<ul>
-<li><p>更新项目 Ctrl + T</p>
-</li>
-<li><p>提交 Ctrl + K</p>
-</li>
-<li><p>推送 Ctrl + Shift + K</p>
-</li>
-</ul>
-<h3 id="5-2-5、分支操作"><a href="#5-2-5、分支操作" class="headerlink" title="5.2.5、分支操作"></a>5.2.5、分支操作</h3><h3 id="5-2-6、解决冲突"><a href="#5-2-6、解决冲突" class="headerlink" title="5.2.6、解决冲突"></a>5.2.6、解决冲突</h3><ol>
-<li><p>修改出现冲突的文件</p>
-</li>
-<li><p>add</p>
-</li>
-<li><p>commit</p>
-</li>
-<li><p>git push</p>
-</li>
-</ol>
-<h2 id="5-3、IDEA常用-Git-操作入口"><a href="#5-3、IDEA常用-Git-操作入口" class="headerlink" title="5.3、IDEA常用 Git 操作入口"></a>5.3、IDEA常用 Git 操作入口</h2><h1 id="6、注意事项"><a href="#6、注意事项" class="headerlink" title="6、注意事项"></a>6、注意事项</h1><ul>
-<li><p>切换分支前先提交本地的修改</p>
-</li>
-<li><p>代码写完后，要及时提交</p>
-</li>
-</ul>
-<h2 id="6-1、window-查看隐藏文件-bashrc、-gitignore"><a href="#6-1、window-查看隐藏文件-bashrc、-gitignore" class="headerlink" title="6.1、window 查看隐藏文件(.bashrc、.gitignore)"></a>6.1、window 查看隐藏文件(.bashrc、.gitignore)</h2><h2 id="6-2、window-下创建-bashrc、-gitignore文件"><a href="#6-2、window-下创建-bashrc、-gitignore文件" class="headerlink" title="6.2、window 下创建.bashrc、.gitignore文件"></a>6.2、window 下创建.bashrc、.gitignore文件</h2><ul>
-<li><p>打开git bash here</p>
-</li>
-<li><p><code>touch .gitignore</code></p>
-</li>
-</ul>
-<h2 id="6-3、IDEA集成-GitBash-作为-Terminal"><a href="#6-3、IDEA集成-GitBash-作为-Terminal" class="headerlink" title="6.3、IDEA集成 GitBash 作为 Terminal"></a>6.3、IDEA集成 GitBash 作为 Terminal</h2><p><strong>可以作为git 的命令行，直接输入命令进行操作</strong></p>
-<h1 id="7、学习资源推荐"><a href="#7、学习资源推荐" class="headerlink" title="7、学习资源推荐"></a>7、学习资源推荐</h1><ul>
-<li><p>菜鸟教程 [菜鸟教程](<a target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tutorial.html">Git 教程 | 菜鸟教程 (runoob.com)</a>)</p>
-</li>
-<li><p>在线练习网站 [Git](<a target="_blank" rel="noopener" href="https://oschina.gitee.io/learn-git-branching/">Learn Git Branching (gitee.io)</a>)</p>
-</li>
-<li><p>廖雪峰教程 [Git](<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">Git教程 - 廖雪峰的官方网站 (liaoxuefeng.com)</a>)</p>
-</li>
-</ul>
+<p><strong>有了创建，有了装配，一个 Bean 才能成为自己想要的样子。</strong></p>
+<p>而需求总是源源不断的，我们有时候想记录一个方法调用的性能，有时候我们又想在方法调用时输出统一的调用日志。诸如此类，我们肯定不想频繁再来个散弹式的修改。所以我们有了 AOP，帮忙拦截方法调用，进行功能扩展。拦截谁呢？在 Spring 中自然就是 Bean 了。</p>
+<p>其实 AOP 并不神奇，结合刚才的 Bean（中介）公司来讲，假设我们判断出一个 Bean 需要“增强”了，我们直接让它从公司返回的时候，就使用一个代理对象作为返回不就可以了么？示例如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BeanFactory</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">Bean</span><span class="token punctuation">&gt;</span></span> beanMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">public</span> <span class="token class-name">Bean</span> <span class="token function">getBean</span><span class="token punctuation">(</span><span class="token class-name">String</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token comment">//查找是否创建过</span>
+       <span class="token class-name">Bean</span> bean <span class="token operator">=</span> beanMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>bean <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+         <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+       <span class="token comment">//创建一个Bean</span>
+       <span class="token class-name">Bean</span> bean <span class="token operator">=</span> <span class="token function">createBean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//判断要不要AOP</span>
+       <span class="token keyword">boolean</span> needAop <span class="token operator">=</span> <span class="token function">judgeIfNeedAop</span><span class="token punctuation">(</span>bean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token keyword">try</span><span class="token punctuation">{</span>
+           <span class="token keyword">if</span><span class="token punctuation">(</span>needAop<span class="token punctuation">)</span>
+              <span class="token comment">//创建代理对象</span>
+              bean <span class="token operator">=</span> <span class="token function">createProxyObject</span><span class="token punctuation">(</span>bean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token keyword">return</span> bean<span class="token punctuation">;</span>
+           <span class="token keyword">else</span><span class="token operator">:</span>
+              <span class="token keyword">return</span> bean
+       <span class="token punctuation">}</span><span class="token keyword">finally</span><span class="token punctuation">{</span>
+           beanMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> bean<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么怎么知道一个对象要不要 AOP？既然一个对象要 AOP，它肯定被标记了一些“规则”，例如拦截某个类的某某方法，示例如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">
+<span class="token annotation punctuation">@Aspect</span>
+<span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AopConfig</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Around</span><span class="token punctuation">(</span><span class="token string">"execution(* com.spring.puzzle.ComponentA.execute()) "</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">recordPayPerformance</span><span class="token punctuation">(</span><span class="token class-name">ProceedingJoinPoint</span> joinPoint<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
+      <span class="token comment">//</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这个时候，很明显了，假设你的 Bean 名字是 ComponentA，那么就应该返回 ComponentA 类型的代理对象了。至于这些规则是怎么建立起来的呢？你看到它上面使用的各种注解大概就能明白其中的规则了，无非就是扫描注解，根据注解创建规则。</p>
+<p>以上即为 Spring 的一些核心思想，包括 Bean 的构建、自动注入和 AOP，这中间还会掺杂无数的细节，不过这不重要，抓住这个核心思想对你接下来理解各种类型的错误案例才是大有裨益的！</p>
+<p>虽然说 Spring 容器上手简单，可以仅仅通过学习一些有限的注解，即可达到快速使用的目的。但在工程实践中，我们依然会从中发现一些常见的错误。尤其当你对 Spring 的生命周期还没有深入了解时，类初始化及销毁过程中潜在的约定就不会很清楚。</p>
 
                 
             </div>
@@ -932,7 +699,7 @@ build/
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/08/22/git-xue-xi-he-shi-yong/">http://example.com/2022/08/22/git-xue-xi-he-shi-yong/</a>
+                    <a href="http://example.com/2022/08/27/02-5-fen-zhong-qing-song-liao-jie-spring-ji-chu-zhi-shi/">http://example.com/2022/08/27/02-5-fen-zhong-qing-song-liao-jie-spring-ji-chu-zhi-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -970,8 +737,8 @@ build/
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/spring/">
+                                    <span class="chip bg-color">spring</span>
                                 </a>
                             
                         </div>
@@ -1056,13 +823,13 @@ build/
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/23/zhe-yang-xue-redis/">
+                <a href="/2022/08/27/03-spring-bean-ding-yi-chang-jian-cuo-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="这样学Redis">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="03 Spring Bean 定义常见错误">
                         
-                        <span class="card-title">这样学Redis</span>
+                        <span class="card-title">03 Spring Bean 定义常见错误</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1073,14 +840,14 @@ build/
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/Spring/" class="post-category">
+                                    Spring
                                 </a>
                             
                             
@@ -1090,8 +857,8 @@ build/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
@@ -1105,13 +872,13 @@ build/
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/22/window-ru-he-da-kai-zhong-duan/">
+                <a href="/2022/08/27/01-tie-xin-bao-mu-spring-ba-gong-liao-zen-me-ban/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Window 如何打开终端">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="01 贴心&#34;保姆&#34;Spring罢工了怎么办">
                         
-                        <span class="card-title">Window 如何打开终端</span>
+                        <span class="card-title">01 贴心&#34;保姆&#34;Spring罢工了怎么办</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1122,14 +889,14 @@ build/
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-22
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" class="post-category">
-                                    问题总结
+                            <a href="/categories/Spring/" class="post-category">
+                                    Spring
                                 </a>
                             
                             
@@ -1139,12 +906,8 @@ build/
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Window/">
-                        <span class="chip bg-color">Window</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BB%88%E7%AB%AF/">
-                        <span class="chip bg-color">终端</span>
+                    <a href="/tags/spring/">
+                        <span class="chip bg-color">spring</span>
                     </a>
                     
                 </div>
