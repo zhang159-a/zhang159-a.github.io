@@ -555,15 +555,12 @@ Redis的官方网站">
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yum install -y gcc tcl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h2 id="1-2-上传安装包并解压"><a href="#1-2-上传安装包并解压" class="headerlink" title="1.2.上传安装包并解压"></a>1.2.上传安装包并解压</h2><p>然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：</p>
-<img src="assets/image-20211211071712536.png" title="" alt="image-20211211071712536" data-align="inline">
-
 <p>例如，我放到了/usr/local/src 目录：</p>
-<p><img src="assets/image-20211211080151539.png" alt="image-20211211080151539"></p>
+<p><img src="assets/image-20211211071712536.png" alt="image-20211211071712536"></p>
 <p>解压缩：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">tar -xzf redis-6.2.6.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>解压后：</p>
-<p><img src="assets/image-20211211080339076.png" alt="image-20211211080339076"></p>
 <p>进入redis目录：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd redis-6.2.6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -572,7 +569,6 @@ Redis的官方网站">
 
 <p>如果没有出错，应该就安装成功了。</p>
 <p>默认的安装路径是在 <code>/usr/local/bin</code>目录下：</p>
-<p><img src="assets/image-20211211080603710.png" alt="image-20211211080603710"></p>
 <p>该目录以及默认配置到环境变量，因此可以在任意目录下运行这些命令。其中：</p>
 <ul>
 <li>redis-cli：是redis提供的命令行客户端</li>
@@ -589,10 +585,8 @@ Redis的官方网站">
 <pre class="line-numbers language-none"><code class="language-none">redis-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如图：</p>
-<p><img src="assets/image-20211211081716167.png" alt="image-20211211081716167"></p>
 <p>这种启动属于<code>前台启动</code>，会阻塞整个会话窗口，窗口关闭或者按下<code>CTRL + C</code>则Redis停止。不推荐使用。</p>
 <h3 id="1-3-2-指定配置启动"><a href="#1-3-2-指定配置启动" class="headerlink" title="1.3.2.指定配置启动"></a>1.3.2.指定配置启动</h3><p>如果要让Redis以<code>后台</code>方式启动，则必须修改Redis配置文件，就在我们之前解压的redis安装包下（<code>/usr/local/src/redis-6.2.6</code>），名字叫redis.conf：</p>
-<p><img src="assets/image-20211211082225509.png" alt="image-20211211082225509"></p>
 <p>我们先将这个配置文件备份一份：</p>
 <pre class="line-numbers language-none"><code class="language-none">cp redis.conf redis.conf.bck<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -673,36 +667,26 @@ systemctl status redis<span aria-hidden="true" class="line-numbers-rows"><span><
 <ul>
 <li><code>-h 127.0.0.1</code>：指定要连接的redis节点的IP地址，默认是127.0.0.1</li>
 <li><code>-p 6379</code>：指定要连接的redis节点的端口，默认是6379</li>
-<li><code>-a 123321</code>：指定redis的访问密码 </li>
+<li><code>-a 123321</code>：指定redis的访问密码</li>
 </ul>
 <p>其中的commonds就是Redis的操作命令，例如：</p>
 <ul>
 <li><code>ping</code>：与redis服务端做心跳测试，服务端正常会返回<code>pong</code></li>
 </ul>
 <p>不指定commond时，会进入<code>redis-cli</code>的交互控制台：</p>
-<p><img src="assets/image-20211211110439353.png" alt="image-20211211110439353"></p>
-<h2 id="2-2-图形化桌面客户端"><a href="#2-2-图形化桌面客户端" class="headerlink" title="2.2.图形化桌面客户端"></a>2.2.图形化桌面客户端</h2><p>GitHub上的大神编写了Redis的图形化桌面客户端，地址：<a target="_blank" rel="noopener" href="https://github.com/uglide/RedisDesktopManager">https://github.com/uglide/RedisDesktopManager</a></p>
+<h2 id="2-2-图形化桌面客户端"><a href="#2-2-图形化桌面客户端" class="headerlink" title="2.2.图形化桌面客户端"></a>2.2.图形化桌面客户端</h2><p>GitHub上的大神编写了Redis的图形化桌面客户端，地址：<a target="_blank" rel="noopener" href="https://github.com/uglide/RedisDesktopManager">GitHub - uglide/RedisDesktopManager: Cross-platform Developer GUI for Redis</a></p>
 <p>不过该仓库提供的是RedisDesktopManager的源码，并未提供windows安装包。</p>
-<p>在下面这个仓库可以找到安装包：<a target="_blank" rel="noopener" href="https://github.com/lework/RedisDesktopManager-Windows/releases">https://github.com/lework/RedisDesktopManager-Windows/releases</a></p>
-<p><img src="assets/image-20211211111351885.png" alt="image-20211211111351885"></p>
+<p>在下面这个仓库可以找到安装包：<a target="_blank" rel="noopener" href="https://github.com/lework/RedisDesktopManager-Windows/releases">Releases · lework/RedisDesktopManager-Windows · GitHub</a></p>
 <h3 id="2-2-1-安装"><a href="#2-2-1-安装" class="headerlink" title="2.2.1.安装"></a>2.2.1.安装</h3><p>在课前资料中可以找到Redis的图形化桌面客户端：</p>
-<p><img src="assets/image-20211214154938770.png" alt="image-20211214154938770"></p>
 <p>解压缩后，运行安装程序即可安装：</p>
-<p><img src="assets/image-20211214155123841.png" alt="image-20211214155123841"></p>
 <p>此处略。</p>
 <p>安装完成后，在安装目录下找到rdm.exe文件：</p>
-<p><img src="assets/image-20211211110935819.png" alt="image-20211211110935819"></p>
 <p>双击即可运行：</p>
-<p><img src="assets/image-20211214155406692.png" alt="image-20211214155406692"></p>
 <h3 id="2-2-2-建立连接"><a href="#2-2-2-建立连接" class="headerlink" title="2.2.2.建立连接"></a>2.2.2.建立连接</h3><p>点击左上角的<code>连接到Redis服务器</code>按钮：</p>
-<p><img src="assets/image-20211214155424842.png" alt="image-20211214155424842"></p>
 <p>在弹出的窗口中填写Redis服务信息：</p>
-<p><img src="assets/image-20211211111614483.png" alt="image-20211211111614483"></p>
 <p>点击确定后，在左侧菜单会出现这个链接：</p>
-<p><img src="assets/image-20211214155804523.png" alt="image-20211214155804523"></p>
 <p>点击即可建立连接了：</p>
-<p><img src="assets/image-20211214155849495.png" alt="image-20211214155849495"></p>
-<p>Redis默认有16个仓库，编号从0至15.  通过配置文件可以设置仓库数量，但是不超过16，并且不能自定义仓库名称。</p>
+<p>Redis默认有16个仓库，编号从0至15. 通过配置文件可以设置仓库数量，但是不超过16，并且不能自定义仓库名称。</p>
 <p>如果是基于redis-cli连接Redis服务，可以通过select命令来选择数据库：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 选择 0号库
 select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -860,13 +844,13 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/31/redis-an-zhuang-shuo-ming/">
+                <a href="/2022/08/31/javascript-jie-shao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Redis 安装说明">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="JavaScript介绍">
                         
-                        <span class="card-title">Redis 安装说明</span>
+                        <span class="card-title">JavaScript介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -883,8 +867,8 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Redis/" class="post-category">
-                                    Redis
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -894,12 +878,8 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">
-                        <span class="chip bg-color">安装说明</span>
-                    </a>
-                    
-                    <a href="/tags/redis/">
-                        <span class="chip bg-color">redis</span>
+                    <a href="/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">
+                        <span class="chip bg-color">编程语言</span>
                     </a>
                     
                 </div>
@@ -1091,7 +1071,7 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.7k</span>
+                        class="white-color">52.3k</span>
             
             
             

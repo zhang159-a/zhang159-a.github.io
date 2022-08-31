@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-31T06:40:30.190Z</updated>
+  <updated>2022-08-31T13:57:07.052Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Redis 安装说明</title>
-    <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
-    <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
-    <published>2022-08-31T06:38:09.000Z</published>
-    <updated>2022-08-31T06:40:30.190Z</updated>
+    <title>JavaScript变量</title>
+    <link href="http://example.com/2022/08/31/javascript-bian-liang/"/>
+    <id>http://example.com/2022/08/31/javascript-bian-liang/</id>
+    <published>2022-08-31T13:57:07.000Z</published>
+    <updated>2022-08-31T13:57:07.052Z</updated>
     
     
       
@@ -34,12 +34,166 @@
     
     
     
-    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript语句</title>
+    <link href="http://example.com/2022/08/31/javascript-yu-ju/"/>
+    <id>http://example.com/2022/08/31/javascript-yu-ju/</id>
+    <published>2022-08-31T13:50:30.000Z</published>
+    <updated>2022-08-31T13:56:52.876Z</updated>
     
     
-    <category term="安装说明" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/"/>
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
     
-    <category term="redis" scheme="http://example.com/tags/redis/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript语法</title>
+    <link href="http://example.com/2022/08/31/javascript-yu-fa/"/>
+    <id>http://example.com/2022/08/31/javascript-yu-fa/</id>
+    <published>2022-08-31T11:10:02.000Z</published>
+    <updated>2022-08-31T13:56:41.332Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript输出</title>
+    <link href="http://example.com/2022/08/31/javascript-shu-chu/"/>
+    <id>http://example.com/2022/08/31/javascript-shu-chu/</id>
+    <published>2022-08-31T07:36:54.000Z</published>
+    <updated>2022-08-31T11:10:24.524Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome浏览器中执行JavaScript</title>
+    <link href="http://example.com/2022/08/31/chrome-liu-lan-qi-zhong-zhi-xing-javascript/"/>
+    <id>http://example.com/2022/08/31/chrome-liu-lan-qi-zhong-zhi-xing-javascript/</id>
+    <published>2022-08-31T07:30:23.000Z</published>
+    <updated>2022-08-31T10:57:52.285Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript用法</title>
+    <link href="http://example.com/2022/08/31/javascript-yong-fa/"/>
+    <id>http://example.com/2022/08/31/javascript-yong-fa/</id>
+    <published>2022-08-31T07:06:04.000Z</published>
+    <updated>2022-08-31T07:33:38.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="http://example.com/tags/JavaScript/"/>
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript介绍</title>
+    <link href="http://example.com/2022/08/31/javascript-jie-shao/"/>
+    <id>http://example.com/2022/08/31/javascript-jie-shao/</id>
+    <published>2022-08-31T06:53:47.000Z</published>
+    <updated>2022-08-31T07:06:54.901Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JavaScript" scheme="http://example.com/categories/JavaScript/"/>
+    
+    
+    <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
@@ -48,7 +202,7 @@
     <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
     <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
     <published>2022-08-31T06:38:09.000Z</published>
-    <updated>2022-08-31T06:42:16.340Z</updated>
+    <updated>2022-08-31T06:40:30.190Z</updated>
     
     
       
@@ -369,158 +523,6 @@
     
     
     <category term="医院" scheme="http://example.com/tags/%E5%8C%BB%E9%99%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>标准先行: Go项目的布局标准是什么?</title>
-    <link href="http://example.com/2022/08/23/biao-zhun-xian-xing-go-xiang-mu-de-bu-ju-biao-zhun-shi-shi-me/"/>
-    <id>http://example.com/2022/08/23/biao-zhun-xian-xing-go-xiang-mu-de-bu-ju-biao-zhun-shi-shi-me/</id>
-    <published>2022-08-23T15:28:31.000Z</published>
-    <updated>2022-08-24T15:35:45.528Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Goland 使用中的错误</title>
-    <link href="http://example.com/2022/08/23/goland-shi-yong-zhong-de-cuo-wu/"/>
-    <id>http://example.com/2022/08/23/goland-shi-yong-zhong-de-cuo-wu/</id>
-    <published>2022-08-23T15:08:51.000Z</published>
-    <updated>2022-08-23T15:23:24.037Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初窥门径: 一个Go程序的结构是怎样的?</title>
-    <link href="http://example.com/2022/08/23/chu-kui-men-jing-yi-ge-go-cheng-xu-de-jie-gou-shi-zen-yang-de/"/>
-    <id>http://example.com/2022/08/23/chu-kui-men-jing-yi-ge-go-cheng-xu-de-jie-gou-shi-zen-yang-de/</id>
-    <published>2022-08-23T11:20:02.000Z</published>
-    <updated>2022-08-23T15:23:39.161Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>cd 命令的使用</title>
-    <link href="http://example.com/2022/08/23/cd-ming-ling-de-shi-yong/"/>
-    <id>http://example.com/2022/08/23/cd-ming-ling-de-shi-yong/</id>
-    <published>2022-08-23T11:05:26.000Z</published>
-    <updated>2022-08-23T11:16:01.839Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="终端" scheme="http://example.com/tags/%E7%BB%88%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>go 的安装问题</title>
-    <link href="http://example.com/2022/08/23/go-de-an-zhuang-wen-ti/"/>
-    <id>http://example.com/2022/08/23/go-de-an-zhuang-wen-ti/</id>
-    <published>2022-08-23T08:13:00.000Z</published>
-    <updated>2022-08-23T08:53:45.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-    <category term="安装" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>配好环境：选择一种最适合你的Go安装方法</title>
-    <link href="http://example.com/2022/08/23/pei-hao-huan-jing-xuan-ze-yi-chong-zui-gua-he-ni-de-go-an-zhuang-fang-fa/"/>
-    <id>http://example.com/2022/08/23/pei-hao-huan-jing-xuan-ze-yi-chong-zui-gua-he-ni-de-go-an-zhuang-fang-fa/</id>
-    <published>2022-08-23T07:15:30.000Z</published>
-    <updated>2022-08-23T08:51:19.944Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
     
   </entry>
   
