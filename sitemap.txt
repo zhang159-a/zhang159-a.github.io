@@ -1,7 +1,10 @@
+http://example.com/2022/08/31/yi-yuan-ji-lu-day07/
+http://example.com/2022/08/28/bian-liang-sheng-ming-jing-tai-yu-yan-you-bie-yu-dong-tai-yu-yan-de-chong-yao-te-zheng/
+http://example.com/2022/08/27/ji-xue-ji-lian-gou-jian-yi-ge-web-fu-wu/
+http://example.com/2022/08/28/goland-yun-xing-cuo-wu/
 http://example.com/2022/08/27/03-spring-bean-ding-yi-chang-jian-cuo-wu/
 http://example.com/2022/08/27/02-5-fen-zhong-qing-song-liao-jie-spring-ji-chu-zhi-shi/
 http://example.com/2022/08/27/01-tie-xin-bao-mu-spring-ba-gong-liao-zen-me-ban/
-http://example.com/2022/08/27/ji-xue-ji-lian-gou-jian-yi-ge-web-fu-wu/
 http://example.com/2022/08/27/ru-kou-han-shu-yu-bao-chu-shi-hua-gao-qing-go-cheng-xu-de-zhi-xing-ci-xu/
 http://example.com/2022/08/24/gou-jian-mo-shi-go-module-de-6-lei-chang-gui-cao-zuo/
 http://example.com/2022/08/26/yi-yuan-ji-lu-day02/
@@ -30,11 +33,13 @@ http://example.com/contact/index.html
 http://example.com/about/index.html
 http://example.com/tags/index.html
 http://example.com/categories/index.html
+http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/
 http://example.com/
 http://example.com/tags/spring/
 http://example.com/tags/Git/
 http://example.com/tags/Github/
 http://example.com/tags/go/
+http://example.com/tags/goland/
 http://example.com/tags/Markdown/
 http://example.com/tags/Window/
 http://example.com/tags/%E7%BB%88%E7%AB%AF/
