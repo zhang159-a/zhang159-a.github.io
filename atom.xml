@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-07T06:40:47.459Z</updated>
+  <updated>2022-08-31T06:40:30.190Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>Redis 安装说明</title>
     <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
     <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
-    <published>2022-08-31T06:34:31.365Z</published>
-    <updated>2022-06-07T06:40:47.459Z</updated>
+    <published>2022-08-31T06:38:09.000Z</published>
+    <updated>2022-08-31T06:40:30.190Z</updated>
     
     
       
@@ -34,6 +34,39 @@
     
     
     
+    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
+    
+    
+    <category term="安装说明" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/"/>
+    
+    <category term="redis" scheme="http://example.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Redis 安装说明</title>
+    <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
+    <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
+    <published>2022-08-31T06:38:09.000Z</published>
+    <updated>2022-08-31T06:42:16.340Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
+    
+    
+    <category term="安装说明" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/"/>
+    
+    <category term="redis" scheme="http://example.com/tags/redis/"/>
     
   </entry>
   
@@ -42,7 +75,7 @@
     <link href="http://example.com/2022/08/31/yi-yuan-ji-lu-day07/"/>
     <id>http://example.com/2022/08/31/yi-yuan-ji-lu-day07/</id>
     <published>2022-08-31T06:34:01.000Z</published>
-    <updated>2022-08-31T06:34:01.663Z</updated>
+    <updated>2022-08-31T06:37:06.420Z</updated>
     
     
       
@@ -55,6 +88,10 @@
     
     
     
+    <category term="日常小记" scheme="http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/"/>
+    
+    
+    <category term="医院" scheme="http://example.com/tags/%E5%8C%BB%E9%99%A2/"/>
     
   </entry>
   
@@ -468,31 +505,6 @@
     <id>http://example.com/2022/08/23/pei-hao-huan-jing-xuan-ze-yi-chong-zui-gua-he-ni-de-go-an-zhuang-fang-fa/</id>
     <published>2022-08-23T07:15:30.000Z</published>
     <updated>2022-08-23T08:51:19.944Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Go语言的设计哲学是怎么一回事</title>
-    <link href="http://example.com/2022/08/23/go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/"/>
-    <id>http://example.com/2022/08/23/go-yu-yan-de-she-ji-zhe-xue-shi-zen-me-yi-hui-shi/</id>
-    <published>2022-08-23T06:30:02.000Z</published>
-    <updated>2022-08-23T08:19:00.935Z</updated>
     
     
       

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="学习笔记">
+    <meta name="keywords" content="Redis 安装说明, 学习笔记">
     <meta name="description" content="Redis安装说明大多数企业都是基于Linux服务器来部署项目，而且Redis官方也没有提供Windows版本的安装包。因此课程中我们会基于Linux系统来安装Redis.
 此处选择的Linux版本为CentOS 7.
 Redis的官方网站">
@@ -19,7 +19,7 @@ Redis的官方网站">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学习笔记</title>
+    <title>Redis 安装说明 | 学习笔记</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -54,9 +54,9 @@ Redis的官方网站">
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
 </head>
 
 
@@ -446,12 +446,12 @@ Redis的官方网站">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Redis 安装说明</h1>
                 </div>
             </div>
         </div>
@@ -473,12 +473,29 @@ Redis的官方网站">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">
+                                <span class="chip bg-color">安装说明</span>
+                            </a>
+                        
+                            <a href="/tags/redis/">
+                                <span class="chip bg-color">redis</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Redis/" class="post-category">
+                                Redis
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -494,7 +511,7 @@ Redis的官方网站">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-07
+                    2022-08-31
                 </div>
                 
 
@@ -537,10 +554,9 @@ Redis的官方网站">
 <h1 id="1-单机安装Redis"><a href="#1-单机安装Redis" class="headerlink" title="1.单机安装Redis"></a>1.单机安装Redis</h1><h2 id="1-1-安装Redis依赖"><a href="#1-1-安装Redis依赖" class="headerlink" title="1.1.安装Redis依赖"></a>1.1.安装Redis依赖</h2><p>Redis是基于C语言编写的，因此首先需要安装Redis所需要的gcc依赖：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">yum install -y gcc tcl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
 <h2 id="1-2-上传安装包并解压"><a href="#1-2-上传安装包并解压" class="headerlink" title="1.2.上传安装包并解压"></a>1.2.上传安装包并解压</h2><p>然后将课前资料提供的Redis安装包上传到虚拟机的任意目录：</p>
-<p><img src="assets/image-20211211071712536.png" alt="image-20211211071712536"></p>
+<img src="assets/image-20211211071712536.png" title="" alt="image-20211211071712536" data-align="inline">
+
 <p>例如，我放到了/usr/local/src 目录：</p>
 <p><img src="assets/image-20211211080151539.png" alt="image-20211211080151539"></p>
 <p>解压缩：</p>
@@ -550,8 +566,6 @@ Redis的官方网站">
 <p><img src="assets/image-20211211080339076.png" alt="image-20211211080339076"></p>
 <p>进入redis目录：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">cd redis-6.2.6<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
 
 <p>运行编译命令：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">make &amp;&amp; make install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -582,8 +596,6 @@ Redis的官方网站">
 <p>我们先将这个配置文件备份一份：</p>
 <pre class="line-numbers language-none"><code class="language-none">cp redis.conf redis.conf.bck<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-
-
 <p>然后修改redis.conf文件中的一些配置：</p>
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token comment"># 允许访问的地址，默认是127.0.0.1，会导致只能在本地访问。修改为0.0.0.0则可以在任意IP访问，生产环境不要设置为0.0.0.0</span>
 <span class="token key attr-name">bind</span> <span class="token value attr-value">0.0.0.0</span>
@@ -591,8 +603,6 @@ Redis的官方网站">
 <span class="token key attr-name">daemonize</span> <span class="token value attr-value">yes </span>
 <span class="token comment"># 密码，设置后访问Redis必须输入密码</span>
 <span class="token key attr-name">requirepass</span> <span class="token value attr-value">123321</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
 
 <p>Redis的其它常见配置：</p>
 <pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token comment"># 监听的端口</span>
@@ -606,22 +616,16 @@ Redis的官方网站">
 <span class="token comment"># 日志文件，默认为空，不记录日志，可以指定日志文件名</span>
 <span class="token key attr-name">logfile</span> <span class="token value attr-value">"redis.log"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>启动Redis：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 进入redis安装目录 
 cd /usr/local/src/redis-6.2.6
 # 启动
 redis-server redis.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>停止服务：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 利用redis-cli来执行 shutdown 命令，即可停止 Redis 服务，
 # 因为之前配置了密码，因此需要通过 -u 来指定密码
 redis-cli -u 123321 shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-
 
 <h3 id="1-3-3-开机自启"><a href="#1-3-3-开机自启" class="headerlink" title="1.3.3.开机自启"></a>1.3.3.开机自启</h3><p>我们也可以通过配置来实现开机自启。</p>
 <p>首先，新建一个系统服务文件：</p>
@@ -640,12 +644,8 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>然后重载系统服务：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl daemon-reload<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
 
 <p>现在，我们可以用下面这组命令来操作redis了：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 启动
@@ -657,12 +657,8 @@ systemctl restart redis
 # 查看状态
 systemctl status redis<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
 <p>执行下面的命令，可以让redis开机自启：</p>
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">systemctl enable redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
 
 <h1 id="2-Redis客户端"><a href="#2-Redis客户端" class="headerlink" title="2.Redis客户端"></a>2.Redis客户端</h1><p>安装完成Redis，我们就可以操作Redis，实现数据的CRUD了。这需要用到Redis客户端，包括：</p>
 <ul>
@@ -711,11 +707,6 @@ systemctl status redis<span aria-hidden="true" class="line-numbers-rows"><span><
 <pre class="line-numbers language-sh" data-language="sh"><code class="language-sh"># 选择 0号库
 select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-
-
-
-
-
                 
             </div>
             <hr/>
@@ -731,7 +722,7 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Zhr</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhr</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -754,7 +745,7 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Zhr</a>
+                    <a href="/about" target="_blank">zhr</a>
                     !
                 </span>
             </div>
@@ -778,7 +769,15 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">
+                                    <span class="chip bg-color">安装说明</span>
+                                </a>
+                            
+                                <a href="/tags/redis/">
+                                    <span class="chip bg-color">redis</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -857,18 +856,17 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2022/08/31/redis-an-zhuang-shuo-ming/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Redis 安装说明">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Redis 安装说明</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -878,18 +876,33 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-31
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhr
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Redis/" class="post-category">
+                                    Redis
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">
+                        <span class="chip bg-color">安装说明</span>
+                    </a>
+                    
+                    <a href="/tags/redis/">
+                        <span class="chip bg-color">redis</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -921,11 +934,23 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zhr
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/" class="post-category">
+                                    日常小记
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8C%BB%E9%99%A2/">
+                        <span class="chip bg-color">医院</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1066,7 +1091,7 @@ select 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">48.2k</span>
+                        class="white-color">49.7k</span>
             
             
             
