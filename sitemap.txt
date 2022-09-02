@@ -1,3 +1,6 @@
+http://example.com/2022/09/02/java-bing-fa-xue-xi/
+http://example.com/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/
+http://example.com/2022/09/02/javascript-yun-suan-fu/
 http://example.com/2022/09/01/javascript-zi-fu-chuan/
 http://example.com/2022/09/01/javascript-shi-jian/
 http://example.com/2022/09/01/javascript-zuo-yong-yu/
@@ -63,6 +66,10 @@ http://example.com/tags/%E7%BB%88%E7%AB%AF/
 http://example.com/tags/%E5%AE%89%E8%A3%85/
 http://example.com/tags/hexo/
 http://example.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/
+http://example.com/tags/Java/
+http://example.com/tags/%E5%B9%B6%E5%8F%91/
+http://example.com/tags/idea/
+http://example.com/tags/java/
 http://example.com/tags/%E5%8C%BB%E9%99%A2/
 http://example.com/categories/Spring/
 http://example.com/categories/JavaScript/
@@ -71,4 +78,5 @@ http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/
 http://example.com/categories/Go/
 http://example.com/categories/Redis/
 http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/
+http://example.com/categories/Java%E5%B9%B6%E5%8F%91/
 http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/

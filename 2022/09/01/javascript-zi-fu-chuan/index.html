@@ -5,7 +5,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="JavaScript字符串, 学习笔记">
-    <meta name="description" content="">
+    <meta name="description" content="JavaScript&amp;nbsp;字符串
+JavaScript 字符串用于存储和处理文本。
+字符串可以是插入到引号中的任何字符。你可以使用单引号或双引号：
+var carname = &#34;Volvo XC60&#34;;
+var carname = &#39;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -516,14 +520,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -546,7 +550,224 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="JavaScript-字符串"><a href="#JavaScript-字符串" class="headerlink" title="JavaScript&nbsp;字符串"></a>JavaScript&nbsp;字符串</h1><hr>
+<p>JavaScript 字符串用于存储和处理文本。</p>
+<p>字符串可以是插入到引号中的任何字符。你可以使用单引号或双引号：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> carname <span class="token operator">=</span> <span class="token string">"Volvo XC60"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> carname <span class="token operator">=</span> <span class="token string">'Volvo XC60'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>你可以使用索引位置来访问字符串中的每个字符：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> character <span class="token operator">=</span> carname<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p>可以使用内置属性&nbsp;<strong>length</strong>&nbsp;来计算字符串的长度：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> txt <span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> sln <span class="token operator">=</span> txt<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p>反斜杠是一个<strong>转义字符</strong>。 转义字符将特殊字符转换为字符串字符：</p>
+<p>转义字符 () 可以用于转义撇号，换行，引号，等其他特殊字符。</p>
+<p>下表中列举了在字符串中可以使用转义字符转义的特殊字符：</p>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>'</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>"</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>tab(制表符)</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符</td>
+</tr>
+</tbody></table>
+<h2 id="字符串可以是对象"><a href="#字符串可以是对象" class="headerlink" title="字符串可以是对象"></a>字符串可以是对象</h2><p>通常， JavaScript 字符串是原始值，可以使用字符创建：&nbsp;<strong>var firstName = “John”</strong></p>
+<p>但我们也可以使用 new 关键字将字符串定义为一个对象：&nbsp;<strong>var firstName = new String(“John”)</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">typeof</span> x <span class="token comment">// 返回 String</span>
+<span class="token keyword">typeof</span> y <span class="token comment">// 返回 Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用：</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span>             
+<span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span>x <span class="token operator">===</span> y<span class="token punctuation">)</span> <span class="token comment">// 结果为 false，因为 x 是字符串，y 是对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>=== 为绝对相等，即数据类型与值都必须相等。</p>
+<h2 id="字符串属性和方法"><a href="#字符串属性和方法" class="headerlink" title="字符串属性和方法"></a>字符串属性和方法</h2><p>原始值字符串，如 “John”, 没有属性和方法(因为他们不是对象)。</p>
+<p>原始值可以使用 JavaScript 的属性和方法，因为 JavaScript 在执行方法和属性时可以把原始值当作对象。</p>
+<p><strong>字符串方法我们将在下一章节中介绍。</strong></p>
+<h2 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>constructor</td>
+<td>返回创建字符串属性的函数</td>
+</tr>
+<tr>
+<td>length</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>允许您向对象添加属性和方法</td>
+</tr>
+</tbody></table>
+<h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><p>更多方法实例可以参见：<a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/jsref-obj-string.html">JavaScript String 对象</a>。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>charAt()</td>
+<td>返回指定索引位置的字符</td>
+</tr>
+<tr>
+<td>charCodeAt()</td>
+<td>返回指定索引位置字符的 Unicode 值</td>
+</tr>
+<tr>
+<td>concat()</td>
+<td>连接两个或多个字符串，返回连接后的字符串</td>
+</tr>
+<tr>
+<td>fromCharCode()</td>
+<td>将 Unicode 转换为字符串</td>
+</tr>
+<tr>
+<td>indexOf()</td>
+<td>返回字符串中检索指定字符第一次出现的位置</td>
+</tr>
+<tr>
+<td>lastIndexOf()</td>
+<td>返回字符串中检索指定字符最后一次出现的位置</td>
+</tr>
+<tr>
+<td>localeCompare()</td>
+<td>用本地特定的顺序来比较两个字符串</td>
+</tr>
+<tr>
+<td>match()</td>
+<td>找到一个或多个正则表达式的匹配</td>
+</tr>
+<tr>
+<td>replace()</td>
+<td>替换与正则表达式匹配的子串</td>
+</tr>
+<tr>
+<td>search()</td>
+<td>检索与正则表达式相匹配的值</td>
+</tr>
+<tr>
+<td>slice()</td>
+<td>提取字符串的片断，并在新的字符串中返回被提取的部分</td>
+</tr>
+<tr>
+<td>split()</td>
+<td>把字符串分割为子字符串数组</td>
+</tr>
+<tr>
+<td>substr()</td>
+<td>从起始索引号提取字符串中指定数目的字符</td>
+</tr>
+<tr>
+<td>substring()</td>
+<td>提取字符串中两个指定的索引号之间的字符</td>
+</tr>
+<tr>
+<td>toLocaleLowerCase()</td>
+<td>根据主机的语言环境把字符串转换为小写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td>
+</tr>
+<tr>
+<td>toLocaleUpperCase()</td>
+<td>根据主机的语言环境把字符串转换为大写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td>
+</tr>
+<tr>
+<td>toLowerCase()</td>
+<td>把字符串转换为小写</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>返回字符串对象值</td>
+</tr>
+<tr>
+<td>toUpperCase()</td>
+<td>把字符串转换为大写</td>
+</tr>
+<tr>
+<td>trim()</td>
+<td>移除字符串首尾空白</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>返回某个字符串对象的原始值</td>
+</tr>
+</tbody></table>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="JavaScript-与-区别"><a href="#JavaScript-与-区别" class="headerlink" title="JavaScript == 与 === 区别"></a>JavaScript == 与 === 区别</h2><p>1、对于 string、number 等基础类型，== 和 === 是有区别的</p>
+<ul>
+<li>a）不同类型间比较，== 之比较 “转化成同一类型后的值” 看 “值” 是否相等，=== 如果类型不同，其结果就是不等。</li>
+<li>&nbsp;b）同类型比较，直接进行 “值” 比较，两者结果一样。</li>
+</ul>
+<p>2、对于 Array,Object 等高级类型，== 和 === 是没有区别的</p>
+<p>进行 “指针地址” 比较</p>
+<p>3、基础类型与高级类型，== 和 === 是有区别的</p>
+<ul>
+<li>a）对于 ==，将高级转化为基础类型，进行 “值” 比较</li>
+<li>&nbsp;b）因为类型不同，=== 结果为 false</li>
+</ul>
+<p>4、!= 为 == 的非运算，!== 为 === 的非运算</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> num<span class="token operator">=</span><span class="token number">1</span>；
+
+<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"1"</span>；
+
+<span class="token keyword">var</span> test<span class="token operator">=</span><span class="token number">1</span>；
+
+test <span class="token operator">==</span> num   <span class="token comment">//true　相同类型　相同值 </span>
+
+test <span class="token operator">===</span> num  <span class="token comment">//true　相同类型　相同值 </span>
+
+test <span class="token operator">!==</span> num  <span class="token comment">//false test与num类型相同，其值也相同,　非运算肯定是false </span>
+
+num <span class="token operator">==</span> str   <span class="token comment">//true 　把str转换为数字，检查其是否相等。 </span>
+
+num <span class="token operator">!=</span> str   <span class="token comment">//false  == 的 非运算 </span>
+
+num <span class="token operator">===</span> str  <span class="token comment">//false  类型不同，直接返回false </span>
+
+num <span class="token operator">!==</span> str  <span class="token comment">//true   num 与 str类型不同 意味着其两者不等　非运算自然是true啦</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -696,18 +917,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/01/javascript-zi-fu-chuan/">
+                <a href="/2022/09/02/javascript-yun-suan-fu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript字符串">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="JavaScript运算符">
                         
-                        <span class="card-title">JavaScript字符串</span>
+                        <span class="card-title">JavaScript运算符</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -717,9 +937,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -732,7 +952,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -937,7 +1156,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">56.7k</span>
+                        class="white-color">59.2k</span>
             
             
             

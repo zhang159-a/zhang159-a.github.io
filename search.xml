@@ -4,11 +4,92 @@
   
     
     <entry>
+      <title>java并发学习</title>
+      <link href="/2022/09/02/java-bing-fa-xue-xi/"/>
+      <url>/2022/09/02/java-bing-fa-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="java-并发编程"><a href="#java-并发编程" class="headerlink" title="java 并发编程"></a>java 并发编程</h1><h2 id="1-1-进程和线程"><a href="#1-1-进程和线程" class="headerlink" title="1.1 进程和线程"></a>1.1 进程和线程</h2><p><strong>进程</strong></p><ul><li><p>程序由指令和数据组成，但这些指令要运行，数据要读写，就必须将指令加载至 CPU，数据加载至内存。在指令运行过程中还需要用到磁盘、网络等设备。进程就是用来加载指令、管理内存、管理 IO 的</p></li><li><p>当一个程序被运行，从磁盘加载这个程序的代码至内存，这时就开启了一个进程。<br>进程就可以视为程序的一个实例。大部分程序可以同时运行多个实例进程（例如记事本、画图、浏览器等），也有的程序只能启动一个实例进程（例如网易云音乐、360 安全卫士等）</p></li></ul><p><strong>线程</strong></p><ul><li><p>一个进程之内可以分为一到多个线程。</p></li><li><p>一个线程就是一个指令流，将指令流中的一条条指令以一定的顺序交给 CPU 执行</p></li><li><p>Java 中，线程作为最小调度单位，进程作为资源分配的最小单位。 在 windows 中进程是不活动的，只是作为线程的容器</p></li></ul><p><strong>对比</strong></p><ul><li><p>进程是相互独立的，而线程存在于进程内，是进程的一个子集</p></li><li><p>进程拥有共享的资源，如内存空间等，供其内部的线程共享</p></li><li><p>进程间通信复杂</p><ul><li><p>同一台计算机的进程通信成为 IPC (Inter-process communication)</p></li><li><p>不同计算机之间的进程通信，需要通过网络，并遵守共同的协议，例如 HTTP</p></li></ul></li><li><p>线程通信相对简单，因为他们共享进程内的内存，多个线程可以访问同一个共享变量</p></li><li><p>线程更轻量，线程上下文切换成本一般要比进程上下文低</p></li></ul><h2 id="1-2-并行与并发"><a href="#1-2-并行与并发" class="headerlink" title="1.2 并行与并发"></a>1.2 并行与并发</h2><ul><li><p>并发 (concurrent) 是同一时间应对多件事情的能力</p></li><li><p>并行 (paraller) 是同一时间动手做多件事情的能力</p></li></ul><h2 id="1-3-同步与异步"><a href="#1-3-同步与异步" class="headerlink" title="1.3 同步与异步"></a>1.3 同步与异步</h2><p><strong>从方法调用的角度来讲</strong></p><ul><li><p>同步：需要等待结果返回</p></li><li><p>异步：不需要等待结果返回</p></li></ul><p>注意：同步在多线程中还有另外一层意思，是让多个线程步调一致</p><h2 id="1-4-小结"><a href="#1-4-小结" class="headerlink" title="1.4 小结"></a>1.4 小结</h2><ol><li>单核 cpu 下，多线程不能实际提高程序运行效率，只是为了能够在不同的任务之间切换，不同线程轮流使用cpu ，不至于一个线程总占用 cpu，别的线程没法干活</li></ol><ol start="2"><li>多核 cpu 可以并行跑多个线程，但能否提高程序运行效率还是要分情况的</li></ol><ul><li><p>有些任务，经过精心设计，将任务拆分，并行执行，当然可以提高程序的运行效率。但不是所有计算任务都能拆分（参考后文的【阿姆达尔定律】）</p></li><li><p>也不是所有任务都需要拆分，任务的目的如果不同，谈拆分和效率没啥意义</p></li></ul><ol start="3"><li>IO 操作不占用 cpu，只是我们一般拷贝文件使用的是【阻塞 IO】，这时相当于线程虽然不用 cpu，但需要一直等待 IO 结束，没能充分利用线程。所以才有后面的【非阻塞 IO】和【异步 IO】优化</li></ol><h1 id="Java-线程"><a href="#Java-线程" class="headerlink" title="Java 线程"></a>Java 线程</h1><h2 id="2-1-创建和运行线程"><a href="#2-1-创建和运行线程" class="headerlink" title="2.1 创建和运行线程"></a>2.1 创建和运行线程</h2><p>方法一，直接使用 Thread</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建线程对象</span><span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// 要执行的任务</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span class="token comment">// 启动线程</span>t<span class="token punctuation">.</span>start<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="C:\Users\13975\Desktop\md\Picture\2022-09-02-13-38-51-image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java并发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 并发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pop.xml文件出现错误</title>
+      <link href="/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/"/>
+      <url>/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="使用-Idea-创建-maven-项目时，"><a href="#使用-Idea-创建-maven-项目时，" class="headerlink" title="使用 Idea 创建 maven 项目时，"></a>使用 Idea 创建 maven 项目时，</h1><h2 id="出现‘artifactId‘-with-value-‘xxx‘-does-not-match-a-valid-id-pattern的解决方法"><a href="#出现‘artifactId‘-with-value-‘xxx‘-does-not-match-a-valid-id-pattern的解决方法" class="headerlink" title="出现‘artifactId‘ with value ‘xxx‘ does not match a valid id pattern的解决方法"></a>出现‘artifactId‘ with value ‘xxx‘ does not match a valid id pattern的解决方法</h2><p><img src="https://img-blog.csdnimg.cn/8a155171d5c4487cba9e22e2edc490fd.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA56CB5Yac56CU56m25YOn,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>查看pom.xml文件下的配置<br>显示其<code>artifictid</code>这一行出了错误</p><p>错误原因是含有中文或者空格，因为识别不到</p><p>artifictid的正则表达式为<code>[A-Za-z0-9_\-.]</code></p><p>所以只需要改掉其中文或者空格就可成功</p><p><img src="https://img-blog.csdnimg.cn/09eecf7b960c42ac9c0f5b8ced5e7f67.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA56CB5Yac56CU56m25YOn,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> idea </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript运算符</title>
+      <link href="/2022/09/02/javascript-yun-suan-fu/"/>
+      <url>/2022/09/02/javascript-yun-suan-fu/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaScript-运算符"><a href="#JavaScript-运算符" class="headerlink" title="JavaScript&nbsp;运算符"></a>JavaScript&nbsp;运算符</h1><hr><p><strong>运算符 = 用于赋值。</strong></p><p><strong>运算符 + 用于加值。</strong></p><hr><p>运算符 = 用于给 JavaScript 变量赋值。</p><p>算术运算符&nbsp;+&nbsp;用于把值加起来。</p><h2 id="JavaScript-算术运算符"><a href="#JavaScript-算术运算符" class="headerlink" title="JavaScript 算术运算符"></a>JavaScript 算术运算符</h2><p>+</p><p>-</p><p>*</p><p>/</p><p>%</p><p>++</p><p>–</p><h2 id="JavaScript-赋值运算符"><a href="#JavaScript-赋值运算符" class="headerlink" title="JavaScript 赋值运算符"></a>JavaScript 赋值运算符</h2><p>=</p><p>+=</p><p>-=</p><p>*=</p><p>/=</p><p>%=</p><h2 id="用于字符串的-运算符"><a href="#用于字符串的-运算符" class="headerlink" title="用于字符串的 + 运算符"></a>用于字符串的 + 运算符</h2><p>+运算符用于把文本值或字符串变量加起来（连接起来）。</p><p>如需把两个或多个字符串变量连接起来，请使用&nbsp;+&nbsp;运算符。</p><p><strong>规则</strong>:如果把数字与字符串相加，结果将成为字符串！</p><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>1、字符串一个很能强大的数据类型；在执行加&nbsp;+&nbsp;时,将被加的对象统一处理为字符串。</p><p>2、bool 类型在与数字类型进行相加时，视为 0 或者 1 处理。</p><p>3、null 类型与数字类型进行累加时，视为 0 处理。</p><p>4、bool 类型与 null 类型进行累加时，视为其与整数类型累加处理。</p><p>5、undefined 除了与字符串进行累加时有效（undefined 视为字符串”undefined”处理），其他情况皆返回 NaN。</p><p>6、求模&nbsp;%&nbsp;运算，运算结果只取决于第一个数字的正负。</p><p>-12 % -8 = -4;<br>12 % -8 =  4;<br>-12 % 8 = -4;</p><p>7、查看 String 数据类型支持的方法和属性：</p><p>打开网页后 F12 进行开发调试环境，找到 console 标签页面，执行：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">'string'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   str <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>点开列表下拉箭头即可:</p><p><img src="https://www.runoob.com/wp-content/uploads/2019/12/30994114-FE40-416F-A993-F49210EF0374.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 编程语言 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript字符串</title>
       <link href="/2022/09/01/javascript-zi-fu-chuan/"/>
       <url>/2022/09/01/javascript-zi-fu-chuan/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="JavaScript-字符串"><a href="#JavaScript-字符串" class="headerlink" title="JavaScript&nbsp;字符串"></a>JavaScript&nbsp;字符串</h1><hr><p>JavaScript 字符串用于存储和处理文本。</p><p>字符串可以是插入到引号中的任何字符。你可以使用单引号或双引号：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> carname <span class="token operator">=</span> <span class="token string">"Volvo XC60"</span><span class="token punctuation">;</span><span class="token keyword">var</span> carname <span class="token operator">=</span> <span class="token string">'Volvo XC60'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>你可以使用索引位置来访问字符串中的每个字符：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> character <span class="token operator">=</span> carname<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="字符串长度"><a href="#字符串长度" class="headerlink" title="字符串长度"></a>字符串长度</h2><p>可以使用内置属性&nbsp;<strong>length</strong>&nbsp;来计算字符串的长度：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> txt <span class="token operator">=</span> <span class="token string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span class="token punctuation">;</span><span class="token keyword">var</span> sln <span class="token operator">=</span> txt<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h2><p>反斜杠是一个<strong>转义字符</strong>。 转义字符将特殊字符转换为字符串字符：</p><p>转义字符 () 可以用于转义撇号，换行，引号，等其他特殊字符。</p><p>下表中列举了在字符串中可以使用转义字符转义的特殊字符：</p><table><thead><tr><th>代码</th><th>输出</th></tr></thead><tbody><tr><td>'</td><td>单引号</td></tr><tr><td>"</td><td>双引号</td></tr><tr><td>\</td><td>反斜杠</td></tr><tr><td>\n</td><td>换行</td></tr><tr><td>\r</td><td>回车</td></tr><tr><td>\t</td><td>tab(制表符)</td></tr><tr><td>\b</td><td>退格符</td></tr><tr><td>\f</td><td>换页符</td></tr></tbody></table><h2 id="字符串可以是对象"><a href="#字符串可以是对象" class="headerlink" title="字符串可以是对象"></a>字符串可以是对象</h2><p>通常， JavaScript 字符串是原始值，可以使用字符创建：&nbsp;<strong>var firstName = “John”</strong></p><p>但我们也可以使用 new 关键字将字符串定义为一个对象：&nbsp;<strong>var firstName = new String(“John”)</strong></p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span><span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">typeof</span> x <span class="token comment">// 返回 String</span><span class="token keyword">typeof</span> y <span class="token comment">// 返回 Object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p><strong>不要创建 String 对象。它会拖慢执行速度，并可能产生其他副作用：</strong></p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span>             <span class="token keyword">var</span> y <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"John"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">(</span>x <span class="token operator">===</span> y<span class="token punctuation">)</span> <span class="token comment">// 结果为 false，因为 x 是字符串，y 是对象</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p>=== 为绝对相等，即数据类型与值都必须相等。</p><h2 id="字符串属性和方法"><a href="#字符串属性和方法" class="headerlink" title="字符串属性和方法"></a>字符串属性和方法</h2><p>原始值字符串，如 “John”, 没有属性和方法(因为他们不是对象)。</p><p>原始值可以使用 JavaScript 的属性和方法，因为 JavaScript 在执行方法和属性时可以把原始值当作对象。</p><p><strong>字符串方法我们将在下一章节中介绍。</strong></p><h2 id="字符串属性"><a href="#字符串属性" class="headerlink" title="字符串属性"></a>字符串属性</h2><table><thead><tr><th>属性</th><th>描述</th></tr></thead><tbody><tr><td>constructor</td><td>返回创建字符串属性的函数</td></tr><tr><td>length</td><td>返回字符串的长度</td></tr><tr><td>prototype</td><td>允许您向对象添加属性和方法</td></tr></tbody></table><h2 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h2><p>更多方法实例可以参见：<a href="https://www.runoob.com/jsref/jsref-obj-string.html">JavaScript String 对象</a>。</p><table><thead><tr><th>方法</th><th>描述</th></tr></thead><tbody><tr><td>charAt()</td><td>返回指定索引位置的字符</td></tr><tr><td>charCodeAt()</td><td>返回指定索引位置字符的 Unicode 值</td></tr><tr><td>concat()</td><td>连接两个或多个字符串，返回连接后的字符串</td></tr><tr><td>fromCharCode()</td><td>将 Unicode 转换为字符串</td></tr><tr><td>indexOf()</td><td>返回字符串中检索指定字符第一次出现的位置</td></tr><tr><td>lastIndexOf()</td><td>返回字符串中检索指定字符最后一次出现的位置</td></tr><tr><td>localeCompare()</td><td>用本地特定的顺序来比较两个字符串</td></tr><tr><td>match()</td><td>找到一个或多个正则表达式的匹配</td></tr><tr><td>replace()</td><td>替换与正则表达式匹配的子串</td></tr><tr><td>search()</td><td>检索与正则表达式相匹配的值</td></tr><tr><td>slice()</td><td>提取字符串的片断，并在新的字符串中返回被提取的部分</td></tr><tr><td>split()</td><td>把字符串分割为子字符串数组</td></tr><tr><td>substr()</td><td>从起始索引号提取字符串中指定数目的字符</td></tr><tr><td>substring()</td><td>提取字符串中两个指定的索引号之间的字符</td></tr><tr><td>toLocaleLowerCase()</td><td>根据主机的语言环境把字符串转换为小写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td></tr><tr><td>toLocaleUpperCase()</td><td>根据主机的语言环境把字符串转换为大写，只有几种语言（如土耳其语）具有地方特有的大小写映射</td></tr><tr><td>toLowerCase()</td><td>把字符串转换为小写</td></tr><tr><td>toString()</td><td>返回字符串对象值</td></tr><tr><td>toUpperCase()</td><td>把字符串转换为大写</td></tr><tr><td>trim()</td><td>移除字符串首尾空白</td></tr><tr><td>valueOf()</td><td>返回某个字符串对象的原始值</td></tr></tbody></table><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="JavaScript-与-区别"><a href="#JavaScript-与-区别" class="headerlink" title="JavaScript == 与 === 区别"></a>JavaScript == 与 === 区别</h2><p>1、对于 string、number 等基础类型，== 和 === 是有区别的</p><ul><li>a）不同类型间比较，== 之比较 “转化成同一类型后的值” 看 “值” 是否相等，=== 如果类型不同，其结果就是不等。</li><li>&nbsp;b）同类型比较，直接进行 “值” 比较，两者结果一样。</li></ul><p>2、对于 Array,Object 等高级类型，== 和 === 是没有区别的</p><p>进行 “指针地址” 比较</p><p>3、基础类型与高级类型，== 和 === 是有区别的</p><ul><li>a）对于 ==，将高级转化为基础类型，进行 “值” 比较</li><li>&nbsp;b）因为类型不同，=== 结果为 false</li></ul><p>4、!= 为 == 的非运算，!== 为 === 的非运算</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> num<span class="token operator">=</span><span class="token number">1</span>；<span class="token keyword">var</span> str<span class="token operator">=</span><span class="token string">"1"</span>；<span class="token keyword">var</span> test<span class="token operator">=</span><span class="token number">1</span>；test <span class="token operator">==</span> num   <span class="token comment">//true　相同类型　相同值 </span>test <span class="token operator">===</span> num  <span class="token comment">//true　相同类型　相同值 </span>test <span class="token operator">!==</span> num  <span class="token comment">//false test与num类型相同，其值也相同,　非运算肯定是false </span>num <span class="token operator">==</span> str   <span class="token comment">//true 　把str转换为数字，检查其是否相等。 </span>num <span class="token operator">!=</span> str   <span class="token comment">//false  == 的 非运算 </span>num <span class="token operator">===</span> str  <span class="token comment">//false  类型不同，直接返回false </span>num <span class="token operator">!==</span> str  <span class="token comment">//true   num 与 str类型不同 意味着其两者不等　非运算自然是true啦</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
       
       <categories>
