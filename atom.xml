@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-02T05:39:09.641Z</updated>
+  <updated>2022-09-03T14:00:28.827Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,113 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Markdown使用中的问题</title>
+    <link href="http://example.com/2022/09/03/markdown-shi-yong-zhong-de-wen-ti/"/>
+    <id>http://example.com/2022/09/03/markdown-shi-yong-zhong-de-wen-ti/</id>
+    <published>2022-09-03T13:44:18.000Z</published>
+    <updated>2022-09-03T14:00:28.827Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vpn软件的推荐</title>
+    <link href="http://example.com/2022/09/03/vpn-ruan-jian-de-tui-jian/"/>
+    <id>http://example.com/2022/09/03/vpn-ruan-jian-de-tui-jian/</id>
+    <published>2022-09-03T12:39:41.000Z</published>
+    <updated>2022-09-03T14:00:02.021Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发工具" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="vpn" scheme="http://example.com/tags/vpn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Window10设置开机自启应用</title>
+    <link href="http://example.com/2022/09/03/window10-she-zhi-kai-ji-zi-qi-ying-yong/"/>
+    <id>http://example.com/2022/09/03/window10-she-zhi-kai-ji-zi-qi-ying-yong/</id>
+    <published>2022-09-03T12:30:08.000Z</published>
+    <updated>2022-09-03T12:40:01.055Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    
+    
+    <category term="window" scheme="http://example.com/tags/window/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java小知识</title>
+    <link href="http://example.com/2022/09/02/java-xiao-zhi-shi/"/>
+    <id>http://example.com/2022/09/02/java-xiao-zhi-shi/</id>
+    <published>2022-09-02T05:45:56.000Z</published>
+    <updated>2022-09-02T05:51:48.098Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="http://example.com/categories/Java/"/>
+    
+    
+    <category term="零碎知识" scheme="http://example.com/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/"/>
+    
+    <category term="java" scheme="http://example.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java并发学习</title>
     <link href="http://example.com/2022/09/02/java-bing-fa-xue-xi/"/>
     <id>http://example.com/2022/09/02/java-bing-fa-xue-xi/</id>
     <published>2022-09-02T05:30:57.000Z</published>
-    <updated>2022-09-02T05:39:09.641Z</updated>
+    <updated>2022-09-02T06:25:14.078Z</updated>
     
     
       
@@ -48,7 +150,7 @@
     <link href="http://example.com/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/"/>
     <id>http://example.com/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/</id>
     <published>2022-09-02T05:13:59.000Z</published>
-    <updated>2022-09-02T05:19:36.899Z</updated>
+    <updated>2022-09-02T05:56:38.399Z</updated>
     
     
       
@@ -64,9 +166,9 @@
     <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
     
     
-    <category term="idea" scheme="http://example.com/tags/idea/"/>
-    
     <category term="java" scheme="http://example.com/tags/java/"/>
+    
+    <category term="idea" scheme="http://example.com/tags/idea/"/>
     
   </entry>
   
@@ -75,7 +177,7 @@
     <link href="http://example.com/2022/09/02/javascript-yun-suan-fu/"/>
     <id>http://example.com/2022/09/02/javascript-yun-suan-fu/</id>
     <published>2022-09-02T01:29:06.000Z</published>
-    <updated>2022-09-02T02:05:30.998Z</updated>
+    <updated>2022-09-02T05:56:44.194Z</updated>
     
     
       
@@ -443,110 +545,6 @@
     
     
     <category term="编程语言" scheme="http://example.com/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis 安装说明</title>
-    <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
-    <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
-    <published>2022-08-31T06:38:09.000Z</published>
-    <updated>2022-08-31T06:40:30.190Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
-    
-    
-    <category term="安装说明" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/"/>
-    
-    <category term="redis" scheme="http://example.com/tags/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>医院记录 day07</title>
-    <link href="http://example.com/2022/08/31/yi-yuan-ji-lu-day07/"/>
-    <id>http://example.com/2022/08/31/yi-yuan-ji-lu-day07/</id>
-    <published>2022-08-31T06:34:01.000Z</published>
-    <updated>2022-08-31T06:37:06.420Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="日常小记" scheme="http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/"/>
-    
-    
-    <category term="医院" scheme="http://example.com/tags/%E5%8C%BB%E9%99%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>变量声明：静态语言有别于动态语言的重要特征</title>
-    <link href="http://example.com/2022/08/28/bian-liang-sheng-ming-jing-tai-yu-yan-you-bie-yu-dong-tai-yu-yan-de-chong-yao-te-zheng/"/>
-    <id>http://example.com/2022/08/28/bian-liang-sheng-ming-jing-tai-yu-yan-you-bie-yu-dong-tai-yu-yan-de-chong-yao-te-zheng/</id>
-    <published>2022-08-28T13:22:14.000Z</published>
-    <updated>2022-08-28T13:32:37.846Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Goland 运行错误</title>
-    <link href="http://example.com/2022/08/28/goland-yun-xing-cuo-wu/"/>
-    <id>http://example.com/2022/08/28/goland-yun-xing-cuo-wu/</id>
-    <published>2022-08-28T12:23:10.000Z</published>
-    <updated>2022-08-28T12:28:38.505Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="go" scheme="http://example.com/tags/go/"/>
-    
-    <category term="goland" scheme="http://example.com/tags/goland/"/>
     
   </entry>
   

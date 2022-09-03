@@ -520,14 +520,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    860
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    5 分
                 </div>
                 
 
@@ -600,10 +600,10 @@
 </ul>
 <p>注意：同步在多线程中还有另外一层意思，是让多个线程步调一致</p>
 <h2 id="1-4-小结"><a href="#1-4-小结" class="headerlink" title="1.4 小结"></a>1.4 小结</h2><ol>
-<li>单核 cpu 下，多线程不能实际提高程序运行效率，只是为了能够在不同的任务之间切换，不同线程轮流使用cpu ，不至于一个线程总占用 cpu，别的线程没法干活</li>
-</ol>
-<ol start="2">
-<li>多核 cpu 可以并行跑多个线程，但能否提高程序运行效率还是要分情况的</li>
+<li><p>单核 cpu 下，多线程不能实际提高程序运行效率，只是为了能够在不同的任务之间切换，不同线程轮流使用cpu ，不至于一个线程总占用 cpu，别的线程没法干活</p>
+</li>
+<li><p>多核 cpu 可以并行跑多个线程，但能否提高程序运行效率还是要分情况的</p>
+</li>
 </ol>
 <ul>
 <li><p>有些任务，经过精心设计，将任务拆分，并行执行，当然可以提高程序的运行效率。但不是所有计算任务都能拆分（参考后文的【阿姆达尔定律】）</p>
@@ -614,7 +614,7 @@
 <ol start="3">
 <li>IO 操作不占用 cpu，只是我们一般拷贝文件使用的是【阻塞 IO】，这时相当于线程虽然不用 cpu，但需要一直等待 IO 结束，没能充分利用线程。所以才有后面的【非阻塞 IO】和【异步 IO】优化</li>
 </ol>
-<h1 id="Java-线程"><a href="#Java-线程" class="headerlink" title="Java 线程"></a>Java 线程</h1><h2 id="2-1-创建和运行线程"><a href="#2-1-创建和运行线程" class="headerlink" title="2.1 创建和运行线程"></a>2.1 创建和运行线程</h2><p>方法一，直接使用 Thread</p>
+<h1 id="Java-线程"><a href="#Java-线程" class="headerlink" title="Java 线程"></a>Java 线程</h1><h2 id="2-1-创建和运行线程"><a href="#2-1-创建和运行线程" class="headerlink" title="2.1 创建和运行线程"></a>2.1 创建和运行线程</h2><p><strong>方法一，直接使用 Thread</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建线程对象</span>
 <span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -624,7 +624,119 @@
 t<span class="token punctuation">.</span>start
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="C:\Users\13975\Desktop\md\Picture\2022-09-02-13-38-51-image.png"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 构造方法的参数是给线程指定名字，推荐</span>
+<span class="token class-name">Thread</span> t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token string">"t1"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token annotation punctuation">@Override</span>
+ <span class="token comment">// run 方法内实现了要执行的任务</span>
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><strong>方法二，使用 Runnable 配合 Thread</strong></p>
+<p>把【线程】和【任务】（要执行的代码）分开</p>
+<ul>
+<li><p>Thread 代表线程</p>
+</li>
+<li><p>Runnable 可运行的任务（线程要执行的代码）</p>
+</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Runnable</span> runnable <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+ <span class="token comment">// 要执行的任务</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 创建线程对象</span>
+<span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span> runnable <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 启动线程</span>
+t<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建任务对象</span>
+<span class="token class-name">Runnable</span> task2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token annotation punctuation">@Override</span>
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数1 是任务对象; 参数2 是线程名字，推荐</span>
+<span class="token class-name">Thread</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>task2<span class="token punctuation">,</span> <span class="token string">"t2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>Java 8 以后可以使用 lambda 精简代码</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建任务对象</span>
+<span class="token class-name">Runnable</span> task2 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数1 是任务对象; 参数2 是线程名字，推荐</span>
+<span class="token class-name">Thread</span> t2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>task2<span class="token punctuation">,</span> <span class="token string">"t2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+t2<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>原理之 Thread 与 Runnable 的关系<br>分析 Thread 的源码，理清它与 Runnable 的关系</li>
+<li>小结<br>方法1 是把线程和任务合并在了一起，方法2 是把线程和任务分开了</li>
+<li>用 Runnable 更容易与线程池等高级 API 配合</li>
+<li>用 Runnable 让任务类脱离了 Thread 继承体系，更灵活</li>
+</ul>
+<p><strong>方法三，FutureTask 配合 Thread</strong></p>
+<p>FutureTask 能够接收 Callable 类型的参数，用来处理有返回结果的情况</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 创建任务对象</span>
+<span class="token class-name">FutureTask</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Integer</span><span class="token punctuation">&gt;</span></span> task3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FutureTask</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+ log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">return</span> <span class="token number">100</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 参数1 是任务对象; 参数2 是线程名字，推荐</span>
+<span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>task3<span class="token punctuation">,</span> <span class="token string">"t3"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 主线程阻塞，同步等待 task 执行完毕的结果</span>
+<span class="token class-name">Integer</span> result <span class="token operator">=</span> task3<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+log<span class="token punctuation">.</span><span class="token function">debug</span><span class="token punctuation">(</span><span class="token string">"结果是:{}"</span><span class="token punctuation">,</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>输出：</p>
+<pre class="line-numbers language-none"><code class="language-none">19:22:27 [t3] c.ThreadStarter - hello
+19:22:27 [main] c.ThreadStarter - 结果是:100<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="2-2-观察多个线程同时运行"><a href="#2-2-观察多个线程同时运行" class="headerlink" title="2.2 观察多个线程同时运行"></a>2.2 观察多个线程同时运行</h2><p>主要是理解</p>
+<ul>
+<li><p>交替执行</p>
+</li>
+<li><p>谁先谁后，不由我们控制</p>
+</li>
+</ul>
+<h2 id="2-3-查看进程线程的方法"><a href="#2-3-查看进程线程的方法" class="headerlink" title="2.3 查看进程线程的方法"></a>2.3 查看进程线程的方法</h2><p>windows</p>
+<ul>
+<li><p>任务管理器可以查看进程和线程数，也可以用来杀死进程</p>
+</li>
+<li><p>tasklist 查看进程</p>
+</li>
+<li><p>taskkill 杀死进程</p>
+</li>
+</ul>
+<p>linux</p>
+<ul>
+<li><p>ps -fe 查看所有进程</p>
+</li>
+<li><p>ps -fT -p 查看某个进程（PID）的所有线程</p>
+</li>
+<li><p>kill 杀死进程</p>
+</li>
+<li><p>top 按大写 H 切换是否显示线程</p>
+</li>
+<li><p>top -H -p 查看某个进程（PID）的所有线程</p>
+</li>
+</ul>
+<p>Java</p>
+<ul>
+<li><p>jps 命令查看所有 Java 进程</p>
+</li>
+<li><p>jstack 查看某个 Java 进程（PID）的所有线程状态</p>
+</li>
+<li><p>jconsole 来查看某个 Java 进程中线程的运行情况（图形界面）</p>
+</li>
+</ul>
 
                 
             </div>
@@ -775,18 +887,17 @@ t<span class="token punctuation">.</span>start
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/02/java-bing-fa-xue-xi/">
+                <a href="/2022/09/02/java-xiao-zhi-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="java并发学习">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="java小知识">
                         
-                        <span class="card-title">java并发学习</span>
+                        <span class="card-title">java小知识</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -796,31 +907,30 @@ t<span class="token punctuation">.</span>start
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java%E5%B9%B6%E5%8F%91/" class="post-category">
-                                    Java并发
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">零碎知识</span>
                     </a>
                     
-                    <a href="/tags/%E5%B9%B6%E5%8F%91/">
-                        <span class="chip bg-color">并发</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -868,12 +978,12 @@ t<span class="token punctuation">.</span>start
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/idea/">
-                        <span class="chip bg-color">idea</span>
-                    </a>
-                    
                     <a href="/tags/java/">
                         <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/idea/">
+                        <span class="chip bg-color">idea</span>
                     </a>
                     
                 </div>
@@ -1016,7 +1126,7 @@ t<span class="token punctuation">.</span>start
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">59.2k</span>
+                        class="white-color">60.8k</span>
             
             
             
