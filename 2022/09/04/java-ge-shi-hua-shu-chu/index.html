@@ -560,10 +560,7 @@ int i=100;
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%o\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"o"表示格式化输出八进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%x\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"x"表示格式化输出十六进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"s"表示格式化输出字符串</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="二、System-out-format"><a href="#二、System-out-format" class="headerlink" title="二、System.out.format()"></a>二、System.out.format()</h1><p>Java SE5引入的format()方法模仿C的printf()方法，可用于PrintStream或者PrintWriter对象，包括System.out对象。用法基本上和System.out.printf()类似。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str<span class="token operator">=</span><span class="token string">"Java"</span><span class="token punctuation">;</span>
@@ -575,10 +572,7 @@ int i=100;
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%o\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"o"表示格式化输出八进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%x\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"x"表示格式化输出十六进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"s"表示格式化输出字符串</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="三、Fomatter类"><a href="#三、Fomatter类" class="headerlink" title="三、Fomatter类"></a>三、Fomatter类</h1><p>Java中所有的格式化功能都由java.util.Formatter类处理。当你创建一个Formatter对象时 ，需要向其构造器传递一些信息，告诉它最终的结果将向哪里输出。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Formatter</span></span><span class="token punctuation">;</span><span class="token comment">//使用Formatter类时需要导入java.util.Formatter</span>
@@ -593,10 +587,7 @@ f<span class="token punctuation">.</span><span class="token function">format</sp
 f<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%o\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"o"表示格式化输出八进制整数</span>
 f<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%x\n"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"x"表示格式化输出十六进制整数</span>
 f<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s\n"</span><span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"s"表示格式化输出字符串</span>
-f<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+f<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"一个字符串：%s，一个浮点数：%f，一个整数：%d"</span><span class="token punctuation">,</span>str<span class="token punctuation">,</span>pi<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//可以一次输出多个变量，注意顺序即可</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h1 id="四、String-format"><a href="#四、String-format" class="headerlink" title="四、String.format()"></a>四、String.format()</h1><p>String.format()是一个static方法，接收与Formatter.format()一样的参数，其返回值：String对象，适用于一次输出。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str<span class="token operator">=</span><span class="token string">"Java"</span><span class="token punctuation">;</span>
@@ -607,8 +598,7 @@ f<span class="token punctuation">.</span><span class="token function">format</sp
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"d"表示格式化输出十进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%o"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"o"表示格式化输出八进制整数</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%x"</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"x"表示格式化输出十六进制整数</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"s"表示格式化输出字符串</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//"s"表示格式化输出字符串</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -759,18 +749,17 @@ f<span class="token punctuation">.</span><span class="token function">format</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/04/java-ge-shi-hua-shu-chu/">
+                <a href="/2022/09/05/tu-jie-wang-luo/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Java格式化输出">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="图解网络">
                         
-                        <span class="card-title">Java格式化输出</span>
+                        <span class="card-title">图解网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,31 +769,30 @@ f<span class="token punctuation">.</span><span class="token function">format</sp
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-04
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-05
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/">
-                        <span class="chip bg-color">格式化输出</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">计算机基础</span>
                     </a>
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">计算机网络</span>
                     </a>
                     
                 </div>
@@ -996,7 +984,7 @@ f<span class="token punctuation">.</span><span class="token function">format</sp
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">64.8k</span>
+                        class="white-color">66.2k</span>
             
             
             
