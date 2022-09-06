@@ -1,6 +1,11 @@
+http://example.com/2022/09/06/hexo-bo-ke-ji-qiao-tian-jia-zi-ding-yi-html-ye-mian/
+http://example.com/2022/09/06/hexo-jie-jue-wu-fa-xian-shi-tu-pian-de-ji-chong-fang-an/
+http://example.com/2022/09/06/typora-mian-fei-ban-xia-zai/
+http://example.com/2022/09/06/typora-chang-yong-kuai-jie-jian/
+http://example.com/2022/09/05/tu-jie-wang-luo/
+http://example.com/2022/09/06/hexo-shi-yong-shuo-ming/
 http://example.com/2022/09/06/ruan-jian-fang-fa-yu-gong-cheng/
 http://example.com/2022/09/06/bian-yi-yuan-li/
-http://example.com/2022/09/05/tu-jie-wang-luo/
 http://example.com/2022/09/06/hexo-tu-pian-jia-zai-bu-chu-lai/
 http://example.com/2022/09/03/markdown-shi-yong-zhong-de-wen-ti/
 http://example.com/2022/09/02/java-bing-fa-xue-xi/
@@ -72,6 +77,7 @@ http://example.com/tags/java/
 http://example.com/tags/Markdown/
 http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/
 http://example.com/tags/redis/
+http://example.com/tags/Typora/
 http://example.com/tags/Window/
 http://example.com/tags/%E7%BB%88%E7%AB%AF/
 http://example.com/tags/window/
@@ -95,8 +101,9 @@ http://example.com/categories/Go/
 http://example.com/categories/Java/
 http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/
 http://example.com/categories/Redis/
+http://example.com/categories/hexo/
 http://example.com/categories/Java%E5%B9%B6%E5%8F%91/
 http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/
 http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/
-http://example.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/
 http://example.com/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/
+http://example.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/
