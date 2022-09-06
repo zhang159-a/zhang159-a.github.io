@@ -516,14 +516,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    11 分
                 </div>
                 
 
@@ -603,6 +603,42 @@
 
 <p>网络接口层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p>
 <h1 id="1-2-键入网址到网页显示，期间发生了什么？"><a href="#1-2-键入网址到网页显示，期间发生了什么？" class="headerlink" title="1.2 键入网址到网页显示，期间发生了什么？"></a>1.2 键入网址到网页显示，期间发生了什么？</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-11-14-43-2.webp"></p>
+<h2 id="孤单小弟-——-HTTP"><a href="#孤单小弟-——-HTTP" class="headerlink" title="孤单小弟 —— HTTP"></a>孤单小弟 —— HTTP</h2><blockquote>
+<p>浏览器做的第一步工作是解析 URL</p>
+</blockquote>
+<p>首先浏览器做的第一步工作就是要对&nbsp;<code>URL</code>&nbsp;进行解析，从而生成发送给&nbsp;<code>Web</code>&nbsp;服务器的请求信息。</p>
+<p>让我们看看一条长长的 URL 里的各个元素的代表什么，见下图：</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-11-26-13-3.webp"></p>
+<p>所以图中的长长的 URL 实际上是请求服务器里的文件资源。</p>
+<blockquote>
+<p>要是上图中的蓝色部分 URL 元素都省略了，那应该是请求哪个文件呢？</p>
+</blockquote>
+<p>当没有路径名时，就代表访问根目录下事先设置的<strong>默认文件</strong>，也就是&nbsp;<code>/index.html</code>&nbsp;或者&nbsp;<code>/default.html</code>&nbsp;这些文件，这样就不会发生混乱了。</p>
+<blockquote>
+<p>生产 HTTP 请求信息</p>
+</blockquote>
+<p>对&nbsp;<code>URL</code>&nbsp;进行解析之后，浏览器确定了 Web 服务器和文件名，接下来就是根据这些信息来生成 HTTP 请求消息了。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/4.jpg" alt="HTTP 的消息格式"></p>
+<blockquote>
+<p>一个孤单 HTTP 数据包表示：“我这么一个小小的数据包，没亲没友，直接发到浩瀚的网络，谁会知道我呢？谁能载我一程呢？谁能保护我呢？我的目的地在哪呢？”。充满各种疑问的它，没有停滞不前，依然踏上了征途！</p>
+</blockquote>
+<h2 id="真实地址查询-——-DNS"><a href="#真实地址查询-——-DNS" class="headerlink" title="真实地址查询 —— DNS"></a>真实地址查询 —— DNS</h2><p>通过浏览器解析 URL 并生成 HTTP 消息后，需要委托操作系统将消息发送给&nbsp;<code>Web</code>&nbsp;服务器。</p>
+<p>但在发送之前，还有一项工作需要完成，那就是<strong>查询服务器域名对应的 IP 地址</strong>，因为委托操作系统发送消息时，必须提供通信对象的 IP 地址。</p>
+<p>比如我们打电话的时候，必须要知道对方的电话号码，但由于电话号码难以记忆，所以通常我们会将对方电话号 + 姓名保存在通讯录里。</p>
+<p>所以，有一种服务器就专门保存了&nbsp;<code>Web</code>&nbsp;服务器域名与&nbsp;<code>IP</code>&nbsp;的对应关系，它就是&nbsp;<code>DNS</code>&nbsp;服务器。</p>
+<p><strong>域名的层级关系</strong></p>
+<p>DNS 中的域名都是用<strong>句点</strong>来分隔的，比如&nbsp;<code>www.server.com</code>，这里的句点代表了不同层次之间的<strong>界限</strong>。</p>
+<p>在域名中，<strong>越靠右</strong>的位置表示其层级<strong>越高</strong>。</p>
+<p>毕竟域名是外国人发明，所以思维和中国人相反，比如说一个城市地点的时候，外国喜欢从小到大的方式顺序说起（如 XX 街道 XX 区 XX 市 XX 省），而中国则喜欢从大到小的顺序（如 XX 省 XX 市 XX 区 XX 街道）。</p>
+<p>实际上域名最后还有一个点，比如&nbsp;<code>www.server.com.</code>，这个最后的一个点代表根域名。</p>
+<p>也就是，<code>.</code>&nbsp;根域是在最顶层，它的下一层就是&nbsp;<code>.com</code>&nbsp;顶级域，再下面是&nbsp;<code>server.com</code>。</p>
+<p>所以域名的层级关系类似一个树状结构：</p>
+<ul>
+<li>根 DNS 服务器（.）</li>
+<li>顶级域 DNS 服务器（.com）</li>
+<li>权威 DNS 服务器（server.com）</li>
+</ul>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/5.jpg" alt="DNS 树状结构"></p>
 
                 
             </div>
@@ -988,7 +1024,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">69k</span>
+                        class="white-color">69.9k</span>
             
             
             

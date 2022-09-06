@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>http://example.com/2022/09/06/bian-yi-yuan-li/</loc>
+    
+    <lastmod>2022-09-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/09/05/tu-jie-wang-luo/</loc>
     
     <lastmod>2022-09-06</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>http://example.com/2022/09/06/hexo-tu-pian-jia-zai-bu-chu-lai/</loc>
-    
-    <lastmod>2022-09-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2022/09/06/bian-yi-yuan-li/</loc>
     
     <lastmod>2022-09-06</lastmod>
     
