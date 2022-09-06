@@ -4,11 +4,88 @@
   
     
     <entry>
+      <title>软件方法与工程</title>
+      <link href="/2022/09/06/ruan-jian-fang-fa-yu-gong-cheng/"/>
+      <url>/2022/09/06/ruan-jian-fang-fa-yu-gong-cheng/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-10-36-01-Snipaste_2022-09-06_10-29-41.png"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-10-40-43-Snipaste_2022-09-06_10-40-33.png"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-10-41-17-Snipaste_2022-09-06_10-41-09.png"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-10-47-26-Snipaste_2022-09-06_10-47-15.png"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-11-17-43-Snipaste_2022-09-06_11-17-22.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo图片加载不出来</title>
+      <link href="/2022/09/06/hexo-tu-pian-jia-zai-bu-chu-lai/"/>
+      <url>/2022/09/06/hexo-tu-pian-jia-zai-bu-chu-lai/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>最近在学习小林图解的时候遇到的问题，复制图片链接，在网站中加载不出来，在网页中却可以加载出来，现在这个问题还没有得到解决。</p><p>不过在寻找答案的过程中学习到了 <strong>html  访问图片资源403问题解决办法</strong></p><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li>之前碰到一个问题，就是html中通过img标签引入一个图片地址，报403。但是这个图片地址直接复制出来在地址栏打开，却是看得到的。</li></ul><p><img src="https://upload-images.jianshu.io/upload_images/6383319-956f8513b3992982.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1081/format/webp"></p><ul><li>先说下解决方法：&nbsp;<strong>在HTML代码的head中添加一句<code>&lt;meta name="referrer" content="no-referrer" /&gt;</code>即可</strong>，后面再说下原理。</li></ul><h1 id="http请求中的referrer"><a href="#http请求中的referrer" class="headerlink" title="http请求中的referrer"></a>http请求中的referrer</h1><ul><li><p>http请求体的header中有一个referrer字段，用来表示发起http请求的源地址信息，这个referrer信息是可以省略但是不可修改的，就是说你只能设置是否带上这个referrer信息，不能定制referrer里面的值。</p></li><li><p>服务器端在拿到这个referrer值后就可以进行相关的处理，比如图片资源，可以通过referrer值判断请求是否来自本站，若不是则返回403或者重定向返回其他信息，从而实现图片的防盗链。上面出现403就是因为，请求的是别人服务器上的资源，但把自己的referrer信息带过去了，被对方服务器拦截返回了403。</p></li><li><p>在前端可以通过meta来设置referrer policy(来源策略)，具体可以设置哪些值以及对应的结果参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Referrer-Policy">这里</a>。所以针对上面的403情况的解决方法，就是把referrer设置成<code>no-referrer</code>，这样发送请求不会带上referrer信息，对方服务器也就无法拦截了。</p></li></ul><p><img src="https://upload-images.jianshu.io/upload_images/6383319-ddebca90d19accd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1070/format/webp"></p><ul><li>浏览器中referrer默认的值是<code>no-referrer-when-downgrade</code>，就是除了降级请求的情况以外都会带上referrer信息。降级请求是指https协议的地址去请求http协议，所以上面403的情况还有另一种解决方法就是，请求的图片地址换成http协议，自己的地址使用http协议，这样降级请求也不会带上referrer。</li></ul><h1 id="nginx配置图片防盗链"><a href="#nginx配置图片防盗链" class="headerlink" title="nginx配置图片防盗链"></a>nginx配置图片防盗链</h1><ul><li>最后再说一下这种根据referrer拦截，在服务器如何配置。我自己服务器用的nginx，这里就说下nginx的配置。首先打开nginx的配置文件:<code>conf/nginx.conf</code>，在server下面添加如下:</li></ul><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">location ~* <span class="token punctuation">\</span>.<span class="token punctuation">(</span>gif<span class="token operator">|</span>jpg<span class="token operator">|</span>png<span class="token operator">|</span>jpeg<span class="token punctuation">)</span>$ <span class="token punctuation">{</span>        valid_referers none  valid.url.com<span class="token punctuation">;</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$invalid_referer</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                <span class="token builtin class-name">return</span> <span class="token number">403</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>首先第一句以文件格式后缀匹配出图片资源路径，然后通过<code>valid_referers</code>添加合法的referer地址，加上none，表示没有传referer也是合法的，最后referer不合法的情况返回403。如果想跳其他地址或返回其他图片资源可以这样：<code>rewrite xxx.xxx.com/xxx.jpg</code>。</li></ul><h1 id="orgin"><a href="#orgin" class="headerlink" title="orgin"></a>orgin</h1><ul><li>http头部中还有一个与referrer类似的叫orgin的字段，在发送跨域请求或预检请求(preflight request)时会带上这个参数，他用来表示发起请求的服务器地址，这个参数是必定会传的，然后服务器端用此字段来判断是否允许跨域。</li></ul><h1 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1><p>图片的懒加载就是在页面打开的时候，不要一次性全部显示页面所有的图片，而是只显示当前视口内的图片，一般在移动端使用（PC端主要是前端分页或者后端分页）。</p><h2 id="为什么需要懒加载"><a href="#为什么需要懒加载" class="headerlink" title="为什么需要懒加载"></a>为什么需要懒加载</h2><p>对于一个页面加载速度影响最大的因素之一就是图片资源，如果一个页面图片太多（比如某宝，某东等），整个页面的图片大小可以到达几百兆，即使在百兆宽带，全部下载的话，也需要上十秒的时间，这对于用户耐心的考验是巨大的，更别说网络差的地方了。</p><p>因此，懒加载是必须要做的，对于页面未在可视区域内显示的图片先不做加载处理，只加载第一映入眼帘的图片，由于可视区域显示的图片少，加载速度就会大大提升，用户体验也会更好。</p><p>而且，用户可能只翻看一两页就退出了，剩下未查看的图片也就不需要加载了。这也相当于节省了带宽资源。</p><h2 id="懒加载实现原理"><a href="#懒加载实现原理" class="headerlink" title="懒加载实现原理"></a>懒加载实现原理</h2><p>由于浏览器会自动对页面中的img标签的src属性发送请求并下载图片。因此，通过html5自定义属性&nbsp;<code>data-xxx</code>先暂存src的值，然后在需要显示的时候，再将&nbsp;<code>data-xxx</code>的值重新赋值到img的src属性即可。</p><h1 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h1><p><strong>现在还没有解决这个问题，在浏览器中复制的图片都是复制图片的链接，粘贴到md文档中可以显示，但是上传到网页中无法显示</strong></p><ul><li>目前来说解决办法是，将图片保存在本地，然后粘贴到 md 文档中，这样就会上传到 github 图床中，然后在网页中就可以加载，但是这样来说太麻烦了。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 问题总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 未解决 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编译原理</title>
+      <link href="/2022/09/06/bian-yi-yuan-li/"/>
+      <url>/2022/09/06/bian-yi-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-09-40-44-Snipaste_2022-09-06_09-40-12.png"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-09-40-50-Snipaste_2022-09-06_09-40-17.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 编译原理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 计算机基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>图解网络</title>
       <link href="/2022/09/05/tu-jie-wang-luo/"/>
       <url>/2022/09/05/tu-jie-wang-luo/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="1-1-TCP-IP-网络模型有哪几层？"><a href="#1-1-TCP-IP-网络模型有哪几层？" class="headerlink" title="1.1 TCP/IP 网络模型有哪几层？"></a>1.1 TCP/IP 网络模型有哪几层？</h2><p>对于同一台设备上的进程间通信，有很多种方式，比如有管道、消息队列、共享内存、信号等方式，而对于不同设备上的进程间通信，就需要网络通信，而设备是多样性的，所以要兼容多种多样的设备，就协商出了一套<strong>通用的网络协议</strong>。</p><p>这个网络协议是分层的，每一层都有各自的作用和职责，接下来就根据「 TCP/IP 网络模型」分别对每一层进行介绍。</p><h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>最上层的，也是我们能直接接触到的就是<strong>应用层</strong>（<em>Application Layer</em>），我们电脑或手机使用的应用软件都是在应用层实现。那么，当两个不同设备的应用需要通信的时候，应用就把应用数据传给下一层，也就是传输层。</p><p>所以，应用层只需要专注于为用户提供应用功能，比如 HTTP、FTP、Telnet、DNS、SMTP等。</p><p>应用层是不用去关心数据是如何传输的，就类似于，我们寄快递的时候，只需要把包裹交给快递员，由他负责运输快递，我们不需要关心快递是如何被运输的。</p><p>而且应用层是工作在操作系统中的用户态，传输层及以下则工作在内核态。</p><h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>应用层的数据包会传给传输层，<strong>传输层</strong>（<em>Transport Layer</em>）是为应用层提供网络支持的。</p><img title="" src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E5%BA%94%E7%94%A8%E5%B1%82.png" alt="" data-align="inline"><p>在传输层会有两个传输协议，分别是 TCP 和 UDP。</p><p>TCP 的全称叫传输控制协议（<em>Transmission Control Protocol</em>），大部分应用使用的正是 TCP 传输层协议，比如 HTTP 应用层协议。TCP 相比 UDP 多了很多特性，比如流量控制、超时重传、拥塞控制等，这些都是为了保证数据包能可靠地传输给对方。</p><p>UDP 相对来说就很简单，简单到只负责发送数据包，不保证数据包是否能抵达对方，但它实时性相对更好，传输效率也高。当然，UDP 也可以实现可靠传输，把 TCP 的特性在应用层上实现就可以，不过要实现一个商用的可靠 UDP 传输协议，也不是一件简单的事情。</p><p>应用需要传输的数据可能会非常大，如果直接传输就不好控制，因此当传输层的数据包大小超过 MSS（TCP 最大报文段长度） ，就要将数据包分块，这样即使中途有一个分块丢失或损坏了，只需要重新发送这一个分块，而不用重新发送整个数据包。在 TCP 协议中，我们把每个分块称为一个&nbsp;<strong>TCP 段</strong>（<em>TCP Segment</em>）。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/TCP%E6%AE%B5.png"></p><p>当设备作为接收方时，传输层则要负责把数据包传给应用，但是一台设备上可能会有很多应用在接收或者传输数据，因此需要用一个编号将应用区分开来，这个编号就是<strong>端口</strong>。</p><p>比如 80 端口通常是 Web 服务器用的，22 端口通常是远程登录服务器用的。而对于浏览器（客户端）中的每个标签栏都是一个独立的进程，操作系统会为这些进程分配临时的端口号。</p><p>由于传输层的报文中会携带端口号，因此接收方可以识别出该报文是发送给哪个应用。</p><h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>传输层可能大家刚接触的时候，会认为它负责将数据从一个设备传输到另一个设备，事实上它并不负责。</p><p>实际场景中的网络环节是错综复杂的，中间有各种各样的线路和分叉路口，如果一个设备的数据要传输给另一个设备，就需要在各种各样的路径和节点进行选择，而传输层的设计理念是简单、高效、专注，如果传输层还负责这一块功能就有点违背设计原则了。</p><p>也就是说，我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E5%B1%82.png"></p><p>网络层最常使用的是 IP 协议（<em>Internet Protocol</em>），IP 协议会将传输层的报文作为数据部分，再加上 IP 包头组装成 IP 报文，如果 IP 报文大小超过 MTU（以太网中一般为 1500 字节）就会<strong>再次进行分片</strong>，得到一个即将发送到网络的 IP 报文。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/12.jpg"></p><p>网络层负责将数据从一个设备传输到另一个设备，世界上那么多设备，又该如何找到对方呢？因此，网络层需要有区分设备的编号。</p><p>我们一般用 IP 地址给设备进行编号，对于 IPv4 协议， IP 地址共 32 位，分成了四段（比如，192.168.100.1），每段是 8 位。只有一个单纯的 IP 地址虽然做到了区分设备，但是寻址起来就特别麻烦，全世界那么多台设备，难道一个一个去匹配？这显然不科学。</p><p>因此，需要将 IP 地址分成两种意义：</p><ul><li>一个是<strong>网络号</strong>，负责标识该 IP 地址是属于哪个「子网」的；</li><li>一个是<strong>主机号</strong>，负责标识同一「子网」下的不同主机；</li></ul><p>怎么分的呢？这需要配合<strong>子网掩码</strong>才能算出 IP 地址 的网络号和主机号。</p><p>举个例子，比如 10.100.122.0/24，后面的<code>/24</code>表示就是&nbsp;<code>255.255.255.0</code>&nbsp;子网掩码，255.255.255.0 二进制是「11111111-11111111-11111111-00000000」，大家数数一共多少个1？不用数了，是 24 个1，为了简化子网掩码的表示，用/24代替255.255.255.0。</p><p>知道了子网掩码，该怎么计算出网络地址和主机地址呢？</p><p>将 10.100.122.2 和 255.255.255.0 进行<strong>按位与运算</strong>，就可以得到网络号，如下图：</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IP/16.jpg" alt="img"></p><p>将 255.255.255.0 取反后与IP地址进行进行<strong>按位与运算</strong>，就可以得到主机号。</p><p>大家可以去搜索下子网掩码计算器，自己改变下「掩码位」的数值，就能体会到子网掩码的作用了。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4/%E7%BD%91%E7%BB%9C/%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E8%AE%A1%E7%AE%97%E5%99%A8.png" alt="子网掩码计算器"></p><p>那么在寻址的过程中，先匹配到相同的网络号（表示要找到同一个子网），才会去找对应的主机。</p><p>除了寻址能力， IP 协议还有另一个重要的能力就是<strong>路由</strong>。实际场景中，两台设备并不是用一条网线连接起来的，而是通过很多网关、路由器、交换机等众多网络设备连接起来的，那么就会形成很多条网络的路径，因此当数据包到达一个网络节点，就需要通过路由算法决定下一步走哪条路径。</p><p>路由器寻址工作中，就是要找到目标地址的子网，找到后进而把数据包转发给对应的网络内。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IP/17.jpg" alt="IP地址的网络号"></p><p>所以，<strong>IP 协议的寻址作用是告诉我们去往下一个目的地该朝哪个方向走，路由则是根据「下一个目的地」选择路径。寻址更像在导航，路由更像在操作方向盘</strong>。</p><h3 id="网络接口层"><a href="#网络接口层" class="headerlink" title="网络接口层"></a>网络接口层</h3><p>生成了 IP 头部之后，接下来要交给<strong>网络接口层</strong>（<em>Link Layer</em>）在 IP 头部的前面加上 MAC 头部，并封装成数据帧（Data frame）发送到网络上。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B1%82.png"></p><p>IP 头部中的接收方 IP 地址表示网络包的目的地，通过这个地址我们就可以判断要将包发到哪里，但在以太网的世界中，这个思路是行不通的。</p><p>什么是以太网呢？电脑上的以太网接口，Wi-Fi接口，以太网交换机、路由器上的千兆，万兆以太网口，还有网线，它们都是以太网的组成部分。以太网就是一种在「局域网」内，把附近的设备连接起来，使它们之间可以进行通讯的技术。</p><p>以太网在判断网络包目的地时和 IP 的方式不同，因此必须采用相匹配的方式才能在以太网中将包发往目的地，而 MAC 头部就是干这个用的，所以，在以太网进行通讯要用到 MAC 地址。</p><p>MAC 头部是以太网使用的头部，它包含了接收方和发送方的 MAC 地址等信息，我们可以通过 ARP 协议获取对方的 MAC 地址。</p><p>所以说，网络接口层主要为网络层提供「链路级别」传输的服务，负责在以太网、WiFi 这样的底层网络上发送原始数据包，工作在网卡这个层次，使用 MAC 地址来标识网络上的设备。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所述，TCP/IP 网络通常是由上到下分成 4 层，分别是<strong>应用层，传输层，网络层和网络接口层</strong>。</p><p><img src="http://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/tcpip%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B.drawio.png"></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="基础篇"><a href="#基础篇" class="headerlink" title="基础篇"></a>基础篇</h1><h2 id="1-1-TCP-IP-网络模型有哪几层？"><a href="#1-1-TCP-IP-网络模型有哪几层？" class="headerlink" title="1.1 TCP/IP 网络模型有哪几层？"></a>1.1 TCP/IP 网络模型有哪几层？</h2><p>对于同一台设备上的进程间通信，有很多种方式，比如有管道、消息队列、共享内存、信号等方式，而对于不同设备上的进程间通信，就需要网络通信，而设备是多样性的，所以要兼容多种多样的设备，就协商出了一套<strong>通用的网络协议</strong>。</p><p>这个网络协议是分层的，每一层都有各自的作用和职责，接下来就根据「 TCP/IP 网络模型」分别对每一层进行介绍。</p><h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><p>最上层的，也是我们能直接接触到的就是<strong>应用层</strong>（<em>Application Layer</em>），我们电脑或手机使用的应用软件都是在应用层实现。那么，当两个不同设备的应用需要通信的时候，应用就把应用数据传给下一层，也就是传输层。</p><p>所以，应用层只需要专注于为用户提供应用功能，比如 HTTP、FTP、Telnet、DNS、SMTP等。</p><p>应用层是不用去关心数据是如何传输的，就类似于，我们寄快递的时候，只需要把包裹交给快递员，由他负责运输快递，我们不需要关心快递是如何被运输的。</p><p>而且应用层是工作在操作系统中的用户态，传输层及以下则工作在内核态。</p><h3 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h3><p>应用层的数据包会传给传输层，<strong>传输层</strong>（<em>Transport Layer</em>）是为应用层提供网络支持的。</p><img title="" src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E5%BA%94%E7%94%A8%E5%B1%82.png" alt="" data-align="inline"><p>在传输层会有两个传输协议，分别是 TCP 和 UDP。</p><p>TCP 的全称叫传输控制协议（<em>Transmission Control Protocol</em>），大部分应用使用的正是 TCP 传输层协议，比如 HTTP 应用层协议。TCP 相比 UDP 多了很多特性，比如流量控制、超时重传、拥塞控制等，这些都是为了保证数据包能可靠地传输给对方。</p><p>UDP 相对来说就很简单，简单到只负责发送数据包，不保证数据包是否能抵达对方，但它实时性相对更好，传输效率也高。当然，UDP 也可以实现可靠传输，把 TCP 的特性在应用层上实现就可以，不过要实现一个商用的可靠 UDP 传输协议，也不是一件简单的事情。</p><p>应用需要传输的数据可能会非常大，如果直接传输就不好控制，因此当传输层的数据包大小超过 MSS（TCP 最大报文段长度） ，就要将数据包分块，这样即使中途有一个分块丢失或损坏了，只需要重新发送这一个分块，而不用重新发送整个数据包。在 TCP 协议中，我们把每个分块称为一个&nbsp;<strong>TCP 段</strong>（<em>TCP Segment</em>）。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/TCP%E6%AE%B5.png"></p><p>当设备作为接收方时，传输层则要负责把数据包传给应用，但是一台设备上可能会有很多应用在接收或者传输数据，因此需要用一个编号将应用区分开来，这个编号就是<strong>端口</strong>。</p><p>比如 80 端口通常是 Web 服务器用的，22 端口通常是远程登录服务器用的。而对于浏览器（客户端）中的每个标签栏都是一个独立的进程，操作系统会为这些进程分配临时的端口号。</p><p>由于传输层的报文中会携带端口号，因此接收方可以识别出该报文是发送给哪个应用。</p><h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><p>传输层可能大家刚接触的时候，会认为它负责将数据从一个设备传输到另一个设备，事实上它并不负责。</p><p>实际场景中的网络环节是错综复杂的，中间有各种各样的线路和分叉路口，如果一个设备的数据要传输给另一个设备，就需要在各种各样的路径和节点进行选择，而传输层的设计理念是简单、高效、专注，如果传输层还负责这一块功能就有点违背设计原则了。</p><p>也就是说，我们不希望传输层协议处理太多的事情，只需要服务好应用即可，让其作为应用间数据传输的媒介，帮助实现应用到应用的通信，而实际的传输功能就交给下一层，也就是<strong>网络层</strong>（<em>Internet Layer</em>）。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E5%B1%82.png"></p><p>网络层最常使用的是 IP 协议（<em>Internet Protocol</em>），IP 协议会将传输层的报文作为数据部分，再加上 IP 包头组装成 IP 报文，如果 IP 报文大小超过 MTU（以太网中一般为 1500 字节）就会<strong>再次进行分片</strong>，得到一个即将发送到网络的 IP 报文。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%94%AE%E5%85%A5%E7%BD%91%E5%9D%80%E8%BF%87%E7%A8%8B/12.jpg"></p><p>网络层负责将数据从一个设备传输到另一个设备，世界上那么多设备，又该如何找到对方呢？因此，网络层需要有区分设备的编号。</p><p>我们一般用 IP 地址给设备进行编号，对于 IPv4 协议， IP 地址共 32 位，分成了四段（比如，192.168.100.1），每段是 8 位。只有一个单纯的 IP 地址虽然做到了区分设备，但是寻址起来就特别麻烦，全世界那么多台设备，难道一个一个去匹配？这显然不科学。</p><p>因此，需要将 IP 地址分成两种意义：</p><ul><li>一个是<strong>网络号</strong>，负责标识该 IP 地址是属于哪个「子网」的；</li><li>一个是<strong>主机号</strong>，负责标识同一「子网」下的不同主机；</li></ul><p>怎么分的呢？这需要配合<strong>子网掩码</strong>才能算出 IP 地址 的网络号和主机号。</p><p>举个例子，比如 10.100.122.0/24，后面的<code>/24</code>表示就是&nbsp;<code>255.255.255.0</code>&nbsp;子网掩码，255.255.255.0 二进制是「11111111-11111111-11111111-00000000」，大家数数一共多少个1？不用数了，是 24 个1，为了简化子网掩码的表示，用/24代替255.255.255.0。</p><p>知道了子网掩码，该怎么计算出网络地址和主机地址呢？</p><p>将 10.100.122.2 和 255.255.255.0 进行<strong>按位与运算</strong>，就可以得到网络号，如下图：</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IP/16.jpg" alt="img"></p><p>将 255.255.255.0 取反后与IP地址进行进行<strong>按位与运算</strong>，就可以得到主机号。</p><p>大家可以去搜索下子网掩码计算器，自己改变下「掩码位」的数值，就能体会到子网掩码的作用了。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4/%E7%BD%91%E7%BB%9C/%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81%E8%AE%A1%E7%AE%97%E5%99%A8.png" alt="子网掩码计算器"></p><p>那么在寻址的过程中，先匹配到相同的网络号（表示要找到同一个子网），才会去找对应的主机。</p><p>除了寻址能力， IP 协议还有另一个重要的能力就是<strong>路由</strong>。实际场景中，两台设备并不是用一条网线连接起来的，而是通过很多网关、路由器、交换机等众多网络设备连接起来的，那么就会形成很多条网络的路径，因此当数据包到达一个网络节点，就需要通过路由算法决定下一步走哪条路径。</p><p>路由器寻址工作中，就是要找到目标地址的子网，找到后进而把数据包转发给对应的网络内。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/IP/17.jpg" alt="IP地址的网络号"></p><p>所以，<strong>IP 协议的寻址作用是告诉我们去往下一个目的地该朝哪个方向走，路由则是根据「下一个目的地」选择路径。寻址更像在导航，路由更像在操作方向盘</strong>。</p><h3 id="网络接口层"><a href="#网络接口层" class="headerlink" title="网络接口层"></a>网络接口层</h3><p>生成了 IP 头部之后，接下来要交给<strong>网络接口层</strong>（<em>Link Layer</em>）在 IP 头部的前面加上 MAC 头部，并封装成数据帧（Data frame）发送到网络上。</p><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/https/%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B1%82.png"></p><p>IP 头部中的接收方 IP 地址表示网络包的目的地，通过这个地址我们就可以判断要将包发到哪里，但在以太网的世界中，这个思路是行不通的。</p><p>什么是以太网呢？电脑上的以太网接口，Wi-Fi接口，以太网交换机、路由器上的千兆，万兆以太网口，还有网线，它们都是以太网的组成部分。以太网就是一种在「局域网」内，把附近的设备连接起来，使它们之间可以进行通讯的技术。</p><p>以太网在判断网络包目的地时和 IP 的方式不同，因此必须采用相匹配的方式才能在以太网中将包发往目的地，而 MAC 头部就是干这个用的，所以，在以太网进行通讯要用到 MAC 地址。</p><p>MAC 头部是以太网使用的头部，它包含了接收方和发送方的 MAC 地址等信息，我们可以通过 ARP 协议获取对方的 MAC 地址。</p><p>所以说，网络接口层主要为网络层提供「链路级别」传输的服务，负责在以太网、WiFi 这样的底层网络上发送原始数据包，工作在网卡这个层次，使用 MAC 地址来标识网络上的设备。</p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所述，TCP/IP 网络通常是由上到下分成 4 层，分别是<strong>应用层，传输层，网络层和网络接口层</strong>。</p><p><img src="http://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost4@main/%E7%BD%91%E7%BB%9C/tcpip%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B.drawio.png"></p><p>再给大家贴一下每一层的封装格式：</p><img title="" src="http://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%B5%AE%E7%82%B9/%E5%B0%81%E8%A3%85.png" alt=""><p>网络接口层的传输单位是帧（frame），IP 层的传输单位是包（packet），TCP 层的传输单位是段（segment），HTTP 的传输单位则是消息或报文（message）。但这些名词并没有什么本质的区分，可以统称为数据包。</p><h1 id="1-2-键入网址到网页显示，期间发生了什么？"><a href="#1-2-键入网址到网页显示，期间发生了什么？" class="headerlink" title="1.2 键入网址到网页显示，期间发生了什么？"></a>1.2 键入网址到网页显示，期间发生了什么？</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/2022/09/06-11-14-43-2.webp"></p>]]></content>
       
       
       <categories>
@@ -1316,9 +1393,9 @@
       
         <tags>
             
-            <tag> Github </tag>
-            
             <tag> Git </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
