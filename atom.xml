@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-08T09:31:39.287Z</updated>
+  <updated>2022-09-08T14:13:57.414Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>图解Redis</title>
+    <link href="http://example.com/2022/09/08/tu-jie-redis/"/>
+    <id>http://example.com/2022/09/08/tu-jie-redis/</id>
+    <published>2022-09-08T12:46:19.000Z</published>
+    <updated>2022-09-08T14:13:57.414Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
+    
+    
+    <category term="redis" scheme="http://example.com/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>图解MySQL</title>
     <link href="http://example.com/2022/09/08/tu-jie-mysql/"/>
     <id>http://example.com/2022/09/08/tu-jie-mysql/</id>
     <published>2022-09-08T07:39:59.000Z</published>
-    <updated>2022-09-08T09:31:39.287Z</updated>
+    <updated>2022-09-08T12:45:24.050Z</updated>
     
     
       
@@ -500,33 +525,6 @@
     <category term="Java" scheme="http://example.com/tags/Java/"/>
     
     <category term="并发" scheme="http://example.com/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pop.xml文件出现错误</title>
-    <link href="http://example.com/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/"/>
-    <id>http://example.com/2022/09/02/pop-xml-wen-jian-chu-xian-cuo-wu/</id>
-    <published>2022-09-02T05:13:59.000Z</published>
-    <updated>2022-09-02T05:56:38.399Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="java" scheme="http://example.com/tags/java/"/>
-    
-    <category term="idea" scheme="http://example.com/tags/idea/"/>
     
   </entry>
   
