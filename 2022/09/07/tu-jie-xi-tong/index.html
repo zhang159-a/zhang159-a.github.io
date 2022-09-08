@@ -53,9 +53,9 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.2">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
 </head>
 
 
@@ -517,14 +517,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.5k
+                    15.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    56 分
                 </div>
                 
 
@@ -736,6 +736,221 @@
 <li><em>每条指令的平均时钟周期数 CPI</em>，表示一条指令需要多少个时钟周期数，现代大多数 CPU 通过流水线技术（Pipeline），让一条指令需要的 CPU 时钟周期数尽可能的少；</li>
 <li><em>时钟周期时间</em>，表示计算机主频，取决于计算机硬件。有的 CPU 支持超频技术，打开了超频意味着把 CPU 内部的时钟给调快了，于是 CPU 工作速度就变快了，但是也是有代价的，CPU 跑的越快，散热的压力就会越大，CPU 会很容易奔溃。</li>
 </ul>
+<p>很多厂商为了跑分而跑分，基本都是在这三个方面入手的哦，特别是超频这一块。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后我们再来回答开头的问题。</p>
+<blockquote>
+<p>64 位相比 32 位 CPU 的优势在哪吗？64 位 CPU 的计算性能一定比 32 位 CPU 高很多吗？</p>
+</blockquote>
+<p>64 位相比 32 位 CPU 的优势主要体现在两个方面：</p>
+<ul>
+<li>64 位 CPU 可以一次计算超过 32 位的数字，而 32 位 CPU 如果要计算超过 32 位的数字，要分多步骤进行计算，效率就没那么高，但是大部分应用程序很少会计算那么大的数字，所以<strong>只有运算大数字的时候，64 位 CPU 的优势才能体现出来，否则和 32 位 CPU 的计算性能相差不大</strong>。</li>
+<li>64 位 CPU 可以<strong>寻址更大的内存空间</strong>，32 位 CPU 最大的寻址地址是 4G，即使你加了 8G 大小的内存，也还是只能寻址到 4G，而 64 位 CPU 最大寻址地址是&nbsp;<code>2^64</code>，远超于 32 位 CPU 最大寻址地址的&nbsp;<code>2^32</code>。</li>
+</ul>
+<blockquote>
+<p>你知道软件的 32 位和 64 位之间的区别吗？再来 32 位的操作系统可以运行在 64 位的电脑上吗？64 位的操作系统可以运行在 32 位的电脑上吗？如果不行，原因是什么？</p>
+</blockquote>
+<p>4 位和 32 位软件，实际上代表指令是 64 位还是 32 位的：</p>
+<ul>
+<li>如果 32 位指令在 64 位机器上执行，需要一套兼容机制，就可以做到兼容运行了。但是<strong>如果 64 位指令在 32 位机器上执行，就比较困难了，因为 32 位的寄存器存不下 64 位的指令</strong>；</li>
+<li>操作系统其实也是一种程序，我们也会看到操作系统会分成 32 位操作系统、64 位操作系统，其代表意义就是操作系统中程序的指令是多少位，比如 64 位操作系统，指令也就是 64 位，因此不能装在 32 位机器上。</li>
+</ul>
+<p>总之，硬件的 64 位和 32 位指的是 CPU 的位宽，软件的 64 位和 32 位指的是指令的位宽。</p>
+<h1 id="2-2-磁盘比内存慢几万倍？"><a href="#2-2-磁盘比内存慢几万倍？" class="headerlink" title="2.2 磁盘比内存慢几万倍？"></a>2.2 磁盘比内存慢几万倍？</h1><p>大家如果想自己组装电脑的话，肯定需要购买一个 CPU，但是存储器方面的设备，分类比较多，那我们肯定不能只买一种存储器，比如你除了要买内存，还要买硬盘，而针对硬盘我们还可以选择是固态硬盘还是机械硬盘。</p>
+<p>相信大家都知道内存和硬盘都属于计算机的存储设备，断电后内存的数据是会丢失的，而硬盘则不会，因为硬盘是持久化存储设备，同时也是一个 I/O 设备。</p>
+<p>但其实 CPU 内部也有存储数据的组件，这个应该比较少人注意到，比如<strong>寄存器、CPU L1/L2/L3 Cache</strong>&nbsp;也都是属于存储设备，只不过它们能存储的数据非常小，但是它们因为靠近 CPU 核心，所以访问速度都非常快，快过硬盘好几个数量级别。</p>
+<p>问题来了，<strong>那机械硬盘、固态硬盘、内存这三个存储器，到底和 CPU L1 Cache 相比速度差多少倍呢？</strong></p>
+<p>在回答这个问题之前，我们先来看看「<strong>存储器的层次结构</strong>」，好让我们对存储器设备有一个整体的认识。</p>
+<p><img src="https://raw.githubusercontent.com/xiaolincoder/ImageHost3/main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E5%99%A8/%E5%AD%98%E5%82%A8%E5%99%A8%E6%8F%90%E7%BA%B2.png"></p>
+<h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><p>我们想象中一个场景，大学期末准备考试了，你前去图书馆临时抱佛脚。那么，在看书的时候，我们的大脑会思考问题，也会记忆知识点，另外我们通常也会把常用的书放在自己的桌子上，当我们要找一本不常用的书，则会去图书馆的书架找。</p>
+<p>就是这么一个小小的场景，已经把计算机的存储结构基本都涵盖了。</p>
+<p>我们可以把 CPU 比喻成我们的大脑，大脑正在思考的东西，就好比 CPU 中的<strong>寄存器</strong>，处理速度是最快的，但是能存储的数据也是最少的，毕竟我们也不能一下同时思考太多的事情，除非你练过。</p>
+<p>我们大脑中的记忆，就好比&nbsp;<strong>CPU Cache</strong>，中文称为 CPU 高速缓存，处理速度相比寄存器慢了一点，但是能存储的数据也稍微多了一些。</p>
+<p>CPU Cache 通常会分为&nbsp;<strong>L1、L2、L3 三层</strong>，其中 L1 Cache 通常分成「数据缓存」和「指令缓存」，L1 是距离 CPU 最近的，因此它比 L2、L3 的读写速度都快、存储空间都小。我们大脑中短期记忆，就好比 L1 Cache，而长期记忆就好比 L2/L3 Cache。</p>
+<p>寄存器和 CPU Cache 都是在 CPU 内部，跟 CPU 挨着很近，因此它们的读写速度都相当的快，但是能存储的数据很少，毕竟 CPU 就这么丁点大。</p>
+<p>知道 CPU 内部的存储器的层次分布，我们放眼看看 CPU 外部的存储器。</p>
+<p>当我们大脑记忆中没有资料的时候，可以从书桌或书架上拿书来阅读，那我们桌子上的书，就好比<strong>内存</strong>，我们虽然可以一伸手就可以拿到，但读写速度肯定远慢于寄存器，那图书馆书架上的书，就好比<strong>硬盘</strong>，能存储的数据非常大，但是读写速度相比内存差好几个数量级，更别说跟寄存器的差距了。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%AD%98%E5%82%A8%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB.png"></p>
+<p>我们从图书馆书架取书，把书放到桌子上，再阅读书，我们大脑就会记忆知识点，然后再经过大脑思考，这一系列过程相当于，数据从硬盘加载到内存，再从内存加载到 CPU 的寄存器和 Cache 中，然后再通过 CPU 进行处理和计算。</p>
+<p><strong>对于存储器，它的速度越快、能耗会越高、而且材料的成本也是越贵的，以至于速度快的存储器的容量都比较小。</strong></p>
+<p>CPU 里的寄存器和 Cache，是整个计算机存储器中价格最贵的，虽然存储空间很小，但是读写速度是极快的，而相对比较便宜的内存和硬盘，速度肯定比不上 CPU 内部的存储器，但是能弥补存储空间的不足。</p>
+<p>存储器通常可以分为这么几个级别：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/%E5%AD%98%E5%82%A8%E5%8C%BA%E5%88%86%E7%BA%A7.png"></p>
+<ul>
+<li>寄存器；</li>
+<li>CPU Cache；<ol>
+<li>L1-Cache；</li>
+<li>L2-Cache；</li>
+<li>L3-Cahce；</li>
+</ol>
+</li>
+<li>内存；</li>
+<li>SSD/HDD 硬盘</li>
+</ul>
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><p>最靠近 CPU 的控制单元和逻辑计算单元的存储器，就是寄存器了，它使用的材料速度也是最快的，因此价格也是最贵的，那么数量不能很多。</p>
+<p>存储器的数量通常在几十到几百之间，每个寄存器可以用来存储一定的字节（byte）的数据。比如：</p>
+<ul>
+<li>32 位 CPU 中大多数寄存器可以存储&nbsp;<code>4</code>&nbsp;个字节；</li>
+<li>64 位 CPU 中大多数寄存器可以存储&nbsp;<code>8</code>&nbsp;个字节。</li>
+</ul>
+<p>寄存器的访问速度非常快，一般要求在半个 CPU 时钟周期内完成读写，CPU 时钟周期跟 CPU 主频息息相关，比如 2 GHz 主频的 CPU，那么它的时钟周期就是 1/2G，也就是 0.5ns（纳秒）。</p>
+<p>CPU 处理一条指令的时候，除了读写寄存器，还需要解码指令、控制指令执行和计算。如果寄存器的速度太慢，则会拉长指令的处理周期，从而给用户的感觉，就是电脑「很慢」。</p>
+<h3 id="CPU-Cache"><a href="#CPU-Cache" class="headerlink" title="CPU Cache"></a>CPU Cache</h3><p>CPU Cache 用的是一种叫&nbsp;<strong>SRAM（<em>Static Random-Access</em>&nbsp;Memory，静态随机存储器）</strong>&nbsp;的芯片。</p>
+<p>SRAM 之所以叫「静态」存储器，是因为只要有电，数据就可以保持存在，而一旦断电，数据就会丢失了。</p>
+<p>在 SRAM 里面，一个 bit 的数据，通常需要 6 个晶体管，所以 SRAM 的存储密度不高，同样的物理空间下，能存储的数据是有限的，不过也因为 SRAM 的电路简单，所以访问速度非常快。</p>
+<p>CPU 的高速缓存，通常可以分为 L1、L2、L3 这样的三层高速缓存，也称为一级缓存、二级缓存、三级缓存。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/CPU-Cache.png"></p>
+<h4 id="L1-高速缓存"><a href="#L1-高速缓存" class="headerlink" title="L1 高速缓存"></a>L1 高速缓存</h4><p>L1 高速缓存的访问速度几乎和寄存器一样快，通常只需要&nbsp;<code>2~4</code>&nbsp;个时钟周期，而大小在几十 KB 到几百 KB 不等。</p>
+<p>每个 CPU 核心都有一块属于自己的 L1 高速缓存，指令和数据在 L1 是分开存放的，所以 L1 高速缓存通常分成<strong>指令缓存</strong>和<strong>数据缓存</strong>。</p>
+<p>在 Linux 系统，我们可以通过这条命令，查看 CPU 里的 L1 Cache 「数据」缓存的容量大小：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> /sys/devices/system/cpu/cpu0/cache/index0/size
+32K<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> /sys/devices/system/cpu/cpu0/cache/index1/size
+32K <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="L2-高速缓存"><a href="#L2-高速缓存" class="headerlink" title="L2 高速缓存"></a>L2 高速缓存</h4><p>L2 高速缓存同样每个 CPU 核心都有，但是 L2 高速缓存位置比 L1 高速缓存距离 CPU 核心 更远，它大小比 L1 高速缓存更大，CPU 型号不同大小也就不同，通常大小在几百 KB 到几 MB 不等，访问速度则更慢，速度在&nbsp;<code>10~20</code>&nbsp;个时钟周期。</p>
+<p>在 Linux 系统，我们可以通过这条命令，查看 CPU 里的 L2 Cache 的容量大小：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> /sys/devices/system/cpu/cpu0/cache/index2/size
+256K<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="L3-高速缓存"><a href="#L3-高速缓存" class="headerlink" title="L3 高速缓存"></a>L3 高速缓存</h4><p>L3 高速缓存通常是多个 CPU 核心共用的，位置比 L2 高速缓存距离 CPU 核心 更远，大小也会更大些，通常大小在几 MB 到几十 MB 不等，具体值根据 CPU 型号而定。</p>
+<p>访问速度相对也比较慢一些，访问速度在&nbsp;<code>20~60</code>个时钟周期。</p>
+<p>在 Linux 系统，我们可以通过这条命令，查看 CPU 里的 L3 Cache 的容量大小：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">cat</span> /sys/devices/system/cpu/cpu0/cache/index3/size 
+3072K<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="内存-1"><a href="#内存-1" class="headerlink" title="内存"></a>内存</h3><p>内存用的芯片和 CPU Cache 有所不同，它使用的是一种叫作&nbsp;<strong>DRAM （<em>Dynamic Random Access Memory</em>，动态随机存取存储器）</strong>&nbsp;的芯片。</p>
+<p>相比 SRAM，DRAM 的密度更高，功耗更低，有更大的容量，而且造价比 SRAM 芯片便宜很多。</p>
+<p>DRAM 存储一个 bit 数据，只需要一个晶体管和一个电容就能存储，但是因为数据会被存储在电容里，电容会不断漏电，所以需要「定时刷新」电容，才能保证数据不会被丢失，这就是 DRAM 之所以被称为「动态」存储器的原因，只有不断刷新，数据才能被存储起来。</p>
+<p>DRAM 的数据访问电路和刷新电路都比 SRAM 更复杂，所以访问的速度会更慢，内存速度大概在&nbsp;<code>200~300</code>&nbsp;个 时钟周期之间。</p>
+<h3 id="SSD-HDD-硬盘"><a href="#SSD-HDD-硬盘" class="headerlink" title="SSD/HDD 硬盘"></a>SSD/HDD 硬盘</h3><p>SSD（<em>Solid-state disk</em>） 就是我们常说的固体硬盘，结构和内存类似，但是它相比内存的优点是断电后数据还是存在的，而内存、寄存器、高速缓存断电后数据都会丢失。内存的读写速度比 SSD 大概快&nbsp;<code>10~1000</code>&nbsp;倍。</p>
+<p>当然，还有一款传统的硬盘，也就是机械硬盘（<em>Hard Disk Drive, HDD</em>），它是通过物理读写的方式来访问数据的，因此它访问速度是非常慢的，它的速度比内存慢&nbsp;<code>10W</code>&nbsp;倍左右。</p>
+<p>由于 SSD 的价格快接近机械硬盘了，因此机械硬盘已经逐渐被 SSD 替代了。</p>
+<h2 id="存储器的层次关系"><a href="#存储器的层次关系" class="headerlink" title="存储器的层次关系"></a>存储器的层次关系</h2><p>现代的一台计算机，都用上了 CPU Cahce、内存、到 SSD 或 HDD 硬盘这些存储器设备了。</p>
+<p>其中，存储空间越大的存储器设备，其访问速度越慢，所需成本也相对越少。</p>
+<p>CPU 并不会直接和每一种存储器设备直接打交道，而是每一种存储器设备只和它相邻的存储器设备打交道。</p>
+<p>比如，CPU Cache 的数据是从内存加载过来的，写回数据的时候也只写回到内存，CPU Cache 不会直接把数据写到硬盘，也不会直接从硬盘加载数据，而是先加载到内存，再从内存加载到 CPU Cache 中。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB%E5%9B%BE.png"></p>
+<p>所以，<strong>每个存储器只和相邻的一层存储器设备打交道，并且存储设备为了追求更快的速度，所需的材料成本必然也是更高，也正因为成本太高，所以 CPU 内部的寄存器、L1\L2\L3 Cache 只好用较小的容量，相反内存、硬盘则可用更大的容量，这就我们今天所说的存储器层次结构</strong>。</p>
+<p>另外，当 CPU 需要访问内存中某个数据的时候，如果寄存器有这个数据，CPU 就直接从寄存器取数据即可，如果寄存器没有这个数据，CPU 就会查询 L1 高速缓存，如果 L1 没有，则查询 L2 高速缓存，L2 还是没有的话就查询 L3 高速缓存，L3 依然没有的话，才去内存中取数据。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/%E7%BC%93%E5%AD%98%E4%BD%93%E7%B3%BB1.png"></p>
+<p>所以，存储层次结构也形成了<strong>缓存</strong>的体系。</p>
+<h2 id="存储器之间的实际价格和性能差距"><a href="#存储器之间的实际价格和性能差距" class="headerlink" title="存储器之间的实际价格和性能差距"></a>存储器之间的实际价格和性能差距</h2><p>前面我们知道了，速度越快的存储器，造价成本往往也越高，那我们就以实际的数据来看看，不同层级的存储器之间的性能和价格差异。</p>
+<p>下面这张表格是不同层级的存储器之间的成本对比图：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/%E5%AD%98%E5%82%A8%E5%99%A8%E6%88%90%E6%9C%AC%E7%9A%84%E5%AF%B9%E6%AF%94.png"></p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>各种存储器之间的关系，可以用我们在图书馆学习这个场景来理解。</p>
+<p>CPU 可以比喻成我们的大脑，我们当前正在思考和处理的知识的过程，就好比 CPU 中的<strong>寄存器</strong>处理数据的过程，速度极快，但是容量很小。而 CPU 中的&nbsp;<strong>L1-L3 Cache</strong>&nbsp;好比我们大脑中的短期记忆和长期记忆，需要小小花费点时间来调取数据并处理。</p>
+<p>我们面前的桌子就相当于<strong>内存</strong>，能放下更多的书（数据），但是找起来和看起来就要花费一些时间，相比 CPU Cache 慢不少。而图书馆的书架相当于<strong>硬盘</strong>，能放下比内存更多的数据，但找起来就更费时间了，可以说是最慢的存储器设备了。</p>
+<p>从 寄存器、CPU Cache，到内存、硬盘，这样一层层下来的存储器，访问速度越来越慢，存储容量越来越大，价格也越来越便宜，而且每个存储器只和相邻的一层存储器设备打交道，于是这样就形成了存储器的层次结构。</p>
+<p>再来回答，开头的问题：那机械硬盘、固态硬盘、内存这三个存储器，到底和&nbsp;<code>CPU L1 Cache</code>&nbsp;相比速度差多少倍呢？</p>
+<p>CPU L1 Cache 随机访问延时是 1 纳秒，内存则是 100 纳秒，所以&nbsp;<strong>CPU L1 Cache 比内存快&nbsp;<code>100</code>&nbsp;倍左右</strong>。</p>
+<p>SSD 随机访问延时是 150 微秒，所以&nbsp;<strong>CPU L1 Cache 比 SSD 快&nbsp;<code>150000</code>&nbsp;倍左右</strong>。</p>
+<p>最慢的机械硬盘随机访问延时已经高达 10 毫秒，我们来看看机械硬盘到底有多「龟速」：</p>
+<ul>
+<li><strong>SSD 比机械硬盘快 70 倍左右；</strong></li>
+<li><strong>内存比机械硬盘快 100000 倍左右；</strong></li>
+<li><strong>CPU L1 Cache 比机械硬盘快 10000000 倍左右；</strong></li>
+</ul>
+<p>我们把上述的时间比例差异放大后，就能非常直观感受到它们的性能差异了。如果 CPU 访问 L1 Cache 的缓存时间是 1 秒，那访问内存则需要大约 2 分钟，随机访问 SSD 里的数据则需要 1.7 天，访问机械硬盘那更久，长达近 4 个月。</p>
+<p>可以发现，不同的存储器之间性能差距很大，构造存储器分级很有意义，分级的目的是要构造<strong>缓存</strong>体系。</p>
+<h1 id="2-3-如何写出让-CPU-跑得更快的代码？"><a href="#2-3-如何写出让-CPU-跑得更快的代码？" class="headerlink" title="2.3 如何写出让 CPU 跑得更快的代码？"></a>2.3 如何写出让 CPU 跑得更快的代码？</h1><p>代码都是由 CPU 跑起来的，我们代码写的好与坏就决定了 CPU 的执行效率，特别是在编写计算密集型的程序，更要注重 CPU 的执行效率，否则将会大大影响系统性能。</p>
+<p>CPU 内部嵌入了 CPU Cache（高速缓存），它的存储容量很小，但是离 CPU 核心很近，所以缓存的读写速度是极快的，那么如果 CPU 运算时，直接从 CPU Cache 读取数据，而不是从内存的话，运算速度就会很快。</p>
+<p>但是，大多数人不知道 CPU Cache 的运行机制，以至于不知道如何才能够写出能够配合 CPU Cache 工作机制的代码，一旦你掌握了它，你写代码的时候，就有新的优化思路了。</p>
+<p>那么，接下来我们就来看看，CPU Cache 到底是什么样的，是如何工作的呢，又该如何写出让 CPU 执行更快的代码呢？</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/CPUCache%E6%8F%90%E7%BA%B2.png"></p>
+<h2 id="CPU-Cache-有多快？"><a href="#CPU-Cache-有多快？" class="headerlink" title="CPU Cache 有多快？"></a>CPU Cache 有多快？</h2><p>你可能会好奇为什么有了内存，还需要 CPU Cache？根据摩尔定律，CPU 的访问速度每 18 个月就会翻倍，相当于每年增长 60% 左右，内存的速度当然也会不断增长，但是增长的速度远小于 CPU，平均每年只增长 7% 左右。于是，CPU 与内存的访问性能的差距不断拉大。</p>
+<p>到现在，一次内存访问所需时间是&nbsp;<code>200~300</code>&nbsp;多个时钟周期，这意味着 CPU 和内存的访问速度已经相差&nbsp;<code>200~300</code>&nbsp;多倍了。</p>
+<p>为了弥补 CPU 与内存两者之间的性能差异，就在 CPU 内部引入了 CPU Cache，也称高速缓存。</p>
+<p>CPU Cache 通常分为大小不等的三级缓存，分别是&nbsp;<strong>L1 Cache、L2 Cache 和 L3 Cache</strong>。</p>
+<p>由于 CPU Cache 所使用的材料是 SRAM，价格比内存使用的 DRAM 高出很多，在当今每生产 1 MB 大小的 CPU Cache 需要 7 美金的成本，而内存只需要 0.015 美金的成本，成本方面相差了 466 倍，所以 CPU Cache 不像内存那样动辄以 GB 计算，它的大小是以 KB 或 MB 来计算的。</p>
+<p>在 Linux 系统中，我们可以使用下图的方式来查看各级 CPU Cache 的大小，比如我这手上这台服务器，离 CPU 核心最近的 L1 Cache 是 32KB，其次是 L2 Cache 是 256KB，最大的 L3 Cache 则是 3MB。</p>
+<p>其中，<strong>L1 Cache 通常会分为「数据缓存」和「指令缓存」</strong>，这意味着数据和指令在 L1 Cache 这一层是分开缓存的，上图中的&nbsp;<code>index0</code>&nbsp;也就是数据缓存，而&nbsp;<code>index1</code>&nbsp;则是指令缓存，它两的大小通常是一样的。</p>
+<p>另外，你也会注意到，L3 Cache 比 L1 Cache 和 L2 Cache 大很多，这是因为&nbsp;<strong>L1 Cache 和 L2 Cache 都是每个 CPU 核心独有的，而 L3 Cache 是多个 CPU 核心共享的。</strong></p>
+<p>程序执行时，会先将内存中的数据加载到共享的 L3 Cache 中，再加载到每个核心独有的 L2 Cache，最后进入到最快的 L1 Cache，之后才会被 CPU 读取。它们之间的层级关系，如下图：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost2/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/CPU-Cache.png"></p>
+<p>越靠近 CPU 核心的缓存其访问速度越快，CPU 访问 L1 Cache 只需要&nbsp;<code>2~4</code>&nbsp;个时钟周期，访问 L2 Cache 大约&nbsp;<code>10~20</code>&nbsp;个时钟周期，访问 L3 Cache 大约&nbsp;<code>20~60</code>&nbsp;个时钟周期，而访问内存速度大概在&nbsp;<code>200~300</code>&nbsp;个 时钟周期之间。如下表格：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E8%A1%A8%E6%A0%BC.png"></p>
+<p><strong>所以，CPU 从 L1 Cache 读取数据的速度，相比从内存读取的速度，会快&nbsp;<code>100</code>&nbsp;多倍</strong></p>
+<h2 id="CPU-Cache-的数据结构和读取过程是什么样的？"><a href="#CPU-Cache-的数据结构和读取过程是什么样的？" class="headerlink" title="CPU Cache 的数据结构和读取过程是什么样的？"></a>CPU Cache 的数据结构和读取过程是什么样的？</h2><p>我们先简单了解下 CPU Cache 的结构，CPU Cache 是由很多个 Cache Line 组成的，Cache Line 是 CPU 从内存读取数据的基本单位，而 Cache Line 是由各种标志（Tag）+ 数据块（Data Block）组成，你可以在下图清晰的看到：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/Cache%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png"></p>
+<p>CPU Cache 的数据是从内存中读取过来的，它是以一小块一小块读取数据的，而不是按照单个数组元素来读取数据的，在 CPU Cache 中的，这样一小块一小块的数据，称为&nbsp;<strong>Cache Line（缓存块）</strong>。</p>
+<p>你可以在你的 Linux 系统，用下面这种方式来查看 CPU 的 Cache Line，你可以看我服务器的 L1 Cache Line 大小是 64 字节，也就意味着&nbsp;<strong>L1 Cache 一次载入数据的大小是 64 字节</strong>。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E6%9F%A5%E7%9C%8BCPULine%E5%A4%A7%E5%B0%8F.png"></p>
+<p>比如，有一个&nbsp;<code>int array[100]</code>&nbsp;的数组，当载入&nbsp;<code>array[0]</code>&nbsp;时，由于这个数组元素的大小在内存只占 4 字节，不足 64 字节，CPU 就会<strong>顺序加载</strong>数组元素到&nbsp;<code>array[15]</code>，意味着&nbsp;<code>array[0]~array[15]</code>&nbsp;数组元素都会被缓存在 CPU Cache 中了，因此当下次访问这些数组元素时，会直接从 CPU Cache 读取，而不用再从内存中读取，大大提高了 CPU 读取数据的性能。</p>
+<p>事实上，CPU 读取数据的时候，无论数据是否存放到 Cache 中，CPU 都是先访问 Cache，只有当 Cache 中找不到数据时，才会去访问内存，并把内存中的数据读入到 Cache 中，CPU 再从 CPU Cache 读取数据。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E7%BC%93%E5%AD%98%E9%80%BB%E8%BE%91.png"></p>
+<p>这样的访问机制，跟我们使用「内存作为硬盘的缓存」的逻辑是一样的，如果内存有缓存的数据，则直接返回，否则要访问龟速一般的硬盘。</p>
+<p>那 CPU 怎么知道要访问的内存数据，是否在 Cache 里？如果在的话，如何找到 Cache 对应的数据呢？我们从最简单、基础的<strong>直接映射 Cache（<em>Direct Mapped Cache</em>）</strong>&nbsp;说起，来看看整个 CPU Cache 的数据结构和访问逻辑。</p>
+<p>前面，我们提到 CPU 访问内存数据时，是一小块一小块数据读取的，具体这一小块数据的大小，取决于&nbsp;<code>coherency_line_size</code>&nbsp;的值，一般 64 字节。在内存中，这一块的数据我们称为<strong>内存块（<em>Block</em>）</strong>，读取的时候我们要拿到数据所在内存块的地址。</p>
+<p>对于直接映射 Cache 采用的策略，就是把内存块的地址始终「映射」在一个 CPU Cache Line（缓存块） 的地址，至于映射关系实现方式，则是使用「取模运算」，取模运算的结果就是内存块地址对应的 CPU Cache Line（缓存块） 的地址。</p>
+<p>举个例子，内存共被划分为 32 个内存块，CPU Cache 共有 8 个 CPU Cache Line，假设 CPU 想要访问第 15 号内存块，如果 15 号内存块中的数据已经缓存在 CPU Cache Line 中的话，则是一定映射在 7 号 CPU Cache Line 中，因为&nbsp;<code>15 % 8</code>&nbsp;的值是 7。</p>
+<p>机智的你肯定发现了，使用取模方式映射的话，就会出现多个内存块对应同一个 CPU Cache Line，比如上面的例子，除了 15 号内存块是映射在 7 号 CPU Cache Line 中，还有 7 号、23 号、31 号内存块都是映射到 7 号 CPU Cache Line 中。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E6%B1%82%E6%A8%A1%E6%98%A0%E5%B0%84%E7%AD%96%E7%95%A5.png"></p>
+<p>因此，为了区别不同的内存块，在对应的 CPU Cache Line 中我们还会存储一个<strong>组标记（Tag）</strong>。这个组标记会记录当前 CPU Cache Line 中存储的数据对应的内存块，我们可以用这个组标记来区分不同的内存块。</p>
+<p>除了组标记信息外，CPU Cache Line 还有两个信息：</p>
+<ul>
+<li>一个是，从内存加载过来的实际存放<strong>数据（<em>Data</em>）</strong>。</li>
+<li>另一个是，<strong>有效位（<em>Valid bit</em>）</strong>，它是用来标记对应的 CPU Cache Line 中的数据是否是有效的，如果有效位是 0，无论 CPU Cache Line 中是否有数据，CPU 都会直接访问内存，重新加载数据。</li>
+</ul>
+<p>CPU 在从 CPU Cache 读取数据的时候，并不是读取 CPU Cache Line 中的整个数据块，而是读取 CPU 所需要的一个数据片段，这样的数据统称为一个<strong>字（<em>Word</em>）</strong>。那怎么在对应的 CPU Cache Line 中数据块中找到所需的字呢？答案是，需要一个<strong>偏移量（Offset）</strong>。</p>
+<p>因此，一个内存的访问地址，包括<strong>组标记、CPU Cache Line 索引、偏移量</strong>这三种信息，于是 CPU 就能通过这些信息，在 CPU Cache 中找到缓存的数据。而对于 CPU Cache 里的数据结构，则是由<strong>索引 + 有效位 + 组标记 + 数据块</strong>组成。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E7%9B%B4%E6%8E%A5Cache%E6%98%A0%E5%B0%84.png"></p>
+<p>如果内存中的数据已经在 CPU Cahe 中了，那 CPU 访问一个内存地址的时候，会经历这 4 个步骤：</p>
+<ol>
+<li>根据内存地址中索引信息，计算在 CPU Cahe 中的索引，也就是找出对应的 CPU Cache Line 的地址；</li>
+<li>找到对应 CPU Cache Line 后，判断 CPU Cache Line 中的有效位，确认 CPU Cache Line 中数据是否是有效的，如果是无效的，CPU 就会直接访问内存，并重新加载数据，如果数据有效，则往下执行；</li>
+<li>对比内存地址中组标记和 CPU Cache Line 中的组标记，确认 CPU Cache Line 中的数据是我们要访问的内存数据，如果不是的话，CPU 就会直接访问内存，并重新加载数据，如果是的话，则往下执行；</li>
+<li>根据内存地址中偏移量信息，从 CPU Cache Line 的数据块中，读取对应的字。</li>
+</ol>
+<p>到这里，相信你对直接映射 Cache 有了一定认识，但其实除了直接映射 Cache 之外，还有其他通过内存地址找到 CPU Cache 中的数据的策略，比如全相连 Cache （<em>Fully Associative Cache</em>）、组相连 Cache （<em>Set Associative Cache</em>）等，这几种策策略的数据结构都比较相似，我们理解了直接映射 Cache 的工作方式，其他的策略如果你有兴趣去看，相信很快就能理解的了。</p>
+<h2 id="如何写出让-CPU-跑得更快的代码？"><a href="#如何写出让-CPU-跑得更快的代码？" class="headerlink" title="如何写出让 CPU 跑得更快的代码？"></a>如何写出让 CPU 跑得更快的代码？</h2><p>我们知道 CPU 访问内存的速度，比访问 CPU Cache 的速度慢了 100 多倍，所以如果 CPU 所要操作的数据在 CPU Cache 中的话，这样将会带来很大的性能提升。访问的数据在 CPU Cache 中的话，意味着<strong>缓存命中</strong>，缓存命中率越高的话，代码的性能就会越好，CPU 也就跑的越快。</p>
+<p>于是，「如何写出让 CPU 跑得更快的代码？」这个问题，可以改成「如何写出 CPU 缓存命中率高的代码？」。</p>
+<p>在前面我也提到， L1 Cache 通常分为「数据缓存」和「指令缓存」，这是因为 CPU 会分别处理数据和指令，比如&nbsp;<code>1+1=2</code>&nbsp;这个运算，<code>+</code>&nbsp;就是指令，会被放在「指令缓存」中，而输入数字&nbsp;<code>1</code>&nbsp;则会被放在「数据缓存」里。</p>
+<p>因此，<strong>我们要分开来看「数据缓存」和「指令缓存」的缓存命中率</strong>。</p>
+<h3 id="如何提升数据缓存的命中率？"><a href="#如何提升数据缓存的命中率？" class="headerlink" title="如何提升数据缓存的命中率？"></a>如何提升数据缓存的命中率？</h3><p>假设要遍历二维数组，有以下两种形式，虽然代码执行结果是一样，但你觉得哪种形式效率最高呢？为什么高呢？</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84.png"></p>
+<p>经过测试，形式一&nbsp;<code>array[i][j]</code>&nbsp;执行时间比形式二&nbsp;<code>array[j][i]</code>&nbsp;快好几倍。</p>
+<p>之所以有这么大的差距，是因为二维数组&nbsp;<code>array</code>&nbsp;所占用的内存是连续的，比如长度&nbsp;<code>N</code>&nbsp;的值是&nbsp;<code>2</code>&nbsp;的话，那么内存中的数组元素的布局顺序是这样的：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80%E9%A1%BA%E5%BA%8F.png"></p>
+<p>形式一用&nbsp;<code>array[i][j]</code>&nbsp;访问数组元素的顺序，正是和内存中数组元素存放的顺序一致。当 CPU 访问&nbsp;<code>array[0][0]</code>&nbsp;时，由于该数据不在 Cache 中，于是会「顺序」把跟随其后的 3 个元素从内存中加载到 CPU Cache，这样当 CPU 访问后面的 3 个数组元素时，就能在 CPU Cache 中成功地找到数据，这意味着缓存命中率很高，缓存命中的数据不需要访问内存，这便大大提高了代码的性能。</p>
+<p>而如果用形式二的&nbsp;<code>array[j][i]</code>&nbsp;来访问，则访问的顺序就是：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E5%BD%A2%E5%BC%8F%E4%BA%8C%E8%AE%BF%E9%97%AE%E9%A1%BA%E5%BA%8F.png"></p>
+<p>你可以看到，访问的方式跳跃式的，而不是顺序的，那么如果 N 的数值很大，那么操作&nbsp;<code>array[j][i]</code>&nbsp;时，是没办法把&nbsp;<code>array[j+1][i]</code>&nbsp;也读入到 CPU Cache 中的，既然&nbsp;<code>array[j+1][i]</code>&nbsp;没有读取到 CPU Cache，那么就需要从内存读取该数据元素了。很明显，这种不连续性、跳跃式访问数据元素的方式，可能不能充分利用到了 CPU Cache 的特性，从而代码的性能不高。</p>
+<p>那访问&nbsp;<code>array[0][0]</code>&nbsp;元素时，CPU 具体会一次从内存中加载多少元素到 CPU Cache 呢？这个问题，在前面我们也提到过，这跟 CPU Cache Line 有关，它表示&nbsp;<strong>CPU Cache 一次性能加载数据的大小</strong>，可以在 Linux 里通过&nbsp;<code>coherency_line_size</code>&nbsp;配置查看 它的大小，通常是 64 个字节。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E6%9F%A5%E7%9C%8BCPULine%E5%A4%A7%E5%B0%8F.png"></p>
+<p>也就是说，当 CPU 访问内存数据时，如果数据不在 CPU Cache 中，则会一次性会连续加载 64 字节大小的数据到 CPU Cache，那么当访问&nbsp;<code>array[0][0]</code>&nbsp;时，由于该元素不足 64 字节，于是就会往后<strong>顺序</strong>读取&nbsp;<code>array[0][0]~array[0][15]</code>&nbsp;到 CPU Cache 中。顺序访问的&nbsp;<code>array[i][j]</code>&nbsp;因为利用了这一特点，所以就会比跳跃式访问的&nbsp;<code>array[j][i]</code>&nbsp;要快。</p>
+<p><strong>因此，遇到这种遍历数组的情况时，按照内存布局顺序访问，将可以有效的利用 CPU Cache 带来的好处，这样我们代码的性能就会得到很大的提升，</strong></p>
+<h3 id="如何提升指令缓存的命中率？"><a href="#如何提升指令缓存的命中率？" class="headerlink" title="如何提升指令缓存的命中率？"></a>如何提升指令缓存的命中率？</h3><p>提升数据的缓存命中率的方式，是按照内存布局顺序访问，那针对指令的缓存该如何提升呢？</p>
+<p>我们以一个例子来看看，有一个元素为 0 到 100 之间随机数字组成的一维数组：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%95%B0%E7%BB%84.png"></p>
+<p>接下来，对这个数组做两个操作：<img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/%E6%8E%92%E5%BA%8Fand%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86.png"></p>
+<ul>
+<li>第一个操作，循环遍历数组，把小于 50 的数组元素置为 0；</li>
+<li>第二个操作，将数组排序；</li>
+</ul>
+<p>那么问题来了，你觉得先遍历再排序速度快，还是先排序再遍历速度快呢？</p>
+<p>在回答这个问题之前，我们先了解 CPU 的<strong>分支预测器</strong>。对于 if 条件语句，意味着此时至少可以选择跳转到两段不同的指令执行，也就是 if 还是 else 中的指令。那么，<strong>如果分支预测可以预测到接下来要执行 if 里的指令，还是 else 指令的话，就可以「提前」把这些指令放在指令缓存中，这样 CPU 可以直接从 Cache 读取到指令，于是执行速度就会很快</strong>。</p>
+<p>当数组中的元素是随机的，分支预测就无法有效工作，而当数组元素都是是顺序的，分支预测器会动态地根据历史命中数据对未来进行预测，这样命中率就会很高。</p>
+<p>因此，先排序再遍历速度会更快，这是因为排序之后，数字是从小到大的，那么前几次循环命中&nbsp;<code>if &lt; 50</code>&nbsp;的次数会比较多，于是分支预测就会缓存&nbsp;<code>if</code>&nbsp;里的&nbsp;<code>array[i] = 0</code>&nbsp;指令到 Cache 中，后续 CPU 执行该指令就只需要从 Cache 读取就好了。</p>
+<p>如果你肯定代码中的&nbsp;<code>if</code>&nbsp;中的表达式判断为&nbsp;<code>true</code>&nbsp;的概率比较高，我们可以使用显示分支预测工具，比如在 C/C++ 语言中编译器提供了&nbsp;<code>likely</code>&nbsp;和&nbsp;<code>unlikely</code>&nbsp;这两种宏，如果&nbsp;<code>if</code>&nbsp;条件为&nbsp;<code>ture</code>&nbsp;的概率大，则可以用&nbsp;<code>likely</code>&nbsp;宏把&nbsp;<code>if</code>&nbsp;里的表达式包裹起来，反之用&nbsp;<code>unlikely</code>&nbsp;宏。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/likely.png"></p>
+<p>实际上，CPU 自身的动态分支预测已经是比较准的了，所以只有当非常确信 CPU 预测的不准，且能够知道实际的概率情况时，才建议使用这两种宏。</p>
+<h3 id="如何提升多核-CPU-的缓存命中率？"><a href="#如何提升多核-CPU-的缓存命中率？" class="headerlink" title="如何提升多核 CPU 的缓存命中率？"></a>如何提升多核 CPU 的缓存命中率？</h3><p>在单核 CPU，虽然只能执行一个线程，但是操作系统给每个线程分配了一个时间片，时间片用完了，就调度下一个线程，于是各个线程就按时间片交替地占用 CPU，从宏观上看起来各个线程同时在执行。</p>
+<p>而现代 CPU 都是多核心的，线程可能在不同 CPU 核心来回切换执行，这对 CPU Cache 不是有利的，虽然 L3 Cache 是多核心之间共享的，但是 L1 和 L2 Cache 都是每个核心独有的，<strong>如果一个线程在不同核心来回切换，各个核心的缓存命中率就会受到影响</strong>，相反如果线程都在同一个核心上执行，那么其数据的 L1 和 L2 Cache 的缓存命中率可以得到有效提高，缓存命中率高就意味着 CPU 可以减少访问 内存的频率。</p>
+<p>当有多个同时执行「计算密集型」的线程，为了防止因为切换到不同的核心，而导致缓存命中率下降的问题，我们可以把<strong>线程绑定在某一个 CPU 核心上</strong>，这样性能可以得到非常可观的提升。</p>
+<p>在 Linux 上提供了&nbsp;<code>sched_setaffinity</code>&nbsp;方法，来实现将线程绑定到某个 CPU 核心这一功能。</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98/sched_setaffinity.png"></p>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><p>由于随着计算机技术的发展，CPU 与 内存的访问速度相差越来越多，如今差距已经高达好几百倍了，所以 CPU 内部嵌入了 CPU Cache 组件，作为内存与 CPU 之间的缓存层，CPU Cache 由于离 CPU 核心很近，所以访问速度也是非常快的，但由于所需材料成本比较高，它不像内存动辄几个 GB 大小，而是仅有几十 KB 到 MB 大小。</p>
+<p>当 CPU 访问数据的时候，先是访问 CPU Cache，如果缓存命中的话，则直接返回数据，就不用每次都从内存读取速度了。因此，缓存命中率越高，代码的性能越好。</p>
+<p>但需要注意的是，当 CPU 访问数据时，如果 CPU Cache 没有缓存该数据，则会从内存读取数据，但是并不是只读一个数据，而是一次性读取一块一块的数据存放到 CPU Cache 中，之后才会被 CPU 读取。</p>
+<p>内存地址映射到 CPU Cache 地址里的策略有很多种，其中比较简单是直接映射 Cache，它巧妙的把内存地址拆分成「索引 + 组标记 + 偏移量」的方式，使得我们可以将很大的内存地址，映射到很小的 CPU Cache 地址里。</p>
+<p>要想写出让 CPU 跑得更快的代码，就需要写出缓存命中率高的代码，CPU L1 Cache 分为数据缓存和指令缓存，因而需要分别提高它们的缓存命中率：</p>
+<ul>
+<li>对于数据缓存，我们在遍历数据的时候，应该按照内存布局的顺序操作，这是因为 CPU Cache 是根据 CPU Cache Line 批量操作数据的，所以顺序地操作连续内存数据时，性能能得到有效的提升；</li>
+<li>对于指令缓存，有规律的条件分支语句能够让 CPU 的分支预测器发挥作用，进一步提高执行的效率；</li>
+</ul>
+<p>另外，对于多核 CPU 系统，线程可能在不同 CPU 核心来回切换，这样各个核心的缓存命中率就会受到影响，于是要想提高线程的缓存命中率，可以考虑把线程绑定 CPU 到某一个 CPU 核心。</p>
+<h1 id="2-4-CPU-缓存一致性"><a href="#2-4-CPU-缓存一致性" class="headerlink" title="2.4 CPU 缓存一致性"></a>2.4 CPU 缓存一致性</h1><p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost3@main/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/CPU%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7/%E7%BC%93%E5%AD%98%E4%B8%80%E8%87%B4%E6%80%A7%E6%8F%90%E7%BA%B2.png"></p>
 
                 
             </div>
@@ -1125,7 +1340,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">97k</span>
+                        class="white-color">109.8k</span>
             
             
             

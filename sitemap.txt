@@ -1,6 +1,7 @@
+http://example.com/2022/09/08/tu-jie-mysql/
+http://example.com/2022/09/05/tu-jie-wang-luo/
 http://example.com/2022/09/07/tu-jie-xi-tong/
 http://example.com/2022/09/07/typora-picgo-github-she-zhi-tu-chuang/
-http://example.com/2022/09/05/tu-jie-wang-luo/
 http://example.com/2022/09/07/jie-jue-python-an-zhuang-bao-wen-ti/
 http://example.com/2022/09/06/hexo-bo-ke-ji-qiao-tian-jia-zi-ding-yi-html-ye-mian/
 http://example.com/2022/09/06/hexo-jie-jue-wu-fa-xian-shi-tu-pian-de-ji-chong-fang-an/
@@ -59,9 +60,9 @@ http://example.com/tags/Github/
 http://example.com/tags/Git/
 http://example.com/tags/go/
 http://example.com/tags/goland/
+http://example.com/tags/Markdown/
 http://example.com/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/
 http://example.com/tags/java/
-http://example.com/tags/Markdown/
 http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/
 http://example.com/tags/redis/
 http://example.com/tags/%E5%9B%BE%E5%BA%8A/
@@ -81,6 +82,7 @@ http://example.com/tags/vpn/
 http://example.com/tags/%E5%8C%BB%E9%99%A2/
 http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/
 http://example.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
+http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/
 http://example.com/tags/%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/
 http://example.com/tags/python/
@@ -96,6 +98,7 @@ http://example.com/categories/hexo/
 http://example.com/categories/Java%E5%B9%B6%E5%8F%91/
 http://example.com/categories/%E6%97%A5%E5%B8%B8%E5%B0%8F%E8%AE%B0/
 http://example.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
+http://example.com/categories/MySQL/
 http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/
 http://example.com/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/
 http://example.com/categories/Python/

@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-07T13:57:38.204Z</updated>
+  <updated>2022-09-08T09:31:39.287Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>图解MySQL</title>
+    <link href="http://example.com/2022/09/08/tu-jie-mysql/"/>
+    <id>http://example.com/2022/09/08/tu-jie-mysql/</id>
+    <published>2022-09-08T07:39:59.000Z</published>
+    <updated>2022-09-08T09:31:39.287Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="http://example.com/categories/MySQL/"/>
+    
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>Typora+PicGo+Github设置图床</title>
@@ -48,7 +73,7 @@
     <link href="http://example.com/2022/09/07/tu-jie-xi-tong/"/>
     <id>http://example.com/2022/09/07/tu-jie-xi-tong/</id>
     <published>2022-09-07T09:38:28.000Z</published>
-    <updated>2022-09-08T05:35:44.102Z</updated>
+    <updated>2022-09-08T07:41:55.928Z</updated>
     
     
       
@@ -300,7 +325,7 @@
     <link href="http://example.com/2022/09/05/tu-jie-wang-luo/"/>
     <id>http://example.com/2022/09/05/tu-jie-wang-luo/</id>
     <published>2022-09-05T15:00:22.000Z</published>
-    <updated>2022-09-07T13:40:47.525Z</updated>
+    <updated>2022-09-08T08:45:53.444Z</updated>
     
     
       
@@ -502,33 +527,6 @@
     <category term="java" scheme="http://example.com/tags/java/"/>
     
     <category term="idea" scheme="http://example.com/tags/idea/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis 安装说明</title>
-    <link href="http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/"/>
-    <id>http://example.com/2022/08/31/redis-an-zhuang-shuo-ming/</id>
-    <published>2022-08-31T06:38:09.000Z</published>
-    <updated>2022-08-31T06:40:30.190Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Redis" scheme="http://example.com/categories/Redis/"/>
-    
-    
-    <category term="安装说明" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/"/>
-    
-    <category term="redis" scheme="http://example.com/tags/redis/"/>
     
   </entry>
   
