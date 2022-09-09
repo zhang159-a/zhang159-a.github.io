@@ -66,8 +66,8 @@ http://example.com/tags/java/
 http://example.com/tags/Markdown/
 http://example.com/tags/%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/
 http://example.com/tags/redis/
-http://example.com/tags/%E5%9B%BE%E5%BA%8A/
 http://example.com/tags/Typora/
+http://example.com/tags/%E5%9B%BE%E5%BA%8A/
 http://example.com/tags/Window/
 http://example.com/tags/%E7%BB%88%E7%AB%AF/
 http://example.com/tags/window/
@@ -76,10 +76,10 @@ http://example.com/tags/hexo/
 http://example.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/
 http://example.com/tags/%E6%9C%AA%E8%A7%A3%E5%86%B3/
 http://example.com/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/
-http://example.com/tags/idea/
+http://example.com/tags/vpn/
 http://example.com/tags/Java/
 http://example.com/tags/%E5%B9%B6%E5%8F%91/
-http://example.com/tags/vpn/
+http://example.com/tags/idea/
 http://example.com/tags/%E5%8C%BB%E9%99%A2/
 http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
 http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/

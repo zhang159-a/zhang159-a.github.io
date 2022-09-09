@@ -4,7 +4,7 @@
   <url>
     <loc>http://example.com/2022/09/05/tu-jie-wang-luo/</loc>
     
-    <lastmod>2022-09-08</lastmod>
+    <lastmod>2022-09-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -594,14 +594,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>http://example.com/tags/Typora/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/Typora/</loc>
+    <loc>http://example.com/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -664,7 +664,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/idea/</loc>
+    <loc>http://example.com/tags/vpn/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -685,7 +685,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/vpn/</loc>
+    <loc>http://example.com/tags/idea/</loc>
     <lastmod>2022-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
