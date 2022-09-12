@@ -516,14 +516,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    92.9k
+                    93.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    329 分
+                    331 分
                 </div>
                 
 
@@ -4011,6 +4011,35 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
 <blockquote>
 <p>读者问：“tcp_orphan_retries也是控制tcp连接的关闭。这个跟tcp_retries1 tcp_retries2有什么区别吗？”</p>
 </blockquote>
+<p>主动方发送 FIN 报文后，连接就处于 FIN_WAIT1 状态下，该状态通常应在数十毫秒内转为 FIN_WAIT2。如果迟迟收不到对方返回的 ACK 时，此时，内核会定时重发 FIN 报文，其中重发次数由 tcp_orphan_retries 参数控制。</p>
+<blockquote>
+<p>读者问：“请问，为什么连续两个报文的seq会是一样的呢，比如三次握手之后的那个报文？还是说，序号相同的是同一个报文，只是拆开显示了？”</p>
+</blockquote>
+<ol>
+<li>三次握手中的前两次，是 seq+1；</li>
+<li>三次握手中的最后一个 ack，实际上是可以携带数据的，由于我文章的例子是没有发送数据的，你可以看到第三次握手的 len=0 ，在数据传输阶段「下一个 seq=seq+len 」，所以第三次握手的 seq 和下一个数据报的 seq 是一样的，因为 len 为 0；</li>
+</ol>
+<h1 id="4-4-TCP-半连接队列和全连接队列"><a href="#4-4-TCP-半连接队列和全连接队列" class="headerlink" title="4.4 TCP 半连接队列和全连接队列"></a>4.4 TCP 半连接队列和全连接队列</h1><p>网上许多博客针对增大 TCP 半连接队列和全连接队列的方式如下：</p>
+<ul>
+<li>增大 TCP 半连接队列的方式是增大 /proc/sys/net/ipv4/tcp_max_syn_backlog；</li>
+<li>增大 TCP 全连接队列的方式是增大 listen() 函数中的 backlog；</li>
+</ul>
+<p>这里先跟大家说下，<strong>上面的方式都是不准确的。</strong></p>
+<blockquote>
+<p>“你怎么知道不准确？”</p>
+</blockquote>
+<p>很简单呀，因为我做了实验和看了 TCP 协议栈的内核源码，发现要增大这两个队列长度，不是简简单单增大某一个参数就可以的。</p>
+<p>接下来，就会以<strong>实战 + 源码分析，带大家解密 TCP 半连接队列和全连接队列。</strong></p>
+<blockquote>
+<p>“源码分析，那不是劝退吗？我们搞 Java 的看不懂呀”</p>
+</blockquote>
+<p>放心，本文的源码分析不会涉及很深的知识，因为都被我删减了，你只需要会条件判断语句 if、左移右移操作符、加减法等基本语法，就可以看懂。</p>
+<p>另外，不仅有源码分析，还会介绍 Linux 排查半连接队列和全连接队列的命令。</p>
+<blockquote>
+<p>“哦？似乎很有看头，那我姑且看一下吧！”</p>
+</blockquote>
+<p>行，没有被劝退的小伙伴，值得鼓励，下面这图是本文的提纲：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E5%8D%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%85%A8%E8%BF%9E%E6%8E%A5/2.jpg" alt="本文提纲"></p>
 
                 
             </div>
@@ -4396,7 +4425,7 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">177.9k</span>
+                        class="white-color">187.6k</span>
             
             
             

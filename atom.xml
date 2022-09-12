@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-12T02:59:22.927Z</updated>
+  <updated>2022-09-12T12:53:03.419Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JSON格式</title>
+    <link href="http://example.com/2022/09/12/json-ge-shi/"/>
+    <id>http://example.com/2022/09/12/json-ge-shi/</id>
+    <published>2022-09-12T12:49:29.000Z</published>
+    <updated>2022-09-12T12:53:03.419Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JSON" scheme="http://example.com/categories/JSON/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>设置Mybatis-plus 主键生成策略</title>
+    <link href="http://example.com/2022/09/12/she-zhi-mybatis-plus-zhu-jian-sheng-cheng-ce-lue/"/>
+    <id>http://example.com/2022/09/12/she-zhi-mybatis-plus-zhu-jian-sheng-cheng-ce-lue/</id>
+    <published>2022-09-12T12:49:08.000Z</published>
+    <updated>2022-09-12T13:13:16.620Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Mybatisplus" scheme="http://example.com/categories/Mybatisplus/"/>
+    
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>springboot数据库连接错误</title>
+    <link href="http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/"/>
+    <id>http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/</id>
+    <published>2022-09-12T12:48:44.000Z</published>
+    <updated>2022-09-12T12:59:52.239Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="http://example.com/categories/SpringBoot/"/>
+    
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库设计</title>
@@ -123,7 +196,7 @@
     <link href="http://example.com/2022/09/07/tu-jie-xi-tong/"/>
     <id>http://example.com/2022/09/07/tu-jie-xi-tong/</id>
     <published>2022-09-07T09:38:28.000Z</published>
-    <updated>2022-09-08T07:41:55.928Z</updated>
+    <updated>2022-09-12T11:10:30.651Z</updated>
     
     
       
@@ -375,7 +448,7 @@
     <link href="http://example.com/2022/09/05/tu-jie-wang-luo/"/>
     <id>http://example.com/2022/09/05/tu-jie-wang-luo/</id>
     <published>2022-09-05T15:00:22.000Z</published>
-    <updated>2022-09-12T08:22:49.315Z</updated>
+    <updated>2022-09-12T11:11:53.537Z</updated>
     
     
       
@@ -446,83 +519,6 @@
     
     
     <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vpn软件的推荐</title>
-    <link href="http://example.com/2022/09/03/vpn-ruan-jian-de-tui-jian/"/>
-    <id>http://example.com/2022/09/03/vpn-ruan-jian-de-tui-jian/</id>
-    <published>2022-09-03T12:39:41.000Z</published>
-    <updated>2022-09-03T14:00:02.021Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="vpn" scheme="http://example.com/tags/vpn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Window10设置开机自启应用</title>
-    <link href="http://example.com/2022/09/03/window10-she-zhi-kai-ji-zi-qi-ying-yong/"/>
-    <id>http://example.com/2022/09/03/window10-she-zhi-kai-ji-zi-qi-ying-yong/</id>
-    <published>2022-09-03T12:30:08.000Z</published>
-    <updated>2022-09-03T12:40:01.055Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="问题总结" scheme="http://example.com/categories/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
-    
-    
-    <category term="window" scheme="http://example.com/tags/window/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java小知识</title>
-    <link href="http://example.com/2022/09/02/java-xiao-zhi-shi/"/>
-    <id>http://example.com/2022/09/02/java-xiao-zhi-shi/</id>
-    <published>2022-09-02T05:45:56.000Z</published>
-    <updated>2022-09-02T05:51:48.098Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://example.com/categories/Java/"/>
-    
-    
-    <category term="java" scheme="http://example.com/tags/java/"/>
-    
-    <category term="零碎知识" scheme="http://example.com/tags/%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
