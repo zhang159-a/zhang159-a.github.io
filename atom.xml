@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-12T12:53:03.419Z</updated>
+  <updated>2022-09-13T11:53:08.745Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>修改Windows控制台默认代码页编码</title>
+    <link href="http://example.com/2022/09/13/xiu-gai-windows-kong-zhi-tai-mo-ren-dai-ma-ye-bian-ma/"/>
+    <id>http://example.com/2022/09/13/xiu-gai-windows-kong-zhi-tai-mo-ren-dai-ma-ye-bian-ma/</id>
+    <published>2022-09-13T11:45:54.000Z</published>
+    <updated>2022-09-13T11:53:08.745Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="vscode" scheme="http://example.com/tags/vscode/"/>
+    
+    <category term="终端" scheme="http://example.com/tags/%E7%BB%88%E7%AB%AF/"/>
+    
+    <category term="windows" scheme="http://example.com/tags/windows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VScode Code Runner输出中文乱码</title>
+    <link href="http://example.com/2022/09/13/vscode-code-runner-shu-chu-zhong-wen-luan-ma/"/>
+    <id>http://example.com/2022/09/13/vscode-code-runner-shu-chu-zhong-wen-luan-ma/</id>
+    <published>2022-09-13T11:27:08.000Z</published>
+    <updated>2022-09-13T12:01:38.442Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
+    
+    
+    <category term="vscode" scheme="http://example.com/tags/vscode/"/>
+    
+    <category term="乱码" scheme="http://example.com/tags/%E4%B9%B1%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>JSON格式</title>
@@ -196,7 +252,7 @@
     <link href="http://example.com/2022/09/07/tu-jie-xi-tong/"/>
     <id>http://example.com/2022/09/07/tu-jie-xi-tong/</id>
     <published>2022-09-07T09:38:28.000Z</published>
-    <updated>2022-09-12T11:10:30.651Z</updated>
+    <updated>2022-09-15T06:19:55.185Z</updated>
     
     
       
@@ -448,7 +504,7 @@
     <link href="http://example.com/2022/09/05/tu-jie-wang-luo/"/>
     <id>http://example.com/2022/09/05/tu-jie-wang-luo/</id>
     <published>2022-09-05T15:00:22.000Z</published>
-    <updated>2022-09-12T11:11:53.537Z</updated>
+    <updated>2022-09-15T06:23:24.860Z</updated>
     
     
       
@@ -467,58 +523,6 @@
     <category term="计算机基础" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java格式化输出</title>
-    <link href="http://example.com/2022/09/04/java-ge-shi-hua-shu-chu/"/>
-    <id>http://example.com/2022/09/04/java-ge-shi-hua-shu-chu/</id>
-    <published>2022-09-04T06:02:01.000Z</published>
-    <updated>2022-09-04T08:23:58.861Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="http://example.com/categories/Java/"/>
-    
-    
-    <category term="格式化输出" scheme="http://example.com/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/"/>
-    
-    <category term="java" scheme="http://example.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown使用中的问题</title>
-    <link href="http://example.com/2022/09/03/markdown-shi-yong-zhong-de-wen-ti/"/>
-    <id>http://example.com/2022/09/03/markdown-shi-yong-zhong-de-wen-ti/</id>
-    <published>2022-09-03T13:44:18.000Z</published>
-    <updated>2022-09-05T12:38:29.900Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="Markdown" scheme="http://example.com/tags/Markdown/"/>
     
   </entry>
   

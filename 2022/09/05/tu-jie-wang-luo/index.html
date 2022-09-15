@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-12
+                    2022-09-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    93.5k
+                    93.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    331 分
+                    332 分
                 </div>
                 
 
@@ -4040,6 +4040,22 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
 </blockquote>
 <p>行，没有被劝退的小伙伴，值得鼓励，下面这图是本文的提纲：</p>
 <p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E5%8D%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%85%A8%E8%BF%9E%E6%8E%A5/2.jpg" alt="本文提纲"></p>
+<h2 id="什么是-TCP-半连接队列和全连接队列？"><a href="#什么是-TCP-半连接队列和全连接队列？" class="headerlink" title="什么是 TCP 半连接队列和全连接队列？"></a>什么是 TCP 半连接队列和全连接队列？</h2><p>在 TCP 三次握手的时候，Linux 内核会维护两个队列，分别是：</p>
+<ul>
+<li>半连接队列，也称 SYN 队列；</li>
+<li>全连接队列，也称 accept 队列；</li>
+</ul>
+<p>服务端收到客户端发起的 SYN 请求后，<strong>内核会把该连接存储到半连接队列</strong>，并向客户端响应 SYN+ACK，接着客户端会返回 ACK，服务端收到第三次握手的 ACK 后，<strong>内核会把连接从半连接队列移除，然后创建新的完全的连接，并将其添加到 accept 队列，等待进程调用 accept 函数时把连接取出来。</strong></p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E5%8D%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%85%A8%E8%BF%9E%E6%8E%A5/3.jpg" alt="半连接队列与全连接队列"></p>
+<p>不管是半连接队列还是全连接队列，都有最大长度限制，超过限制时，内核会直接丢弃，或返回 RST 包。</p>
+<h2 id="实战-TCP-全连接队列溢出"><a href="#实战-TCP-全连接队列溢出" class="headerlink" title="实战 - TCP 全连接队列溢出"></a>实战 - TCP 全连接队列溢出</h2><blockquote>
+<p>如何知道应用程序的 TCP 全连接队列大小？</p>
+</blockquote>
+<p>在服务端可以使用 <code>ss</code> 命令，来查看 TCP 全连接队列的情况：</p>
+<p>但需要注意的是 <code>ss</code> 命令获取的 <code>Recv-Q/Send-Q</code> 在「LISTEN 状态」和「非 LISTEN 状态」所表达的含义是不同的。从下面的内核代码可以看出区别：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E5%8D%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%85%A8%E8%BF%9E%E6%8E%A5/4.jpg" alt="img"></p>
+<p>在「LISTEN 状态」时，<code>Recv-Q/Send-Q</code> 表示的含义如下：</p>
+<p><img src="https://cdn.xiaolincoding.com/gh/xiaolincoder/ImageHost/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/TCP-%E5%8D%8A%E8%BF%9E%E6%8E%A5%E5%92%8C%E5%85%A8%E8%BF%9E%E6%8E%A5/5.jpg" alt="img"></p>
 
                 
             </div>
@@ -4425,7 +4441,7 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">187.6k</span>
+                        class="white-color">263k</span>
             
             
             
