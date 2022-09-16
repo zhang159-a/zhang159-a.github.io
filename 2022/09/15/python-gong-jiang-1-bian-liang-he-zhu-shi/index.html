@@ -507,21 +507,21 @@ Python 是一门动态类型语言">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-15
+                    2022-09-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    185
+                    9.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    35 分
                 </div>
                 
 
@@ -547,10 +547,538 @@ Python 是一门动态类型语言">
                 <h1 id="第一章-变量与注释"><a href="#第一章-变量与注释" class="headerlink" title="第一章 变量与注释"></a>第一章 变量与注释</h1><p><strong>编程是一个通过代码来表达思想的过程。</strong>变量和注释，是代码里最接近自然语言的东西，最容易被消化和理解。</p>
 <p>变量与注释是作者表达思想的基础，是读者理解代码的第一道门，他们对代码质量的贡献毋庸置疑。</p>
 <p>Python 是一门动态类型语言，所以我们无须预先声明变量类型，直接对变量赋值即可。</p>
-<h2 id="变量解包"><a href="#变量解包" class="headerlink" title="变量解包"></a>变量解包</h2><p>变量解包（unpacking）是 Python 里的一种特殊赋值操作，允许我们把一个可迭代对象（比如列表）的所有成员，一次性赋值给多个变量。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">username <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'a'</span><span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">]</span>
-author<span class="token punctuation">,</span> reader <span class="token operator">=</span> username<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author <span class="token operator">=</span> <span class="token string">'piglei'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Hello, {}!'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>author<span class="token punctuation">)</span><span class="token punctuation">)</span>
+Hello<span class="token punctuation">,</span> piglei!<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
+<p>你也可以在一行语句里同时操作多个变量，比如调换两个变量所指向的值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author<span class="token punctuation">,</span> reader <span class="token operator">=</span> <span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token string">'raymond'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author<span class="token punctuation">,</span> reader <span class="token operator">=</span> reader<span class="token punctuation">,</span> author ➊
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author
+<span class="token string">'raymond'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="01-变量解包"><a href="#01-变量解包" class="headerlink" title="01. 变量解包"></a>01. 变量解包</h2><p>变量解包（unpacking）是 Python 里的一种特殊赋值操作，允许我们把一个可迭代对象（比如列表）的所有成员，一次性赋值给多个变量。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> usernames <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token string">'raymond'</span><span class="token punctuation">]</span>
+<span class="token comment"># 注意：左侧变量的个数必须和待展开的列表长度相等，否则会报错</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author<span class="token punctuation">,</span> reader <span class="token operator">=</span> usernames
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author
+<span class="token string">'piglei'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>假如在赋值语句左侧添加小括号(…)，甚至可以一次展开多层嵌套数据：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> attrs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> user_id<span class="token punctuation">,</span> <span class="token punctuation">(</span>username<span class="token punctuation">,</span> score<span class="token punctuation">)</span> <span class="token operator">=</span> attrs
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> user_id
+<span class="token number">1</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username
+<span class="token string">'piglei'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>除了上面的普通解包外，Python还支持更灵活的动态解包语法。只要用星号表达式（<em>variables）作为变量名，它便会贪婪地捕获多个值对象，并将捕获到的内容作为列表赋值给variables。比如，下面data列表里的数据就分为三段：头为用户，尾为分数，中间的都是水果名称。通过把</em>fruits设置为中间的解包变量，我们就能一次性解包所有变量——fruits会捕获data去头去尾后的所有成员：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username<span class="token punctuation">,</span> <span class="token operator">*</span>fruits<span class="token punctuation">,</span> score <span class="token operator">=</span> data
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username
+<span class="token string">'piglei'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> fruits
+<span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> score
+<span class="token number">100</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>和常规的切片赋值语句比起来，动态解包语法要直观许多：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#1. 动态解包</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username<span class="token punctuation">,</span> <span class="token operator">*</span>fruits<span class="token punctuation">,</span> score <span class="token operator">=</span> data
+<span class="token comment"># 2. 切片赋值</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username<span class="token punctuation">,</span> fruits<span class="token punctuation">,</span> score <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment"># 两种变量赋值方式完全等价</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面的变量解包操作也可以在任何循环语句里使用：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">for</span> username<span class="token punctuation">,</span> score <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token string">'raymond'</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>     <span class="token keyword">print</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span>
+<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+piglei
+raymond<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="02．单下划线变量名"><a href="#02．单下划线变量名" class="headerlink" title="02．单下划线变量名_"></a>02．单下划线变量名_</h2><p>在常用的诸多变量名中，单下划线_是比较特殊的一个。它常作为一个无意义的占位符出现在赋值语句中。_这个名字本身没什么特别之处，这算是大家约定俗成的一种用法。举个例子，假如你想在解包赋值时忽略某些变量，就可以使用_作为变量名：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#忽略展开时的第二个变量</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> author<span class="token punctuation">,</span> _ <span class="token operator">=</span> usernames
+<span class="token comment"># 忽略第一个和最后一个变量之间的所有变量</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> username<span class="token punctuation">,</span> <span class="token operator">*</span>_<span class="token punctuation">,</span> score <span class="token operator">=</span> data<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>而在Python交互式命令行（直接执行python命令进入的交互环境）里，_变量还有一层特殊含义——默认保存我们输入的上个表达式的返回值：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token string">'foo'</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token string">'FOO'</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> <span class="token keyword">print</span><span class="token punctuation">(</span>_<span class="token punctuation">)</span> ➊
+FOO<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此时的_变量保存着上一个.upper()表达式的结果</p>
+<h2 id="1-1-2-给变量注明类型"><a href="#1-1-2-给变量注明类型" class="headerlink" title="1.1.2 给变量注明类型"></a>1.1.2 给变量注明类型</h2><p>前面说过，Python是动态类型语言，使用变量时不需要做任何类型声明。在我看来，这是Python相比其他语言的一个重要优势：它减少了我们的心智负担，让写代码变得更容易。尤其对于许多编程新手来说，“不用声明类型”无疑会让学Python这件事变得简单很多。</p>
+<p>但任何事物都有其两面性。动态类型所带来的缺点是代码的可读性会因此大打折扣。</p>
+<p>试着读读下面这段代码：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">remove_invalid</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""剔除 items 里面无效的元素"""</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>你能告诉我，函数接收的items参数是什么类型吗？是一个装满数字的列表，还是一个装满字符串的集合？只看上面这点儿代码，我们根本无从得知。</p>
+<p>为了解决动态类型带来的可读性问题，最常见的办法就是在函数文档（docstring）里做文章。我们可以把每个函数参数的类型与说明全都写在函数文档里。</p>
+<p>下面是增加了Python官方推荐的Sphinx格式文档后的效果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">remove_invalid</span><span class="token punctuation">(</span>items<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""剔除 items 里面无效的元素
+
+    :param items: 待剔除对象
+    :type items: 包含整数的列表，[int, ...]
+    """</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在上面的函数文档里，我用:type items:注明了items是个整型列表。任何人只要读到这份文档，马上就能知道参数类型，不用再猜来猜去了。</p>
+<p>当然，标注类型的办法肯定不止上面这一种。在Python 3.5版本[插图]以后，你可以用类型注解功能来直接注明变量类型。相比编写Sphinx格式文档，我其实更推荐使用类型注解，因为它是Python的内置功能，而且正在变得越来越流行。</p>
+<p>要使用类型注解，只需在变量后添加类型，并用冒号隔开即可，比如func(value: str)表示函数的value参数为字符串类型。</p>
+<p>下面是给remove_invalid()函数添加类型注解后的样子：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> typing <span class="token keyword">import</span> List
+
+<span class="token keyword">def</span> <span class="token function">remove_invalid</span><span class="token punctuation">(</span>items<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span> ➊
+    <span class="token triple-quoted-string string">"""剔除 items 里面无效的元素"""</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>List表示参数为列表类型，[int]表示里面的成员是整型</p>
+<p> <strong>“类型注解”只是一种有关类型的注释，不提供任何校验功能。要校验类型正确性，需要使用其他静态类型检查工具（如mypy等）。</strong></p>
+<p>平心而论，不管是编写Sphinx格式文档，还是添加类型注解，都会增加编写代码的工作量。同样一段代码，标注变量类型比不标注一定要花费更多时间。</p>
+<p>但从我的经验来看，这些额外的时间投入，会带来非常丰厚的回报：</p>
+<ul>
+<li>代码更易读，读代码时可以直接看到变量类型；</li>
+<li>大部分的现代化 IDE 会读取类型注解信息，提供更智能的输入提示；</li>
+<li>类型注解配合 mypy 等静态类型检查工具，能提升代码正确性；</li>
+</ul>
+<p>因此，我强烈建议在多人参与的中大型Python项目里，至少使用一种类型注解方案——Sphinx格式文档或官方类型注解都行。能直接看到变量类型的代码，总是会让人更安心。</p>
+<h2 id="1-1-3-变量命名原则"><a href="#1-1-3-变量命名原则" class="headerlink" title="1.1.3 变量命名原则"></a>1.1.3 变量命名原则</h2><p>在计算机科学领域，有一句广为流传的格言（俏皮话）：</p>
+<p>计算机科学领域只有两件难事：缓存失效和命名。</p>
+<p>​                                ——Phil Karlton</p>
+<p>这句话里虽然一半严肃一半玩笑，但“命名”有时真的会难到让人抓狂。我常常呆坐在显示器前，抓耳挠腮好几分钟，就是没法给变量想出一个合适的名字。</p>
+<p>要给变量起个好名字，主要靠的是经验，有时还需加上一丁点儿灵感，但更重要的是遵守一些基本原则。下面就是我总结的几条变量命名的基本原则。</p>
+<h3 id="01．遵循PEP-8原则"><a href="#01．遵循PEP-8原则" class="headerlink" title="01．遵循PEP 8原则"></a>01．遵循PEP 8原则</h3><p>给变量起名主要有两种流派：一是通过大小写界定单词的驼峰命名派CamelCase，二是通过下划线连接的蛇形命名派snake_case。这两种流派没有明显的优劣之分，似乎与个人喜好有关。</p>
+<p>为了让不同开发者写出的代码风格尽量保持统一，Python制定了官方的编码风格指南：PEP 8。这份风格指南里有许多详细的风格建议，比如应该用4个空格缩进，每行不超过79个字符，等等。其中，当然也包含变量的命名规范：</p>
+<ul>
+<li>对于普通变量，使用蛇形命名法，比如 max_value;</li>
+<li>对于常量，采用全大写字母，使用下划线连接，比如 MAX_VALUE;</li>
+<li>如果变量标记为“仅内部使用”，为其增加下划线前缀，比如_local_var；</li>
+<li> 当名字与Python关键字冲突时，在变量末尾追加下划线，比如class_。</li>
+</ul>
+<p>除变量名以外，PEP 8中还有许多其他命名规范，比如类名应该使用驼峰风格（FooClass）、函数应该使用蛇形风格（bar_function），等等。给变量起名的第一条原则，就是一定要在格式上遵循以上规范。</p>
+<blockquote>
+<p>PEP 8是Python编码风格的事实标准。“代码符合PEP 8规范”应该作为对Python程序员的基本要求之一。假如一份代码的风格与PEP 8大相径庭，就基本不必继续讨论它优雅与否了。</p>
+</blockquote>
+<h3 id="02．描述性要强"><a href="#02．描述性要强" class="headerlink" title="02．描述性要强"></a>02．描述性要强</h3><p>写作过程中的一项重要工作，就是为句子斟酌恰当的词语。不同词语的描述性强弱不同，比如“冬天的梅花”就比“花”的描述性更强。而变量名和普通词语一样，同样有描述性强弱之分，假如代码大量使用描述性弱的变量名，读者就很难理解代码的含义。</p>
+<p>本章开头的那两段代码可以很好地解释这个问题：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#描述性弱的名字：看不懂在做什么</span>
+value <span class="token operator">=</span> process<span class="token punctuation">(</span>s<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment"># 描述性强的名字：尝试从用户输入里解析出一个用户名</span>
+username <span class="token operator">=</span> extract_username<span class="token punctuation">(</span>input_string<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>所以，在可接受的长度范围内，变量名所指向的内容描述得越精确越好。表1-1是一些具体的例子。</p>
+<p>data -&gt; </p>
+<p>temp -&gt; </p>
+<p>result -&gt;</p>
+<p>当然不是这样。判断一个名字是否合适，一定要结合它所在的场景，脱离场景谈名字是片面的，是没有意义的。因此，在“说明”这一列中，我们强调了这个判断所适用的场景。</p>
+<p>而在其他一些场景下，这里“描述性弱”的名字也可能是好名字，比如把一个数学公式的计算结果叫作value，就非常恰当。</p>
+<h3 id="03．要尽量短"><a href="#03．要尽量短" class="headerlink" title="03．要尽量短"></a>03．要尽量短</h3><p>刚刚说到，变量名的描述性要尽量强，但描述性越强，通常名字也就越长（不信再看看表1-1，第二列的名字就比第一列长）。假如不加思考地实践“描述性原则”，那你的代码里可能会充斥着how_many_points_needed_for_user_level3这种名字，简直像条蛇一样长：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">upgrade_to_level3</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""如果积分满足要求，将用户升级到级别 3"""</span>
+    how_many_points_needed_for_user_level3 <span class="token operator">=</span> get_level_points（<span class="token number">3</span>）
+    <span class="token keyword">if</span> user<span class="token punctuation">.</span>points <span class="token operator">&gt;=</span> how_many_points_needed_for_user_level3<span class="token punctuation">:</span>
+        upgrade<span class="token punctuation">(</span>user<span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> Error<span class="token punctuation">(</span><span class="token string">'积分不够，必须要 {} 分'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>how_many_points_needed_for_user_level3<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>假如一个特别长的名字重复出现，读者不会认为它足够精确，反而会觉得啰唆难读。既然如此，怎么才能在保证描述性的前提下，让名字尽量简短易读呢？</p>
+<p>我认为个中诀窍在于：为变量命名要结合代码情境和上下文。比如在上面的代码里，upgrade_to_level3(user)函数已经通过自己的名称、文档表明了其目的，那在函数内部，我们完全可以把how_many_points_needed_for_user_level3直接删减成level3_points。</p>
+<p>即使没用特别长的名字，相信读代码的人也肯定能明白，这里的level3_points指的就是“升到级别3所需要的积分”，而不是其他含义。</p>
+<h3 id="04．要匹配类型"><a href="#04．要匹配类型" class="headerlink" title="04．要匹配类型"></a>04．要匹配类型</h3><p>虽然变量无须声明类型，但为了提升可读性，我们可以用类型注解语法给其加上类型。不过现实很残酷，到目前为止，大部分Python项目没有类型注解,因此当你看到一个变量时，除了通过上下文猜测，没法轻易知道它是什么类型。</p>
+<p>但是，对于变量名和类型的关系，通常会有一些“直觉上”的约定。如果在起名时遵守这些约定，就可以建立变量名和类型间的匹配关系，让代码更容易理解。</p>
+<blockquote>
+<p>匹配布尔值类型的变量名</p>
+</blockquote>
+<p>布尔值（bool）是一种很简单的类型，它只有两个可能的值：“是”（True）或“不是”（False）。因此，给布尔值变量起名有一个原则：一定要让读到变量的人觉得它只有“肯定”和“否定”两种可能。举例来说，is、has这些非黑即白的词就很适合用来修饰这类名字。</p>
+<blockquote>
+<p>匹配int/float类型的变量名</p>
+</blockquote>
+<p>当人们看到和数字有关的名字时，自然就会认定它们是int或float类型。这些名字可简单分为以下几种常见类型：</p>
+<p>释义为数字的所有单词，比如port（端口号）、age（年龄）、radius（半径）等；</p>
+<p>使用以_id结尾的单词，比如user_id、host_id；</p>
+<p>使用以length/count开头或者结尾的单词，比如length_of_username、max_length、users_count。</p>
+<blockquote>
+<p>最好别拿一个名词的复数形式来作为int类型的变量名，比如apples、trips等，因为这类名字容易与那些装着Apple和Trip的普通容器对象（List[Apple]、List[Trip]）混淆，建议用number_of_apples或trips_count这类复合词来作为int类型的名字。</p>
+</blockquote>
+<blockquote>
+<p>匹配其他类型的变量名</p>
+</blockquote>
+<p>至于剩下的字符串（str）、列表（list）、字典（dict）等其他值类型，我们很难归纳出一个“由名字猜测类型”的统一公式。拿headers这个名字来说，它既可能是一个装满头信息的列表（List[Header]），也可能是一个包含头信息的字典（Dict[str, Header]）。</p>
+<h3 id="05．超短命名"><a href="#05．超短命名" class="headerlink" title="05．超短命名"></a>05．超短命名</h3><p>在众多变量名里，有一类非常特别，那就是只有一两个字母的短名字。这些短名字一般可分为两类，一类是那些大家约定俗成的短名字，比如：</p>
+<ul>
+<li>数组索引三剑客 i, j, k</li>
+<li>某个整数 n </li>
+<li>某个字符串 s</li>
+<li>某个异常 e</li>
+<li>文件对象 fp</li>
+</ul>
+<p>我并不反对使用这类短名字，我自己也经常用，因为它们写起来的确很方便。但如果条件允许，建议尽量用更精确的名字替代。比如，在表示用户输入的字符串时，用input_str替代s会更明确一些。</p>
+<p>另一类短名字，则是对一些其他常用名的缩写。比如，在使用Django框架做国际化内容翻译时，常常会用到gettext方法。为了方便，我们常把gettext缩写成_：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>translation <span class="token keyword">import</span> gettext <span class="token keyword">as</span> _
+<span class="token keyword">print</span><span class="token punctuation">(</span>_<span class="token punctuation">(</span><span class="token string">'待翻译文字'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>如果你的项目中有一些长名字反复出现，可以效仿上面的方式，为它们设置一些短名字作为别名。这样可以让代码变得更紧凑、更易读。但同一个项目内的超短缩写不宜太多，否则会适得其反。</p>
+<h3 id="其他技巧"><a href="#其他技巧" class="headerlink" title="其他技巧"></a>其他技巧</h3><p>· 在同一段代码内，不要出现多个相似的变量名，比如同时使用users、users1、users3这种序列；</p>
+<p>· 可以尝试换词来简化复合变量名，比如用is_special来代替is_not_normal；</p>
+<p>· 如果你苦思冥想都想不出一个合适的名字，请打开GitHub[插图]，到其他人的开源项目里找找灵感吧！</p>
+<h2 id="1-1-4-注释基础知识"><a href="#1-1-4-注释基础知识" class="headerlink" title="1.1.4 注释基础知识"></a>1.1.4 注释基础知识</h2><p>注释（comment）是代码非常重要的组成部分。通常来说，注释泛指那些不影响代码实际行为的文字，它们主要起额外说明作用。</p>
+<p>Python里的注释主要分为两种，一种是最常见的代码内注释，通过在行首输入#号来表示：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#用户输入可能会有空格，使用strip去掉空格</span>
+username <span class="token operator">=</span> extract_username<span class="token punctuation">(</span>input_string<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>当注释包含多行内容时，同样使用#号：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#使用strip()去掉空格的好处：</span>
+<span class="token comment"># 1. 数据库保存时占用空间更小</span>
+<span class="token comment"># 2. 不必因为用户多打了一个空格而要求用户重新输入</span>
+username <span class="token operator">=</span> extract_username<span class="token punctuation">(</span>input_string<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>除使用#的注释外，另一种注释则是我们前面看到过的函数（类）文档（docstring），这些文档也称接口注释（interface comment）。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""人
+
+    :param name: 姓名
+    :param age: 年龄
+    :param favorite_color: 最喜欢的颜色
+    """</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> favorite_color<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>age <span class="token operator">=</span> age
+        self<span class="token punctuation">.</span>favorite_color <span class="token operator">=</span> favorite_color<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接口注释有好几种流行的风格，比如Sphinx文档风格、Google风格等，其中Sphinx文档风格目前应用得最为广泛。上面的Person类的接口注释就属于Sphinx文档风格。</p>
+<p>虽然注释一般不影响代码的执行效果，却会极大地影响代码的可读性。在编写注释时，编程新手们常常会犯同类型的错误，以下是我整理的最常见的3种。</p>
+<h3 id="01．用注释屏蔽代码"><a href="#01．用注释屏蔽代码" class="headerlink" title="01．用注释屏蔽代码"></a>01．用注释屏蔽代码</h3><p>有时，人们会把注释当作临时屏蔽代码的工具。当某些代码暂时不需要执行时，就把它们都注释了，未来需要时再解除注释。</p>
+<p>其实根本没必要这么做。这些被临时注释掉的大段内容，对于阅读代码的人来说是一种干扰，没有任何意义。对于不再需要的代码，我们应该直接把它们删掉，而不是注释掉。如果未来有人真的需要用到这些旧代码，他直接去Git仓库历史里就能找到，毕竟版本控制系统就是专门干这个的。</p>
+<h3 id="02．用注释复述代码"><a href="#02．用注释复述代码" class="headerlink" title="02．用注释复述代码"></a>02．用注释复述代码</h3><p>在编写注释时，新手常犯的另一类错误是用注释复述代码。就像这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#调用strip()去掉空格</span>
+input_string <span class="token operator">=</span> input_string<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>上面代码里的注释完全是冗余的，因为读者从代码本身就能读到注释里的信息。好的注释应该像下面这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#如果直接把带空格的输入传递到后端处理，可能会造成后端服务崩溃</span>
+<span class="token comment"># 因此使用strip() 去掉首尾空格</span>
+input_string <span class="token operator">=</span> input_string<span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>注释作为代码之外的说明性文字，应该尽量提供那些读者无法从代码里读出来的信息。描述代码为什么要这么做，而不是简单复述代码本身。</p>
+<p>除了描述“为什么”的解释性注释外，还有一种注释也很常见：指引性注释。这种注释并不直接复述代码，而是简明扼要地概括代码功能，起到“代码导读”的作用。</p>
+<p>比如，以下代码里的注释就属于指引性注释：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#初始化访问服务的client对象</span>
+token <span class="token operator">=</span> token_service<span class="token punctuation">.</span>get_token<span class="token punctuation">(</span><span class="token punctuation">)</span>
+service_client <span class="token operator">=</span> ServiceClient<span class="token punctuation">(</span>token<span class="token operator">=</span>token<span class="token punctuation">)</span>
+service_client<span class="token punctuation">.</span>ready<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment"># 调用服务获取数据，然后进行过滤</span>
+data <span class="token operator">=</span> service_client<span class="token punctuation">.</span>fetch_full_data<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> data<span class="token punctuation">:</span>
+    <span class="token keyword">if</span> item<span class="token punctuation">.</span>value <span class="token operator">&gt;</span> SOME_VALUE<span class="token punctuation">:</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>指引性注释并不提供代码里读不到的东西——假如没有注释，耐心读完所有代码，你也能知道代码做了什么事儿。指引性注释的主要作用是降低代码的认知成本，让我们能更容易理解代码的意图。</p>
+<p>在编写指引性注释时，有一点需要注意，那就是你得判断何时该写注释，何时该将代码提炼为独立的函数（或方法）。比如上面的代码，其实可以通过抽象两个新函数改成下面这样：</p>
+<h3 id="03．弄错接口注释的受众"><a href="#03．弄错接口注释的受众" class="headerlink" title="03．弄错接口注释的受众"></a>03．弄错接口注释的受众</h3><p>在编写接口注释时，人们有时会写出下面这样的内容：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">resize_image</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""将图片缩放到指定尺寸，并返回新的图片。
+    该函数将使用Pilot 模块读取文件对象，然后调用.resize() 方法将其缩放到指定尺寸。
+    但由于Pilot 模块自身限制，这个函数不能很好地处理过大的文件，当文件大小超过 5MB 时，
+    resize() 方法的性能就会因为内存分配问题急剧下降，详见 Pilot 模块的Issue #007。因此，
+    对于超过 5MB 的图片文件，请使用resize_big_image() 替代，后者基于Pillow 模块开发，
+    很好地解决了内存分配问题，确保性能更好了。
+    :param image: 图片文件对象
+    :param size: 包含宽高的元组：（width, height）
+    :return: 新图片对象
+    """</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面这段注释虽然有些夸张，但像它一样的注释在项目中其实并不少见。这段接口注释最主要的问题在于过多阐述了函数的实现细节，提供了太多其他人并不关心的内容。</p>
+<p>接口文档主要是给函数（或类）的使用者看的，它最主要的存在价值，是让人们不用逐行阅读函数代码，也能很快通过文档知道该如何使用这个函数，以及在使用时有什么注意事项。</p>
+<p>在编写接口文档时，我们应该站在函数设计者的角度，着重描述函数的功能、参数说明等。而函数自身的实现细节，比如调用了哪个第三方模块、为何有性能问题等，无须放在接口文档里。</p>
+<p>对于上面的resize_image()函数来说，文档里提供以下内容就足够了：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">resize_image</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> size<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""将图片缩放到指定尺寸，并返回新的图片。
+    注意：当文件超过 5MB 时，请使用resize_big_image()
+    :param image: 图片文件对象
+    :param size: 包含宽高的元组：（width, height）
+    :return: 新图片对象
+    """</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>至于那些使用了Pilot模块、为何有内存问题的细节说明，全都可以丢进函数内部的代码注释里。</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>题目　冒泡排序算法</p>
+<p>请用Python语言实现冒泡排序算法，把较大的数字放在后面。</p>
+<p>注意：默认所有的偶数都比奇数大。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> magic_bubble_sort<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">,</span> <span class="token number">23</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">magic_bubble_sort</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    j <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>　　
+    <span class="token keyword">while</span> j <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+                numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+                <span class="token keyword">continue</span>
+        <span class="token keyword">elif</span> <span class="token punctuation">(</span>numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">%</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">and</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            <span class="token keyword">continue</span>
+    j <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">return</span> numbers<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">magic_bubble_sort</span><span class="token punctuation">(</span>numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span><span class="token builtin">int</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""有魔力的冒泡排序算法，默认所有的偶数都比奇数大
+    :param numbers: 需要排序的列表，函数会直接修改原始列表
+    """</span>
+    stop_position <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>numbers<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> stop_position <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>stop_position<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            current<span class="token punctuation">,</span> next_ <span class="token operator">=</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> ➊
+            current_is_even<span class="token punctuation">,</span> next_is_even <span class="token operator">=</span> current <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">,</span> next_ <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span>
+            should_swap <span class="token operator">=</span> <span class="token boolean">False</span>
+            <span class="token comment"># 交换位置的两个条件：</span>
+            <span class="token comment"># - 前面是偶数，后面是奇数</span>
+        <span class="token comment"># - 前面和后面同为奇数或者偶数，但是前面比后面大</span>
+        <span class="token keyword">if</span> current_is_even <span class="token keyword">and</span> <span class="token keyword">not</span> next_is_even<span class="token punctuation">:</span>
+            should_swap <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">elif</span> current_is_even <span class="token operator">==</span> next_is_even <span class="token keyword">and</span> current <span class="token operator">&gt;</span> next_<span class="token punctuation">:</span>
+            should_swap <span class="token operator">=</span> <span class="token boolean">True</span>
+        <span class="token keyword">if</span> should_swap<span class="token punctuation">:</span>
+            numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> numbers<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> numbers<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    stop_position <span class="token operator">-=</span> <span class="token number">1</span>
+<span class="token keyword">return</span> numbers<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：此处变量名是next_而非next，这是因为已经有一个内置函数使用了next这个名字。PEP 8规定在这种情况下，应该给变量名增加_后缀来避免冲突</p>
+<p>（1）变量名变成了可读的、有意义的名字，比如在旧代码里，“停止位”是无意义的j，新代码里变成了stop_position。</p>
+<p>（2）增加了有意义的临时变量，比如current/next_代表前一个/后一个元素、{}_is_even代表元素是否为偶数、should_swap代表是否应该交换元素。</p>
+<p>（3）多了一点儿恰到好处的指引性注释，比如说明交换元素顺序的详细条件。</p>
+<h2 id="编程建议"><a href="#编程建议" class="headerlink" title="编程建议"></a>编程建议</h2><h3 id="1-3-1-保持变量的一致性"><a href="#1-3-1-保持变量的一致性" class="headerlink" title="1.3.1 保持变量的一致性"></a>1.3.1 保持变量的一致性</h3><p>在使用变量时，你需要保证它在两个方面的一致性：名字一致性与类型一致性。</p>
+<p>名字一致性是指在同一个项目（或者模块、函数）中，对一类事物的称呼不要变来变去。如果你把项目里的“用户头像”叫作user_avatar_url，那么在其他地方就别把它改成user_profile_url。否则会让读代码的人犯迷糊：“user_avatar_url和user_profile_url到底是不是一个东西？”</p>
+<p>类型一致性则是指不要把同一个变量重复指向不同类型的值，举个例子：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># users 本身是一个 Dict</span>
+    users <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'data'</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token string">'raymond'</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment"># users 这个名字真不错！尝试复用它，把它变成 List 类型</span>
+    users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在foo()函数的作用域内，users变量被使用了两次：第一次指向字典，第二次则变成了列表。虽然Python的类型系统允许我们这么做，但这样做其实有很多坏处，比如变量的辨识度会因此降低，还很容易引入bug。</p>
+<p>所以，我建议在这种情况下启用一个新变量：</p>
+<blockquote>
+<p>如果使用mypy工具（13.1.5节会详细讲解），它在静态检查时就会报出这种“变量类型不一致”的错误。对于上面的代码，mypy就会输出error: Incompatible types in assignment（变量赋值时类型不兼容）错误。</p>
+</blockquote>
+<h3 id="1-3-2-变量定义尽量靠近使用"><a href="#1-3-2-变量定义尽量靠近使用" class="headerlink" title="1.3.2 变量定义尽量靠近使用"></a>1.3.2 变量定义尽量靠近使用</h3><p>包括我自己在内的很多人在初学编程时有一种很不好的习惯——喜欢把所有变量初始化定义写在一起，放在函数最前面，就像下面这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">generate_trip_png</span><span class="token punctuation">(</span>trip<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    根据旅途数据生成 PNG 图片
+    """</span>
+    <span class="token comment"># 预先定义好所有的局部变量</span>
+    waypoints <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    photo_markers<span class="token punctuation">,</span> text_markers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    marker_count <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token comment"># 开始初始化 waypoints 数据</span>
+    waypoints<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment"># 经过几行代码后，开始处理 photo_markers、text_markers</span>
+    photo_markers<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token comment"># 经过更多代码后，开始计算 marker_count</span>
+    marker_count <span class="token operator">+=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment"># 拼接图片：已省略……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>之所以这么写代码，是因为我们觉得“初始化变量”语句是类似的，应该将其归类到一起，放到最前面，这样代码会整洁很多。</p>
+<p>但是，这样的代码只是看上去整洁，它的可读性不会得到任何提升，反而会变差。</p>
+<p>在组织代码时，我们应该谨记：总是从代码的职责出发，而不是其他东西。比如，在上面的generate_trip_png()函数里，代码的职责主要分为三块：</p>
+<ul>
+<li>初始化waypoints数据</li>
+<li>处理markers数据</li>
+<li>处理markers数据</li>
+</ul>
+<p>那代码可以这么调整：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">generate_trip_png</span><span class="token punctuation">(</span>trip<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""
+    根据旅途数据生成 PNG 图片
+    """</span>
+    <span class="token comment"># 开始初始化 waypoints 数据</span>
+    waypoints <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    waypoints<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment"># 开始处理 photo_markers、text_markers</span>
+    photo_markers<span class="token punctuation">,</span> text_markers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    photo_markers<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment"># 开始计算 marker_count</span>
+    marker_count <span class="token operator">=</span> <span class="token number">0</span>
+    marker_count <span class="token operator">+=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment"># 拼接图片：已省略……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>通过把变量定义移动到每段“各司其职”的代码头部，大大缩短了变量从初始化到被使用的“距离”。当读者阅读代码时，可以更容易理解代码的逻辑，而不是来回翻阅代码，心想：“这个变量是什么时候定义的？是干什么用的？”</p>
+<h3 id="1-3-3-定义临时变量提升可读性"><a href="#1-3-3-定义临时变量提升可读性" class="headerlink" title="1.3.3 定义临时变量提升可读性"></a>1.3.3 定义临时变量提升可读性</h3><p>随着业务逻辑变得复杂，我们的代码里也会经常出现一些复杂的表达式，就像下面这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#为所有性别为女或者级别大于3的活跃用户发放 10000个金币</span>
+<span class="token keyword">if</span> user<span class="token punctuation">.</span>is_active <span class="token keyword">and</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span>sex <span class="token operator">==</span> <span class="token string">'female'</span> <span class="token keyword">or</span> user<span class="token punctuation">.</span>level <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    user<span class="token punctuation">.</span>add_coins<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>看见if后面那一长串代码了吗？有点儿难读对不对？但这也没办法，毕竟产品经理就是明明白白这么跟我说的——业务逻辑如此。</p>
+<p>逻辑虽然如此，不代表我们就得把代码直白地写成这样。如果把后面的复杂表达式赋值为一个临时变量，代码可以变得更易读：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#为所有性别为女或者级别大于3的活跃用户发放10000个金币</span>
+user_is_eligible <span class="token operator">=</span> user<span class="token punctuation">.</span>is_active <span class="token keyword">and</span> <span class="token punctuation">(</span>user<span class="token punctuation">.</span>sex <span class="token operator">==</span> <span class="token string">'female'</span> <span class="token keyword">or</span> user<span class="token punctuation">.</span>level <span class="token operator">&gt;</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> user_is_eligible<span class="token punctuation">:</span>
+    user<span class="token punctuation">.</span>add_coins<span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在新代码里，“计算用户合规的表达式”和“判断合规发送金币的条件分支”这两段代码不再直接杂糅在一起，而是添加了一个可读性强的变量user_is_elegible作为缓冲。不论是代码的可读性还是可维护性，都因为这个变量而增强了。</p>
+<blockquote>
+<p>直接翻译业务逻辑的代码，大多不是好代码。优秀的程序设计需要在理解原需求的基础上，恰到好处地抽象，只有这样才能同时满足可读性和可扩展性方面的需求。抽象有许多种方式，比如定义新函数、定义新类型，“定义一个临时变量”是诸多方式里不太起眼的一个，但用得恰当的话效果也很巧妙。</p>
+</blockquote>
+<h3 id="1-3-4-同一作用域内不要有太多变量"><a href="#1-3-4-同一作用域内不要有太多变量" class="headerlink" title="1.3.4 同一作用域内不要有太多变量"></a>1.3.4 同一作用域内不要有太多变量</h3><p>通常来说，函数越长，用到的变量也会越多。但是人脑的记忆力是很有限的。研究表明，人类的短期记忆只能同时记住不超过10个名字。变量过多，代码肯定就会变得难读，以代码清单1-3为例。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">import_users_from_file</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""尝试从文件对象读取用户，然后导入数据库
+
+    :param fp: 可读文件对象
+    :return: 成功与失败的数量
+    """</span>
+    <span class="token comment"># 初始化变量：重复用户、黑名单用户、正常用户</span>
+    duplicated_users<span class="token punctuation">,</span> banned_users<span class="token punctuation">,</span> normal_users <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> fp<span class="token punctuation">:</span>
+        parsed_user <span class="token operator">=</span> parse_user<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+        <span class="token comment"># …… 进行判断处理，修改前面定义的{X}_users 变量</span>
+
+    succeeded_count<span class="token punctuation">,</span> failed_count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token comment"># …… 读取 {X}_users 变量，写入数据库并修改成功与失败的数量</span>
+    <span class="token keyword">return</span> succeeded_count<span class="token punctuation">,</span> failed_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>要减少函数里的变量数量，最直接的方式是给这些变量分组，建立新的模型。比如，我们可以将代码里的succeeded_count、failed_count建模为ImportedSummary类，用ImportedSummary.succeeded_count来替代现有变量；对{duplicated|banned|normal}_users也可以执行同样的操作。相关操作如代码清单1-4所示。</p>
+<p>代码清单1-4 对局部变量分组并建模</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">ImportedSummary</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""保存导入结果摘要的数据类"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>succeeded_count <span class="token operator">=</span> <span class="token number">0</span>
+        self<span class="token punctuation">.</span>failed_count <span class="token operator">=</span> <span class="token number">0</span>
+
+<span class="token keyword">class</span> <span class="token class-name">ImportingUserGroup</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""用于暂存用户导入处理的数据类"""</span>
+
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>duplicated <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>banned <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>normal <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+<span class="token keyword">def</span> <span class="token function">import_users_from_file</span><span class="token punctuation">(</span>fp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""尝试从文件对象读取用户，然后导入数据库　　
+
+    :param fp: 可读文件对象
+    :return: 成功与失败的数量
+    """</span>
+    importing_user_group <span class="token operator">=</span> ImportingUserGroup<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> line <span class="token keyword">in</span> fp<span class="token punctuation">:</span>
+        parsed_user <span class="token operator">=</span> parse_user<span class="token punctuation">(</span>line<span class="token punctuation">)</span>
+        <span class="token comment"># …… 进行判断处理，修改上面定义的importing_user_group 变量</span>
+
+    summary <span class="token operator">=</span> ImportedSummary<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment"># …… 读取 importing_user_group，写入数据库并修改成功与失败的数量</span>
+
+    <span class="token keyword">return</span> summary<span class="token punctuation">.</span>succeeded_count<span class="token punctuation">,</span> summary<span class="token punctuation">.</span>failed_count<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>需要说明的一点是，大多数情况下，只是执行上面这样的操作是远远不够的。函数内变量的数量太多，通常意味着函数过于复杂，承担了太多职责。只有把复杂函数拆分为多个小函数，代码的整体复杂度才可能实现根本性的降低。</p>
+<h3 id="1-3-5-能不定义变量就别定义"><a href="#1-3-5-能不定义变量就别定义" class="headerlink" title="1.3.5 能不定义变量就别定义"></a>1.3.5 能不定义变量就别定义</h3><p>前面提到过，定义临时变量可以提高代码的可读性。但有时，把不必要的东西赋值为临时变量，反而会让代码显得啰唆：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_best_trip_by_user_id</span><span class="token punctuation">(</span>user_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment"># 心理活动：嗯，这个值未来说不定会修改/二次使用，我们先把它定义成变量吧！</span>
+    user <span class="token operator">=</span> get_user<span class="token punctuation">(</span>user_id<span class="token punctuation">)</span>
+    trip <span class="token operator">=</span> get_best_trip<span class="token punctuation">(</span>user_id<span class="token punctuation">)</span>
+    result <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'user'</span><span class="token punctuation">:</span> user<span class="token punctuation">,</span>
+        <span class="token string">'trip'</span><span class="token punctuation">:</span> trip
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在编写代码时，我们会下意识地定义很多变量，好为未来调整代码做准备。但其实，你所想的未来也许永远不会来。上面这段代码里的三个临时变量完全可以去掉，变成下面这样：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">get_best_trip_by_user_id</span><span class="token punctuation">(</span>user_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token string">'user'</span><span class="token punctuation">:</span> get_user<span class="token punctuation">(</span>user_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token string">'trip'</span><span class="token punctuation">:</span> get_best_trip<span class="token punctuation">(</span>user_id<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这样的代码就像删掉赘语的句子，变得更精练、更易读。所以，不必为了那些未来可能出现的变动，牺牲代码此时此刻的可读性。如果以后需要定义变量，那就以后再做吧！</p>
+<h3 id="1-3-6-不要使用locals"><a href="#1-3-6-不要使用locals" class="headerlink" title="1.3.6 不要使用locals()"></a>1.3.6 不要使用locals()</h3><p>locals()是Python的一个内置函数，调用它会返回当前作用域中的所有局部变量：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    name <span class="token operator">=</span> <span class="token string">'piglei'</span>
+    bar <span class="token operator">=</span> <span class="token number">1</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">locals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 调用foo() 将输出：</span>
+<span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'piglei'</span><span class="token punctuation">,</span> <span class="token string">'bar'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在有些场景下，我们需要一次性拿到当前作用域下的所有（或绝大部分）变量，比如在渲染Django模板时：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">render_trip_page</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> user_id<span class="token punctuation">,</span> trip_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">"""渲染旅程页面"""</span>
+    user <span class="token operator">=</span> User<span class="token punctuation">.</span>objects<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token builtin">id</span><span class="token operator">=</span>user_id<span class="token punctuation">)</span>
+    trip <span class="token operator">=</span> get_object_or_404<span class="token punctuation">(</span>Trip<span class="token punctuation">,</span> pk<span class="token operator">=</span>trip_id<span class="token punctuation">)</span>
+    is_suggested <span class="token operator">=</span> check_if_suggested<span class="token punctuation">(</span>user<span class="token punctuation">,</span> trip<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'trip.html'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token string">'user'</span><span class="token punctuation">:</span> user<span class="token punctuation">,</span>
+        <span class="token string">'trip'</span><span class="token punctuation">:</span> trip<span class="token punctuation">,</span>
+        <span class="token string">'is_suggested'</span><span class="token punctuation">:</span> is_suggested
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>看上去使用locals()函数正合适，假如调用locals()，上面的代码会简化许多：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">render_trip_page</span><span class="token punctuation">(</span>request<span class="token punctuation">,</span> user_id<span class="token punctuation">,</span> trip_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+    <span class="token comment"># 利用locals() 把当前所有变量作为模板渲染参数返回</span>
+    <span class="token comment"># 节约了三行代码，我简直是个天才！</span>
+    <span class="token keyword">return</span> render<span class="token punctuation">(</span>request<span class="token punctuation">,</span> <span class="token string">'trip.html'</span><span class="token punctuation">,</span> <span class="token builtin">locals</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>	<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>第一眼看上去非常“简洁”，但是，这样的代码真的更好吗？</p>
+<p>答案并非如此。locals()看似简洁，但其他人在阅读代码时，为了搞明白模板渲染到底用了哪些变量，必须记住当前作用域里的所有变量。假如函数非常复杂，“记住所有局部变量”简直是个不可能完成的任务。</p>
+<p>使用locals()还有一个缺点，那就是它会把一些并没有真正使用的变量也一并暴露。</p>
+<h3 id="Python之禅：显式优于隐式"><a href="#Python之禅：显式优于隐式" class="headerlink" title="Python之禅：显式优于隐式"></a>Python之禅：显式优于隐式</h3><p>在Python命令行中输入import this，你可以看到Tim Peters写的一段编程原则： The Zen of Python（“Python之禅”）。这些原则字字珠玑，里面蕴藏着许多Python编程智慧。</p>
+<p>“Python之禅”中有一句“Explicit is better than implicit”（显式优于隐式），这条原则完全可以套用到locals()的例子上——locals()实在是太隐晦了，直接写出变量名显然更好。</p>
+<h3 id="1-3-7-空行也是一种“注释”"><a href="#1-3-7-空行也是一种“注释”" class="headerlink" title="1.3.7 空行也是一种“注释”"></a>1.3.7 空行也是一种“注释”</h3><p>代码里的注释不只是那些常规的描述性语句，有时候，没有一个字符的空行，也算得上一种特殊的“注释”。</p>
+<p>在写代码时，我们可以适当地在代码中插入空行，把代码按不同的逻辑块分隔开，这样能有效提升代码的可读性。</p>
+<h3 id="1-3-8-先写注释，后写代码"><a href="#1-3-8-先写注释，后写代码" class="headerlink" title="1.3.8 先写注释，后写代码"></a>1.3.8 先写注释，后写代码</h3><p>每个函数的名称与接口注释（也就是docstring），其实是一种比函数内部代码更为抽象的东西。你需要在函数名和短短几行注释里，把函数内代码所做的事情，高度浓缩地表达清楚。</p>
+<p>正因如此，接口注释其实完全可以当成一种协助你设计函数的前置工具。这个工具的用法很简单：假如你没法通过几行注释把函数职责描述清楚，那么整个函数的合理性就应该打一个问号。</p>
+<p>举个例子，你在编辑器里写下了def process_user(…):，准备实现一个名为process_user的新函数。在编写函数注释时，你发现在写了好几行文字后，仍然没法把process_user()的职责描述清楚，因为它可以同时完成好多件不同的事情。</p>
+<p>这时你就应该意识到，process_user()函数承担了太多职责，解决办法就是直接删掉它，设计更多单一职责的子函数来替代之。</p>
+<p>先写注释的另一个好处是：不会漏掉任何应该写的注释。</p>
+<p>我常常在审查代码时发现，一些关键函数的docstring位置一片空白，而那里本该备注详尽的接口注释。每当遇到这种情况，我都会不厌其烦地请代码提交者补充和完善接口注释。</p>
+<p>为什么大家总会漏掉注释？我的一个猜测是：程序员在编写函数时，总是跳过接口注释直接开始写代码。而当写完代码，实现函数的所有功能后，他就对这个函数失去了兴趣。这时，他最不愿意做的事，就是回过头去补写函数的接口注释，即便写了，也只是草草对付了事。</p>
+<p>如果遵守“先写注释，后写代码”的习惯，我们就能完全避免上面的问题。要养成这个习惯其实很简单：<strong>在写出一句有说服力的接口注释前，别写任何函数代码</strong>。</p>
+<h2 id="1-4-总结"><a href="#1-4-总结" class="headerlink" title="1.4 总结"></a>1.4 总结</h2><p>在一段代码里，变量和注释是最接近自然语言的东西。因此，好的变量名、简明扼要的注释，都可以显著提升代码的质量。在给变量起名时，请尽量使用描述性强的名字，但也得注意别过了头。</p>
+<p>（1）变量和注释决定“第一印象”</p>
+<p>· 变量和注释是代码里最接近自然语言的东西，它们的可读性非常重要</p>
+<p>· 即使是实现同一个算法，变量和注释不一样，给人的感觉也会截然不同</p>
+<p>（2）基础知识</p>
+<p>· Python的变量赋值语法非常灵活，可以使用*variables星号表达式灵活赋值</p>
+<p>· 编写注释的两个要点：不要用来屏蔽代码，而是用来解释“为什么”</p>
+<p>· 接口注释是为使用者而写，因此应该简明扼要地描述函数职责，而不必包含太多内部细节</p>
+<p>· 可以用Sphinx格式文档或类型注解给变量标明类型</p>
+<p>（3）变量名字很重要</p>
+<p>· 给变量起名要遵循PEP 8原则，代码的其他部分也同样如此</p>
+<p>· 尽量给变量起描述性强的名字，但评价描述性也需要结合场景</p>
+<p>· 在保证描述性的前提下，变量名要尽量短</p>
+<p>· 变量名要匹配它所表达的类型</p>
+<p>· 可以使用一两个字母的超短名字，但注意不要过度使用</p>
+<p>（4）代码组织技巧</p>
+<p>· 按照代码的职责来组织代码：让变量定义靠近使用</p>
+<p>· 适当定义临时变量可以提升代码的可读性</p>
+<p>· 不必要的变量会让代码显得冗长、啰唆</p>
+<p>· 同一个作用域内不要有太多变量，解决办法：提炼数据类、拆分函数</p>
+<p>· 空行也是一种特殊的“注释”，适当的空行可以让代码更易读</p>
+<p>（5）代码可维护性技巧</p>
+<p>· 保持变量在两个方面的一致性：名字一致性与类型一致性</p>
+<p>· 显式优于隐式：不要使用locals()批量获取变量</p>
+<p>· 把接口注释当成一种函数设计工具：先写注释，后写代码</p>
 
                 
             </div>
@@ -697,18 +1225,17 @@ author<span class="token punctuation">,</span> reader <span class="token operato
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/15/python-gong-jiang-1-bian-liang-he-zhu-shi/">
+                <a href="/2022/09/16/wei-fu-wu-ji-zhu-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Python工匠：1、变量和注释">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="微服务技术栈">
                         
-                        <span class="card-title">Python工匠：1、变量和注释</span>
+                        <span class="card-title">微服务技术栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -718,27 +1245,26 @@ author<span class="token punctuation">,</span> reader <span class="token operato
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python%E5%B7%A5%E5%8C%A0/" class="post-category">
-                                    Python工匠
+                            <a href="/categories/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="post-category">
+                                    微服务
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/springcloud/">
+                        <span class="chip bg-color">springcloud</span>
                     </a>
                     
                 </div>
@@ -938,7 +1464,7 @@ author<span class="token punctuation">,</span> reader <span class="token operato
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">272.1k</span>
+                        class="white-color">313.5k</span>
             
             
             
