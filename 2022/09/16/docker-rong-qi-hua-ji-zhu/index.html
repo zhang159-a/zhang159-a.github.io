@@ -512,21 +512,21 @@ Docker可以让开发者打包他们的应用以及依">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-16
+                    2022-09-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    12 分
                 </div>
                 
 
@@ -794,6 +794,164 @@ mysql:5.6<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <li><p>使用外部机器访问MySQL</p>
 </li>
 </ol>
+<h3 id="4-2-Tomcat部署"><a href="#4-2-Tomcat部署" class="headerlink" title="4.2 Tomcat部署"></a>4.2 Tomcat部署</h3><ol>
+<li><p>搜索Tomcat 镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> search tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>拉取mysql镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建容器，设置端口映射、目录映射</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#在/root目录下创建tomcat目录用于存放tomcat数据信息</span>
+<span class="token function">mkdir</span> ~/tomcat
+<span class="token builtin class-name">cd</span> ~/tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run -id --name<span class="token operator">=</span>c_tomcat <span class="token punctuation">\</span>
+-p <span class="token number">8080</span>:8080 <span class="token punctuation">\</span>
+-v <span class="token environment constant">$PWD</span>:/usr/local/tomcat/webapps <span class="token punctuation">\</span>
+tomcat<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>参数说明：<ul>
+<li><code>-p 8080:8080</code>：将容器的8080端口映射到主机的8080端口</li>
+<li><code>-v $PWD:/usr/local/tomcat/webapps</code>：将主机中当前目录挂载到容器的<code>webapps</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>最后使用外部机器访问tomcat</p>
+</li>
+</ol>
+<h3 id="4-3-Nginx部署"><a href="#4-3-Nginx部署" class="headerlink" title="4.3 Nginx部署"></a>4.3 Nginx部署</h3><ol>
+<li><p>搜索Nginx 镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> search nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>拉取mysql镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull nginx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建容器，设置端口映射、目录映射</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#在/root目录下创建nginx目录用于存储nginx数据信息</span>
+<span class="token function">mkdir</span> ~/nginx
+<span class="token builtin class-name">cd</span> ~/nginx
+<span class="token function">mkdir</span> conf
+<span class="token builtin class-name">cd</span> conf
+<span class="token comment">#在~/nginx/conf/下创建nginx.conf文件，粘贴下面代码块的内容</span>
+<span class="token function">vim</span> nginx.conf<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+ <pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">user  nginx;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> -run -id --name<span class="token operator">=</span>c_nginx <span class="token punctuation">\</span>
+-p <span class="token number">80</span>:800 <span class="token punctuation">\</span>
+-v <span class="token environment constant">$PWD</span>/conf/nginx.conf:/etc/nginx/nginx.conf <span class="token punctuation">\</span>
+-v <span class="token environment constant">$PWD</span>/logs:/var/log/nginx <span class="token punctuation">\</span>
+-v <span class="token environment constant">$PWD</span>/html:/usr/share/nginx/html <span class="token punctuation">\</span>
+nginx<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>参数说明：<ul>
+<li><code>-p 80:800</code>：将容器的80端口映射到宿主机的80端口</li>
+<li><code>-v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf</code>：将主机当前目录下的<code>/conf/nginx.conf</code>挂载到容器的<code>:/etc/nginx/nginx.conf</code>配置目录</li>
+<li><code>-v $PWD/html:/usr/share/nginx/html</code>：将主机当前目录挂载到容器的<code>/val/log/nginx</code>日志目录</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>使用外部机器访问nginx</p>
+</li>
+</ol>
+<h3 id="4-4-Redis部署"><a href="#4-4-Redis部署" class="headerlink" title="4.4 Redis部署"></a>4.4 Redis部署</h3><ol>
+<li><p>搜索Redis 镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> search redis<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>拉取Redis 镜像</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> pull redis:5.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>创建容器，设置端口映射、目录映射</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run -id --name<span class="token operator">=</span>c_redis -p <span class="token number">6379</span>:6379 redis:5.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>使用外部机器连接redis</p>
+ <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">redis-cli.exe -h <span class="token number">192.168</span>.187.129 -p <span class="token number">6379</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ol>
+<h2 id="第五章-Dockerfile"><a href="#第五章-Dockerfile" class="headerlink" title="第五章 Dockerfile"></a>第五章 Dockerfile</h2><p><strong>思考：</strong></p>
+<ul>
+<li>Docker 镜像的本质是什么？<ul>
+<li>是一个分层的文件系统</li>
+</ul>
+</li>
+<li>Docker 中一个CentOS 镜像为什么只有200MB，而一个CentOS 操作系统的iso 文件要几个G？<ul>
+<li>CentOS的iso镜像文件包含bootfs和rootfs，而Docker的CentOS镜像复用操作系统的bootfs，只有rootfs和其他镜像层</li>
+</ul>
+</li>
+<li>Docker 中一个Tomcat 镜像为什么有500MB，而一个Tomcat 安装包只有70多MB？<ul>
+<li>由于Docker中镜像是分层的，tomcat虽然只有70多MB，但他需要依赖于父镜像和基础镜像，所以整个对外暴露的tomcat镜像大小500多MB</li>
+</ul>
+</li>
+</ul>
+<p>操作系统组成部分：</p>
+<ul>
+<li>进程调度子系统</li>
+<li>进程通信子系统</li>
+<li>内存管理子系统</li>
+<li>设备管理子系统</li>
+<li>文件管理子系统</li>
+<li>网络通信子系统</li>
+<li>作业控制子系统</li>
+</ul>
+<p>Linux文件系统由bootfs 和rootfs 两部分组成</p>
+<ul>
+<li>bootfs：包含bootloader（引导加载程序）和kernel（内核）</li>
+<li>rootfs：root文件系统，包含的就是典型的Linux 系统中的/dev、/proc、/bin等标准目录和文件</li>
+<li>不同的Linux 发行版，bootfs 基本一样，而rootfs 不同，如ubuntu，CentOS等</li>
+</ul>
+<p><strong>Docker 镜像原理：</strong></p>
+<ul>
+<li>Docker 镜像是由特殊的文件系统叠加而成</li>
+<li>最低端是bootfs，并使用宿主机的bootfs</li>
+<li>第二层是root 文件系统rootfs ，称为base iamge</li>
+<li>然后再往上可以叠加其他的镜像文件</li>
+<li>统一文件系统（Union File System）技术能够将不同的层整合成一个文件系统，为这些层提供了一个统一的视角，这样就隐藏了多层的存在，在用户的角度看来，只存在一个文件系统</li>
+<li>一个镜像可以放在另一个镜像的上面。位于下面的镜像称为父镜像，最底部的镜像称为基础镜像</li>
+<li>当从一个镜像启动容器时，Docker会在最顶层加载一个读写文件系统作为容器</li>
+</ul>
+<p><strong>镜像制作：</strong></p>
+<ul>
+<li><p>容器转为镜像</p>
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> commit 容器id 镜像名称:版本号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+  <pre class="line-numbers language-shel" data-language="shel"><code class="language-shel">docker save -o 压缩文件名称 镜像名称:版本号<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+  <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> load -i 压缩文件名称<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<h3 id="5-2-Dockerfile-概念及作用"><a href="#5-2-Dockerfile-概念及作用" class="headerlink" title="5.2 Dockerfile 概念及作用"></a>5.2 Dockerfile 概念及作用</h3><p><strong>Dockerfile 概念</strong></p>
+<ul>
+<li>Dockerfile 是一个文本文件</li>
+<li>包含了一条条的指令</li>
+<li>每一条指令构建一层，基于基础镜像，最终构建出一个新的镜像</li>
+<li>对于开发人员，可以为开发团队提供一个完全一致的开发环境</li>
+<li>对于测试人员，可以直接拿开发时所构建的镜像或者通过Dockerfile 文件构建一个新的镜像开始工作了</li>
+<li>对于运维人员，在部署时，可以实现应用的无缝移植</li>
+</ul>
 
                 
             </div>
@@ -944,18 +1102,17 @@ mysql:5.6<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/16/docker-rong-qi-hua-ji-zhu/">
+                <a href="/2022/09/17/java-he-xin-juan-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Docker容器化技术">
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Java核心卷笔记">
                         
-                        <span class="card-title">Docker容器化技术</span>
+                        <span class="card-title">Java核心卷笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -965,31 +1122,26 @@ mysql:5.6<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Docker/" class="post-category">
-                                    Docker
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%B9%E5%99%A8/">
-                        <span class="chip bg-color">容器</span>
-                    </a>
-                    
-                    <a href="/tags/docker/">
-                        <span class="chip bg-color">docker</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
                 </div>
@@ -1181,7 +1333,7 @@ mysql:5.6<span aria-hidden="true" class="line-numbers-rows"><span></span><span><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">313.5k</span>
+                        class="white-color">326.1k</span>
             
             
             
