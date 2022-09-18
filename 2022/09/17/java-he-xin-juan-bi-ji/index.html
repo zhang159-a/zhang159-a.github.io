@@ -513,14 +513,14 @@ Java并不只是一种语言。在此之前出现的那么多种语言也没有�
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.4k
+                    6.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    22 分
                 </div>
                 
 
@@ -630,7 +630,46 @@ Java并不只是一种语言。在此之前出现的那么多种语言也没有�
 <li>Eclipse</li>
 <li>IntelliJ IDEA</li>
 </ul>
-<h1 id="第3章-Java的基本程序设计结构"><a href="#第3章-Java的基本程序设计结构" class="headerlink" title="第3章 Java的基本程序设计结构"></a>第3章 Java的基本程序设计结构</h1>
+<h1 id="第3章-Java的基本程序设计结构"><a href="#第3章-Java的基本程序设计结构" class="headerlink" title="第3章 Java的基本程序设计结构"></a>第3章 Java的基本程序设计结构</h1><h2 id="3-1-一个简单的Java应用程序"><a href="#3-1-一个简单的Java应用程序" class="headerlink" title="3.1 一个简单的Java应用程序"></a>3.1 一个简单的Java应用程序</h2><p>下面看一个最简单的Java应用程序，它只发送一条消息到控制台窗口中：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Hello</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello world!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>源代码的文件名必须与公共类的名字相同，并用.java作为扩展名。因此，存储这段源代码的文件名必须为FirstSample.java（再次提醒大家注意，大小写是非常重要的，千万不能写成firstsample.java）。</p>
+<h2 id="3-2-注释"><a href="#3-2-注释" class="headerlink" title="3.2 注释"></a>3.2 注释</h2><ul>
+<li>单行注释： //</li>
+<li>多行注释： /*    */</li>
+<li>文档注释： /**  */</li>
+</ul>
+<blockquote>
+<p>警告：在Java中，/**/注释不能嵌套。也就是说，不能简单地把代码用/<em>和</em>/括起来作为注释，因为这段代码本身可能也包含一个*/。</p>
+</blockquote>
+<h2 id="3-3-数据类型"><a href="#3-3-数据类型" class="headerlink" title="3.3 数据类型"></a>3.3 数据类型</h2><p>Java是一种强类型语言。这就意味着必须为每一个变量声明一种类型。在Java中，一共有8种基本类型（primitive type），其中有4种整型、2种浮点类型、1种用于表示Unicode编码的字符单元的字符类型char（请参见论述char类型的章节）和1种用于表示真值的boolean类型。</p>
+<blockquote>
+<p>[插图]注释：Java有一个能够表示任意精度的算术包，通常称为“大数值”（big number）。虽然被称为大数值，但它并不是一种新的Java类型，而是一个Java对象。本章稍后将会详细地介绍它的用法。</p>
+</blockquote>
+<h3 id="3-3-1-整型"><a href="#3-3-1-整型" class="headerlink" title="3.3.1 整型"></a>3.3.1 整型</h3><ul>
+<li>int 4 byte</li>
+<li>short 2 byte</li>
+<li>long 8 byte   后缀加 L / l</li>
+<li>byte 1 byte</li>
+</ul>
+<p>长整型数值有一个后缀L或l（如4000000000L）。十六进制数值有一个前缀0x或0X（如0xCAFE）。八进制有一个前缀0，例如，010对应八进制中的8。很显然，八进制表示法比较容易混淆，所以建议最好不要使用八进制常数。</p>
+<h3 id="3-3-2-浮点类型"><a href="#3-3-2-浮点类型" class="headerlink" title="3.3.2 浮点类型"></a>3.3.2 浮点类型</h3><ul>
+<li>float 4 byte  后缀加 F / f</li>
+<li>double 8 byte </li>
+</ul>
+<p>double表示这种类型的数值精度是float类型的两倍（有人称之为双精度数值）。绝大部分应用程序都采用double类型。在很多情况下，float类型的精度很难满足需求。实际上，只有很少的情况适合使用float类型，例如，需要单精度数据的库，或者需要存储大量数据。</p>
+<p>float类型的数值有一个后缀F或f（例如，3.14F）。没有后缀F的浮点数值（如3.14）默认为double类型。当然，也可以在浮点数值后面添加后缀D或d（例如，3.14D）。</p>
+<h3 id="3-3-3-char类型"><a href="#3-3-3-char类型" class="headerlink" title="3.3.3 char类型"></a>3.3.3 char类型</h3><p>char类型原本用于表示单个字符。不过，现在情况已经有所变化。如今，有些Unicode字符可以用一个char值描述，另外一些Unicode字符则需要两个char值。有关的详细信息请阅读下一节。</p>
+<p>char类型的字面量值要用单引号括起来。例如：’A’是编码值为65所对应的字符常量。它与”A”不同，”A”是包含一个字符A的字符串。char类型的值可以表示为十六进制值，其范围从\u0000到\Uffff。例如：\u2122表示注册符号（TM），\u03C0表示希腊字母π</p>
+<h4 id="3-3-5-boolean类型"><a href="#3-3-5-boolean类型" class="headerlink" title="3.3.5 boolean类型"></a>3.3.5 boolean类型</h4><p>boolean（布尔）类型有两个值：false和true，用来判定逻辑条件。整型值和布尔值之间不能进行相互转换。</p>
+<h2 id="3-4-变量"><a href="#3-4-变量" class="headerlink" title="3.4 变量"></a>3.4 变量</h2><p>在Java中，每个变量都有一个类型（type）。在声明变量时，变量的类型位于变量名之前。这里列举一些声明变量的示例：</p>
+<p>可以看到，每个声明以分号结束。由于声明是一条完整的Java语句，所以必须以分号结束。</p>
+<h3 id="3-4-1-变量初始化"><a href="#3-4-1-变量初始化" class="headerlink" title="3.4.1 变量初始化"></a>3.4.1 变量初始化</h3><p>声明一个变量之后，必须用赋值语句对变量进行显式初始化，千万不要使用未初始化的变量。例如，Java编译器认为下面的语句序列是错误的：</p>
+
                 
             </div>
             <hr/>
@@ -776,18 +815,17 @@ Java并不只是一种语言。在此之前出现的那么多种语言也没有�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/17/java-he-xin-juan-bi-ji/">
+                <a href="/2022/09/17/jie-duan-xing-zong-jie-2022-9-17/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="Java核心卷笔记">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="阶段性总结 2022-9-17">
                         
-                        <span class="card-title">Java核心卷笔记</span>
+                        <span class="card-title">阶段性总结 2022-9-17</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,27 +835,26 @@ Java并不只是一种语言。在此之前出现的那么多种语言也没有�
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/%E7%94%9F%E6%B4%BB%E5%B0%8F%E8%AE%B0/" class="post-category">
+                                    生活小记
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/%E8%AE%B0%E5%BD%95%E7%94%9F%E6%B4%BB/">
+                        <span class="chip bg-color">记录生活</span>
                     </a>
                     
                 </div>
@@ -1013,7 +1050,7 @@ Java并不只是一种语言。在此之前出现的那么多种语言也没有�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">326.1k</span>
+                        class="white-color">330.6k</span>
             
             
             
