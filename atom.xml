@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-18T14:50:20.631Z</updated>
+  <updated>2022-09-19T14:08:28.991Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,86 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>springboot单元测试问题</title>
+    <link href="http://example.com/2022/09/19/springboot-dan-yuan-ce-shi-wen-ti/"/>
+    <id>http://example.com/2022/09/19/springboot-dan-yuan-ce-shi-wen-ti/</id>
+    <published>2022-09-19T13:53:46.000Z</published>
+    <updated>2022-09-19T14:08:28.991Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringBoot" scheme="http://example.com/categories/SpringBoot/"/>
+    
+    
+    <category term="springboot" scheme="http://example.com/tags/springboot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>REST风格</title>
+    <link href="http://example.com/2022/09/19/rest-feng-ge/"/>
+    <id>http://example.com/2022/09/19/rest-feng-ge/</id>
+    <published>2022-09-19T08:25:13.000Z</published>
+    <updated>2022-09-19T09:06:03.810Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="SpringMVC" scheme="http://example.com/categories/SpringMVC/"/>
+    
+    
+    <category term="RESTful" scheme="http://example.com/tags/RESTful/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MybatisPlus学习</title>
+    <link href="http://example.com/2022/09/19/mybatisplus-xue-xi/"/>
+    <id>http://example.com/2022/09/19/mybatisplus-xue-xi/</id>
+    <published>2022-09-19T04:11:12.000Z</published>
+    <updated>2022-09-19T15:22:41.352Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MybatisPlus" scheme="http://example.com/categories/MybatisPlus/"/>
+    
+    
+    <category term="MybatisPlus" scheme="http://example.com/tags/MybatisPlus/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript学习</title>
     <link href="http://example.com/2022/09/18/javascript-xue-xi/"/>
     <id>http://example.com/2022/09/18/javascript-xue-xi/</id>
     <published>2022-09-18T01:43:39.000Z</published>
-    <updated>2022-09-18T14:50:20.631Z</updated>
+    <updated>2022-09-19T03:45:31.436Z</updated>
     
     
       
@@ -121,7 +196,7 @@
     <link href="http://example.com/2022/09/16/docker-rong-qi-hua-ji-zhu/"/>
     <id>http://example.com/2022/09/16/docker-rong-qi-hua-ji-zhu/</id>
     <published>2022-09-16T14:45:20.000Z</published>
-    <updated>2022-09-17T01:39:46.737Z</updated>
+    <updated>2022-09-19T05:43:15.383Z</updated>
     
     
       
@@ -352,7 +427,7 @@
     <link href="http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/"/>
     <id>http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/</id>
     <published>2022-09-12T12:48:44.000Z</published>
-    <updated>2022-09-12T12:59:52.239Z</updated>
+    <updated>2022-09-19T12:26:53.794Z</updated>
     
     
       
@@ -444,87 +519,6 @@
     
     
     <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Typora+PicGo+Github设置图床</title>
-    <link href="http://example.com/2022/09/07/typora-picgo-github-she-zhi-tu-chuang/"/>
-    <id>http://example.com/2022/09/07/typora-picgo-github-she-zhi-tu-chuang/</id>
-    <published>2022-09-07T13:41:43.000Z</published>
-    <updated>2022-09-07T13:57:38.204Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Typora" scheme="http://example.com/categories/Typora/"/>
-    
-    
-    <category term="图床" scheme="http://example.com/tags/%E5%9B%BE%E5%BA%8A/"/>
-    
-    <category term="Typora" scheme="http://example.com/tags/Typora/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图解系统</title>
-    <link href="http://example.com/2022/09/07/tu-jie-xi-tong/"/>
-    <id>http://example.com/2022/09/07/tu-jie-xi-tong/</id>
-    <published>2022-09-07T09:38:28.000Z</published>
-    <updated>2022-09-17T14:14:56.917Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://example.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="计算机基础" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    <category term="操作系统" scheme="http://example.com/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决python安装包问题</title>
-    <link href="http://example.com/2022/09/07/jie-jue-python-an-zhuang-bao-wen-ti/"/>
-    <id>http://example.com/2022/09/07/jie-jue-python-an-zhuang-bao-wen-ti/</id>
-    <published>2022-09-07T07:58:47.000Z</published>
-    <updated>2022-09-07T10:47:14.922Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Python" scheme="http://example.com/categories/Python/"/>
-    
-    
-    <category term="python" scheme="http://example.com/tags/python/"/>
-    
-    <category term="安装问题" scheme="http://example.com/tags/%E5%AE%89%E8%A3%85%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   

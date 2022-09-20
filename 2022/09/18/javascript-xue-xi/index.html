@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-18
+                    2022-09-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    27.6k
+                    32.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    120 分
+                    142 分
                 </div>
                 
 
@@ -3753,6 +3753,604 @@ removeEventListener（<span class="token string">"click"</span><span class="toke
 <p>此外，窗口最大化、最小化、控制窗口大小、移动窗口等，这些操作在实际开发中用得不多，大家暂时不需要记忆。</p>
 <h2 id="13-3-对话框"><a href="#13-3-对话框" class="headerlink" title="13.3 对话框"></a>13.3 对话框</h2><p>在JavaScript中，对话框有3种：alert（　）、confirm（　）和prompt（　）。它们都是window对象的方法。前面我们说过，对于window对象的属性和方法，是可以省略window前缀的，如window.alert（　）可以简写为alert（　）。</p>
 <h3 id="13-3-1-alert（-）"><a href="#13-3-1-alert（-）" class="headerlink" title="13.3.1 alert（　）"></a>13.3.1 alert（　）</h3><p>在JavaScript中，alert（　）对话框一般只用于提示文字。这个方法在之前用了很多次，这里不再多说。对于alert（　），只需记住一点：在alert（　）中实现文本换行，用的是\n。</p>
+<p><code>alert("提示文字")</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         alert（<span class="token string">"HTML\nCSS\nJavaScript"</span>）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="13-3-2-confirm（-）"><a href="#13-3-2-confirm（-）" class="headerlink" title="13.3.2 confirm（　）"></a>13.3.2 confirm（　）</h3><p>在JavaScript中，confirm（　）对话框不仅提示文字，还提供确认。</p>
+<p><code>confirm("提示文字")</code></p>
+<p>如果用户点击【确定】按钮，confirm（　）会返回true；如果用户点击【取消】按钮，则会返回false。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+           window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+           <span class="token punctuation">{</span>
+              <span class="token keyword">var</span> oBtn<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementById（<span class="token string">"btn"</span>）<span class="token punctuation">;</span>
+              oBtn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+              <span class="token punctuation">{</span>
+                  <span class="token keyword">if</span>（confirm（<span class="token string">"确定要跳转到绿叶首页吗？"</span>））<span class="token punctuation">{</span>
+                     window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token operator">=</span><span class="token string">"http://www.lvyestudy.com"</span><span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+                     document<span class="token punctuation">.</span>write（<span class="token string">"你取消了跳转"</span>）<span class="token punctuation">;</span>
+                  <span class="token punctuation">}</span>
+              <span class="token punctuation">}</span><span class="token punctuation">;</span>
+           <span class="token punctuation">}</span>
+     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>回到首页<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在弹出的confirm（　）对话框中，当我们点击【确定】按钮时，confirm（　）会返回true，当前窗口就会跳转到绿叶学习网首页。当我们点击【取消】按钮时，confirm（　）会返回false，就会输出内容。</p>
+<h3 id="13-3-3-prompt（-）"><a href="#13-3-3-prompt（-）" class="headerlink" title="13.3.3 prompt（　）"></a>13.3.3 prompt（　）</h3><p>在JavaScript中，prompt（　）对话框不仅会提示文字，还会返回一个字符串。</p>
+<p><code>prompt("提示文字")</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             <span class="token keyword">var</span> oBtn<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementById（<span class="token string">"btn"</span>）<span class="token punctuation">;</span>
+             oBtn<span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+             <span class="token punctuation">{</span>
+                <span class="token keyword">var</span> name<span class="token operator">=</span>prompt（<span class="token string">"请输入你的名字"</span>）<span class="token punctuation">;</span>
+                document<span class="token punctuation">.</span>write（<span class="token string">"欢迎来到&lt;strong&gt;"</span><span class="token operator">+</span>name<span class="token operator">+</span><span class="token string">"&lt;/strong&gt;"</span>）<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>按钮<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在弹出的对话框中，有一个输入文本框。输入内容，然后点击对话框中的【确定】按钮，就会返回刚刚输入的文本。</p>
+<p>对于alert（　）、confirm（　）和prompt（　）对话框，总结如表13-3所示。</p>
+<p>​                            表13-3 3种对话框</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alert()</td>
+<td>仅提示文字，没有返回值</td>
+</tr>
+<tr>
+<td>confirm()</td>
+<td>具有提示文字，返回“布尔值”(true, false)</td>
+</tr>
+<tr>
+<td>prompt()</td>
+<td>具有提示文字，返回“字符串”</td>
+</tr>
+</tbody></table>
+<p>在实际开发中，这3种对话框经常会用到，但一般我们不会采用浏览器默认的对话框，因为这些默认对话框的外观不太美观。为了提供更好的用户体验，我们都倾向于使用div元素模拟出自己想要的对话框，并且结合CSS3、JavaScript等来实现酷炫的动画效果。</p>
+<p>下面就是使用div元素模拟出来的对话框，简约扁平，并且还带有各种3D动画，用户体验非常好，如图13-19、图13-20和图13-21所示。对于这个例子的源代码，大家可以从本书的配套文件中下载并查看。</p>
+<h2 id="13-4-定时器"><a href="#13-4-定时器" class="headerlink" title="13.4 定时器"></a>13.4 定时器</h2><p>在浏览网页的过程中，我们经常可以看到这样的动画：轮播效果中，图片每隔几秒就切换一次；在线时钟中，秒针每隔一秒转一次。如绿叶学习网，首页的图片轮播每隔5秒就“爆炸”一次，十分酷炫，大家可以去感受一下，如图13-22所示。</p>
+<p>上面说到的这些动画特效中，其实就用到了“定时器”。所谓的“定时器”，指的是每隔一段时间就执行一次代码。在JavaScript中，对于定时器的实现，有以下两组方法。</p>
+<ul>
+<li>setTimeout() / clearTimeout()</li>
+<li>setInterval() / clearInterval()</li>
+</ul>
+<h3 id="13-4-1-setTimeout（-）和clearTimeout（-）"><a href="#13-4-1-setTimeout（-）和clearTimeout（-）" class="headerlink" title="13.4.1 setTimeout（　）和clearTimeout（　）"></a>13.4.1 setTimeout（　）和clearTimeout（　）</h3><p>在JavaScript中，我们可以使用setTimeout（　）方法来“一次性”地调用函数，并且可以使用clearTimeout（　）来取消执行setTimeout（　）。</p>
+<p><code>setTimeout(code, time);</code></p>
+<blockquote>
+<p>说明</p>
+</blockquote>
+<p>参数code可以是一段代码，可以是一个函数，也可以是一个函数名。</p>
+<p>参数time是时间，单位为毫秒，表示要过多长时间才执行code中的代码。</p>
+<p>举例：code是一段代码</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             setTimeout（<span class="token string">'alert（"欢迎来到绿叶学习网"）;'</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2秒后提示欢迎语。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>打开页面，2秒后会弹出对话框，如图13-24所示。由于setTimeout（　）方法只会执行一次，所以只会弹出一次对话框。</p>
+<p>举例：code是一段函数</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             setTimeout（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>
+                alert（<span class="token string">"欢迎！"</span>）<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2秒后提示欢迎语。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这里，setTimeout（　）的第一个参数是一个函数，这个函数是没有名字的，也叫匿名函数。匿名函数属于JavaScript进阶的内容。我们从图13-26中就能很清楚地看出来第1个参数是一段函数。</p>
+<p>举例：code是一个函数名</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             setTimeout（alertMes<span class="token punctuation">,</span><span class="token number">2000</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token keyword">function</span> alertMes（　）<span class="token punctuation">{</span>
+             alert（<span class="token string">"欢迎来到绿叶学习网"</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2秒后提示欢迎语。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在这里，setTimeout（　）的第一个参数是一个函数名，这个函数名是不需要加括号的！下面两种写法是等价的。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">setTimeout（alertMes<span class="token punctuation">,</span><span class="token number">2000</span>）
+setTimeout（<span class="token string">"alertMes（　）"</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>之前接触过不少初学者，很多人都容易搞混这两种写法，如写成setTimeout（alertMes（　）, 2000）或setTimeout（”alertMes”, 2000），我们一定要注意这一点。一般情况下，我们只需要掌握setTimeout（alertMes, 2000）这一种写法就可以了，原因有两个：一是这种写法性能更高，二是可以避免两种写法造成记忆混乱。</p>
+<blockquote>
+<p>举例：clearTimeout（　）</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+         <span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span>1px solid silver<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             <span class="token comment">//获取元素</span>
+             <span class="token keyword">var</span> oBtn<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"input"</span>）<span class="token punctuation">;</span>
+             <span class="token comment">//timer存放定时器</span>
+             <span class="token keyword">var</span> timer<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+             oBtn<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+             <span class="token punctuation">{</span>
+                timer<span class="token operator">=</span>setTimeout（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>
+                   alert（<span class="token string">"欢迎来到绿叶学习网"</span>）<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">;</span>
+           oBtn<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+           <span class="token punctuation">{</span>
+              clearTimeout（timer）<span class="token punctuation">;</span>
+           <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>点击"开始"按钮，2秒后提示欢迎语。<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>开始<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>暂停<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果点击【开始】按钮，2秒后就会弹出对话框。如果在2秒内再次点击【暂停】按钮，就不会弹出对话框。</p>
+<p>这里定义了一个变量timer，用于保存setTimeout（　）这个定时器，以便使用clearTimeout（timer）来暂停。</p>
+<h3 id="13-4-2-setInterval（-）和clearInterval（-）"><a href="#13-4-2-setInterval（-）和clearInterval（-）" class="headerlink" title="13.4.2 setInterval（　）和clearInterval（　）"></a>13.4.2 setInterval（　）和clearInterval（　）</h3><p>在JavaScript中，我们可以使用setInterval（　）方法来“重复性”地调用函数，并且可以使用clearInterval（　）来取消执行setInterval（　）。</p>
+<p><code>setInterval(code, time);</code></p>
+<p>参数code可以是一段代码，可以是一个函数，也可以是一个函数名。</p>
+<p>参数time是时间，单位为毫秒，表示要过多长时间才执行code中的代码。</p>
+<p>此外，setInterval（　）跟setTimeout（　）语法是一样的，唯一不同的是setTimeout（　）只执行一次，而setInterval（　）可以重复执行无数次。对于setInterval（　）来说，下面3种方式都是正确的，这个跟setTimeout（　）是一样的。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//方式1</span>
+setInterval（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>…<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span>）
+<span class="token comment">//方式2</span>
+setInterval（alertMes<span class="token punctuation">,</span><span class="token number">2000</span>）
+<span class="token comment">//方式3</span>
+setInterval（<span class="token string">"alertMes（　）"</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>举例：倒计时效果</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         <span class="token comment">//定义全局变量，用于记录秒数</span>
+         <span class="token keyword">var</span> n<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             <span class="token comment">//设置定时器，重复执行函数countDown</span>
+           setInterval（countDown<span class="token punctuation">,</span><span class="token number">1000</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         <span class="token comment">//定义函数</span>
+         <span class="token keyword">function</span> countDown（　）
+         <span class="token punctuation">{</span>
+             <span class="token comment">//判断n是否大于0，因为倒计时不可能有负数</span>
+             <span class="token keyword">if</span>（n <span class="token operator">&gt;</span> <span class="token number">0</span>）<span class="token punctuation">{</span>
+                  n<span class="token operator">--</span><span class="token punctuation">;</span>
+                  document<span class="token punctuation">.</span>getElementById（<span class="token string">"num"</span>）<span class="token punctuation">.</span>innerHTML<span class="token operator">=</span>n<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>倒计时：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>num<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>5<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果这里使用setTimeout（　）来代替setInterval（　），就没办法实现倒计时效果了。因为setTimeout（　）只会执行一次，而setInterval（　）会重复执行。</p>
+<blockquote>
+<p>举例：clearInterval（　）</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+         <span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span>1px solid silver<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             <span class="token comment">//获取元素</span>
+             <span class="token keyword">var</span> oBtn<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"input"</span>）<span class="token punctuation">;</span>
+             <span class="token keyword">var</span> oDiv<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"div"</span>）<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+             <span class="token comment">//定义一个数组colors，存放6种颜色</span>
+             <span class="token keyword">var</span> colors<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"red"</span><span class="token punctuation">,</span><span class="token string">"orange"</span><span class="token punctuation">,</span><span class="token string">"yellow"</span><span class="token punctuation">,</span><span class="token string">"green"</span><span class="token punctuation">,</span><span class="token string">"blue"</span><span class="token punctuation">,</span><span class="token string">"purple"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+             <span class="token comment">//timer用于定时器</span>
+             <span class="token keyword">var</span> timer<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+             <span class="token comment">//i用于计数</span>
+             <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+             <span class="token comment">//"开始"按钮</span>
+             oBtn<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+             <span class="token punctuation">{</span>
+                <span class="token comment">//每隔1秒切换一次背景颜色</span>
+                timer<span class="token operator">=</span>setInterval（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>
+                   oDiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor<span class="token operator">=</span>colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                   i<span class="token operator">++</span><span class="token punctuation">;</span>
+                   i<span class="token operator">=</span>i <span class="token operator">%</span> colors<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span>）<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">;</span>
+             <span class="token comment">//"暂停"按钮</span>
+             oBtn<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+             <span class="token punctuation">{</span>
+                clearInterval（timer）<span class="token punctuation">;</span>
+             <span class="token punctuation">}</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>开始<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>暂停<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当我们点击【开始】按钮后，div元素每隔一秒就会切换一次背景颜色。当我们点击【暂停】按钮后，就会停止切换。i = i % colors.length；使i可以在“1、2、3、4、5”之间不断循环，这是一个非常棒的技巧，在图片轮播的开发中非常有用，小伙伴们认真琢磨一下。</p>
+<p>如果我们快速不断地点击【开始】按钮，神奇的一幕发生了：背景颜色切换的速度加快了。此时点击【暂停】按钮，却发现根本停不下来！这是什么原因导致的呢？</p>
+<p>其实每点击一次，都会新开一个setInterval（　），如果你不断点击按钮，setInterval（　）就会累加起来。也就是说，当你点击3次按钮时，其实已经开了3个setInterval（　），此时如果想要停下来，就必须点击3次【暂停】按钮。为了避免产生这个累加的bug，我们在每次点击【开始】按钮时就要清除一次定时器，改进后的代码如下。</p>
+<blockquote>
+<p>举例：改进后的定时器</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+         <span class="token selector">div</span><span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span>100px<span class="token punctuation">;</span><span class="token property">border</span><span class="token punctuation">:</span>1px solid silver<span class="token punctuation">;</span><span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         window<span class="token punctuation">.</span><span class="token function-variable function">onload</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+         <span class="token punctuation">{</span>
+             <span class="token comment">//获取元素</span>
+             <span class="token keyword">var</span> oBtn<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"input"</span>）<span class="token punctuation">;</span>
+             <span class="token keyword">var</span> oDiv<span class="token operator">=</span>document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"div"</span>）<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+             <span class="token comment">//定义一个数组colors，存放6种颜色</span>
+             <span class="token keyword">var</span> colors<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"red"</span><span class="token punctuation">,</span><span class="token string">"orange"</span><span class="token punctuation">,</span><span class="token string">"yellow"</span><span class="token punctuation">,</span><span class="token string">"green"</span><span class="token punctuation">,</span><span class="token string">"blue"</span><span class="token punctuation">,</span><span class="token string">"purple"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+             <span class="token comment">//timer用于存放定时器</span>
+             <span class="token keyword">var</span> timer<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+             <span class="token comment">//i用于计数</span>
+           <span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+           <span class="token comment">//"开始"按钮</span>
+           oBtn<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+           <span class="token punctuation">{</span>
+              <span class="token comment">//每次点击"开始"按钮，一开始就清除一次定时器</span>
+              clearInterval（timer）<span class="token punctuation">;</span>
+              <span class="token comment">//每隔1秒切换一次背景颜色</span>
+              timer<span class="token operator">=</span>setInterval（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>
+                  oDiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor<span class="token operator">=</span>colors<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                  i<span class="token operator">++</span><span class="token punctuation">;</span>
+                  i<span class="token operator">=</span>i <span class="token operator">%</span> colors<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">1000</span>）<span class="token punctuation">;</span>
+           <span class="token punctuation">}</span><span class="token punctuation">;</span>
+           <span class="token comment">//"暂停"按钮</span>
+           oBtn<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span><span class="token operator">=</span><span class="token keyword">function</span>（　）
+           <span class="token punctuation">{</span>
+              clearInterval（timer）<span class="token punctuation">;</span>
+           <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+  </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>开始<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>暂停<span class="token punctuation">"</span></span><span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此时即使我们快速不间断地点击【开始】按钮，也不会出现定时器累加的bug了。定时器在实际开发中会大量用到，小伙伴们要重点掌握。</p>
+<h2 id="13-5-location对象"><a href="#13-5-location对象" class="headerlink" title="13.5 location对象"></a>13.5 location对象</h2><p>在JavaScript中，我们可以使用window对象下的location子对象来操作当前窗口的URL。所谓的URL，指的就是页面地址。对于location对象，我们只需要掌握以下3个属性（其他不用管），如表13-4所示。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>href</td>
+<td>当前页面地址</td>
+</tr>
+<tr>
+<td>search</td>
+<td>当前页面地址“？”后面的内容</td>
+</tr>
+<tr>
+<td>hash</td>
+<td>当前页面地址“#”后面的内容</td>
+</tr>
+</tbody></table>
+<h3 id="13-5-1-window-location-href"><a href="#13-5-1-window-location-href" class="headerlink" title="13.5.1 window.location.href"></a>13.5.1 window.location.href</h3><p>在JavaScript中，我们可以使用location对象的href属性来获取或设置当前页面的地址。</p>
+<p><code>window.location.href</code></p>
+<p>window.location.href可以直接简写为location.href，但我们一般都习惯加上window前缀。</p>
+<blockquote>
+<p>举例：获取当前页面地址</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         <span class="token keyword">var</span> url<span class="token operator">=</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token punctuation">;</span>
+         document<span class="token punctuation">.</span>write（<span class="token string">"当前页面地址是："</span><span class="token operator">+</span>url）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>举例：设置当前页面地址</p>
+</blockquote>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         setTimeout（<span class="token keyword">function</span>（　）<span class="token punctuation">{</span>
+             window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>href<span class="token operator">=</span><span class="token string">"http://www.lvyestudy.com"</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span>）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>2秒后跳转<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="13-5-2-window-location-search"><a href="#13-5-2-window-location-search" class="headerlink" title="13.5.2 window.location.search"></a>13.5.2 window.location.search</h3><p>在JavaScript中，我们可以使用location对象的search属性来获取和设置当前页面地址“?”后面的内容。</p>
+<p><code>window.location.search</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         document<span class="token punctuation">.</span>write（window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>search）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此时页面是空白的，我们在浏览器地址后面加上？id=1（要自己手动输入），再刷新页面，就会出现结果了，浏览器预览效果如图13-35所示。</p>
+<h3 id="13-5-3-window-location-hash"><a href="#13-5-3-window-location-hash" class="headerlink" title="13.5.3 window.location.hash"></a>13.5.3 window.location.hash</h3><p>在JavaScript中，我们可以使用location对象的hash属性来获取和设置当前页面地址井号（#）后面的内容。井号（#）一般用于锚点链接，这个相信大家见过不少了。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         document<span class="token punctuation">.</span>write（window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>hash）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此时页面是空白的，我们在浏览器地址后面加上#imgId（要自己手动输入），再刷新页面，就会出现结果了，效果如图13-37所示。</p>
+<p>在实际开发中，window.location.hash用得比较少，我们了解一下就行。</p>
+<h2 id="13-6-navigator对象"><a href="#13-6-navigator对象" class="headerlink" title="13.6 navigator对象"></a>13.6 navigator对象</h2><p>在JavaScript中，我们可以使用window对象下的子对象navigator来获取浏览器的类型。</p>
+<blockquote>
+<p>语法</p>
+</blockquote>
+<p><code>window.navigator.userAgent</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         alert（window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不同的浏览器，会弹出相应的版本号信息。这3种浏览器都含有独一无二的字符：IE含有“MSIE”,Chrome含有“Chrome”，而Firefox含有“Firefox”。根据这个特点，我们可以判断当前的浏览器的类型。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         <span class="token keyword">if</span>（window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span>indexOf（<span class="token string">"MSIE"</span>）<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span>）<span class="token punctuation">{</span>
+              alert（<span class="token string">"这是IE"</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span>（window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span>indexOf（<span class="token string">"Chrome"</span>）<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span>）<span class="token punctuation">{</span>
+              alert（<span class="token string">"这是Chrome"</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span>（window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span>indexOf（<span class="token string">"Firefox"</span>）<span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span>）<span class="token punctuation">{</span>
+              alert（<span class="token string">"这是Firefox"</span>）<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>判断浏览器类型也是经常用到的，特别是在处理不同浏览器的兼容性上，我们需要根据浏览器的类型来加载对应的JavaScript代码进行处理。不过现在浏览器更新迭代非常快，随着IE逐渐退出历史舞台，很多时候我们已经不再需要考虑浏览器之间的兼容性了。</p>
+<h1 id="第14章-document对象"><a href="#第14章-document对象" class="headerlink" title="第14章 document对象"></a>第14章 document对象</h1><h2 id="14-1-document对象简介"><a href="#14-1-document对象简介" class="headerlink" title="14.1 document对象简介"></a>14.1 document对象简介</h2><p>从上一章中我们知道，document对象其实是window对象下的一个子对象，它操作的是HTML文档里所有的内容。实际上，浏览器每次打开一个窗口，就会为这个窗口生成一个window对象，并且会为这个窗口内部的页面（即HTML文档）自动生成一个document对象，这样我们就可以通过document对象来操作页面中所有的元素了。</p>
+<p>window是浏览器为每个窗口创建的对象。通过window对象，我们可以操作窗口，如打开窗口、关闭窗口、浏览器版本等，这些操作又被统称为“BOM（浏览器对象模型）”。</p>
+<p>document是浏览器为每个窗口内的HTML页面创建的对象。通过document对象，我们可以操作页面的元素，这些操作又被统称为“DOM（文档对象模型）”。</p>
+<p>由于window对象是包括document对象的，所以我们可以“简单”地把BOM和DOM的关系理解成BOM包含DOM。只不过对于文档操作来说，我们一般不会把它看成BOM的一部分，而是看成独立的，也就是DOM。</p>
+<p>其实，在前面的章节中，我们就已经在大量使用document对象的属性和方法了，如document.write（　）、document.getElementById（　）、document.body等。这一章我们来系统学习一下document对象。</p>
+<h2 id="14-2-document对象属性"><a href="#14-2-document对象属性" class="headerlink" title="14.2 document对象属性"></a>14.2 document对象属性</h2><p>document对象的属性非常多，但是大多数都不常用，表14-1列出比较常用的属性。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ducument.title</td>
+<td>获取文档的 title</td>
+</tr>
+<tr>
+<td>document.body</td>
+<td>获取文档的 body</td>
+</tr>
+<tr>
+<td>document.forms</td>
+<td>获取所有 from 元素</td>
+</tr>
+<tr>
+<td>document.images</td>
+<td>获取所有 img 元素</td>
+</tr>
+<tr>
+<td>document.links</td>
+<td>获取所有 a 元素</td>
+</tr>
+<tr>
+<td>document.cookie</td>
+<td>文档的 cookie</td>
+</tr>
+<tr>
+<td>document.URL</td>
+<td>当前文档的 URL</td>
+</tr>
+<tr>
+<td>document.referrer</td>
+<td>返回使浏览器到达当前文档的 URL</td>
+</tr>
+</tbody></table>
+<p>document.title和document.body这两个我们在“9.4 获取元素”一节已经介绍过了，此处不赘述。</p>
+<p>document.forms、document.images、document.links这3个分别等价于下面3个，所以我们一般用document.getElementsByTagName来获取就行了，不需要记忆。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"form"</span>）
+document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"img"</span>）
+document<span class="token punctuation">.</span>getElementsByTagName（<span class="token string">"a"</span>）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>cookie一般在结合后端技术操作时用得比较多，document.cookie单纯在前端中用得也不多，我们简单看一下就行。</p>
+<p>下面我们来介绍一下document.URL和document.referrer。</p>
+<h3 id="14-2-1-document-URL"><a href="#14-2-1-document-URL" class="headerlink" title="14.2.1 document.URL"></a>14.2.1 document.URL</h3><p>在JavaScript中，我们可以使用document对象的URL属性来获取当前页面的地址。</p>
+<p><code>document.URL</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         <span class="token keyword">var</span> url<span class="token operator">=</span>document<span class="token punctuation">.</span><span class="token constant">URL</span><span class="token punctuation">;</span>
+         document<span class="token punctuation">.</span>write（<span class="token string">"当前页面地址是："</span><span class="token operator">+</span>url）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>document.URL和window.location.href都可以获取当前页面的URL，但是它们也有区别：document.URL只能获取不能设置，window.location.href既可以获取也可以设置。</p>
+<h3 id="14-2-2-document-referrer"><a href="#14-2-2-document-referrer" class="headerlink" title="14.2.2 document.referrer"></a>14.2.2 document.referrer</h3><p>在JavaScript中，我们可以使用document对象的referrer属性来获取用户在访问当前页面之前所在页面的地址。例如，我从页面A的某个链接进入页面B，如果在页面B中使用document.referrer，就可以获取页面A的地址。</p>
+<p>document.referrer非常酷，因为我们可以通过它来统计“用户都是通过什么方式来到你的网站的”。</p>
+<p>我们可以建立两个页面，然后在第1个页面设置一个超链接指向第2个页面。当我们通过第1个页面的超链接进入第2个页面时，在第2个页面使用document.referrer就可以获取第1个页面的地址了。小伙伴们可以自行在本地编辑器中测试一下，非常简单。</p>
+<h3 id="14-3-document对象方法"><a href="#14-3-document对象方法" class="headerlink" title="14.3 document对象方法"></a>14.3 document对象方法</h3><p>document对象的方法也非常多，表14-2中列出了比较常用的方法。</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919102950574.png" alt="image-20220919102950574"></p>
+<p>表14-2中的大多数方法在前面的章节中已经介绍过了，这里我们顺便复习一下，可以用手遮住右边，看着左边，然后回忆一下这些方法的用途。</p>
+<p>下面我们重点来介绍一下document.write（　）和document.writeln（　）。在JavaScript中，如果要往页面输出内容，可以使用document对象的write（　）和writeln（　）这2个方法。</p>
+<h3 id="14-3-1-document-write（-）"><a href="#14-3-1-document-write（-）" class="headerlink" title="14.3.1 document.write（　）"></a>14.3.1 document.write（　）</h3><p>在JavaScript中，我们可以使用document.write（　）输出内容。这个方法我们已经接触了多次，此处不赘述。</p>
+<p><code>document.write()</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+         document<span class="token punctuation">.</span>write（<span class="token string">'&lt;div style="color:hotpink;"&gt;绿叶学习网&lt;/div&gt;'</span>）<span class="token punctuation">;</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>document.write（　）不仅可以输出文本，还可以输出标签。此外，document.write（　）都是在body标签内输出内容的。对于上面这个例子，我们打开浏览器控制台（按【F12】键）就可以看出来了，如图14-3所示。</p>
+<h3 id="14-3-2-document-writeln（-）"><a href="#14-3-2-document-writeln（-）" class="headerlink" title="14.3.2 document.writeln（　）"></a>14.3.2 document.writeln（　）</h3><p>writeln（　）方法跟write（　）方法相似，唯一区别是writeln（　）方法会在输出内容后面多加上一个换行符“\n”。</p>
+<p>writeln（　）方法在实际开发中用得较少，我们简单了解一下就可以了。</p>
+<p>本书是JavaScript的基础部分，不过我相信已经把市面上大多数同类图书的知识点都讲解了。但是要想达到真正的前端工程师水平，仅凭这些是远远不够的，小伙伴们还得继续学习更高级的技术才行。</p>
+<p>《HTML+CSS快速上手》→《CSS进阶之旅》→《JavaScript快速上手》→《jQuery快速上手》→《HTML5+CSS3修炼之道》→《HTML5 Canvas动画开发》→未完待续。</p>
+<h1 id="附录A-字符串的方法"><a href="#附录A-字符串的方法" class="headerlink" title="附录A 字符串的方法"></a>附录A 字符串的方法</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114315907.png" alt="image-20220919114315907"></p>
+<h1 id="附录B-数组的方法"><a href="#附录B-数组的方法" class="headerlink" title="附录B 数组的方法"></a>附录B 数组的方法</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114339331.png" alt="image-20220919114339331"></p>
+<h1 id="附录C-时间对象的方法"><a href="#附录C-时间对象的方法" class="headerlink" title="附录C 时间对象的方法"></a>附录C 时间对象的方法</h1><p>时间对象的方法有很多，主要分为两大类：getXxx（　）和setXxx（　）。getXxx（　）用于获取时间，见表C-1;setXxx（　）用于设置时间，见表C-2。</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114402831.png" alt="image-20220919114402831"></p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114412857.png" alt="image-20220919114412857"></p>
+<h1 id="附录D-数学对象的方法"><a href="#附录D-数学对象的方法" class="headerlink" title="附录D 数学对象的方法"></a>附录D 数学对象的方法</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114435545.png" alt="image-20220919114435545"></p>
+<h1 id="附录E-常用的随机数"><a href="#附录E-常用的随机数" class="headerlink" title="附录E 常用的随机数"></a>附录E 常用的随机数</h1><p>表E-1和表E-2列举的是实际开发中最常见的随机数表达式，特别注意一点：Math.random（　）生成随机数范围是[0,1）而不是[0,1]（即不包含1）。    </p>
+<p>​                                表E-1 随机任意数</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114507958.png" alt="image-20220919114507958"></p>
+<p>​                                表E-2 随机整数</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919114528183.png" alt="image-20220919114528183"></p>
 </strong>
                 
             </div>
@@ -3899,18 +4497,17 @@ removeEventListener（<span class="token string">"click"</span><span class="toke
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/09/18/javascript-xue-xi/">
+                <a href="/2022/09/19/mybatisplus-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="JavaScript学习">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="MybatisPlus学习">
                         
-                        <span class="card-title">JavaScript学习</span>
+                        <span class="card-title">MybatisPlus学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -3920,27 +4517,26 @@ removeEventListener（<span class="token string">"click"</span><span class="toke
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-09-19
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/MybatisPlus/" class="post-category">
+                                    MybatisPlus
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
+                    <a href="/tags/MybatisPlus/">
+                        <span class="chip bg-color">MybatisPlus</span>
                     </a>
                     
                 </div>
@@ -4132,7 +4728,7 @@ removeEventListener（<span class="token string">"click"</span><span class="toke
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">358.6k</span>
+                        class="white-color">367.8k</span>
             
             
             

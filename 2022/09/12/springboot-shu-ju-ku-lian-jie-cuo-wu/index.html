@@ -507,21 +507,21 @@ springb">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-12
+                    2022-09-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    809
+                    859
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -565,6 +565,12 @@ Reason</span><span class="token operator">:</span> <span class="token class-name
     <span class="token class-name">If</span> you want an embedded database <span class="token punctuation">(</span>H2<span class="token punctuation">,</span> HSQL or <span class="token class-name">Derby</span><span class="token punctuation">)</span><span class="token punctuation">,</span> please put it on the <span class="token class-name"><span class="token namespace">classpath<span class="token punctuation">.</span></span>
     If</span> you have database settings <span class="token keyword">to</span> <span class="token namespace">be</span> loaded from a particular profile you may need <span class="token keyword">to</span> <span class="token namespace">activate</span> it <span class="token punctuation">(</span>no profiles are currently active<span class="token punctuation">)</span><span class="token punctuation">.</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h3 id="我遇到这种问题的原因"><a href="#我遇到这种问题的原因" class="headerlink" title="我遇到这种问题的原因"></a>我遇到这种问题的原因</h3><p>因为配置了数据池，但是没有添加 druid 依赖，所以使用数据库错误。</p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220919202544105.png" alt="image-20220919202544105"></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li>添加 druid 依赖</li>
+<li>删除 druid 配置</li>
+</ul>
 <p>********************************** 第一种，项目不需要连接数据库，启动报错 ******************************************</p>
 <p>解决方法如下：</p>
 <p>只要在将@SpringBootApplication修改为@SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})就可以启动的时候不需要连接数据库。</p>
@@ -1018,7 +1024,7 @@ url<span class="token operator">:</span> jdbc<span class="token operator">:</spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">358.6k</span>
+                        class="white-color">367.8k</span>
             
             
             
