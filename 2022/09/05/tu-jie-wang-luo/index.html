@@ -509,21 +509,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-17
+                    2022-09-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    119.9k
+                    120.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    425 分
+                    426 分
                 </div>
                 
 
@@ -5083,6 +5083,16 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
 <p><img src="https://img-blog.csdnimg.cn/71cbefee5ab741018386b6a37f492614.png" alt="img"></p>
 <p>所以，以后抓包中，如果莫名奇妙出现一个 SYN 包，有可能对方接下来想要对你发起的 RST 攻击，直接将你的 TCP 连接断开！</p>
 <p>怎么样，很巧妙吧！</p>
+<h1 id="4-10-四次挥手中收到乱序的-FIN-包会如何处理？"><a href="#4-10-四次挥手中收到乱序的-FIN-包会如何处理？" class="headerlink" title="4.10 四次挥手中收到乱序的 FIN 包会如何处理？"></a>4.10 四次挥手中收到乱序的 FIN 包会如何处理？</h1><p><img src="https://img-blog.csdnimg.cn/39f790ee7a45473587c8fe3e08e01ba4.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP5p6XY29kaW5n,size_17,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>不得不说，鹅厂真的很喜欢问网络问题，而且爱问异常情况下的网络问题，之前也有篇另外一个读者面试鹅厂的网络问题：「<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34827674/article/details/117922761">被鹅厂面怕了！ (opens new window)</a>」。</p>
+<p>不过这道鹅厂的网络题可能是提问的读者表述有问题，<strong>因为如果 FIN 报文比数据包先抵达客户端，此时 FIN 报文其实是一个乱序的报文，此时客户端的 TCP 连接并不会从 FIN_WAIT_2 状态转换到 TIME_WAIT 状态</strong>。</p>
+<p><img src="https://img-blog.csdnimg.cn/ccabc2f21b014c6c9118cd29ae11c18c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP5p6XY29kaW5n,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
+<p>因此，我们要关注到点是看「**在 FIN_WAIT_2 状态下，是如何处理收到的乱序到 FIN 报文，然后 TCP 连接又是什么时候才进入到 TIME_WAIT 状态?**」。</p>
+<p>我这里先直接说结论：</p>
+<p><strong>在 FIN_WAIT_2 状态时，如果收到乱序的 FIN 报文，那么就被会加入到「乱序队列」，并不会进入到 TIME_WAIT 状态。</strong></p>
+<p><strong>等再次收到前面被网络延迟的数据包时，会判断乱序队列有没有数据，然后会检测乱序队列中是否有可用的数据，如果能在乱序队列中找到与当前报文的序列号保持的顺序的报文，就会看该报文是否有 FIN 标志，如果发现有 FIN 标志，这时才会进入 TIME_WAIT 状态。</strong></p>
+<p>我也画了一张图，大家可以结合着图来理解。</p>
+<p><img src="https://img-blog.csdnimg.cn/4effcf2a9e7e4adeb892da98ee21694b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5bCP5p6XY29kaW5n,size_20,color_FFFFFF,t_70,g_se,x_16" alt="img"></p>
 
                 
             </div>
@@ -5468,7 +5478,7 @@ net.ipv4.tcp_keepalive_probes=9<span aria-hidden="true" class="line-numbers-rows
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">367.8k</span>
+                        class="white-color">378.3k</span>
             
             
             
