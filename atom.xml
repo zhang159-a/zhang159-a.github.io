@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-09-23T14:42:07.866Z</updated>
+  <updated>2022-09-26T06:07:58.756Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go学习</title>
+    <link href="http://example.com/2022/09/24/go-xue-xi/"/>
+    <id>http://example.com/2022/09/24/go-xue-xi/</id>
+    <published>2022-09-24T14:13:52.000Z</published>
+    <updated>2022-09-26T06:07:58.756Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://example.com/categories/Go/"/>
+    
+    
+    <category term="go" scheme="http://example.com/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vscode运行go时遇到的问题</title>
+    <link href="http://example.com/2022/09/24/vscode-yun-xing-go-shi-yu-dao-de-wen-ti/"/>
+    <id>http://example.com/2022/09/24/vscode-yun-xing-go-shi-yu-dao-de-wen-ti/</id>
+    <published>2022-09-24T14:02:58.000Z</published>
+    <updated>2022-09-24T14:11:52.854Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://example.com/categories/Go/"/>
+    
+    
+    <category term="go" scheme="http://example.com/tags/go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何使用Goland</title>
+    <link href="http://example.com/2022/09/24/ru-he-shi-yong-goland/"/>
+    <id>http://example.com/2022/09/24/ru-he-shi-yong-goland/</id>
+    <published>2022-09-24T01:44:31.000Z</published>
+    <updated>2022-09-24T01:45:06.643Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="http://example.com/categories/Go/"/>
+    
+    
+    <category term="Goland" scheme="http://example.com/tags/Goland/"/>
+    
+  </entry>
   
   <entry>
     <title>正则表达式学习</title>
@@ -444,79 +519,6 @@
     <category term="vscode" scheme="http://example.com/tags/vscode/"/>
     
     <category term="乱码" scheme="http://example.com/tags/%E4%B9%B1%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JSON格式</title>
-    <link href="http://example.com/2022/09/12/json-ge-shi/"/>
-    <id>http://example.com/2022/09/12/json-ge-shi/</id>
-    <published>2022-09-12T12:49:29.000Z</published>
-    <updated>2022-09-12T12:53:03.419Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="JSON" scheme="http://example.com/categories/JSON/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设置Mybatis-plus 主键生成策略</title>
-    <link href="http://example.com/2022/09/12/she-zhi-mybatis-plus-zhu-jian-sheng-cheng-ce-lue/"/>
-    <id>http://example.com/2022/09/12/she-zhi-mybatis-plus-zhu-jian-sheng-cheng-ce-lue/</id>
-    <published>2022-09-12T12:49:08.000Z</published>
-    <updated>2022-09-12T13:13:16.620Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Mybatisplus" scheme="http://example.com/categories/Mybatisplus/"/>
-    
-    
-    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>springboot数据库连接错误</title>
-    <link href="http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/"/>
-    <id>http://example.com/2022/09/12/springboot-shu-ju-ku-lian-jie-cuo-wu/</id>
-    <published>2022-09-12T12:48:44.000Z</published>
-    <updated>2022-09-19T12:26:53.794Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="SpringBoot" scheme="http://example.com/categories/SpringBoot/"/>
-    
-    
-    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
