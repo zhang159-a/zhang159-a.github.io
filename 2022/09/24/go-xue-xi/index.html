@@ -522,21 +522,21 @@ go run
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-30
+                    2022-10-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.2k
+                    6.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    28 分
+                    30 分
                 </div>
                 
 
@@ -2053,7 +2053,7 @@ go run
 
 <span class="token keyword">func</span> <span class="token function">check</span><span class="token punctuation">(</span>s <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>
 	<span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token string">""</span> <span class="token punctuation">{</span>
-		<span class="token keyword">return</span> 34errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"字符串不能为空"</span><span class="token punctuation">)</span>
+		<span class="token keyword">return</span> errors<span class="token punctuation">.</span><span class="token function">New</span><span class="token punctuation">(</span><span class="token string">"字符串不能为空"</span><span class="token punctuation">)</span>
 	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
 		<span class="token keyword">return</span> <span class="token boolean">nil</span>
 	<span class="token punctuation">}</span>
@@ -2279,52 +2279,147 @@ now<span class="token punctuation">.</span><span class="token function">UnixNano
 
 
 
+<h1 id="go-encoding-xml"><a href="#go-encoding-xml" class="headerlink" title="go encoding/xml"></a>go encoding/xml</h1><blockquote>
+<p>xml 包实现 xml 解析</p>
+</blockquote>
+<h2 id="核心的两个函数"><a href="#核心的两个函数" class="headerlink" title="核心的两个函数"></a>核心的两个函数</h2><blockquote>
+<p>将 struct 编码成 xml, 可以接收任意类型</p>
+</blockquote>
+<p><code>func Marshal(v interface{}) ([]byte, error)</code></p>
+<blockquote>
+<p>将 xml 转码成 struct 结构体</p>
+</blockquote>
+<p><code>func Unmarshal(data []byte, v interface{}) error()</code></p>
+<h2 id="两个核心结构体-1"><a href="#两个核心结构体-1" class="headerlink" title="两个核心结构体"></a>两个核心结构体</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">type</span> Decoder <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token comment">// contains filtered or unexported fileds</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">type</span> Encode <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token comment">// contains filtered or unexported fileds</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"encoding/xml"</span>
+	<span class="token string">"fmt"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">type</span> Person31 <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 反引号</span>
+	XMLName xml<span class="token punctuation">.</span>Name <span class="token string">`xml:"person"`</span>
+	Name    <span class="token builtin">string</span>   <span class="token string">`xml:"name"`</span>
+	Age     <span class="token builtin">int</span>      <span class="token string">`xml:"age"`</span>
+	Email   <span class="token builtin">string</span>   <span class="token string">`xml:"email"`</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">MarshalTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	p <span class="token operator">:=</span> Person31<span class="token punctuation">{</span>
+		Name<span class="token punctuation">:</span>  <span class="token string">"tom"</span><span class="token punctuation">,</span>
+		Age<span class="token punctuation">:</span>   <span class="token number">20</span><span class="token punctuation">,</span>
+		Email<span class="token punctuation">:</span> <span class="token string">"tom@example.com"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token comment">// b, _ := xml.Marshal(p)</span>
+	<span class="token comment">// 有缩进</span>
+	b<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> xml<span class="token punctuation">.</span><span class="token function">MarshalIndent</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">,</span> <span class="token string">" "</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"%v\n"</span><span class="token punctuation">,</span> <span class="token function">string</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">UnmarshalTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	s <span class="token operator">:=</span> <span class="token string">` &lt;person&gt;
+  &lt;name&gt;tom&lt;/name&gt;
+  &lt;age&gt;20&lt;/age&gt;
+  &lt;email&gt;tom@example.com&lt;/email&gt;
+ &lt;/person&gt;`</span>
+
+	b <span class="token operator">:=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+	<span class="token keyword">var</span> per Person31
+
+	<span class="token boolean">_</span> <span class="token operator">=</span> xml<span class="token punctuation">.</span><span class="token function">Unmarshal</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token operator">&amp;</span>per<span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"per: %v\n"</span><span class="token punctuation">,</span> per<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token function">MarshalTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token function">UnmarshalTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
+<h1 id="go-math"><a href="#go-math" class="headerlink" title="go math"></a>go math</h1><blockquote>
+<p>包含一些常量和一些有用的数学计算函数，</p>
+<ul>
+<li>三角函数</li>
+<li>随机数</li>
+<li>绝对值</li>
+<li>平方根</li>
+</ul>
+</blockquote>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002121130777.png" alt="image-20221002121130777"></p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002121424201.png" alt="image-20221002121424201"></p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002121449655.png" alt="image-20221002121449655"></p>
+<h1 id="go-操作数据库"><a href="#go-操作数据库" class="headerlink" title="go 操作数据库"></a>go 操作数据库</h1><h2 id="安装驱动"><a href="#安装驱动" class="headerlink" title="安装驱动"></a>安装驱动</h2><p><code>go get -u github.com/go-sql-driver/mysql</code></p>
+<h2 id="初始化模块"><a href="#初始化模块" class="headerlink" title="初始化模块"></a>初始化模块</h2><p><code>go mod init m</code></p>
+<h2 id="执行-go-mod-tidy"><a href="#执行-go-mod-tidy" class="headerlink" title="执行 go mod tidy"></a>执行 go mod tidy</h2><p><code>go mod tidy</code></p>
+<h2 id="导入驱动"><a href="#导入驱动" class="headerlink" title="导入驱动"></a>导入驱动</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002133430324.png" alt="image-20221002133430324"></p>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">"database/sql"</span>
+	<span class="token string">"fmt"</span>
+	<span class="token boolean">_</span> <span class="token string">"github.com/go-sql-driver/mysql"</span>
+<span class="token punctuation">)</span>
 
+<span class="token keyword">var</span> db <span class="token operator">*</span>sql<span class="token punctuation">.</span>DB
 
+<span class="token keyword">func</span> <span class="token function">initDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>err <span class="token builtin">error</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	dsn <span class="token operator">:=</span> <span class="token string">"root:123456@tcp(127.0.0.1:3306)/go_db?charset=utf8mb4&amp;parseTime=True"</span>
+	db<span class="token punctuation">,</span> err <span class="token operator">=</span> sql<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">"mysql"</span><span class="token punctuation">,</span> dsn<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
+	err <span class="token operator">=</span> db<span class="token punctuation">.</span><span class="token function">Ping</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token keyword">return</span> err
+	<span class="token punctuation">}</span>
 
+	<span class="token keyword">return</span> <span class="token boolean">nil</span>
+<span class="token punctuation">}</span>
 
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">//db, err := sql.Open("mysql", "root:123456@/go_db")</span>
+	<span class="token comment">//if err != nil {</span>
+	<span class="token comment">//	fmt.Printf("err: %v\n", err)</span>
+	<span class="token comment">//}</span>
+	<span class="token comment">//// See "Important settings" section.</span>
+	<span class="token comment">//db.SetConnMaxLifetime(time.Minute * 3)</span>
+	<span class="token comment">//db.SetMaxOpenConns(10)</span>
+	<span class="token comment">//db.SetMaxIdleConns(10)</span>
+	<span class="token comment">//</span>
+	<span class="token comment">//fmt.Printf("db: %v\n", db)</span>
 
+	err <span class="token operator">:=</span> <span class="token function">initDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">"err: %v\n"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"连接成功！"</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
 
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h2 id="Exec"><a href="#Exec" class="headerlink" title="Exec"></a>Exec</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002134601190.png" alt="image-20221002134601190"></p>
+<blockquote>
+<p>db.QueryRow()</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002134919679.png" alt="image-20221002134919679"></p>
+<blockquote>
+<p>db.Query()</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002135233810.png" alt="image-20221002135233810"></p>
+<blockquote>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002135441151.png" alt="image-20221002135441151"></p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221002135831319.png" alt="image-20221002135831319"></p>
 
                 
             </div>
@@ -2702,7 +2797,7 @@ now<span class="token punctuation">.</span><span class="token function">UnixNano
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">389k</span>
+                        class="white-color">389.7k</span>
             
             
             

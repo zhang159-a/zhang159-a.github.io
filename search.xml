@@ -4,6 +4,42 @@
   
     
     <entry>
+      <title>gorm学习</title>
+      <link href="/2022/10/02/gorm-xue-xi/"/>
+      <url>/2022/10/02/gorm-xue-xi/</url>
+      
+      
+      <categories>
+          
+          <category> gorm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> go </tag>
+            
+            <tag> 数据库 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>token的使用</title>
+      <link href="/2022/10/02/token-de-shi-yong/"/>
+      <url>/2022/10/02/token-de-shi-yong/</url>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Swagger学习与使用</title>
       <link href="/2022/10/01/swagger-xue-xi-yu-shi-yong/"/>
       <url>/2022/10/01/swagger-xue-xi-yu-shi-yong/</url>
