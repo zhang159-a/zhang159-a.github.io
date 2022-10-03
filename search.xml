@@ -4,17 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/"/>
-      <url>/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/</url>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>gorm学习</title>
       <link href="/2022/10/02/gorm-xue-xi/"/>
       <url>/2022/10/02/gorm-xue-xi/</url>
@@ -55,6 +44,29 @@
         <tags>
             
             <tag> token </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>尚硅谷_毕设项目系列教程_智慧校园管理系统</title>
+      <link href="/2022/10/02/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/"/>
+      <url>/2022/10/02/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/</url>
+      
+      
+      <categories>
+          
+          <category> 项目总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 智慧校园 </tag>
             
         </tags>
       
