@@ -4,6 +4,17 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/"/>
+      <url>/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/</url>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>gorm学习</title>
       <link href="/2022/10/02/gorm-xue-xi/"/>
       <url>/2022/10/02/gorm-xue-xi/</url>
@@ -34,6 +45,18 @@
       <url>/2022/10/02/token-de-shi-yong/</url>
       
       
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> token </tag>
+            
+        </tags>
       
     </entry>
     

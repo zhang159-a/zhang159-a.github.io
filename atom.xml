@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-02T09:09:45.404Z</updated>
+  <updated>2022-10-03T02:31:52.730Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/"/>
+    <id>http://example.com/2022/10/03/zhi-hui-xiao-yuan-kai-fa-wen-dang/shang-huo-gu-bi-she-xiang-mu-xi-lie-jiao-cheng-zhi-hui-xiao-yuan-guan-li-xi-tong/</id>
+    <published>2022-10-03T02:32:59.122Z</published>
+    <updated>2022-10-03T02:31:52.730Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>gorm学习</title>
@@ -48,7 +69,7 @@
     <link href="http://example.com/2022/10/02/token-de-shi-yong/"/>
     <id>http://example.com/2022/10/02/token-de-shi-yong/</id>
     <published>2022-10-02T03:31:54.000Z</published>
-    <updated>2022-10-02T03:31:54.453Z</updated>
+    <updated>2022-10-03T02:02:29.718Z</updated>
     
     
       
@@ -61,6 +82,10 @@
     
     
     
+    <category term="SpringBoot" scheme="http://example.com/categories/SpringBoot/"/>
+    
+    
+    <category term="token" scheme="http://example.com/tags/token/"/>
     
   </entry>
   
@@ -169,7 +194,7 @@
     <link href="http://example.com/2022/09/24/ru-he-shi-yong-goland/"/>
     <id>http://example.com/2022/09/24/ru-he-shi-yong-goland/</id>
     <published>2022-09-24T01:44:31.000Z</published>
-    <updated>2022-09-24T01:45:06.643Z</updated>
+    <updated>2022-10-03T02:11:37.799Z</updated>
     
     
       
@@ -470,31 +495,6 @@
     <id>http://example.com/2022/09/16/python-gong-jiang-3-rong-qi-lei-xing/</id>
     <published>2022-09-16T12:41:35.000Z</published>
     <updated>2022-09-20T11:43:23.214Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Python工匠" scheme="http://example.com/categories/Python%E5%B7%A5%E5%8C%A0/"/>
-    
-    
-    <category term="python" scheme="http://example.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python工匠：2、数值与字符串</title>
-    <link href="http://example.com/2022/09/16/python-gong-jiang-2-shu-zhi-yu-zi-fu-chuan/"/>
-    <id>http://example.com/2022/09/16/python-gong-jiang-2-shu-zhi-yu-zi-fu-chuan/</id>
-    <published>2022-09-16T09:32:07.000Z</published>
-    <updated>2022-09-16T12:39:46.139Z</updated>
     
     
       

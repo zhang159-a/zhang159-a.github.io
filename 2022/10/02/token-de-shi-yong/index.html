@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="token的使用, 学习笔记">
-    <meta name="description" content="">
+    <meta name="description" content="用户身份验证的令牌–TokenToken 是什么?所谓的 Token,其实就是服务端生成的一串加密字符串、以作客户端进行请求的一个 ”令牌“。当用户第一次使用账号密码成功进行登录后，服务器便生成一个 Token 及 Token 失效时间并将">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -471,12 +471,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/token/">
+                                <span class="chip bg-color">token</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/SpringBoot/" class="post-category">
+                                SpringBoot
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -492,21 +505,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-02
+                    2022-10-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -529,7 +542,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="用户身份验证的令牌–Token"><a href="#用户身份验证的令牌–Token" class="headerlink" title="用户身份验证的令牌–Token"></a>用户身份验证的令牌–Token</h1><h2 id="Token-是什么"><a href="#Token-是什么" class="headerlink" title="Token 是什么?"></a>Token 是什么?</h2><p>所谓的 Token,其实就是服务端生成的一串加密字符串、以作客户端进行请求的一个 ”令牌“。当用户第一次使用账号密码成功进行登录后，服务器便生成一个 Token 及 Token 失效时间并将此返回给客户端，若成功登陆，以后客户端只需在有效时间内带上这个Token 前来请求数据即可，无需再次带上用户名和密码。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-ce9df901c56ec05cee23f168382dbbc5_1440w.webp" alt="img"></p>
+<p>拿实际过程举例，当你下载QQ或微信后第一次用账号和密码成功登录后，Token就为我们免去了每次打开应用都要输入账号跟密码的过程。</p>
+<h2 id="为什么要使用-Token？"><a href="#为什么要使用-Token？" class="headerlink" title="为什么要使用 Token？"></a>为什么要使用 Token？</h2><p>为什么要使用Token？这个问题其实很好回答——因为它能解决问题！</p>
+<p>当下用户对产品的使用体验要求在逐渐提高，从产品体验方面来讲，Token带来的体验更容易能让用户接受。</p>
+<p>那么Token都可以解决哪些问题呢？</p>
+<ul>
+<li>Token 具有随机性、不可预测性、时效性、无状态、跨域等特点。</li>
+<li>Token 完全由应用管理，所以它可以避开同源策略</li>
+<li>Token 可以避免 CSRF 攻击</li>
+<li>Token 可以是无状态的，可以在多个服务间共享</li>
+<li>Token 是在服务端产生的。如果前端使用用户名、密码向服务端请求认证，服务端认证成功，那么在服务端会返回 Token 给前端。前端可以在每次请求的时候带上 Token 证明自己的身份。如果这个 Token 在服务端持久化（比如存入数据库），那它就是一个永久的身份令牌。</li>
+</ul>
+<p>当然说到这里大家可能会想到，用服务器的session_id存储到cookies中也能做到，为什么非要用Token呢？网上有许多对比Token和session的文章，在此就不再赘述。其实小编觉得，如果是开发web应用的话，用两者都可以，但如果是开发API接口，前后端分离，最好使用Token，因为session+cookies是基于web的，但针对API接口可能会考虑到移动端，app是没有cookies和session的。</p>
+<h2 id="Token-的声明周期"><a href="#Token-的声明周期" class="headerlink" title="Token 的声明周期"></a>Token 的声明周期</h2><h3 id="1-用户未登录"><a href="#1-用户未登录" class="headerlink" title="1.用户未登录"></a>1.用户未登录</h3><p>用户执行注册/登录→</p>
+<p>一旦基础数据校验成功，后端生成Token，并且Token包含此次注册/登录用户的用户名并通过JsonResponse返回给前端→</p>
+<p>前端拿到返回的Token后，存入浏览器本地存储</p>
+<h3 id="2-用户每次访问博客页面"><a href="#2-用户每次访问博客页面" class="headerlink" title="2.用户每次访问博客页面"></a>2.用户每次访问博客页面</h3><p>从本地存储中拿出Token→</p>
+<p>JS将Token　放入request的Authorization头，发送http请求向后端索要数据→</p>
+<p>服务器接到前端请求（当前URL加了loging_check,并且请求方法在methods参数中）,进行校验→从requestAuthorization头拿出Token→校验→校验不通过，返回前端异常代码/校验通过，正常执行对应的视图函数→前端一旦接到关于Token的异常码，则删除本地存储中的Token,且将用户转至登录界面。</p>
+<h3 id="3-如何设置-Token-的有效期"><a href="#3-如何设置-Token-的有效期" class="headerlink" title="3.如何设置 Token 的有效期"></a>3.如何设置 Token 的有效期</h3><p>其实Token作为一个概念模型，开发者完全可以针对自己开发的应用自定义Token，只要能做到不让不法分子钻系统漏洞即可。</p>
+<p>那么为Token设置有效期还有必要吗？</p>
+<p>对于这个问题，大家不妨先看两个例子：</p>
+<p>例1：登录密码</p>
+<p>登录密码一般要求定期改变密码，以防止泄漏，所以密码是有有效期的。</p>
+<p>例2：安全证书</p>
+<p>SSL安全证书都有有效期，目的是为了解决吊销的问题。</p>
+<p>所以无论是从安全的角度考虑，还是从吊销的角度考虑，Token都需要设有效期。</p>
+<p>那么，Token的有效期多长合适呢？</p>
+<p>一般来说，基于系统安全的需要当然需要尽可能的短，但也不能短得离谱：如果在用户正常操作的过程中，Token过期失效要求重新登录，用户体验岂不是很糟糕？</p>
+<p>为了解决在操作过程不让用户感到Token失效的问题，有一种方案是在服务器端保存Token状态，用户每次操作都会自动刷新（推迟）Token的过期时间。</p>
+<p>如此操作会存在一个问题，即在前后端分离、单页App等情况下，每秒可能发起多次请求，如果每次都去刷新过期时间会产生非常大的代价，同样地，如果Token的过期时间被持久化到数据库或文件，代价就更大了。所以通常为了提升效率、减少消耗，会把Token的过期时保存在缓存或者内存中。</p>
+<p>另一种方案是使用<strong>RefreshToken</strong>，它可以避免频繁的读写操作。这种方案中，服务端无需刷新Token的过期时间，一旦Token过期，就反馈给前端，前端使用RefreshToken申请一个全新Token继续使用。</p>
+<p>这种方案中，服务端只需要在客户端请求更新Token的时候对RefreshToken的有效性进行一次检查，大大减少了更新有效期的操作，也就避免了频繁读写。当然RefreshToken也是有有效期的，但是这个有效期就可以长一点了。</p>
+<p>使用 Token 和 Refresh Token 的时序图如下：</p>
+<h4 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h4><p><img src="https://pic4.zhimg.com/80/v2-249b858821ae8e68420c37ebacb9486f_1440w.webp" alt="img"></p>
+<h4 id="业务请求"><a href="#业务请求" class="headerlink" title="业务请求"></a>业务请求</h4><p><img src="https://pic1.zhimg.com/80/v2-97a479838a94cd365523961682643a98_1440w.webp" alt="img"></p>
+<h4 id="Token-过期，刷新-Token"><a href="#Token-过期，刷新-Token" class="headerlink" title="Token 过期，刷新 Token"></a>Token 过期，刷新 Token</h4><p><img src="https://pic1.zhimg.com/80/v2-fa0a5c054a69a31d270b981df4b1ddb8_1440w.webp" alt="img"></p>
+
                 
             </div>
             <hr/>
@@ -592,7 +643,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/token/">
+                                    <span class="chip bg-color">token</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -906,7 +961,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">389.7k</span>
+                        class="white-color">404.6k</span>
             
             
             
