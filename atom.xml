@@ -146,6 +146,33 @@
   </entry>
   
   <entry>
+    <title>Vue简单学习</title>
+    <link href="http://example.com/2022/10/05/vue-jian-dan-xue-xi/"/>
+    <id>http://example.com/2022/10/05/vue-jian-dan-xue-xi/</id>
+    <published>2022-10-05T02:05:37.000Z</published>
+    <updated>2022-10-05T08:14:21.643Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Vue" scheme="http://example.com/categories/Vue/"/>
+    
+    
+    <category term="前端" scheme="http://example.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ES6简单学习</title>
     <link href="http://example.com/2022/10/05/es6-jian-dan-xue-xi/"/>
     <id>http://example.com/2022/10/05/es6-jian-dan-xue-xi/</id>
@@ -494,31 +521,6 @@
     
     
     <category term="go" scheme="http://example.com/tags/go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何使用Goland</title>
-    <link href="http://example.com/2022/09/24/ru-he-shi-yong-goland/"/>
-    <id>http://example.com/2022/09/24/ru-he-shi-yong-goland/</id>
-    <published>2022-09-24T01:44:31.000Z</published>
-    <updated>2022-10-03T02:11:37.799Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Go" scheme="http://example.com/categories/Go/"/>
-    
-    
-    <category term="Goland" scheme="http://example.com/tags/Goland/"/>
     
   </entry>
   

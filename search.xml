@@ -115,6 +115,31 @@
     
     
     <entry>
+      <title>Vue简单学习</title>
+      <link href="/2022/10/05/vue-jian-dan-xue-xi/"/>
+      <url>/2022/10/05/vue-jian-dan-xue-xi/</url>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ES6简单学习</title>
       <link href="/2022/10/05/es6-jian-dan-xue-xi/"/>
       <url>/2022/10/05/es6-jian-dan-xue-xi/</url>
@@ -2106,9 +2131,9 @@
       
         <tags>
             
-            <tag> Git </tag>
-            
             <tag> Github </tag>
+            
+            <tag> Git </tag>
             
         </tags>
       
