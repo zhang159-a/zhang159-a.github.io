@@ -17,7 +17,8 @@ ASSIGN_UUID 不含中划线的 UUID
 NONE 无状态
 
 
-AUTO （自动增长策略）aout自">
+AUTO（自动增长策略）
+需要对数据">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -517,21 +518,21 @@ AUTO （自动增长策略）aout自">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-12
+                    2022-10-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    687
+                    744
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -566,7 +567,14 @@ AUTO （自动增长策略）aout自">
 <li><p>NONE 无状态</p>
 </li>
 </ul>
-<h2 id="AUTO-（自动增长策略）"><a href="#AUTO-（自动增长策略）" class="headerlink" title="AUTO （自动增长策略）"></a>AUTO （自动增长策略）</h2><p>aout自动增长策略，这个配合数据库使用，mysql可以，但是oracle不行。<br><strong>使用方法</strong><br>在主键字段上加上 @TableId(type = IdType.AUTO)</p>
+<h2 id="AUTO（自动增长策略）"><a href="#AUTO（自动增长策略）" class="headerlink" title="AUTO（自动增长策略）"></a>AUTO（自动增长策略）</h2><blockquote>
+<p>需要对数据库进行设置</p>
+<ul>
+<li>表主键字段设置为自动增长</li>
+<li>表主键字段类型为 int 或 其他整形</li>
+</ul>
+</blockquote>
+<p>aout自动增长策略，这个配合数据库使用，mysql可以，但是oracle不行。<br><strong>使用方法</strong><br>在主键字段上加上 @TableId(type = IdType.AUTO)</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span> <span class="token punctuation">{</span>
     <span class="token comment">//指定主键使用数据库ID自增策略</span>
@@ -576,7 +584,10 @@ AUTO （自动增长策略）aout自">
     <span class="token keyword">private</span> <span class="token class-name">String</span> passWord<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>Input（自定义输入策略）<br>自定义输入策略<br>Mybatis-Plus 内置了如下数据库主键序列（如果内置支持不满足你的需求，可实现 IKeyGenerator 接口来进行扩展）：<br>DB2KeyGenerator<br>H2KeyGenerator<br>KingbaseKeyGenerator<br>OracleKeyGenerator<br>PostgreKeyGenerator<br>使用方法<br>首先添加@Bean</p>
+<h2 id="Input（自定义输入策略）"><a href="#Input（自定义输入策略）" class="headerlink" title="Input（自定义输入策略）"></a>Input（自定义输入策略）</h2><blockquote>
+<p>需要自己输入 id</p>
+</blockquote>
+<p>自定义输入策略<br>Mybatis-Plus 内置了如下数据库主键序列（如果内置支持不满足你的需求，可实现 IKeyGenerator 接口来进行扩展）：<br>DB2KeyGenerator<br>H2KeyGenerator<br>KingbaseKeyGenerator<br>OracleKeyGenerator<br>PostgreKeyGenerator<br>使用方法<br>首先添加@Bean</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
    <span class="token keyword">public</span> <span class="token class-name">OracleKeyGenerator</span> <span class="token function">oracleKeyGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">OracleKeyGenerator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -590,7 +601,12 @@ AUTO （自动增长策略）aout自">
     <span class="token annotation punctuation">@TableId</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"ID"</span><span class="token punctuation">,</span>type <span class="token operator">=</span> <span class="token class-name">IdType</span><span class="token punctuation">.</span>INPUT<span class="token punctuation">)</span>
     <span class="token keyword">private</span> <span class="token class-name">Integer</span> id<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>ASSIGN_ID（雪花算法）<br>如果不设置 type 值，默认则使用 IdType.ASSIGN_ID 策略（自 3.3.0 起）。该策略会使用雪花算法自动生成主键 ID，主键类型为 Long 或 String。</p>
+<h2 id="ASSIGN-ID（雪花算法）"><a href="#ASSIGN-ID（雪花算法）" class="headerlink" title="ASSIGN_ID（雪花算法）"></a>ASSIGN_ID（雪花算法）</h2><blockquote>
+<p>如果不设置 type 值，默认则使用 IdType.ASSIGN_ID 策略（自 3.3.0 起）。该策略会使用雪花算法自动生成主键 ID，主键类型为 Long 或 String。</p>
+<ul>
+<li>生成 19 位数字</li>
+</ul>
+</blockquote>
 <p>雪花算法（SnowFlake）是 Twitter 开源的分布式 id 生成算法。其核心思想就是：使用一个 64 bit 的 long 型的数字作为全局唯一 id。在分布式系统中的应用十分广泛，且 ID 引入了时间戳，基本上保持自增的<br><strong>使用方法</strong><br>指定主键生成策略使用雪花算法（默认策略）</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span> <span class="token punctuation">{</span>
@@ -601,7 +617,13 @@ AUTO （自动增长策略）aout自">
     <span class="token keyword">private</span> <span class="token class-name">String</span> passWord<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="ASSIGN-UUID（不含中划线的UUID）"><a href="#ASSIGN-UUID（不含中划线的UUID）" class="headerlink" title="ASSIGN_UUID（不含中划线的UUID）"></a>ASSIGN_UUID（不含中划线的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=UUID&amp;spm=1001.2101.3001.7020">UUID</a>）</h2><p>如果使用 IdType.ASSIGN_UUID 策略，则会自动生成不含中划线的 UUID 作为主键，主键类型为 String。<br><strong>使用方法</strong></p>
+<h2 id="ASSIGN-UUID（不含中划线的UUID）"><a href="#ASSIGN-UUID（不含中划线的UUID）" class="headerlink" title="ASSIGN_UUID（不含中划线的UUID）"></a>ASSIGN_UUID（不含中划线的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=UUID&amp;spm=1001.2101.3001.7020">UUID</a>）</h2><blockquote>
+<p>如果使用 IdType.ASSIGN_UUID 策略，则会自动生成不含中划线的 UUID 作为主键，主键类型为 String。  </p>
+<ul>
+<li>生成数字和字母值</li>
+</ul>
+<p><strong>使用方法</strong></p>
+</blockquote>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
 <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserInfo</span> <span class="token punctuation">{</span>
     <span class="token comment">//指定主键生成策略为不含中划线的UUID</span>
@@ -611,8 +633,8 @@ AUTO （自动增长策略）aout自">
     <span class="token keyword">private</span> <span class="token class-name">String</span> passWord<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>NONE（无状态）<br>如果使用 IdType.NONE 策略，表示未设置主键类型（注解里等于跟随全局,全局里约等于 INPUT）</p>
-<p>假设我们希望默认全部都使用 AUTO 策略（数据库 ID 自增），那么可以在 application.properties 中添加如下配置进行修改：<br><code>mybatis-plus.global-config.db-config.id-type=auto</code></p>
+<h2 id="NONE（无状态）"><a href="#NONE（无状态）" class="headerlink" title="NONE（无状态）"></a>NONE（无状态）</h2><p>如果使用 IdType.NONE 策略，表示未设置主键类型（注解里等于跟随全局,全局里约等于 INPUT）</p>
+<h2 id="假设我们希望默认全部都使用-AUTO-策略（数据库-ID-自增），那么可以在-application-properties-中添加如下配置进行修改："><a href="#假设我们希望默认全部都使用-AUTO-策略（数据库-ID-自增），那么可以在-application-properties-中添加如下配置进行修改：" class="headerlink" title="假设我们希望默认全部都使用 AUTO 策略（数据库 ID 自增），那么可以在 application.properties 中添加如下配置进行修改："></a>假设我们希望默认全部都使用 AUTO 策略（数据库 ID 自增），那么可以在 application.properties 中添加如下配置进行修改：</h2><p><code>mybatis-plus.global-config.db-config.id-type=auto</code></p>
 <h1 id="错误-主键雪花策略：Data-truncation-Out-of-range-value-for-column-‘id’-at-row-1"><a href="#错误-主键雪花策略：Data-truncation-Out-of-range-value-for-column-‘id’-at-row-1" class="headerlink" title="错误-主键雪花策略：Data truncation: Out of range value for column ‘id’ at row 1"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/shining-feifan/p/15473135.html">错误-主键雪花策略：Data truncation: Out of range value for column ‘id’ at row 1</a></h1><p>报错：Data truncation: Out of range value for column ‘id’ at row 1</p>
 <p>原因：mybatis-plus开启主键雪花策略，生成19位随机字符串，数据库中的主键字段为int类型，长度小于19位。</p>
 <p>解决：将数据库中表的主键字段设置为bigint类型</p>
@@ -989,7 +1011,7 @@ AUTO （自动增长策略）aout自">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">404.6k</span>
+                        class="white-color">408.6k</span>
             
             
             
