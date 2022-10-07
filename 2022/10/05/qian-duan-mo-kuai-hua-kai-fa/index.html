@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="前端模块化开发, 学习笔记">
     <meta name="description" content="[TOC]
-">
+模块化开发1.模块化简介1.1 模块化产生的背景随着网站逐渐变成”互联网应用程序”，嵌入网页的Javascript代码越来越庞大，越来越复杂。
+Javascript模块化编程，已经成为一个迫切的需求。理想情况下，开发者只需要实现">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -472,12 +473,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Es6/" class="post-category">
+                                Es6
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -500,14 +514,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1
+                    822
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -531,6 +545,160 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[TOC]</p>
+<h1 id="模块化开发"><a href="#模块化开发" class="headerlink" title="模块化开发"></a>模块化开发</h1><h2 id="1-模块化简介"><a href="#1-模块化简介" class="headerlink" title="1.模块化简介"></a>1.模块化简介</h2><h3 id="1-1-模块化产生的背景"><a href="#1-1-模块化产生的背景" class="headerlink" title="1.1 模块化产生的背景"></a>1.1 模块化产生的背景</h3><p>随着网站逐渐变成”互联网应用程序”，嵌入网页的Javascript代码越来越庞大，越来越复杂。</p>
+<p>Javascript模块化编程，已经成为一个迫切的需求。理想情况下，开发者只需要实现核心的业务逻辑，其他都可以加载别人已经写好的模块。</p>
+<p>但是，Javascript不是一种模块化编程语言，它不支持”类”（class），包（package）等概念，更遑论”模块”（module）了。</p>
+<h3 id="1-2-什么是模块化开发"><a href="#1-2-什么是模块化开发" class="headerlink" title="1.2 什么是模块化开发"></a>1.2 什么是模块化开发</h3><p>传统非模块化开发有如下的缺点：</p>
+<ul>
+<li>命名冲突</li>
+<li>文件依赖</li>
+</ul>
+<p>模块化规范：</p>
+<ul>
+<li>CommonJS模块化规范</li>
+<li>ES6模块化规范</li>
+</ul>
+<h2 id="2-ES5-模块化"><a href="#2-ES5-模块化" class="headerlink" title="2.ES5 模块化"></a>2.ES5 模块化</h2><p>每个文件就是一个模块，有自己作用域。在一个文件里定义的变量、函数、类，都是私有的，对其他文件不可见。</p>
+<h3 id="2-1-创建-“module”-文件夹"><a href="#2-1-创建-“module”-文件夹" class="headerlink" title="2.1 创建 “module” 文件夹"></a>2.1 创建 “module” 文件夹</h3><h3 id="2-2-导出模块"><a href="#2-2-导出模块" class="headerlink" title="2.2 导出模块"></a>2.2 导出模块</h3><p>创建 common-js模块化/四则运算.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 定义成员：</span>
+<span class="token keyword">const</span> <span class="token function-variable function">sum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">subtract</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>导出模块中的成员</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 导出成员：</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">sum</span><span class="token operator">:</span> sum<span class="token punctuation">,</span>
+    <span class="token literal-property property">subtract</span><span class="token operator">:</span> subtract
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 简写</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    sum<span class="token punctuation">,</span>
+    subtract
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-3-导入模块"><a href="#2-3-导入模块" class="headerlink" title="2.3 导入模块"></a>2.3 导入模块</h3><p>创建 common-js模块化/引入模块.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//引入模块，注意：当前路径必须写 ./</span>
+<span class="token keyword">const</span> m <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./四则运算.js'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span>
+<span class="token keyword">const</span> result1 <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">sum</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> result2 <span class="token operator">=</span> m<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result1<span class="token punctuation">,</span> result2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-4、运行程序"><a href="#2-4、运行程序" class="headerlink" title="2.4、运行程序"></a>2.4、运行程序</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> common-js模块化/引入模块.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>CommonJS使用 exports 和require 来导出、导入模块。</p>
+<h2 id="3-ES6-模块化"><a href="#3-ES6-模块化" class="headerlink" title="3.ES6 模块化"></a>3.ES6 模块化</h2><blockquote>
+<p>ES6使用 export 和 import 来导出、导入模块。</p>
+</blockquote>
+<h3 id="3-1-导出模块"><a href="#3-1-导出模块" class="headerlink" title="3.1 导出模块"></a>3.1 导出模块</h3><p>创建 src/userApi.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'获取数据列表'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'保存数据'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-2-导入模块"><a href="#3-2-导入模块" class="headerlink" title="3.2 导入模块"></a>3.2 导入模块</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//只取需要的方法即可，多个方法用逗号分隔</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> getList<span class="token punctuation">,</span> save <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./userApi.js"</span>
+<span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p><strong>注意：这时程序无法运行，因为ES6的模块化无法在Node.js中执行，需要用Babel编辑成ES5后再执行。</strong></p>
+</blockquote>
+<h3 id="3-3-安装Babel"><a href="#3-3-安装Babel" class="headerlink" title="3.3 安装Babel"></a>3.3 安装Babel</h3><p>Babel是一个广泛使用的转码器，可以将ES6代码转为ES5代码，从而在现有环境执行执行</p>
+<p><strong>安装命令行转码工具</strong></p>
+<p>Babel提供babel-cli工具，用于命令行转码。它的安装命令如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 全局安装</span>
+<span class="token function">npm</span> <span class="token function">install</span> --global babel-cli
+<span class="token comment">#查看是否安装成功</span>
+babel --version<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-4-配置-babelrc"><a href="#3-4-配置-babelrc" class="headerlink" title="3.4 配置 .babelrc"></a>3.4 配置 .babelrc</h3><p>Babel的配置文件是.babelrc，存放在项目的根目录下，该文件用来设置转码规则和插件，presets字段设定转码规则，将es2015规则加入 .babelrc：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">{</span>
+    <span class="token string-property property">"presets"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"es2015"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"plugins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-5-安装转码器"><a href="#3-5-安装转码器" class="headerlink" title="3.5 安装转码器"></a>3.5 安装转码器</h3><p>在项目中安装</p>
+<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">npm install --save-dev babel-preset-es2015<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="3-6-转码"><a href="#3-6-转码" class="headerlink" title="3.6 转码"></a>3.6 转码</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 新建个目录存放转码后的代码</span>
+<span class="token function">mkdir</span> dist1
+<span class="token comment"># --out-dir 或 -d 参数指定输出目录</span>
+<span class="token comment"># 如果目录不存在，会自动创建</span>
+babel src -d dist1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3-7-运行程序"><a href="#3-7-运行程序" class="headerlink" title="3.7 运行程序"></a>3.7 运行程序</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">node dist1/userComponent.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="4-ES6-模块化二"><a href="#4-ES6-模块化二" class="headerlink" title="4.ES6 模块化二"></a>4.ES6 模块化二</h2><h3 id="4-1-导出模块"><a href="#4-1-导出模块" class="headerlink" title="4.1 导出模块"></a>4.1 导出模块</h3><p>创建 es6/userApi2.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'获取数据列表2'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'保存数据2'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-2-导入模块"><a href="#4-2-导入模块" class="headerlink" title="4.2 导入模块"></a>4.2 导入模块</h3><p>创建 es6/userComponent2.js</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> user <span class="token keyword">from</span> <span class="token string">"./userApi2.js"</span>
+user<span class="token punctuation">.</span><span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+user<span class="token punctuation">.</span><span class="token function">save</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-3-转码"><a href="#4-3-转码" class="headerlink" title="4.3 转码"></a>4.3 转码</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">mkdir dist2
+# --out-dir 或 -d 参数指定输出目录
+babel es6 -d dist2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-4-运行程序"><a href="#4-4-运行程序" class="headerlink" title="4.4 运行程序"></a>4.4 运行程序</h3><pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">node dist2/userComponent2.js<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 
             </div>
@@ -594,7 +762,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -699,13 +871,25 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zhr
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Es6/" class="post-category">
+                                    Es6
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -898,7 +1082,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">409.6k</span>
+                        class="white-color">410.5k</span>
             
             
             
