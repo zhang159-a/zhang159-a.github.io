@@ -109,11 +109,11 @@ http://example.com/tags/goland/
 http://example.com/tags/java/
 http://example.com/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA/
 http://example.com/tags/Markdown/
-http://example.com/tags/maven/
 http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/
+http://example.com/tags/maven/
+http://example.com/tags/javascript/
 http://example.com/tags/MybatisPlus/
 http://example.com/tags/node/
-http://example.com/tags/javascript/
 http://example.com/tags/npm/
 http://example.com/tags/python/
 http://example.com/tags/RESTful/
@@ -164,11 +164,11 @@ http://example.com/categories/Go/
 http://example.com/categories/JSON/
 http://example.com/categories/Java/
 http://example.com/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/
-http://example.com/categories/Maven/
 http://example.com/categories/Mybatisplus/
+http://example.com/categories/Maven/
+http://example.com/categories/JavaScript/
 http://example.com/categories/MybatisPlus/
 http://example.com/categories/Node-js/
-http://example.com/categories/JavaScript/
 http://example.com/categories/Npm/
 http://example.com/categories/Python%E5%B7%A5%E5%8C%A0/
 http://example.com/categories/SpringMVC/
