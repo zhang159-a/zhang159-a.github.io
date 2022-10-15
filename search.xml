@@ -4,6 +4,81 @@
   
     
     <entry>
+      <title>CLion使用</title>
+      <link href="/2022/10/15/clion-shi-yong/"/>
+      <url>/2022/10/15/clion-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>[TOC]</p><blockquote><p>这个学期学习 软件开发新技术，学习并发编程，使用到了 MPI，应该是一个 C 语言库，用来实现 并发编程</p></blockquote><h1 id="CLion配置MPI"><a href="#CLion配置MPI" class="headerlink" title="CLion配置MPI"></a>CLion配置MPI</h1><h2 id="下载MPI，默认安装路径"><a href="#下载MPI，默认安装路径" class="headerlink" title="下载MPI，默认安装路径"></a>下载MPI，默认安装路径</h2><p><a href="https://www.microsoft.com/en-us/download/details.aspx?id=57467">MPI下载链接</a></p><p><img src="https://img-blog.csdnimg.cn/20201222163713258.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczNTkzMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="查看下载的路径"><a href="#查看下载的路径" class="headerlink" title="查看下载的路径"></a>查看下载的路径</h3><blockquote><p>set MSMPI</p></blockquote><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221015205610912.png" alt="image-20221015205610912"></p><h2 id="创建一个C程序项目"><a href="#创建一个C程序项目" class="headerlink" title="创建一个C程序项目"></a>创建一个C程序项目</h2><p><img src="https://img-blog.csdnimg.cn/20201222164048795.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczNTkzMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="在创建的项目中的Cmake配置文件中配置如下图选中的三行代码"><a href="#在创建的项目中的Cmake配置文件中配置如下图选中的三行代码" class="headerlink" title="在创建的项目中的Cmake配置文件中配置如下图选中的三行代码"></a>在创建的项目中的Cmake配置文件中配置如下图选中的三行代码</h3><blockquote><p>导入需要的包</p><p>include_directories后面找到你安装的MPI目录找到下面的Include目录<br>link_directories后面找到你安装的MPI目录找到下面的lib目录下面的X64<br>link_libraries(msmpi)是固定的</p><p>include_directories(“D:\Program Files (x86)\Microsoft SDKs\MPI\Include”)<br>link_directories(“D:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64”)<br>link_libraries(msmpi)</p></blockquote><p><img src="https://img-blog.csdnimg.cn/20201222164240600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczNTkzMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="编写程序-hello-world"><a href="#编写程序-hello-world" class="headerlink" title="编写程序 hello world!"></a>编写程序 hello world!</h3><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h&gt;</span></span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;mpi.h&gt;</span></span><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;stdint.h&gt;</span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span><span class="token operator">*</span> argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token function">fflush</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 定义 id ,numprocs</span>    <span class="token keyword">int</span> myid<span class="token punctuation">,</span> numprocs<span class="token punctuation">;</span>    <span class="token keyword">int</span>  namelen<span class="token punctuation">;</span>    <span class="token comment">// 处理器名称</span>    <span class="token keyword">char</span> processor_name<span class="token punctuation">[</span>MPI_MAX_PROCESSOR_NAME<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token comment">// 初始化</span>    <span class="token function">MPI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span><span class="token operator">&amp;</span>argv<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">MPI_Comm_rank</span><span class="token punctuation">(</span>MPI_COMM_WORLD<span class="token punctuation">,</span><span class="token operator">&amp;</span>myid<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">MPI_Comm_size</span><span class="token punctuation">(</span>MPI_COMM_WORLD<span class="token punctuation">,</span><span class="token operator">&amp;</span>numprocs<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">MPI_Get_processor_name</span><span class="token punctuation">(</span>processor_name<span class="token punctuation">,</span><span class="token operator">&amp;</span>namelen<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello World! Process %d of %d on %s\n"</span><span class="token punctuation">,</span>myid<span class="token punctuation">,</span>numprocs<span class="token punctuation">,</span><span class="token operator">&amp;</span>processor_name<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">fflush</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 结束</span>    <span class="token function">MPI_Finalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="添加为可执行文件"><a href="#添加为可执行文件" class="headerlink" title="添加为可执行文件"></a>添加为可执行文件</h3><blockquote><p>这个东西我现在还不是很理解，但是之前使用 vs 也有这样的问题，应该是默认只有一个文件可以执行。</p></blockquote><blockquote><p>下载一个插件，可以将我们想要执行的文件，添加到 CMake 中</p></blockquote><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221015212155978.png" alt="image-20221015212155978"></p><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221015212216939.png" alt="image-20221015212216939"></p><h3 id="编写配置环境，并发编程"><a href="#编写配置环境，并发编程" class="headerlink" title="编写配置环境，并发编程"></a>编写配置环境，并发编程</h3><p><img src="https://img-blog.csdnimg.cn/20201222164929735.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDczNTkzMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20221015212307993.png" alt="image-20221015212307993"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CLion </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wps插入图片错误</title>
+      <link href="/2022/10/15/wps-cha-ru-tu-pian-cuo-wu/"/>
+      <url>/2022/10/15/wps-cha-ru-tu-pian-cuo-wu/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>[TOC]</p><blockquote><p>在写实验报告的时候，发现插入图片无法显示</p><ul><li>修改文章整体的行间距</li><li>设置图片的环绕方式</li></ul></blockquote><h1 id="设置行间距"><a href="#设置行间距" class="headerlink" title="设置行间距"></a>设置行间距</h1><ul><li>选中全文</li><li>打开段落设置</li><li>设置行距为 <strong>单倍行距</strong></li></ul><h1 id="设置图片环绕方式"><a href="#设置图片环绕方式" class="headerlink" title="设置图片环绕方式"></a>设置图片环绕方式</h1><ul><li>文件</li><li>选项</li><li>编辑</li><li>将图片插入、设置方式为 上下型</li></ul><p><img src="http://img1.pcfg.cache.wpscdn.cn/ks3_8864c87ad3440f2f8047f469537d81e6/%E5%9B%BE%E7%89%872.jpg?w=865&amp;h=823" alt="img"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> wps </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java,javac版本</title>
+      <link href="/2022/10/15/java-javac-ban-ben/"/>
+      <url>/2022/10/15/java-javac-ban-ben/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>[TOC]</p><blockquote><p>在 Vscode 中配置 Java 环境时，发现程序无法正常运行，因为 java 编译的版本的问题，但是自己现在还没有解决，不怎么会用 vscode</p><p>但是通过这个发现了 终端 cmd 中的 Java 版本与 Javac 的版本不一致，无法运行，因为我的电脑上边有两个 java 环境，所以之前配置的一些系统变量出现了错误，现在设置的都是 jdk16</p></blockquote><ul><li>在 path 中修改位置，通过移动 java 环境变量的位置，让系统先读到这个环境</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发问题 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端模块化开发</title>
       <link href="/2022/10/05/qian-duan-mo-kuai-hua-kai-fa/"/>
       <url>/2022/10/05/qian-duan-mo-kuai-hua-kai-fa/</url>
@@ -495,7 +570,7 @@
       <link href="/2022/09/24/vscode-yun-xing-go-shi-yu-dao-de-wen-ti/"/>
       <url>/2022/09/24/vscode-yun-xing-go-shi-yu-dao-de-wen-ti/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li>首先要下载 Go</li><li>然后配置 环境变量 GOROOT GOPATH</li><li>下载 Vscode</li><li>下载插件 Go</li><li>下载插件 Code Ruuner</li><li>在终端中配置 Go 环境</li></ul><h1 id="遇到的错误"><a href="#遇到的错误" class="headerlink" title="遇到的错误"></a>遇到的错误</h1><h2 id="golang异常-main-go-1-1-expected-‘package‘-found-‘EOF‘"><a href="#golang异常-main-go-1-1-expected-‘package‘-found-‘EOF‘" class="headerlink" title="golang异常: main.go:1:1: expected ‘package‘, found ‘EOF‘"></a>golang异常: main.go:1:1: expected ‘package‘, found ‘EOF‘</h2><p>go build main.go 运行时报错如下：<br>main.go:1:1: expected ‘package’, found ‘EOF’</p><blockquote><p>解决：ctrl+s保存下就可以了</p></blockquote><h2 id="解决cannot-find-package-“fmt“-in-any-of-问题"><a href="#解决cannot-find-package-“fmt“-in-any-of-问题" class="headerlink" title="解决cannot find package “fmt“ in any of 问题"></a>解决cannot find package “fmt“ in any of 问题</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">could not <span class="token function">import</span> <span class="token function">fmt</span> <span class="token punctuation">(</span>cannot <span class="token function">find</span> package <span class="token string">"fmt"</span> <span class="token keyword">in</span> any of /usr/local/Cellar/go/1.15.7/libexec/src/fmt <span class="token punctuation">(</span>from <span class="token variable">$GOROOT</span><span class="token punctuation">)</span>/Users/bytedance/go/src/fmt <span class="token punctuation">(</span>from <span class="token variable">$GOPATH</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>原因在于没有找到 Go 的环境</strong></p><p>在终端进行设置后，恢复正常</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li>首先要下载 Go</li><li>然后配置 环境变量 GOROOT GOPATH</li><li>下载 Vscode</li><li>下载插件 Go</li><li>下载插件 Code Ruuner</li><li>在终端中配置 Go 环境</li></ul><h1 id="遇到的错误"><a href="#遇到的错误" class="headerlink" title="遇到的错误"></a>遇到的错误</h1><h2 id="golang异常-main-go-1-1-expected-‘package‘-found-‘EOF‘"><a href="#golang异常-main-go-1-1-expected-‘package‘-found-‘EOF‘" class="headerlink" title="golang异常: main.go:1:1: expected ‘package‘, found ‘EOF‘"></a>golang异常: main.go:1:1: expected ‘package‘, found ‘EOF‘</h2><p>go build main.go 运行时报错如下：<br>main.go:1:1: expected ‘package’, found ‘EOF’</p><blockquote><p>解决：ctrl+s保存下就可以了</p></blockquote><h2 id="解决-cannot-find-package-“fmt“-in-any-of-问题"><a href="#解决-cannot-find-package-“fmt“-in-any-of-问题" class="headerlink" title="解决 cannot find package “fmt“ in any of 问题"></a>解决 cannot find package “fmt“ in any of 问题</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">could not <span class="token function">import</span> <span class="token function">fmt</span> <span class="token punctuation">(</span>cannot <span class="token function">find</span> package <span class="token string">"fmt"</span> <span class="token keyword">in</span> any of /usr/local/Cellar/go/1.15.7/libexec/src/fmt <span class="token punctuation">(</span>from <span class="token variable">$GOROOT</span><span class="token punctuation">)</span>/Users/bytedance/go/src/fmt <span class="token punctuation">(</span>from <span class="token variable">$GOPATH</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><p><strong>原因在于没有找到 Go 的环境</strong></p><p>在终端进行设置后，恢复正常</p>]]></content>
       
       
       <categories>
