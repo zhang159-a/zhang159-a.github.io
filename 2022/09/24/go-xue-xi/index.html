@@ -9,20 +9,9 @@
 go 官网 https://go.dev/
 go 的标准库 https://pkg.go.dev/
 
-Go 常用命令查看常用命令 go help
-
-
-命令
-功能说明
-
-
-
-go build
-编译包和依赖，生成可执行文件
-
-
-go run
-">
+[TOC]
+Go语言设计哲学追求简单，少即是多
+Go设计者推崇“最小方式”思维，即一件事情仅有一种方式或数量尽可能少的方式去完成，这大大">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -522,21 +511,21 @@ go run
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-02
+                    2022-12-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.6k
+                    8.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    38 分
                 </div>
                 
 
@@ -562,6 +551,35 @@ go run
                 <blockquote>
 <p>go 官网 <a target="_blank" rel="noopener" href="https://go.dev/">https://go.dev/</a></p>
 <p>go 的标准库 <a target="_blank" rel="noopener" href="https://pkg.go.dev/">https://pkg.go.dev/</a></p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id="Go语言设计哲学"><a href="#Go语言设计哲学" class="headerlink" title="Go语言设计哲学"></a>Go语言设计哲学</h1><h2 id="追求简单，少即是多"><a href="#追求简单，少即是多" class="headerlink" title="追求简单，少即是多"></a>追求简单，少即是多</h2><blockquote>
+<p>Go设计者推崇“<strong>最小方式</strong>”思维，即一件事情仅有一种方式或数量尽可能少的方式去完成，这大大减少了开发人员在选择路径方式及理解他人所选路径方式上的心智负担。</p>
+</blockquote>
+<h2 id="偏好组合，正交解耦"><a href="#偏好组合，正交解耦" class="headerlink" title="偏好组合，正交解耦"></a>偏好组合，正交解耦</h2><blockquote>
+<p>Go语言无类型体系，类型之间是独立的，没有子类型的概念；每个类型都可以有自己的方法集合，类型定义与方法的实现是正交独立的；接口与其实现之间隐式关联；包之间是相对独立的，没有子包的概念。</p>
+</blockquote>
+<blockquote>
+<p>Go语言为我们呈现了这样一幅图景：一座座没有关联的“孤岛”，但每个岛内又都很精彩。现在摆在面前的工作就是以最适当的方式在这些孤岛之间建立关联（耦合），形成一个整体。Go采用了组合的方式，也是唯一的方式。</p>
+</blockquote>
+<h3 id="垂直组合"><a href="#垂直组合" class="headerlink" title="垂直组合"></a>垂直组合</h3><p>Go语言提供的最为直观的组合的语法元素是类型嵌入（type embedding）。通过类型嵌入，我们可以将已经实现的功能嵌入新类型中，以快速满足新类型的功能需求。这种方式有些类似经典OO语言中的继承机制，但在原理上与其完全不同，这是一种Go设计者们精心设计的语法糖。被嵌入的类型和新类型之间没有任何关系，甚至相互完全不知道对方的存在，更没有经典OO语言中的那种父类、子类的关系以及向上、向下转型（type casting）。在通过新类型实例调用方法时，方法的匹配取决于方法名字，而不是类型。这种组合方式，笔者称之为“垂直组合”，即通过类型嵌入，快速让一个新类型复用其他类型已经实现的能力，实现功能的垂直扩展。</p>
+<h3 id="水平组合"><a href="#水平组合" class="headerlink" title="水平组合"></a>水平组合</h3><p>interface是Go语言中真正的“魔法”，是Go语言的一个创新设计，它只是方法集合，且与实现者之间的关系是隐式的，它让程序各个部分之间的耦合降至最低，同时是连接程序各个部分的“纽带”。隐式的interface实现会不经意间满足依赖抽象、里氏替换、接口隔离等设计原则，这在其他语言中是需要很刻意的设计谋划才能实现的，但在Go interface看来，一切却是自然而然的。</p>
+<h2 id="原生并发，轻量高效"><a href="#原生并发，轻量高效" class="headerlink" title="原生并发，轻量高效"></a>原生并发，轻量高效</h2><p>（1）Go语言采用轻量级协程并发模型，使得Go应用在面向多核硬件时更具可扩展性</p>
+<blockquote>
+<p>Go果断放弃了传统的基于操作系统线程的并发模型，而采用了用户层轻量级线程或者说是类协程（coroutine），Go将之称为goroutine。goroutine占用的资源非常少，Go运行时默认为每个goroutine分配的栈空间仅2KB。goroutine调度的切换也不用陷入（trap）操作系统内核层完成，代价很低。因此，在一个Go程序中可以创建成千上万个并发的goroutine。所有的Go代码都在goroutine中执行，哪怕是Go的运行时代码也不例外。</p>
+</blockquote>
+<p>（2）Go语言为开发者提供的支持并发的语法元素和机制</p>
+<blockquote>
+<p>执行单元：goroutine。创建和销毁方式：go+函数调用；函数退出即goroutine退出。并发goroutine的通信：通过语言内置的channel传递消息或实现同步，并通过select实现多路channel的并发控制。对比来看，Go对并发的原生支持将大大降低开发人员在开发并发程序时的心智负担。</p>
+</blockquote>
+<p>（3）并发原则对Go开发者在程序结构设计层面的影响</p>
+<blockquote>
+<p>并发是有关结构的，它是一种将一个程序分解成多个小片段并且每个小片段都可以独立执行的程序设计方法；并发程序的小片段之间一般存在通信联系并且通过通信相互协作。并行是有关执行的，它表示同时进行一些计算任务。以上观点的重点是，并发是一种程序结构设计的方法，它使并行成为可能。不过这依然很抽象，这里借用Rob Pike分享中的那个“搬运书问题”来重新诠释并发的含义。搬运书问题要求设计一个方案，使gopher能更快地将一堆废弃的语言手册搬到垃圾回收场烧掉。</p>
+</blockquote>
+<h2 id="面向工程，自带电池"><a href="#面向工程，自带电池" class="headerlink" title="面向工程，自带电池"></a>面向工程，自带电池</h2><p>Go设计者将所有工程问题浓缩为一个词：scale（笔者总觉得将scale这个词翻译为任何中文词都无法传神地表达其含义，暂译为“规模”吧）。从Go1开始，Go的设计目标就是帮助开发者更容易、更高效地管理两类规模。</p>
+<p>生产规模：用Go构建的软件系统的并发规模，比如这类系统并发关注点的数量、处理数据的量级、同时并发与之交互的服务的数量等。开发规模：包括开发团队的代码库的大小，参与开发、相互协作的工程师的人数等。</p>
+<h2 id="使用go语言原生编程思维来写go代码"><a href="#使用go语言原生编程思维来写go代码" class="headerlink" title="使用go语言原生编程思维来写go代码"></a>使用go语言原生编程思维来写go代码</h2><h3 id="1-语言与思维"><a href="#1-语言与思维" class="headerlink" title="1.语言与思维"></a>1.语言与思维</h3><blockquote>
+<p>在人类自然语言学界有一个很著名的假说——“萨丕尔-沃夫假说”，这个假说的内容是这样的：“语言影响或决定人类的思维方式。”</p>
 </blockquote>
 <h1 id="Go-常用命令"><a href="#Go-常用命令" class="headerlink" title="Go 常用命令"></a>Go 常用命令</h1><h2 id="查看常用命令-go-help"><a href="#查看常用命令-go-help" class="headerlink" title="查看常用命令 go help"></a>查看常用命令 go help</h2><table>
 <thead>
@@ -705,7 +723,8 @@ go run
 <li>相互调用</li>
 </ul>
 <h2 id="开启vscode自动保存"><a href="#开启vscode自动保存" class="headerlink" title="开启vscode自动保存"></a>开启vscode自动保存</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220924234130374.png" alt="image-20220924234130374"></p>
-<h1 id="go-标识符、关键字、命名规则"><a href="#go-标识符、关键字、命名规则" class="headerlink" title="go 标识符、关键字、命名规则"></a>go 标识符、关键字、命名规则</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925090250079.png" alt="image-20220925090250079"></p>
+<h1 id="go-标识符、关键字、命名规则"><a href="#go-标识符、关键字、命名规则" class="headerlink" title="go 标识符、关键字、命名规则"></a>go 标识符、关键字、命名规则</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221222152238156.png" alt="image-20221222152238156"></p>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925090250079.png" alt="image-20220925090250079"></p>
 <h2 id="go-关键字"><a href="#go-关键字" class="headerlink" title="go 关键字"></a>go 关键字</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925090751137.png" alt="image-20220925090751137"></p>
 <h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925091127728.png" alt="image-20220925091127728"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925091220397.png" alt="image-20220925091220397"></p>
@@ -721,7 +740,7 @@ go run
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925092058606.png" alt="image-20220925092058606"></p>
 <h2 id="变量初始化"><a href="#变量初始化" class="headerlink" title="变量初始化"></a>变量初始化</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925092707079.png" alt="image-20220925092707079"></p>
 <h2 id="短变量声明"><a href="#短变量声明" class="headerlink" title="短变量声明"></a>短变量声明</h2><blockquote>
-<p>这种方法只适合在函数内部，函数外边不能使用</p>
+<p><strong>这种方法只适合在函数内部，函数外边不能使用</strong></p>
 </blockquote>
 <pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
 
@@ -756,7 +775,7 @@ go run
 <p> <img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925102400630.png" alt="image-20220925102400630"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925102723971.png" alt="image-20220925102723971"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925103023762.png" alt="image-20220925103023762"></p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="go-格式化输出"><a href="#go-格式化输出" class="headerlink" title="go 格式化输出"></a>go 格式化输出</h1><p><strong><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925103523633.png" alt="image-20220925103523633"></strong></p>
+<h1 id="go-格式化输出"><a href="#go-格式化输出" class="headerlink" title="go 格式化输出"></a>go 格式化输出</h1><p><strong><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925103523633.png" alt="image-20220925103523633"></strong></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925110737004.png" alt="image-20220925110737004"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925110753409.png" alt="image-20220925110753409"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925110842246.png" alt="image-20220925110842246"></p>
@@ -769,7 +788,7 @@ go run
 <li>不能使用 0 或 非 0 表示真假，Java 中也是如何,c 和 python 中可以</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925141143015.png" alt="image-20220925141143015"></p>
-<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925142913744.png" alt="image-20220925142913744"></p>
+<h2 id="switch-fallthrogh"><a href="#switch-fallthrogh" class="headerlink" title="switch fallthrogh"></a>switch fallthrogh</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925142913744.png" alt="image-20220925142913744"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925143049258.png" alt="image-20220925143049258"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925143305243.png" alt="image-20220925143305243"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925143323658.png" alt="image-20220925143323658"></p>
@@ -782,6 +801,11 @@ go run
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925173855717.png" alt="image-20220925173855717"></p>
 <h2 id="break"><a href="#break" class="headerlink" title="break"></a>break</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925174510347.png" alt="image-20220925174510347"></p>
 <h2 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925175109718.png" alt="image-20220925175109718"></p>
+<h2 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h2><blockquote>
+<p>goto 语句通过标签进行代码间的 <strong>无条件跳转</strong>。goto 语句可以在快速跳出循环，避免重复退出上与偶一定帮助。</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119235624913.png" alt="image-20221119235624913"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119235633969.png" alt="image-20221119235633969"></p>
 <h1 id="go-数组"><a href="#go-数组" class="headerlink" title="go 数组"></a>go 数组</h1><p><code>var arr [10]int</code></p>
 <p><code>var arr = [...]int{1,2}</code></p>
 <ul>
@@ -807,10 +831,40 @@ go run
 <p>index <code>a = append(a[: index], a[index + 1:]...)</code></p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925225755625.png" alt="image-20220925225755625"></p>
-<h1 id="go-map"><a href="#go-map" class="headerlink" title="go map"></a>go map</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925230035956.png" alt="image-20220925230035956"></p>
+<h1 id="go-map"><a href="#go-map" class="headerlink" title="go map"></a>go map</h1><blockquote>
+<ul>
+<li>不要依赖 map 的元素的遍历顺序</li>
+<li>map 不是线程安全的，不支持并发写</li>
+<li>不要尝试获取 map 中元素（value)的地址</li>
+<li>尽量使用 cap 参数创建 map</li>
+</ul>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925230035956.png" alt="image-20220925230035956"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925230129421.png" alt="image-20220925230129421"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925230810870.png" alt="image-20220925230810870"></p>
 <h2 id="遍历-map"><a href="#遍历-map" class="headerlink" title="遍历 map"></a>遍历 map</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925231027533.png" alt="image-20220925231027533"></p>
+<h1 id="go-表达式求值顺序"><a href="#go-表达式求值顺序" class="headerlink" title="go 表达式求值顺序"></a>go 表达式求值顺序</h1><blockquote>
+<p>表达式本质上就是一个值，表达式求值顺序影响着程序的计算结果。在本条中，我们通过生动的例子讲解了各种情景下Go语言表达式的求值顺序规则。Gopher应牢记以下几点规则。</p>
+</blockquote>
+<ul>
+<li>包级别变量声明语句中的表达式求值顺序由变量的声明顺序和初始化依赖关系决定，并且包级变量表达式求值顺序优先级最高。</li>
+<li>表达式操作数中的函数、方法及channel操作按普通求值顺序，即从左到右的次序进行求值。</li>
+<li>赋值语句求值分为两个阶段：先按照普通求值规则对等号左边的下标表达式、指针解引用表达式和等号右边的表达式中的操作数进行求值，然后按从左到右的顺序对变量进行赋值。</li>
+<li>重点关注switch-case和select-case语句中的表达式“惰性求值”规则。</li>
+</ul>
+<h1 id="go-代码块与作用域"><a href="#go-代码块与作用域" class="headerlink" title="go 代码块与作用域"></a>go 代码块与作用域</h1><blockquote>
+<p>各类隐式代码块的规则才是理解Go代码块和作用域的规则的“金钥匙”，尤其是那些对于程序执行流有重大影响的控制语句的隐式代码块规则。</p>
+<p>理解Go代码块和作用域的规则将有助于我们快速解决类似“变量未定义”的错误和上一层变量被内层同名变量遮蔽（shadow）的问题，同时对于正确理解Go程序的执行流也大有裨益。</p>
+</blockquote>
+<h1 id="go-控制结构"><a href="#go-控制结构" class="headerlink" title="go 控制结构"></a>go 控制结构</h1><blockquote>
+<p>本条介绍了Go控制结构的惯用法和使用注意事项。牢记下面几个要点将能帮助大家避免在使用控制语句时“踩坑”：</p>
+</blockquote>
+<ul>
+<li>使用if语句时遵循“快乐路径”原则；</li>
+<li><strong>小心for range的循环变量重用，明确真实参与循环的是range表达式的副本；</strong></li>
+<li>明确break和continue执行后的真实“目的地”；</li>
+<li>使用fallthrough关键字前，考虑能否用更简洁、清晰的case表达式列表替代。</li>
+</ul>
 <h1 id="go-函数"><a href="#go-函数" class="headerlink" title="go 函数"></a>go 函数</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925231230826.png" alt="image-20220925231230826"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925231429906.png" alt="image-20220925231429906"></p>
 <h2 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220925231659817.png" alt="image-20220925231659817"></p>
@@ -825,9 +879,13 @@ go run
 <p>变量f是一个函数，并且它引用了其外部作用域中的 x 变量，此时 f 就是一个闭包，在 f 的生命周期内，变量 x 也一直有效</p>
 </blockquote>
 <h1 id="go-递归"><a href="#go-递归" class="headerlink" title="go 递归"></a>go 递归</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926101456604.png" alt="image-20220926101456604"></p>
-<h1 id="go-defer-语句"><a href="#go-defer-语句" class="headerlink" title="go defer 语句"></a>go defer 语句</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102056879.png" alt="image-20220926102056879"></p>
+<h1 id="go-defer-语句"><a href="#go-defer-语句" class="headerlink" title="go defer 语句"></a>go defer 语句</h1><ul>
+<li>释放资源</li>
+<li>关闭文件句柄</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102056879.png" alt="image-20220926102056879"></p>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102156357.png" alt="image-20220926102156357"></p>
-<h2 id="go-init-函数"><a href="#go-init-函数" class="headerlink" title="go init 函数"></a>go init 函数</h2><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102354934.png" alt="image-20220926102354934"></p>
+<h1 id="go-init-函数"><a href="#go-init-函数" class="headerlink" title="go init 函数"></a>go init 函数</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102354934.png" alt="image-20220926102354934"></p>
 <h1 id="go-指针"><a href="#go-指针" class="headerlink" title="go 指针"></a>go 指针</h1><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926102720664.png" alt="image-20220926102720664"></p>
 <h2 id="go-指针数组-指向数组的指针"><a href="#go-指针数组-指向数组的指针" class="headerlink" title="go 指针数组 指向数组的指针"></a>go 指针数组 指向数组的指针</h2><ul>
 <li>指针与 c 语言不同，指针不能进行运算，所以指针没有指向数组的第一个元素</li>
@@ -879,6 +937,34 @@ go run
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926135752343.png" alt="image-20220926135752343"></p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p><img src="https://raw.githubusercontent.com/zhang159-a/img/main/picgo/image-20220926140257712.png" alt="image-20220926140257712"></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>Go编译器在编译过程中必然要使用的是编译单元（一个包）所依赖的包的源码；</li>
+<li>Go源码文件头部的包导入语句中import后面的部分是一个路径，路径的最后一个分段是目录名，而不是包名；</li>
+<li>Go编译器的包源码搜索路径由基本搜索路径和包导入路径组成，两者结合在一起后，编译器便可确定一个包的所有依赖包的源码路径的集合，这个集合构成了Go编译器的源码搜索路径空间；</li>
+<li>同一源码文件的依赖包在同一源码搜索路径空间下的包名冲突问题可以由显式指定包名的方式解决。</li>
+</ul>
+<pre class="line-numbers language-go" data-language="go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+        pkg1 <span class="token string">"github.com/bigwhite/effective-go-book/chapter3-demo1/pkg/pkg1"</span>
+        mypkg1 <span class="token string">"github.com/bigwhite/effective-go-book/chapter3-demo2/pkg/pkg1"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        pkg1<span class="token punctuation">.</span><span class="token function">Func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        mypkg1<span class="token punctuation">.</span><span class="token function">Func1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
 <h1 id="go-包管理工具-Go-module"><a href="#go-包管理工具-Go-module" class="headerlink" title="go 包管理工具 Go module"></a>go 包管理工具 Go module</h1><blockquote>
 <p>go modules 是 golang 1.11 新加的特性，用来管理模块中<strong>包的依赖关系</strong></p>
 </blockquote>
@@ -2789,7 +2875,7 @@ now<span class="token punctuation">.</span><span class="token function">UnixNano
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">Zhr</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -2797,7 +2883,7 @@ now<span class="token punctuation">.</span><span class="token function">UnixNano
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">420k</span>
+                        class="white-color">476.4k</span>
             
             
             

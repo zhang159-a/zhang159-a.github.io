@@ -512,21 +512,21 @@ vscode设置整体界面字体的大小
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-27
+                    2022-10-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    275
+                    738
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -580,6 +580,98 @@ vscode设置整体界面字体的大小
 <p>不单独显示空文件夹</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027103846151.png" alt="image-20221027103846151"></p>
+<h2 id="创建HTML自定义模板"><a href="#创建HTML自定义模板" class="headerlink" title="创建HTML自定义模板"></a>创建HTML自定义模板</h2><h3 id="1-输入-！-tab"><a href="#1-输入-！-tab" class="headerlink" title="1.输入 ！+ tab"></a>1.输入 ！+ tab</h3><blockquote>
+<p>自动生成模板</p>
+</blockquote>
+<h3 id="2-在空白-html-文件中输入-‘html’"><a href="#2-在空白-html-文件中输入-‘html’" class="headerlink" title="2.在空白 html 文件中输入 ‘html’"></a>2.在空白 html 文件中输入 ‘html’</h3><p><img src="https://img-blog.csdnimg.cn/20210609101548975.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODM0NTMwNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-自定义模板"><a href="#3-自定义模板" class="headerlink" title="3.自定义模板"></a>3.自定义模板</h3><blockquote>
+<p>打开File–&gt;Preferences–&gt;User Snippets–&gt;在文本框中输入“html”(将打开html.json，在该文件中输入对应的模板保存即可)–&gt;在空白html文件中输入“h”+回车，即可生成自定义的模板</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2021060910215677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODM0NTMwNg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="创建-vue-自定义模板"><a href="#创建-vue-自定义模板" class="headerlink" title="创建 vue 自定义模板"></a>创建 vue 自定义模板</h2><h3 id="1-安装-VueHelper-扩展"><a href="#1-安装-VueHelper-扩展" class="headerlink" title="1.安装 VueHelper 扩展"></a>1.安装 VueHelper 扩展</h3><p><img src="https://img-blog.csdnimg.cn/20190702100441266.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3k1NjIzNjM3NTM=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="2-打开用户代码片段"><a href="#2-打开用户代码片段" class="headerlink" title="2.打开用户代码片段"></a>2.打开用户代码片段</h3><blockquote>
+<p>方法一：Ctrl+Shift+P打开命令输入 snippets; 在<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%90%9C%E7%B4%A2%E6%A1%86&amp;spm=1001.2101.3001.7020">搜索框</a>输入vue选择 ‘vue.json’<br>方法二：文件 → 首选项 → 用户代码片段 → 在搜索框输入vue选择‘vue.json’。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20190702100816595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3k1NjIzNjM3NTM=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="3-输入模板"><a href="#3-输入模板" class="headerlink" title="3.输入模板"></a>3.输入模板</h3><blockquote>
+<ol>
+<li>清空内容，输入模板，具体格式如下（可根据自己的喜好进行修改） 其中$0代表模板生成后，光标停留的位置。</li>
+</ol>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+		<span class="token property">"Print to console"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+			<span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"vue"</span><span class="token punctuation">,</span>
+			<span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+				<span class="token string">"&lt;template&gt;"</span><span class="token punctuation">,</span>
+				<span class="token string">" &lt;div&gt;\n"</span><span class="token punctuation">,</span>
+				<span class="token string">" &lt;/div&gt;"</span><span class="token punctuation">,</span>
+				<span class="token string">"&lt;/template&gt;\n"</span><span class="token punctuation">,</span>
+				<span class="token string">"&lt;script&gt;"</span><span class="token punctuation">,</span>
+				<span class="token string">" export default {"</span><span class="token punctuation">,</span>
+				<span class="token string">"   data () {"</span><span class="token punctuation">,</span>
+				<span class="token string">"     return {\n"</span><span class="token punctuation">,</span>
+				<span class="token string">"     }"</span><span class="token punctuation">,</span>
+				<span class="token string">"   },"</span><span class="token punctuation">,</span>
+				<span class="token string">"   components: {\n"</span><span class="token punctuation">,</span>
+				<span class="token string">"   }"</span><span class="token punctuation">,</span>
+				<span class="token string">" }"</span><span class="token punctuation">,</span>
+				<span class="token string">"&lt;/script&gt;\n"</span><span class="token punctuation">,</span>
+				<span class="token string">"&lt;style&gt;\n"</span><span class="token punctuation">,</span>
+				<span class="token string">" "</span><span class="token punctuation">,</span>
+				<span class="token string">"&lt;/style&gt;"</span><span class="token punctuation">,</span>
+				<span class="token string">"$2"</span>
+			<span class="token punctuation">]</span><span class="token punctuation">,</span>
+			<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Log output to console"</span>
+		<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-输入vue-Tab"><a href="#4-输入vue-Tab" class="headerlink" title="4.输入vue,Tab"></a>4.输入vue,Tab</h3><p><img src="https://img-blog.csdnimg.cn/20190702101709744.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3k1NjIzNjM3NTM=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="创建用户代码片段"><a href="#创建用户代码片段" class="headerlink" title="创建用户代码片段"></a>创建用户代码片段</h2><blockquote>
+<p>创建自己的编程模板</p>
+<p>文件 =&gt;  首选项 =&gt; 用户代码片段 =&gt; 新建全局代码片段/或文件夹代码片段：vue-html.code-snippets</p>
+<p><strong>注意：制作代码片段的时候，字符串中如果包含文件中复制过来的“Tab”键的空格，要换成“空格键”的空格</strong></p>
+</blockquote>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"vue htm"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"scope"</span><span class="token operator">:</span> <span class="token string">"html"</span><span class="token punctuation">,</span>
+        <span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"vuehtml"</span><span class="token punctuation">,</span>
+        <span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"&lt;!DOCTYPE html&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;html lang=\"en\"&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;head&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;meta charset=\"UTF-8\"&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;title&gt;Document&lt;/title&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/head&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;body&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;div id=\"app\"&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;/div&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;script src=\"vue.min.js\"&gt;&lt;/script&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;script&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"        new Vue({"</span><span class="token punctuation">,</span>
+            <span class="token string">"            el: '#app',"</span><span class="token punctuation">,</span>
+            <span class="token string">"            data: {"</span><span class="token punctuation">,</span>
+            <span class="token string">"                $1"</span><span class="token punctuation">,</span>
+            <span class="token string">"            }"</span><span class="token punctuation">,</span>
+            <span class="token string">"        })"</span><span class="token punctuation">,</span>
+            <span class="token string">"    &lt;/script&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/body&gt;"</span><span class="token punctuation">,</span>
+            <span class="token string">""</span><span class="token punctuation">,</span>
+            <span class="token string">"&lt;/html&gt;"</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"my vue template in html"</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
 <h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><h3 id="Auto-Close-Tag"><a href="#Auto-Close-Tag" class="headerlink" title="Auto Close Tag"></a>Auto Close Tag</h3><blockquote>
 <p>自动添加 HTML/XML 的闭合括号</p>
 </blockquote>
@@ -732,18 +824,17 @@ vscode设置整体界面字体的大小
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/10/23/vscode-she-zhi/">
+                <a href="/2022/10/27/shen-ru-li-jie-java-xu-ni-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Vscode设置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="深入理解Java虚拟机">
                         
-                        <span class="card-title">Vscode设置</span>
+                        <span class="card-title">深入理解Java虚拟机</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -753,27 +844,26 @@ vscode设置整体界面字体的大小
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="post-category">
-                                    开发工具
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vscode/">
-                        <span class="chip bg-color">vscode</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
                     </a>
                     
                 </div>
@@ -957,7 +1047,7 @@ vscode设置整体界面字体的大小
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">Zhr</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -965,7 +1055,7 @@ vscode设置整体界面字体的大小
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">420k</span>
+                        class="white-color">476.4k</span>
             
             
             

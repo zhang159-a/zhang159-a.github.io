@@ -528,21 +528,21 @@ js, css, 资源的模块化
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-27
+                    2022-11-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.5k
+                    7.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    25 分
+                    27 分
                 </div>
                 
 
@@ -1007,18 +1007,28 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 
 
 
-<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="什么是-Vue"><a href="#什么是-Vue" class="headerlink" title="什么是 Vue"></a>什么是 Vue</h2><p><strong>一套构建用户界面的框架</strong></p>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="什么是-Vue"><a href="#什么是-Vue" class="headerlink" title="什么是 Vue"></a>什么是 Vue</h2><p><strong>一套构建用户界面的渐进式框架</strong></p>
 <ul>
 <li>用 vue 往 html 页面中填充数据，开发效率高</li>
 <li>框架是一套现成的解决方案</li>
 <li>vue 指令、组件（对 UI 结构的复用）、路由、Vuex、Vue 组件库</li>
 </ul>
 <h2 id="Vue-特性"><a href="#Vue-特性" class="headerlink" title="Vue 特性"></a>Vue 特性</h2><ul>
+<li><strong>组件化</strong>，提供代码复用，并且更好的维护</li>
+<li><strong>声明式编码</strong>，让编码人员无需直接操作 DOM，提高开发效率</li>
+<li>使用 <strong>虚拟DOM + 优秀的diff</strong> 算法，尽量复用DOM节点</li>
+</ul>
+<ul>
 <li>数据驱动视图</li>
 <li>双向数据绑定</li>
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221019204107357.png" alt="image-20221019204107357"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221019204547174.png" alt="image-20221019204547174"></p>
+<h2 id="模板语法"><a href="#模板语法" class="headerlink" title="模板语法"></a>模板语法</h2><ul>
+<li>差值语法</li>
+<li>指令语法</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031095056920.png" alt="image-20221031095056920"></p>
 <h2 id="MVVM"><a href="#MVVM" class="headerlink" title="MVVM"></a>MVVM</h2><p><strong>MVVM 是 Vue 实现数据驱动视图和双向数据绑定的核心原理。</strong></p>
 <ul>
 <li>Model</li>
@@ -1027,11 +1037,28 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221019211525864.png" alt="image-20221019211525864"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221019211644443.png" alt="image-20221019211644443"></p>
+<h2 id="数据代理"><a href="#数据代理" class="headerlink" title="数据代理"></a>数据代理</h2><ul>
+<li>Object.defineProperty</li>
+</ul>
+<blockquote>
+<p>可以给对象添加属性,</p>
+<p>v-bind</p>
+<p>v-model</p>
+<p>的原理实现</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031135442972.png" alt="image-20221031135442972"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031140305123.png" alt="image-20221031140305123"></p>
+<blockquote>
+<p>原理</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031213737951.png" alt="image-20221031213737951"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031213756945.png" alt="image-20221031213756945"></p>
 <h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221019212830022.png" alt="image-20221019212830022"></p>
 <h2 id="vue-调试"><a href="#vue-调试" class="headerlink" title="vue 调试"></a>vue 调试</h2><blockquote>
 <p>使用 chrome 的 Vue.js devtools 插件进行调试.</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020083748797.png" alt="image-20221020083748797"></p>
+<h2 id="vue-el-data"><a href="#vue-el-data" class="headerlink" title="vue el data"></a>vue el data</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031102719685.png" alt="image-20221031102719685"></p>
 <h2 id="Vue-指令"><a href="#Vue-指令" class="headerlink" title="Vue 指令"></a>Vue 指令</h2><p><strong>指令是 vue 为开发者提供的模板语法，用于辅助开发者渲染页面的基本结构</strong></p>
 <ul>
 <li>内容渲染指令</li>
@@ -1081,6 +1108,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <blockquote>
 <p>v-html 可以把带有标签的字符串，渲染为真正的 HTML 内容</p>
 </blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103180054278.png" alt="image-20221103180054278"></p>
 <h3 id="属性绑定指令"><a href="#属性绑定指令" class="headerlink" title="属性绑定指令"></a>属性绑定指令</h3><ul>
 <li>v-bind</li>
 <li>：</li>
@@ -1119,6 +1147,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>绑定事件时，可以传递参数</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020084418634.png" alt="image-20221020084418634"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031215415617.png" alt="image-20221031215415617"></p>
 <h3 id="event"><a href="#event" class="headerlink" title="$event"></a>$event</h3><blockquote>
 <p>vue 提供的内置变量，提供原生的 DOM 事件对象</p>
 </blockquote>
@@ -1126,7 +1155,9 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p><strong>当函数没有传递参数时，默认为传递 event, 可以在 methods 里接收</strong></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020091015033.png" alt="image-20221020091015033"></p>
 <h3 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020090024790.png" alt="image-20221020090024790"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031215623443.png" alt="image-20221031215623443"></p>
 <h3 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020091554897.png" alt="image-20221020091554897"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221031222341743.png" alt="image-20221031222341743"></p>
 <h3 id="双向绑定指令"><a href="#双向绑定指令" class="headerlink" title="双向绑定指令"></a>双向绑定指令</h3><ul>
 <li>v-model</li>
 </ul>
@@ -1141,6 +1172,8 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020092154124.png" alt="image-20221020092154124"></p>
 <h4 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020093036147.png" alt="image-20221020093036147"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103155453343.png" alt="image-20221103155453343"></p>
+<h4 id="原理，语法糖"><a href="#原理，语法糖" class="headerlink" title="原理，语法糖"></a>原理，语法糖</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101221938342.png" alt="image-20221101221938342"></p>
 <h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><ul>
 <li>v-show 原理：动态为元素添加或移除 display: none 样式，来实现元素的显示和隐藏<ul>
 <li>频繁切换，v-show 性能更好</li>
@@ -1150,12 +1183,25 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020095947670.png" alt="image-20221020095947670"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020101529379.png" alt="image-20221020101529379"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101181202430.png" alt="image-20221101181202430"></p>
 <h3 id="列表渲染指令"><a href="#列表渲染指令" class="headerlink" title="列表渲染指令"></a>列表渲染指令</h3><ul>
 <li>v-for</li>
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020101910092.png" alt="image-20221020101910092"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020112918031.png" alt="image-20221020112918031"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020113733432.png" alt="image-20221020113733432"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101183156556.png" alt="image-20221101183156556"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101184438190.png" alt="image-20221101184438190"></p>
+<h3 id="列表过滤"><a href="#列表过滤" class="headerlink" title="列表过滤"></a>列表过滤</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101190429933.png" alt="image-20221101190429933"></p>
+<h3 id="列表排序"><a href="#列表排序" class="headerlink" title="列表排序"></a>列表排序</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101220213440.png" alt="image-20221101220213440"></p>
+<h3 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103203113943.png" alt="image-20221103203113943"></p>
+<h3 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103203313953.png" alt="image-20221103203313953"></p>
+<h3 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103203509434.png" alt="image-20221103203509434"></p>
+<h2 id="检测数据改变的原理"><a href="#检测数据改变的原理" class="headerlink" title="检测数据改变的原理"></a>检测数据改变的原理</h2><blockquote>
+<p>数据劫持，添加 get , set 方法，实现数据监听，重新解析模板。</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103151404979.png" alt="image-20221103151404979"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103151530349.png" alt="image-20221103151530349"></p>
 <h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><p><strong>vue3 中已经移除了这个功能，只能在 vue2 中使用</strong></p>
 <blockquote>
 <p>过滤器（Filters）是 vue 为开发者提供的功能，常用于 文本的格式化。</p>
@@ -1168,6 +1214,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </blockquote>
 <p><strong>示例代码</strong></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020222242282.png" alt="image-20221020222242282"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221103161359246.png" alt="image-20221103161359246"></p>
 <h3 id="声明过滤器"><a href="#声明过滤器" class="headerlink" title="声明过滤器"></a>声明过滤器</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020225040896.png" alt="image-20221020225040896"></p>
 <h4 id="全局过滤器"><a href="#全局过滤器" class="headerlink" title="全局过滤器"></a>全局过滤器</h4><blockquote>
 <p>如果全局过滤器与私有过滤器名字一致，优先调用 私有过滤器</p>
@@ -1194,23 +1241,48 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>允许开发者监视数据的变化，从而针对 <strong>数据的变化做特定的操作</strong></p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221020231636241.png" alt="image-20221020231636241"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101152632535.png" alt="image-20221101152632535"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101155729132.png" alt="image-20221101155729132"></p>
 <h3 id="自动触发"><a href="#自动触发" class="headerlink" title="自动触发"></a>自动触发</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021090315121.png" alt="image-20221021090315121"></p>
 <h3 id="深度侦听"><a href="#深度侦听" class="headerlink" title="深度侦听"></a>深度侦听</h3><blockquote>
 <p>嵌套的形式，进行侦听</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021090904433.png" alt="image-20221021090904433"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021091206726.png" alt="image-20221021091206726"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101160510736.png" alt="image-20221101160510736"></p>
 <h2 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h2><blockquote>
 <p>计算属性指的是 <strong>通过一系列运算</strong> 之后，最终得到一个属性值。</p>
+<p>模板字符串 <code>${}</code></p>
 <p>这个动态计算出来的属性值可以被模板结构或 methods 方法使用。示例代码如下：</p>
 </blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101150459429.png" alt="image-20221101150459429"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021092316383.png" alt="image-20221021092316383"></p>
+<blockquote>
+<p>简写形式，只考虑获取，不考虑修改，可以简化.函数名 == 属性名</p>
+<p>函数名 () {}</p>
+<p>默认调用 get（）方法</p>
+</blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021093218951.png" alt="image-20221021093218951"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101145919686.png" alt="image-20221101145919686"></p>
+<h2 id="计算属性与watch对比"><a href="#计算属性与watch对比" class="headerlink" title="计算属性与watch对比"></a>计算属性与watch对比</h2><blockquote>
+<p>计算属性不需要提前声明 属性， computed</p>
+<p>异步使用时，使用 watch</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101162256121.png" alt="image-20221101162256121"></p>
+<h2 id="绑定样式"><a href="#绑定样式" class="headerlink" title="绑定样式"></a>绑定样式</h2><ul>
+<li>：class</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101164110239.png" alt="image-20221101164110239"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221101164804871.png" alt="image-20221101164804871"></p>
 <h2 id="vue-cli"><a href="#vue-cli" class="headerlink" title="vue-cli"></a>vue-cli</h2><blockquote>
 <p>vue-cli 是 vue.js 开发的标准工具。它简化了程序员基于 webpack 创建工程化的 vue 项目的过程。</p>
 </blockquote>
 <p><strong>程序员可以专注于撰写应用上，而不必花好几天去纠结 webpack 配置的问题</strong></p>
 <h3 id="安装和使用"><a href="#安装和使用" class="headerlink" title="安装和使用"></a>安装和使用</h3><blockquote>
+<p>为 npm 设置淘宝镜像</p>
+<p><code>npm config set registry https://registry.npm.taobao.org</code></p>
+</blockquote>
+<blockquote>
 <p>vue-cli 是 npm 上的一个全局包，使用 <code>npm install</code> 命令，即可方便的把它安装到自己的电脑上：</p>
 <p><code>npm install -g @vue/cli</code></p>
 </blockquote>
@@ -1246,6 +1318,9 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>可以进行插件和配置等管理</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221026114547565.png" alt="image-20221026114547565"></p>
+<h3 id="查看所有-webpack-相关的配置"><a href="#查看所有-webpack-相关的配置" class="headerlink" title="查看所有 webpack 相关的配置"></a>查看所有 webpack 相关的配置</h3><p><code>vue inspect &gt; output.js</code></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105111546495.png" alt="image-20221105111546495"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105111555476.png" alt="image-20221105111555476"></p>
 <h2 id="Vue项目目录构成"><a href="#Vue项目目录构成" class="headerlink" title="Vue项目目录构成"></a>Vue项目目录构成</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021125117867.png" alt="image-20221021125117867"></p>
 <ul>
 <li>assets : 存放项目中用到的静态资源文件，例如：css 样式表、图片资源</li>
@@ -1253,6 +1328,21 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <li>main.js : 是项目的入口文件。整个项目的运行，要先执行 main.js</li>
 <li>App.vue ： 是项目的根组件</li>
 </ul>
+<h3 id="一些配置"><a href="#一些配置" class="headerlink" title="一些配置"></a>一些配置</h3><ul>
+<li>浏览器自动打开</li>
+<li>关闭 eslint</li>
+<li>配置文件夹简写 @ </li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221102103215073.png" alt="image-20221102103215073"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221102103519218.png" alt="image-20221102103519218"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221102103617170.png" alt="image-20221102103617170"></p>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105100922463.png" alt="image-20221105100922463"></p>
+<h2 id="不同版本的-vue"><a href="#不同版本的-vue" class="headerlink" title="不同版本的 vue"></a>不同版本的 vue</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105103005136.png" alt="image-20221105103005136"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105103030690.png" alt="image-20221105103030690"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105103050802.png" alt="image-20221105103050802"></p>
 <h2 id="vue运行流程"><a href="#vue运行流程" class="headerlink" title="vue运行流程"></a>vue运行流程</h2><blockquote>
 <p>vue 要做的事情很单纯：通过 main.js 把 App.vue 渲染到 Index.html 的指定区域中。</p>
 </blockquote>
@@ -1262,15 +1352,21 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <li>main.js 把 App.vue 渲染到了 index.html 所预留的区域中</li>
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021130534477.png" alt="image-20221021130534477"></p>
-<h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p><strong>vue 组件库 vant</strong></p>
-<p><a target="_blank" rel="noopener" href="http://vant3.uihtm.com/#/zh-CN">http://vant3.uihtm.com/#/zh-CN</a></p>
+<h2 id="vue组件"><a href="#vue组件" class="headerlink" title="vue组件"></a>vue组件</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104132034036.png" alt="image-20221104132034036"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104132701846.png" alt="image-20221104132701846"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104134957364.png" alt="image-20221104134957364"></p>
+<h1 id="vue-组件库-vant-Element-UI"><a href="#vue-组件库-vant-Element-UI" class="headerlink" title="vue 组件库 vant,Element-UI"></a>vue 组件库 vant,Element-UI</h1><p><a target="_blank" rel="noopener" href="http://vant3.uihtm.com/#/zh-CN">http://vant3.uihtm.com/#/zh-CN</a></p>
 <blockquote>
 <p>组件化开发指的是：根据封装的思想，把 <strong>页面上可复用的 UI 结构封装为组件，</strong>从而方便项目的开发和维护.</p>
 </blockquote>
 <ul>
 <li>组件的后缀名是 <strong>.vue</strong></li>
 </ul>
-<h3 id="三个组成部分"><a href="#三个组成部分" class="headerlink" title="三个组成部分"></a>三个组成部分</h3><ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110152746255.png" alt="image-20221110152746255"></p>
+<h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104135342127.png" alt="image-20221104135342127"></p>
+<h2 id="组件构造函数"><a href="#组件构造函数" class="headerlink" title="组件构造函数"></a>组件构造函数</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104153539951.png" alt="image-20221104153539951"></p>
+<h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104203817013.png" alt="image-20221104203817013"></p>
+<h2 id="三个组成部分"><a href="#三个组成部分" class="headerlink" title="三个组成部分"></a>三个组成部分</h2><ul>
 <li>template -&gt; 组件的模板结构,只能包含一个根 div</li>
 <li>script -&gt; 组件的 JavaScript 行为</li>
 <li>style -&gt; 组件的样式</li>
@@ -1300,7 +1396,8 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>在其他组件中可以直接使用，但是自己不能使用自己</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221021173000348.png" alt="image-20221021173000348"></p>
-<h3 id="组件的-props"><a href="#组件的-props" class="headerlink" title="组件的 props"></a>组件的 props</h3><ul>
+<h2 id="组件的-props"><a href="#组件的-props" class="headerlink" title="组件的 props"></a>组件的 props</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105134022577.png" alt="image-20221105134022577"></p>
+<ul>
 <li>props 是只读的，不能直接去修改 props 的值</li>
 </ul>
 <blockquote>
@@ -1340,33 +1437,36 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <h3 id="实例对象"><a href="#实例对象" class="headerlink" title="实例对象"></a>实例对象</h3><blockquote>
 <p>可以把定义的组件看做是 构造函数，当引入 组件时，相当于创建了一个实例对象</p>
 </blockquote>
-<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022102940926.png" alt="image-20221022102940926"></p>
+<h2 id="mixin-混入"><a href="#mixin-混入" class="headerlink" title="mixin(混入)"></a>mixin(混入)</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105135013207.png" alt="image-20221105135013207"></p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022102940926.png" alt="image-20221022102940926"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022103245435.png" alt="image-20221022103245435"></p>
 <p><img src="https://cn.vuejs.org/assets/lifecycle.16e4c08e.png" alt="组件生命周期图示"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imglifecycle.png" alt="lifecycle"></p>
-<h4 id="created"><a href="#created" class="headerlink" title="created()"></a>created()</h4><blockquote>
+<h2 id="created"><a href="#created" class="headerlink" title="created()"></a>created()</h2><blockquote>
 <p>在这个阶段发送请求，获取数据，进行渲染</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022105558627.png" alt="image-20221022105558627"></p>
-<h4 id="mounted"><a href="#mounted" class="headerlink" title="mounted()"></a>mounted()</h4><blockquote>
+<h2 id="mounted"><a href="#mounted" class="headerlink" title="mounted()"></a>mounted()</h2><blockquote>
 <p>内容渲染完成，可以获取里面的 DOM 元素</p>
 </blockquote>
-<h4 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h4><blockquote>
+<h2 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h2><blockquote>
 <p>数据发生改变后，再次渲染完成</p>
 </blockquote>
-<h3 id="组件之间的数据共享"><a href="#组件之间的数据共享" class="headerlink" title="组件之间的数据共享"></a>组件之间的数据共享</h3><blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104131621079.png" alt="image-20221104131621079"></p>
+<h1 id="组件之间的数据共享"><a href="#组件之间的数据共享" class="headerlink" title="组件之间的数据共享"></a>组件之间的数据共享</h1><blockquote>
 <p>组件之间的关系</p>
 <ul>
 <li>父子</li>
 <li>兄弟</li>
 </ul>
 </blockquote>
-<h4 id="父子传递"><a href="#父子传递" class="headerlink" title="父子传递"></a>父子传递</h4><blockquote>
+<h2 id="父子传递"><a href="#父子传递" class="headerlink" title="父子传递"></a>父子传递</h2><blockquote>
 <p>子组件中需要使用 <strong>自定义属性</strong> props :msg</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022113307312.png" alt="image-20221022113307312"></p>
+<h3 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107091855686.png" alt="image-20221107091855686"></p>
 <blockquote>
-<p>子组件中自定义事件， @ 绑定事件 $emit </p>
+<p>子组件中自定义事件， @ 绑定事件 $emit  </p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022115106723.png" alt="image-20221022115106723"></p>
 <h4 id="兄弟组件"><a href="#兄弟组件" class="headerlink" title="兄弟组件"></a>兄弟组件</h4><blockquote>
@@ -1374,6 +1474,12 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022160420426.png" alt="image-20221022160420426"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022155910464.png" alt="image-20221022155910464"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107101607852.png" alt="image-20221107101607852"></p>
+<h3 id="消息订阅与发布"><a href="#消息订阅与发布" class="headerlink" title="消息订阅与发布"></a>消息订阅与发布</h3><blockquote>
+<p>pubsub-js 第三方库</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107105031940.png" alt="image-20221107105031940"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107105906252.png" alt="image-20221107105906252"></p>
 <h2 id="ref-引用-DOM"><a href="#ref-引用-DOM" class="headerlink" title="ref 引用 DOM"></a>ref 引用 DOM</h2><blockquote>
 <p>jquery 简化了程序员操作 DOM 的过程 ${}</p>
 <p>vue优势： MVVM 在 vue 中，程序员不需要操作 DOM。</p>
@@ -1389,13 +1495,17 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <li>为需要改变的 DOM 元素，添加 ref 属性</li>
 <li>调用 this.$refs.属性名 进行改变</li>
 </ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105131610060.png" alt="image-20221105131610060"></p>
 <h4 id="ref-组件"><a href="#ref-组件" class="headerlink" title="ref 组件"></a>ref 组件</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022215453782.png"></p>
-<h4 id="this-nextTick-cb-方法"><a href="#this-nextTick-cb-方法" class="headerlink" title="this.$nextTick(cb) 方法"></a>this.$nextTick(cb) 方法</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022230353193.png" alt="image-20221022230353193"></p>
+<h2 id="this-nextTick-cb-方法"><a href="#this-nextTick-cb-方法" class="headerlink" title="this.$nextTick(cb) 方法"></a>this.$nextTick(cb) 方法</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022230353193.png" alt="image-20221022230353193"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107130116241.png" alt="image-20221107130116241"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107130225956.png" alt="image-20221107130225956"></p>
 <h3 id="使用-ref-的时候，可能会出现的错误"><a href="#使用-ref-的时候，可能会出现的错误" class="headerlink" title="使用 ref 的时候，可能会出现的错误"></a>使用 ref 的时候，可能会出现的错误</h3><blockquote>
 <p>can’t —- undefined 不能识别这个函数</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022230229783.png"></p>
-<h2 id="案例：购物车"><a href="#案例：购物车" class="headerlink" title="案例：购物车"></a>案例：购物车</h2><blockquote>
+<h1 id="插件-Vue-use"><a href="#插件-Vue-use" class="headerlink" title="插件 Vue.use"></a>插件 Vue.use</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221105141824731.png" alt="image-20221105141824731"></p>
+<h1 id="案例：购物车"><a href="#案例：购物车" class="headerlink" title="案例：购物车"></a>案例：购物车</h1><blockquote>
 <p>js 中数组的一些知识</p>
 <ul>
 <li>forEach</li>
@@ -1409,8 +1519,8 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022232951282.png" alt="image-20221022232951282"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221022233253032.png" alt="image-20221022233253032"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221023104215110.png" alt="image-20221023104215110"></p>
-<h3 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221023120749734.png"></p>
-<h3 id="父向子传递数据"><a href="#父向子传递数据" class="headerlink" title="父向子传递数据"></a>父向子传递数据</h3><blockquote>
+<h1 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221023120749734.png"></p>
+<h1 id="传递数据"><a href="#传递数据" class="headerlink" title="传递数据"></a>传递数据</h1><h3 id="父向子传递数据"><a href="#父向子传递数据" class="headerlink" title="父向子传递数据"></a>父向子传递数据</h3><blockquote>
 <p>通过在子组件中定义 props</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221023135442760.png" alt="image-20221023135442760"></p>
@@ -1447,7 +1557,8 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>name 属性0</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221024172235830.png" alt="image-20221024172235830"></p>
-<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><hr>
+<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107193756916.png" alt="image-20221107193756916"></p>
+<hr>
 <blockquote>
 <p><strong>插槽（Slot) 是 vue 为组件的封装者提供的能力。</strong> 允许开发者在封装组件时，把 <strong>不确定的，希望用户指定的部分定义为插槽</strong>.</p>
 </blockquote>
@@ -1477,8 +1588,13 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <li>全局 自定义指令</li>
 </ul>
 </blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104093003545.png" alt="image-20221104093003545"></p>
 <h3 id="私有-directives"><a href="#私有-directives" class="headerlink" title="私有 directives"></a>私有 directives</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221024224121213.png"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221024224736474.png" alt="image-20221024224736474"></p>
+<blockquote>
+<p>执行时机</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221104092146600.png" alt="image-20221104092146600"></p>
 <h3 id="传递参数-1"><a href="#传递参数-1" class="headerlink" title="传递参数"></a>传递参数</h3><blockquote>
 <p>“color” 会去寻找 color 的变量</p>
 <p>“‘red’” 传递字符串的值 ‘red’</p>
@@ -1496,6 +1612,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025105902741.png" alt="image-20221025105902741"></p>
 <blockquote>
 <p>提醒现在处于那种模式，开发 develop, 生产 production</p>
+<p>阻止 vue 在启动时生成生产提示</p>
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025110330265.png" alt="image-20221025110330265"></p>
 <h2 id="Eslint"><a href="#Eslint" class="headerlink" title="Eslint"></a>Eslint</h2><p><strong>Find and fix problems in your JavaScript code</strong></p>
@@ -1571,10 +1688,24 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <h2 id="单页面应用程序"><a href="#单页面应用程序" class="headerlink" title="单页面应用程序"></a>单页面应用程序</h2><blockquote>
 <p>SPA (Single Page Application) 一个 web 网站中只有唯一的一个 HTML 页面，所有的功能都在这唯一的一个页面内完成</p>
 </blockquote>
-<h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><blockquote>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><blockquote>
+<p>专门在 Vue 中实现集中式状态（数据）管理的一个 Vue 插件，组件通信</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107194114517.png" alt="image-20221107194114517"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107194647013.png" alt="image-20221107194647013"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107194944317.png" alt="image-20221107194944317"></p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107200009426.png"></p>
+<h3 id="基本使用-1"><a href="#基本使用-1" class="headerlink" title="基本使用"></a>基本使用</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108112921067.png" alt="image-20221108112921067"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108112946715.png" alt="image-20221108112946715"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108120243601.png" alt="image-20221108120243601"></p>
+<h3 id="四个-map-方法的使用"><a href="#四个-map-方法的使用" class="headerlink" title="四个 map 方法的使用"></a>四个 map 方法的使用</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108123010892.png" alt="image-20221108123010892"></p>
+<h3 id="模块化-命名空间"><a href="#模块化-命名空间" class="headerlink" title="模块化+命名空间"></a>模块化+命名空间</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108140053254.png" alt="image-20221108140053254"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108140200121.png" alt="image-20221108140200121"></p>
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><blockquote>
 <p>router 就是对应关系</p>
 </blockquote>
 <p>SPA 指的是一个 web 网站只有唯一的一个 HTML 页面， <strong>所有组件的展示与切换</strong> 都在这个唯一的页面完成。此时， <strong>不同组件之间的切换</strong> 需要通过 <strong>前端路由来实现</strong></p>
+<p>不会刷新完整的页面，而是局部刷新</p>
 <h3 id="锚链接，哈希地址"><a href="#锚链接，哈希地址" class="headerlink" title="锚链接，哈希地址"></a>锚链接，哈希地址</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025150507078.png" alt="image-20221025150507078"></p>
 <h3 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025150648469.png" alt="image-20221025150648469"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025150834872.png" alt="image-20221025150834872"></p>
@@ -1585,6 +1716,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p>它只能结合 vue 项目进行使用，能够轻松的管理 SPA 项目中组件的切换。</p>
 </blockquote>
 <h3 id="安装-vue-router-包"><a href="#安装-vue-router-包" class="headerlink" title="安装 vue-router 包"></a>安装 vue-router 包</h3><p><code>npm i vue-router @版本号 -S</code></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108145429837.png" alt="image-20221108145429837"></p>
 <h3 id="创建路由模块"><a href="#创建路由模块" class="headerlink" title="创建路由模块"></a>创建路由模块</h3><blockquote>
 <p>router</p>
 </blockquote>
@@ -1598,6 +1730,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025161234111.png" alt="image-20221025161234111"></p>
 <h3 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025161719888.png" alt="image-20221025161719888"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025161901762.png" alt="image-20221025161901762"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221109144406284.png" alt="image-20221109144406284"></p>
 <h3 id="路由重定向"><a href="#路由重定向" class="headerlink" title="路由重定向"></a>路由重定向</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025162104887.png" alt="image-20221025162104887"></p>
 <h3 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025162416511.png" alt="image-20221025162416511"></p>
 <h4 id="children-声明子路由"><a href="#children-声明子路由" class="headerlink" title="children 声明子路由"></a>children 声明子路由</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025163020591.png" alt="image-20221025163020591"></p>
@@ -1621,6 +1754,9 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </blockquote>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025174501561.png" alt="image-20221025174501561"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025174602020.png" alt="image-20221025174602020"></p>
+<h3 id="路由的-query-参数"><a href="#路由的-query-参数" class="headerlink" title="路由的 query 参数"></a>路由的 query 参数</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108153155359.png" alt="image-20221108153155359"></p>
+<h3 id="给路由起名字"><a href="#给路由起名字" class="headerlink" title="给路由起名字"></a>给路由起名字</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108153533970.png" alt="image-20221108153533970"></p>
+<h3 id="params-query"><a href="#params-query" class="headerlink" title="params,query"></a>params,query</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221108154106908.png" alt="image-20221108154106908"></p>
 <h3 id="声明式导航-amp-编程式导航"><a href="#声明式导航-amp-编程式导航" class="headerlink" title="声明式导航&amp;编程式导航"></a>声明式导航&amp;编程式导航</h3><blockquote>
 <p>在浏览器中， <strong>点击链接</strong> 实现导航的方式，叫做声明式导航</p>
 <ul>
@@ -1636,6 +1772,12 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </a><h4 id="常用的API"><a></a><a href="#常用的API" class="headerlink" title="常用的API"></a>常用的API</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025175145708.png"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025183956159.png" alt="image-20221025183956159"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025184007900.png" alt="image-20221025184007900"></p>
+<h3 id="缓存路由"><a href="#缓存路由" class="headerlink" title="缓存路由"></a>缓存路由</h3><blockquote>
+<p>使用 keep-alive</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221109215110942.png" alt="image-20221109215110942"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221109215438644.png" alt="image-20221109215438644"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110103943694.png" alt="image-20221110103943694"></p>
 <h3 id="导航守卫"><a href="#导航守卫" class="headerlink" title="导航守卫"></a>导航守卫</h3><blockquote>
 <p>可以控制 <strong>路由的访问权限</strong></p>
 </blockquote>
@@ -1644,6 +1786,14 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <h4 id="守卫方法的-3-个形参"><a href="#守卫方法的-3-个形参" class="headerlink" title="守卫方法的 3 个形参"></a>守卫方法的 3 个形参</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025202754485.png" alt="image-20221025202754485"></p>
 <h4 id="next-函数的-3-中调用方式"><a href="#next-函数的-3-中调用方式" class="headerlink" title="next 函数的 3 中调用方式"></a>next 函数的 3 中调用方式</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025204930997.png" alt="image-20221025204930997"></p>
 <h4 id="控制后台主页的访问权限"><a href="#控制后台主页的访问权限" class="headerlink" title="控制后台主页的访问权限"></a>控制后台主页的访问权限</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025210300836.png" alt="image-20221025210300836"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110121058059.png" alt="image-20221110121058059"></p>
+<h2 id="独享路由守卫"><a href="#独享路由守卫" class="headerlink" title="独享路由守卫"></a>独享路由守卫</h2><p>在组件中定义守卫,没有后置路由守卫</p>
+<blockquote>
+<p>beforeEnter</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110121606235.png" alt="image-20221110121606235"></p>
+<h2 id="组件内守卫"><a href="#组件内守卫" class="headerlink" title="组件内守卫"></a>组件内守卫</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110132437278.png" alt="image-20221110132437278"></p>
+<h2 id="hash模式与history模式"><a href="#hash模式与history模式" class="headerlink" title="hash模式与history模式"></a>hash模式与history模式</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221110140028221.png" alt="image-20221110140028221"></p>
 <h2 id="后台管理案例"><a href="#后台管理案例" class="headerlink" title="后台管理案例"></a>后台管理案例</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221025213537142.png" alt="image-20221025213537142"></p>
 <h2 id="组件库-vant"><a href="#组件库-vant" class="headerlink" title="组件库 vant"></a>组件库 vant</h2><blockquote>
 <p>pc 用 element-ui</p>
@@ -1658,6 +1808,17 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221026112306170.png" alt="image-20221026112306170"></p>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221026114937990.png" alt="image-20221026114937990"></p>
+<h3 id="定制主题"><a href="#定制主题" class="headerlink" title="定制主题"></a>定制主题</h3><blockquote>
+<p>修改 less 属性</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027122829874.png" alt="image-20221027122829874"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027123337996.png" alt="image-20221027123337996"></p>
+<h4 id="创建-theme-less"><a href="#创建-theme-less" class="headerlink" title="创建 theme.less"></a>创建 theme.less</h4><blockquote>
+<p>在里面定义 css 样式，会覆盖原来的样式</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027135206771.png" alt="image-20221027135206771"></p>
+<h4 id="进行配置"><a href="#进行配置" class="headerlink" title="进行配置"></a>进行配置</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027135319521.png" alt="image-20221027135319521"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027135743938.png" alt="image-20221027135743938"></p>
 <h2 id="项目的结构"><a href="#项目的结构" class="headerlink" title="项目的结构"></a>项目的结构</h2><ul>
 <li>node_modules <code>npm i</code> 安装项目所需要的包</li>
 <li>public 存放一些公共的资源</li>
@@ -1672,6 +1833,37 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
 <li>package.json 管理的包的信息</li>
 </ul>
 <p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221026190447575.png" alt="image-20221026190447575"></p>
+<h2 id="项目打包后"><a href="#项目打包后" class="headerlink" title="项目打包后"></a>项目打包后</h2><h3 id="如何打开"><a href="#如何打开" class="headerlink" title="如何打开"></a>如何打开</h3><blockquote>
+<p>默认情况下，需要通过 http 协议访问，在本地无法打开</p>
+<p>通过配置可以打开</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027140725665.png" alt="image-20221027140725665"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221027140737139.png" alt="image-20221027140737139"></p>
+<h1 id="阶段总结"><a href="#阶段总结" class="headerlink" title="阶段总结"></a>阶段总结</h1><ul>
+<li>学会了如何基于 <code>vue-cli</code> 创建和开发 <strong>工程化</strong> 的 Vue 项目</li>
+<li>能够熟练运用 <strong>组件化的开发思想</strong>，进行企业级的项目开发</li>
+<li>能够熟练使用 <strong>指令、侦听器、插槽、生命周期、组件通讯等技术</strong></li>
+<li>能够掌握在 Vue 项目中如何封装和使用 <code>axios</code> 来请求后端的 API </li>
+<li>能够熟练使用 <code>vue-router</code> 实现单页面应用程序的开发</li>
+<li>能够在 Vue 项目中使用 <code>Vant</code> 和 <code>Element-UI</code> 组件库</li>
+<li>能够熟练运用 <code>vue-devtools</code> 来调试自己的 Vue 项目</li>
+</ul>
+<h2 id="TodoList案例"><a href="#TodoList案例" class="headerlink" title="TodoList案例"></a>TodoList案例</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221106151858391.png" alt="image-20221106151858391"></p>
+<h2 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221106153737889.png" alt="image-20221106153737889"></p>
+<h1 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107134846858.png" alt="image-20221107134846858"></p>
+<blockquote>
+<p>[Animate.css](<a target="_blank" rel="noopener" href="https://animate.style/">Animate.css | A cross-browser library of CSS animations.</a>)</p>
+<p>一个 CSS 动画库</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107134816933.png" alt="image-20221107134816933"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107134951707.png" alt="image-20221107134951707"></p>
+<h1 id="解决跨域"><a href="#解决跨域" class="headerlink" title="解决跨域"></a>解决跨域</h1><blockquote>
+<p>后端加入 @Crossorigin 或者修改前端</p>
+<p>前端开启代理服务器</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107143412224.png" alt="image-20221107143412224"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107143530806.png" alt="image-20221107143530806"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221107143607616.png" alt="image-20221107143607616"></p>
 
                 
             </div>
@@ -2041,7 +2233,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">Zhr</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -2049,7 +2241,7 @@ plugins <span class="token punctuation">[</span>htmlPlugin<span class="token pun
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">420k</span>
+                        class="white-color">476.4k</span>
             
             
             

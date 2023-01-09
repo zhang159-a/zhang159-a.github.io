@@ -1,0 +1,1732 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="wx小程序, 学习笔记">
+    <meta name="description" content="[TOC]
+开发环境配置注册小程序
+微信小程序
+
+使用微信扫码注册，选择个人开发
+安装开发者工具
+工具
+
+下载 HBuilderX 进行开发，然后开发者工具进行 预览和调试
+简单入门项目的基本结构
+pages
+JSON配置
+app.json">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>wx小程序 | 学习笔记</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">学习笔记</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>mudies</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://music.apple.com/cn/browse">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Musics</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://ddys.tv/big-mouth/">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Movies</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://weread.qq.com/web/shelf">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a target="_blank" rel="noopener" href="https://leetcode.cn/">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>LiCode</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">学习笔记</div>
+        <div class="logo-desc">
+            
+            记录学习
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			mudies
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://music.apple.com/cn/browse " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Musics</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://ddys.tv/big-mouth/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Movies</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://weread.qq.com/web/shelf " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a target="_blank" rel="noopener" href="https://leetcode.cn/ " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>LiCode</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/26.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">wx小程序</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/wx/">
+                                <span class="chip bg-color">wx</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-category">
+                                小程序
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-11-15
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-12-01
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>[TOC]</p>
+<h1 id="开发环境配置"><a href="#开发环境配置" class="headerlink" title="开发环境配置"></a>开发环境配置</h1><h2 id="注册小程序"><a href="#注册小程序" class="headerlink" title="注册小程序"></a>注册小程序</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/cgi-bin/wx">微信小程序</a></p>
+</blockquote>
+<p>使用微信扫码注册，选择个人开发</p>
+<h2 id="安装开发者工具"><a href="#安装开发者工具" class="headerlink" title="安装开发者工具"></a>安装开发者工具</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">工具</a></p>
+</blockquote>
+<p>下载 <strong>HBuilderX</strong> 进行开发，然后开发者工具进行 <strong>预览和调试</strong></p>
+<h1 id="简单入门"><a href="#简单入门" class="headerlink" title="简单入门"></a>简单入门</h1><h2 id="项目的基本结构"><a href="#项目的基本结构" class="headerlink" title="项目的基本结构"></a>项目的基本结构</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115101802286.png" alt="image-20221115101802286"></p>
+<h3 id="pages"><a href="#pages" class="headerlink" title="pages"></a>pages</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115101952621.png" alt="image-20221115101952621"></p>
+<h3 id="JSON配置"><a href="#JSON配置" class="headerlink" title="JSON配置"></a>JSON配置</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115104922131.png" alt="image-20221115104922131"></p>
+<h4 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115114056996.png" alt="image-20221115114056996"></p>
+<ul>
+<li>sitemapLocation: 指明位置</li>
+</ul>
+<h4 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json"></a>project.config.json</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115114718371.png" alt="image-20221115114718371"></p>
+<h4 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a>sitemap.json</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115115106560.png" alt="image-20221115115106560"></p>
+<h4 id="页面的-json"><a href="#页面的-json" class="headerlink" title="页面的.json"></a>页面的.json</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115115340250.png" alt="image-20221115115340250"></p>
+<h3 id="新建小程序页面"><a href="#新建小程序页面" class="headerlink" title="新建小程序页面"></a>新建小程序页面</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115115455130.png" alt="image-20221115115455130"></p>
+<h3 id="修改项目首页"><a href="#修改项目首页" class="headerlink" title="修改项目首页"></a>修改项目首页</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115115605871.png" alt="image-20221115115605871"></p>
+<h3 id="wxml-html"><a href="#wxml-html" class="headerlink" title="wxml/html"></a>wxml/html</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115115845186.png" alt="image-20221115115845186"></p>
+<h3 id="wxss-css"><a href="#wxss-css" class="headerlink" title="wxss/css"></a>wxss/css</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115120137575.png" alt="image-20221115120137575"></p>
+<h3 id="js"><a href="#js" class="headerlink" title="js"></a>js</h3><ul>
+<li>app.js</li>
+<li>页面.js</li>
+<li>普通的.js</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115120403819.png" alt="image-20221115120403819"></p>
+<h3 id="宿主环境"><a href="#宿主环境" class="headerlink" title="宿主环境"></a>宿主环境</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115120543890.png" alt="image-20221115120543890"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115120707867.png" alt="image-20221115120707867"></p>
+<blockquote>
+<p>小程序宿主环境包含的内容</p>
+</blockquote>
+<ul>
+<li>通信模型</li>
+<li>运行机制</li>
+<li>组件</li>
+<li>API</li>
+</ul>
+<h4 id="通信模型"><a href="#通信模型" class="headerlink" title="通信模型"></a>通信模型</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115120938607.png" alt="image-20221115120938607"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115121013458.png" alt="image-20221115121013458"></p>
+<h4 id="运行机制"><a href="#运行机制" class="headerlink" title="运行机制"></a>运行机制</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115121213329.png" alt="image-20221115121213329"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115121250714.png" alt="image-20221115121250714"></p>
+<h2 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115121348663.png" alt="image-20221115121348663"></p>
+<h3 id="视图容器"><a href="#视图容器" class="headerlink" title="视图容器"></a>视图容器</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115121511014.png" alt="image-20221115121511014"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115122139621.png" alt="image-20221115122139621"></p>
+<h4 id="滚动框-scroll"><a href="#滚动框-scroll" class="headerlink" title="滚动框 scroll"></a>滚动框 scroll</h4><blockquote>
+<p>scroll-view</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115122210759.png" alt="image-20221115122210759"></p>
+<h4 id="轮播图-swiper"><a href="#轮播图-swiper" class="headerlink" title="轮播图 swiper"></a>轮播图 swiper</h4><blockquote>
+<p>swiper-item</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115133835011.png" alt="image-20221115133835011"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115141416705.png" alt="image-20221115141416705"></p>
+<h4 id="基础内容组件"><a href="#基础内容组件" class="headerlink" title="基础内容组件"></a>基础内容组件</h4><ul>
+<li>text</li>
+<li>rich-text</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115142150571.png" alt="image-20221115142150571"></p>
+<blockquote>
+<p>selectable 长按选中</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115142223939.png" alt="image-20221115142223939"></p>
+<blockquote>
+<p>rich-text</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115142451969.png" alt="image-20221115142451969"></p>
+<h4 id="其他组件"><a href="#其他组件" class="headerlink" title="其他组件"></a>其他组件</h4><ul>
+<li>button</li>
+<li>image</li>
+<li>navigator</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115142707890.png" alt="image-20221115142707890"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115142721228.png" alt="image-20221115142721228"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115143735858.png" alt="image-20221115143735858"></p>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><ul>
+<li>事件监听</li>
+<li>同步</li>
+<li>异步</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144229573.png" alt="image-20221115144229573"></p>
+<h2 id="协同工作和发布"><a href="#协同工作和发布" class="headerlink" title="协同工作和发布"></a>协同工作和发布</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144423467.png" alt="image-20221115144423467"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144504321.png" alt="image-20221115144504321"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144531569.png" alt="image-20221115144531569"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144802198.png" alt="image-20221115144802198"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115144929945.png" alt="image-20221115144929945"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145046099.png" alt="image-20221115145046099"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145243427.png" alt="image-20221115145243427"></p>
+<h2 id="版本"><a href="#版本" class="headerlink" title="版本"></a>版本</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145350364.png" alt="image-20221115145350364"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145407971.png" alt="image-20221115145407971"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145503557.png" alt="image-20221115145503557"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145556184.png" alt="image-20221115145556184"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145625409.png" alt="image-20221115145625409"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145644696.png" alt="image-20221115145644696"></p>
+<h2 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115145823445.png" alt="image-20221115145823445"></p>
+<h2 id="运营数据"><a href="#运营数据" class="headerlink" title="运营数据"></a>运营数据</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115150106883.png" alt="image-20221115150106883"></p>
+<h1 id="第一阶段总结"><a href="#第一阶段总结" class="headerlink" title="第一阶段总结"></a>第一阶段总结</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115150433589.png" alt="image-20221115150433589"></p>
+<h1 id="模板与配置"><a href="#模板与配置" class="headerlink" title="模板与配置"></a>模板与配置</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115150517704.png" alt="image-20221115150517704"></p>
+<h2 id="wxml"><a href="#wxml" class="headerlink" title="wxml"></a>wxml</h2><h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><blockquote>
+<p>与 Vue 类似</p>
+</blockquote>
+<ul>
+<li>在 data 中定义数据</li>
+<li>在 wxml 中使用数据</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115150905740.png" alt="image-20221115150905740"></p>
+<h3 id="Mustache-语法"><a href="#Mustache-语法" class="headerlink" title="Mustache 语法"></a>Mustache 语法</h3><blockquote>
+<p>差值表达式</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115150943518.png" alt="image-20221115150943518"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115151136955.png" alt="image-20221115151136955"></p>
+<blockquote>
+<p>不需要 v-bind  继续使用 <code>{{}}</code></p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115151202303.png" alt="image-20221115151202303"></p>
+<h3 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115151704146.png" alt="image-20221115151704146"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115151748370.png" alt="image-20221115151748370"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115151907354.png" alt="image-20221115151907354"></p>
+<blockquote>
+<p>冒泡</p>
+<p>target currentTarget</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115152126215.png" alt="image-20221115152126215"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115152202957.png" alt="image-20221115152202957"></p>
+<h4 id="bindtap"><a href="#bindtap" class="headerlink" title="bindtap"></a>bindtap</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115152312596.png" alt="image-20221115152312596"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115152707108.png" alt="image-20221115152707108"></p>
+<h4 id="bindinput"><a href="#bindinput" class="headerlink" title="bindinput"></a>bindinput</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115154059335.png" alt="image-20221115154059335"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115160607300.png" alt="image-20221115160607300"></p>
+<h3 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h3><blockquote>
+<p>不能在绑定事件的时候传递参数</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115153517345.png" alt="image-20221115153517345"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115153549063.png" alt="image-20221115153549063"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115153918377.png" alt="image-20221115153918377"></p>
+<h3 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115194632262.png" alt="image-20221115194632262"></p>
+<blockquote>
+<p>block</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115194951768.png" alt="image-20221115194951768"></p>
+<blockquote>
+<p>hidden</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115195343078.png" alt="image-20221115195343078"></p>
+<blockquote>
+<p>v-if  </p>
+<p>v-show hidden</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115200923212.png" alt="image-20221115200923212"></p>
+<h3 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115201023570.png" alt="image-20221115201023570"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115201532122.png" alt="image-20221115201532122"></p>
+<blockquote>
+<p>wx:key</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115201605742.png" alt="image-20221115201605742"></p>
+<h2 id="wxss"><a href="#wxss" class="headerlink" title="wxss"></a>wxss</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115201951133.png"></p>
+<h3 id="rpx"><a href="#rpx" class="headerlink" title="rpx"></a>rpx</h3><blockquote>
+<p>rpx （responsive pixel）是微信小程序独有的，用来 <strong>解决屏适配的尺寸单位</strong></p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115202320897.png" alt="image-20221115202320897"></p>
+<blockquote>
+<p>rpx px 换算</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115202549082.png" alt="image-20221115202549082"></p>
+<h3 id="样式导入"><a href="#样式导入" class="headerlink" title="样式导入"></a>样式导入</h3><ul>
+<li>@import</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115202920024.png" alt="image-20221115202920024"></p>
+<h3 id="全局样式"><a href="#全局样式" class="headerlink" title="全局样式"></a>全局样式</h3><blockquote>
+<p><strong>app.wxss</strong></p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115203315567.png" alt="image-20221115203315567"></p>
+<h3 id="局部样式"><a href="#局部样式" class="headerlink" title="局部样式"></a>局部样式</h3><blockquote>
+<p><strong>.wxss</strong></p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115203457339.png" alt="image-20221115203457339"></p>
+<h2 id="全局配置"><a href="#全局配置" class="headerlink" title="全局配置"></a>全局配置</h2><ul>
+<li>pages</li>
+<li><strong>window</strong></li>
+<li><strong>tabBar</strong></li>
+<li>style</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115203753838.png" alt="image-20221115203753838"></p>
+<h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115204024980.png" alt="image-20221115204024980"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115203950655.png" alt="image-20221115203950655"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115204348665.png" alt="image-20221115204348665"></p>
+<h4 id="设置导航栏标题"><a href="#设置导航栏标题" class="headerlink" title="设置导航栏标题"></a>设置导航栏标题</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115204235048.png"></p>
+<h4 id="设置导航栏背景色"><a href="#设置导航栏背景色" class="headerlink" title="设置导航栏背景色"></a>设置导航栏背景色</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115204446879.png" alt="image-20221115204446879"></p>
+<h4 id="设置导航栏标题颜色"><a href="#设置导航栏标题颜色" class="headerlink" title="设置导航栏标题颜色"></a>设置导航栏标题颜色</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115204921774.png" alt="image-20221115204921774"></p>
+<h4 id="全局开启下拉刷新"><a href="#全局开启下拉刷新" class="headerlink" title="全局开启下拉刷新"></a>全局开启下拉刷新</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115205125303.png" alt="image-20221115205125303"></p>
+<blockquote>
+<p>注意：在 app.json 中启用下拉刷新功能，会作用于每一个页面</p>
+</blockquote>
+<h4 id="下拉刷新时窗口的背景色"><a href="#下拉刷新时窗口的背景色" class="headerlink" title="下拉刷新时窗口的背景色"></a>下拉刷新时窗口的背景色</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221235696.png" alt="image-20221115221235696"></p>
+<h4 id="下拉刷新时-loading"><a href="#下拉刷新时-loading" class="headerlink" title="下拉刷新时 loading"></a>下拉刷新时 loading</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221315692.png" alt="image-20221115221315692"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221331615.png" alt="image-20221115221331615"></p>
+<h4 id="设置上拉触底的距离"><a href="#设置上拉触底的距离" class="headerlink" title="设置上拉触底的距离"></a>设置上拉触底的距离</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221623729.png" alt="image-20221115221623729"></p>
+<h3 id="tabBar"><a href="#tabBar" class="headerlink" title="tabBar"></a>tabBar</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221727994.png" alt="image-20221115221727994"></p>
+<h4 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115221938618.png" alt="image-20221115221938618"></p>
+<h4 id="配置项"><a href="#配置项" class="headerlink" title="配置项"></a>配置项</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115222033216.png" alt="image-20221115222033216"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221115222114495.png" alt="image-20221115222114495"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116094952316.png" alt="image-20221116094952316"></p>
+<h2 id="图标下载"><a href="#图标下载" class="headerlink" title="图标下载"></a>图标下载</h2><blockquote>
+<p>使用阿里矢量图标库</p>
+<p><a target="_blank" rel="noopener" href="https://www.iconfont.cn/home/index?spm=a313x.7781069.1998910419.2">Here</a></p>
+</blockquote>
+<h2 id="页面配置"><a href="#页面配置" class="headerlink" title="页面配置"></a>页面配置</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116101049488.png" alt="image-20221116101049488"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116101208779.png" alt="image-20221116101208779"></p>
+<h2 id="网络数据请求"><a href="#网络数据请求" class="headerlink" title="网络数据请求"></a>网络数据请求</h2><h3 id="如何请求本地接口"><a href="#如何请求本地接口" class="headerlink" title="如何请求本地接口"></a>如何请求本地接口</h3><blockquote>
+<p>关闭检查，这样就可以访问本地</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116110121537.png" alt="image-20221116110121537"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116103813767.png" alt="image-20221116103813767"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116104211737.png" alt="image-20221116104211737"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116104444582.png" alt="image-20221116104444582"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116110637600.png" alt="image-20221116110637600"></p>
+<h3 id="跳过检验"><a href="#跳过检验" class="headerlink" title="跳过检验"></a>跳过检验</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116111225730.png" alt="image-20221116111225730"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116111305031.png" alt="image-20221116111305031"></p>
+<h3 id="跨域-Ajax"><a href="#跨域-Ajax" class="headerlink" title="跨域 Ajax"></a>跨域 Ajax</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116111427339.png" alt="image-20221116111427339"></p>
+<h2 id="案例-本地生活（首页）"><a href="#案例-本地生活（首页）" class="headerlink" title="案例-本地生活（首页）"></a>案例-本地生活（首页）</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116113158737.png" alt="image-20221116113158737"></p>
+<h3 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116113419902.png" alt="image-20221116113419902"></p>
+<h3 id="tabBar-1"><a href="#tabBar-1" class="headerlink" title="tabBar"></a>tabBar</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116114231799.png" alt="image-20221116114231799"></p>
+<h3 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116120944196.png" alt="image-20221116120944196"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116131715202.png" alt="image-20221116131715202"></p>
+<h3 id="九宫格"><a href="#九宫格" class="headerlink" title="九宫格"></a>九宫格</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116132224173.png" alt="image-20221116132224173"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116133648031.png" alt="image-20221116133648031"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116133659275.png" alt="image-20221116133659275"></p>
+<h3 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116134601008.png" alt="image-20221116134601008"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116133950985.png" alt="image-20221116133950985"></p>
+<h1 id="第二阶段总结"><a href="#第二阶段总结" class="headerlink" title="第二阶段总结"></a>第二阶段总结</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116135332953.png" alt="image-20221116135332953"></p>
+<hr>
+<h1 id="视图与逻辑"><a href="#视图与逻辑" class="headerlink" title="视图与逻辑"></a>视图与逻辑</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116135423613.png" alt="image-20221116135423613"></p>
+<h2 id="页面导航"><a href="#页面导航" class="headerlink" title="页面导航"></a>页面导航</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116135703746.png" alt="image-20221116135703746"></p>
+<h3 id="声明式导航"><a href="#声明式导航" class="headerlink" title="声明式导航"></a>声明式导航</h3><h4 id="导航到-tabBar-页面"><a href="#导航到-tabBar-页面" class="headerlink" title="导航到 tabBar 页面"></a>导航到 tabBar 页面</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116135828533.png" alt="image-20221116135828533"></p>
+<h4 id="导航到非-tabBar-页面"><a href="#导航到非-tabBar-页面" class="headerlink" title="导航到非 tabBar 页面"></a>导航到非 tabBar 页面</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116140106434.png" alt="image-20221116140106434"></p>
+<h4 id="后退导航"><a href="#后退导航" class="headerlink" title="后退导航"></a>后退导航</h4><blockquote>
+<p>delta 默认值为 1，可以省略不写</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116140329812.png" alt="image-20221116140329812"></p>
+<h4 id="导航传参"><a href="#导航传参" class="headerlink" title="导航传参"></a>导航传参</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116143009562.png" alt="image-20221116143009562"></p>
+<h3 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h3><h4 id="tabBar-2"><a href="#tabBar-2" class="headerlink" title="tabBar"></a>tabBar</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116140626209.png" alt="image-20221116140626209"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116140634554.png" alt="image-20221116140634554"></p>
+<h4 id="非-tabBar"><a href="#非-tabBar" class="headerlink" title="非 tabBar"></a>非 tabBar</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116140818847.png" alt="image-20221116140818847"></p>
+<h4 id="后退导航-1"><a href="#后退导航-1" class="headerlink" title="后退导航"></a>后退导航</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116141000940.png" alt="image-20221116141000940"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116142816542.png" alt="image-20221116142816542"></p>
+<h4 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h4><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116143203790.png" alt="image-20221116143203790"></p>
+<h3 id="接收导航参数"><a href="#接收导航参数" class="headerlink" title="接收导航参数"></a>接收导航参数</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116143344962.png" alt="image-20221116143344962"></p>
+<h2 id="页面事件"><a href="#页面事件" class="headerlink" title="页面事件"></a>页面事件</h2><h3 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116143723836.png" alt="image-20221116143723836"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116143828383.png" alt="image-20221116143828383"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116144136490.png" alt="image-20221116144136490"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116144246885.png" alt="image-20221116144246885"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116144256525.png" alt="image-20221116144256525"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116145425345.png" alt="image-20221116145425345"></p>
+<h3 id="上拉触底"><a href="#上拉触底" class="headerlink" title="上拉触底"></a>上拉触底</h3><blockquote>
+<p>是移动端的专有名词，通过手指在屏幕上的上拉滑动操作，从而 <strong>加载更多数据的行为</strong></p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116145645777.png" alt="image-20221116145645777"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116150257813.png" alt="image-20221116150257813"></p>
+<h3 id="上拉触底案例"><a href="#上拉触底案例" class="headerlink" title="上拉触底案例"></a>上拉触底案例</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116150401388.png" alt="image-20221116150401388"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116150730623.png" alt="image-20221116150730623"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116150804304.png" alt="image-20221116150804304"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116152031035.png" alt="image-20221116152031035"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116152152485.png" alt="image-20221116152152485"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116152536570.png" alt="image-20221116152536570"></p>
+<h1 id="自定义编译模式"><a href="#自定义编译模式" class="headerlink" title="自定义编译模式"></a>自定义编译模式</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116164917765.png" alt="image-20221116164917765"></p>
+<h1 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h1><p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20221116165330203.png" alt="image-20221116165330203"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116165504484.png" alt="image-20221116165504484"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116165545812.png" alt="image-20221116165545812"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116165612534.png" alt="image-20221116165612534"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116170218872.png" alt="image-20221116170218872"></p>
+<h1 id="wxs"><a href="#wxs" class="headerlink" title="wxs"></a>wxs</h1><blockquote>
+<p>wxs 是小程序独有的一套脚本语言</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116170552494.png" alt="image-20221116170552494"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116170719761.png" alt="image-20221116170719761"></p>
+<h2 id="内嵌-wxs-脚本"><a href="#内嵌-wxs-脚本" class="headerlink" title="内嵌 wxs 脚本"></a>内嵌 wxs 脚本</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116170903053.png" alt="image-20221116170903053"></p>
+<h2 id="外联-wxs-脚本"><a href="#外联-wxs-脚本" class="headerlink" title="外联 wxs 脚本"></a>外联 wxs 脚本</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116171443000.png" alt="image-20221116171443000"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116171703492.png" alt="image-20221116171703492"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116171939053.png" alt="image-20221116171939053"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116172018758.png" alt="image-20221116172018758"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116172050586.png" alt="image-20221116172050586"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116172118494.png" alt="image-20221116172118494"></p>
+<h1 id="本地生活（列表页面"><a href="#本地生活（列表页面" class="headerlink" title="本地生活（列表页面)"></a>本地生活（列表页面)</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116172319067.png" alt="image-20221116172319067"></p>
+<ol>
+<li>创建页面</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116174852323.png" alt="image-20221116174852323"></p>
+<ol start="2">
+<li>设置页面的标题</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116174927892.png" alt="image-20221116174927892"></p>
+<ol start="3">
+<li>初始化数据，发送请求</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116174819234.png" alt="image-20221116174819234"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116181124441.png" alt="image-20221116181124441"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116182427374.png" alt="image-20221116182427374"></p>
+<ol start="4">
+<li>设置上拉触底，请求新的数据</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116194730143.png" alt="image-20221116194730143"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116194751698.png" alt="image-20221116194751698"></p>
+<ol start="5">
+<li>判断是否还有下一页数据</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116201029520.png" alt="image-20221116201029520"></p>
+<ol start="6">
+<li>关闭下拉刷新</li>
+</ol>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116212610298.png" alt="image-20221116212610298"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116212628490.png" alt="image-20221116212628490"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116212636209.png" alt="image-20221116212636209"></p>
+<blockquote>
+<p>wxs 处理手机号</p>
+</blockquote>
+<h1 id="第三阶段总结"><a href="#第三阶段总结" class="headerlink" title="第三阶段总结"></a>第三阶段总结</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116213738126.png" alt="image-20221116213738126"></p>
+<hr>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116213930816.png" alt="image-20221116213930816"></p>
+<h1 id="自定义组件"><a href="#自定义组件" class="headerlink" title="自定义组件"></a>自定义组件</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117144836404.png" alt="image-20221117144836404"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117144918764.png" alt="image-20221117144918764"></p>
+<h2 id="引用组件"><a href="#引用组件" class="headerlink" title="引用组件"></a>引用组件</h2><h3 id="局部引用"><a href="#局部引用" class="headerlink" title="局部引用"></a>局部引用</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117145118387.png" alt="image-20221117145118387"></p>
+<h3 id="全局引用"><a href="#全局引用" class="headerlink" title="全局引用"></a>全局引用</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117145341864.png" alt="image-20221117145341864"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117145602962.png" alt="image-20221117145602962"></p>
+<h3 id="组件与页面的区别"><a href="#组件与页面的区别" class="headerlink" title="组件与页面的区别"></a>组件与页面的区别</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117145746554.png" alt="image-20221117145746554"></p>
+<h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117145911760.png" alt="image-20221117145911760"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117150117269.png" alt="image-20221117150117269"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117150227202.png" alt="image-20221117150227202"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117150342687.png" alt="image-20221117150342687"></p>
+<h2 id="data-方法，属性"><a href="#data-方法，属性" class="headerlink" title="data,方法，属性"></a>data,方法，属性</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117150716466.png" alt="image-20221117150716466"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117151103493.png" alt="image-20221117151103493"></p>
+<h2 id="data与properties"><a href="#data与properties" class="headerlink" title="data与properties"></a>data与properties</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117151523391.png" alt="image-20221117151523391"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117151742236.png" alt="image-20221117151742236"></p>
+<h2 id="数据监听器"><a href="#数据监听器" class="headerlink" title="数据监听器"></a>数据监听器</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117151945214.png" alt="image-20221117151945214"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117152038629.png" alt="image-20221117152038629"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117152525829.png" alt="image-20221117152525829"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117153811814.png" alt="image-20221117153811814"></p>
+<h2 id="纯数据字段"><a href="#纯数据字段" class="headerlink" title="纯数据字段"></a>纯数据字段</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117154108231.png" alt="image-20221117154108231"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117154139977.png" alt="image-20221117154139977"></p>
+<h2 id="组件生命周期"><a href="#组件生命周期" class="headerlink" title="组件生命周期"></a>组件生命周期</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117154527732.png" alt="image-20221117154527732"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117154955408.png" alt="image-20221117154955408"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117155339065.png" alt="image-20221117155339065"></p>
+<h2 id="组件所在页面的生命周期"><a href="#组件所在页面的生命周期" class="headerlink" title="组件所在页面的生命周期"></a>组件所在页面的生命周期</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117155653762.png" alt="image-20221117155653762"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117155748064.png" alt="image-20221117155748064"></p>
+<h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117160305475.png" alt="image-20221117160305475"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117160347510.png" alt="image-20221117160347510"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117160612469.png" alt="image-20221117160612469"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117160727303.png" alt="image-20221117160727303"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117160835416.png" alt="image-20221117160835416"></p>
+<h2 id="组件之间数据通信"><a href="#组件之间数据通信" class="headerlink" title="组件之间数据通信"></a>组件之间数据通信</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117161035654.png" alt="image-20221117161035654"></p>
+<h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3><blockquote>
+<p>用于实现 <strong>父向子传值</strong> ，而且只能传递普通类型的数据，无法将方法传递给子数组</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117161303064.png" alt="image-20221117161303064"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117161312301.png" alt="image-20221117161312301"></p>
+<h3 id="事件绑定-1"><a href="#事件绑定-1" class="headerlink" title="事件绑定"></a>事件绑定</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117161739602.png" alt="image-20221117161739602"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117162116103.png" alt="image-20221117162116103"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117162132461.png" alt="image-20221117162132461"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117162254056.png" alt="image-20221117162254056"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117162353897.png" alt="image-20221117162353897"></p>
+<h3 id="获取组件实例"><a href="#获取组件实例" class="headerlink" title="获取组件实例"></a>获取组件实例</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117162924523.png" alt="image-20221117162924523"></p>
+<h2 id="behaviors"><a href="#behaviors" class="headerlink" title="behaviors"></a>behaviors</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117163518716.png" alt="image-20221117163518716"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117163558528.png" alt="image-20221117163558528"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117163639737.png" alt="image-20221117163639737"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117163807588.png" alt="image-20221117163807588"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117164906770.png" alt="image-20221117164906770"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117165020897.png" alt="image-20221117165020897"></p>
+<hr>
+<h1 id="第四阶段总结"><a href="#第四阶段总结" class="headerlink" title="第四阶段总结"></a>第四阶段总结</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117165415068.png" alt="image-20221117165415068"></p>
+<hr>
+<h1 id="使用-npm-包"><a href="#使用-npm-包" class="headerlink" title="使用 npm 包"></a>使用 npm 包</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117165647096.png" alt="image-20221117165647096"></p>
+<h2 id="vant"><a href="#vant" class="headerlink" title="vant"></a>vant</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117165759365.png" alt="image-20221117165759365"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117165948463.png" alt="image-20221117165948463"></p>
+<h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><p>初始化 package</p>
+<blockquote>
+<p>进入文件夹目录执行命令</p>
+<p>npm init -y</p>
+</blockquote>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117170643342.png" alt="image-20221117170643342"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117170651468.png" alt="image-20221117170651468"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117170713863.png" alt="image-20221117170713863"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117171655658.png" alt="image-20221117171655658"></p>
+<h3 id="定制全局主题"><a href="#定制全局主题" class="headerlink" title="定制全局主题"></a>定制全局主题</h3><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117205328502.png" alt="image-20221117205328502"></p>
+<h2 id="CSS变量"><a href="#CSS变量" class="headerlink" title="CSS变量"></a>CSS变量</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117171459646.png" alt="image-20221117171459646"></p>
+<h2 id="API-Promise化"><a href="#API-Promise化" class="headerlink" title="API Promise化"></a>API Promise化</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117205832586.png" alt="image-20221117205832586"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117205932933.png" alt="image-20221117205932933"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117205958923.png" alt="image-20221117205958923"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117210752555.png" alt="image-20221117210752555"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117211150235.png" alt="image-20221117211150235"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117213714806.png" alt="image-20221117213714806"></p>
+<h1 id="全局数据共享-MobX"><a href="#全局数据共享-MobX" class="headerlink" title="全局数据共享 MobX"></a>全局数据共享 MobX</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117224320368.png" alt="image-20221117224320368"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117224410788.png" alt="image-20221117224410788"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117224526702.png" alt="image-20221117224526702"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117224914261.png" alt="image-20221117224914261"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117225549201.png" alt="image-20221117225549201"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117230759161.png" alt="image-20221117230759161"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117231512372.png" alt="image-20221117231512372"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232102147.png" alt="image-20221117232102147"></p>
+<h1 id="分包"><a href="#分包" class="headerlink" title="分包"></a>分包</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232332867.png" alt="image-20221117232332867"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232423138.png" alt="image-20221117232423138"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232540945.png" alt="image-20221117232540945"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232646947.png" alt="image-20221117232646947"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232816667.png" alt="image-20221117232816667"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221117232943944.png" alt="image-20221117232943944"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118102050977.png" alt="image-20221118102050977"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118102119288.png" alt="image-20221118102119288"></p>
+<h2 id="打包原则"><a href="#打包原则" class="headerlink" title="打包原则"></a>打包原则</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105118105.png" alt="image-20221118105118105"></p>
+<h2 id="引用原则"><a href="#引用原则" class="headerlink" title="引用原则"></a>引用原则</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105209439.png" alt="image-20221118105209439"></p>
+<h2 id="独立分包"><a href="#独立分包" class="headerlink" title="独立分包"></a>独立分包</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105329411.png" alt="image-20221118105329411"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105400840.png" alt="image-20221118105400840"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105448353.png" alt="image-20221118105448353"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105536151.png" alt="image-20221118105536151"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105657341.png" alt="image-20221118105657341"></p>
+<h2 id="分包预下载"><a href="#分包预下载" class="headerlink" title="分包预下载"></a>分包预下载</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118105913238.png" alt="image-20221118105913238"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118110010857.png" alt="image-20221118110010857"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118110439570.png" alt="image-20221118110439570"></p>
+<h1 id="案例-自定义tabBar"><a href="#案例-自定义tabBar" class="headerlink" title="案例-自定义tabBar"></a>案例-自定义tabBar</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118110628571.png" alt="image-20221118110628571"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118110658247.png" alt="image-20221118110658247"></p>
+<hr>
+<h1 id="第四阶段总结-1"><a href="#第四阶段总结-1" class="headerlink" title="第四阶段总结"></a>第四阶段总结</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221118130835067.png" alt="image-20221118130835067"></p>
+<hr>
+<h1 id="Flex布局"><a href="#Flex布局" class="headerlink" title="Flex布局"></a>Flex布局</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130211653589.png" alt="image-20221130211653589"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130211716792.png" alt="image-20221130211716792"></p>
+<h2 id="父项属性"><a href="#父项属性" class="headerlink" title="父项属性"></a>父项属性</h2><ul>
+<li>flex-direction</li>
+<li>justify-content</li>
+<li>flex-wrap</li>
+<li>align-content</li>
+<li>align-items</li>
+<li>flex-flow</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130211816917.png" alt="image-20221130211816917"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130211910282.png" alt="image-20221130211910282"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130211929549.png" alt="image-20221130211929549"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130212413703.png" alt="image-20221130212413703"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130213657911.png" alt="image-20221130213657911"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130213758739.png" alt="image-20221130213758739"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221130214220284.png" alt="image-20221130214220284"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221201104448651.png" alt="image-20221201104448651"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221201104630359.png" alt="image-20221201104630359"></p>
+<h2 id="子项属性"><a href="#子项属性" class="headerlink" title="子项属性"></a>子项属性</h2><ul>
+<li>flex</li>
+<li>align-self</li>
+<li>order</li>
+</ul>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221201104856102.png" alt="image-20221201104856102"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221201105739643.png" alt="image-20221201105739643"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221201105748698.png" alt="image-20221201105748698"></p>
+<hr>
+<h1 id="黑马优购项目"><a href="#黑马优购项目" class="headerlink" title="黑马优购项目"></a>黑马优购项目</h1><p><a target="_blank" rel="noopener" href="https://www.escook.cn/docs-uni-shop/">开发文档地址</a></p>
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><h3 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h3><p><img src="https://www.escook.cn/docs-uni-shop/assets/img/1-5.585d746d.png" alt="img"></p>
+<h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><pre class="line-numbers language-text" data-language="text"><code class="language-text">┌─components            uni-app组件目录
+│  └─comp-a.vue         可复用的a组件
+├─pages                 业务页面文件存放的目录
+│  ├─index
+│  │  └─index.vue       index页面
+│  └─list
+│     └─list.vue        list页面
+├─static                存放应用引用静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此
+├─main.js               Vue初始化入口文件
+├─App.vue               应用配置，用来配置小程序的全局样式、生命周期函数等
+├─manifest.json         配置应用名称、appid、logo、版本等打包信息
+└─pages.json            配置页面路径、页面窗口样式、tabBar、navigationBar 等页面类信息<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h1><h2 id="调试界面报错"><a href="#调试界面报错" class="headerlink" title="调试界面报错"></a>调试界面报错</h2><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221116111100651.png" alt="image-20221116111100651"></p>
+<h1 id="启动方式"><a href="#启动方式" class="headerlink" title="启动方式"></a>启动方式</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119165825997.png" alt="image-20221119165825997"></p>
+<h1 id="运行原理"><a href="#运行原理" class="headerlink" title="运行原理"></a>运行原理</h1><p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119165958255.png" alt="image-20221119165958255"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119170009725.png" alt="image-20221119170009725"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119171619184.png" alt="image-20221119171619184"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119171836527.png" alt="image-20221119171836527"></p>
+<p><img src="https://md-1314217273.cos.ap-nanjing.myqcloud.com//imgimage-20221119171938181.png" alt="image-20221119171938181"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zhr</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhang159-a.github.io/2022/11/15/wx-xiao-cheng-xu/">https://zhang159-a.github.io/2022/11/15/wx-xiao-cheng-xu/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zhr</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/wx/">
+                                    <span class="chip bg-color">wx</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/11/22/kai-fa-zhong-de-wen-ti/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="开发中的问题">
+                        
+                        <span class="card-title">开发中的问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/" class="post-category">
+                                    开发问题
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/10/shang-pin-hui-xue-xi-bi-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="尚品汇学习笔记">
+                        
+                        <span class="card-title">尚品汇学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="post-category">
+                                    项目总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <a href="/about" target="_blank">Zhr</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">476.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "09";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zhang159-a" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1397543194@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1397543194" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1397543194" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
