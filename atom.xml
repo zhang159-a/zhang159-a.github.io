@@ -6,7 +6,7 @@
   <link href="https://zhang159-a.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhang159-a.github.io/"/>
-  <updated>2022-12-27T11:06:46.888Z</updated>
+  <updated>2023-01-30T03:35:14.898Z</updated>
   <id>https://zhang159-a.github.io/</id>
   
   <author>
@@ -15,6 +15,222 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>权限管理项目</title>
+    <link href="https://zhang159-a.github.io/2023/01/30/quan-xian-guan-li-xiang-mu/"/>
+    <id>https://zhang159-a.github.io/2023/01/30/quan-xian-guan-li-xiang-mu/</id>
+    <published>2023-01-30T03:32:50.000Z</published>
+    <updated>2023-01-30T03:35:14.898Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>玩转 Git 三剑客</title>
+    <link href="https://zhang159-a.github.io/2023/01/27/wan-zhuan-git-san-jian-ke/"/>
+    <id>https://zhang159-a.github.io/2023/01/27/wan-zhuan-git-san-jian-ke/</id>
+    <published>2023-01-27T12:01:34.000Z</published>
+    <updated>2023-01-27T14:09:04.339Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络微课堂</title>
+    <link href="https://zhang159-a.github.io/2023/01/27/ji-suan-ji-wang-luo-wei-ke-tang/"/>
+    <id>https://zhang159-a.github.io/2023/01/27/ji-suan-ji-wang-luo-wei-ke-tang/</id>
+    <published>2023-01-27T11:40:50.000Z</published>
+    <updated>2023-01-31T07:34:36.497Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Go 语言项目开发实战</title>
+    <link href="https://zhang159-a.github.io/2023/01/26/go-yu-yan-xiang-mu-kai-fa-shi-zhan/"/>
+    <id>https://zhang159-a.github.io/2023/01/26/go-yu-yan-xiang-mu-kai-fa-shi-zhan/</id>
+    <published>2023-01-26T11:44:57.000Z</published>
+    <updated>2023-01-26T12:04:25.113Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Go" scheme="https://zhang159-a.github.io/categories/Go/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 连接问题</title>
+    <link href="https://zhang159-a.github.io/2023/01/25/mysql-lian-jie-wen-ti/"/>
+    <id>https://zhang159-a.github.io/2023/01/25/mysql-lian-jie-wen-ti/</id>
+    <published>2023-01-25T07:41:35.000Z</published>
+    <updated>2023-01-25T09:00:47.422Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="MySQL" scheme="https://zhang159-a.github.io/categories/MySQL/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL 实战45讲</title>
+    <link href="https://zhang159-a.github.io/2023/01/25/mysql-shi-zhan-45-jiang/"/>
+    <id>https://zhang159-a.github.io/2023/01/25/mysql-shi-zhan-45-jiang/</id>
+    <published>2023-01-25T02:45:53.000Z</published>
+    <updated>2023-01-27T12:00:00.349Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>小程序开发问题</title>
+    <link href="https://zhang159-a.github.io/2023/01/22/xiao-cheng-xu-kai-fa-wen-ti/"/>
+    <id>https://zhang159-a.github.io/2023/01/22/xiao-cheng-xu-kai-fa-wen-ti/</id>
+    <published>2023-01-22T11:45:02.000Z</published>
+    <updated>2023-01-22T11:54:44.897Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java设计模式</title>
+    <link href="https://zhang159-a.github.io/2023/01/18/java-she-ji-mo-shi/"/>
+    <id>https://zhang159-a.github.io/2023/01/18/java-she-ji-mo-shi/</id>
+    <published>2023-01-18T12:17:20.000Z</published>
+    <updated>2023-01-18T12:17:20.186Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>硅谷电商毕设项目-微服务版本</title>
+    <link href="https://zhang159-a.github.io/2023/01/12/huo-gu-dian-shang-bi-she-xiang-mu-wei-fu-wu-ban-ben/"/>
+    <id>https://zhang159-a.github.io/2023/01/12/huo-gu-dian-shang-bi-she-xiang-mu-wei-fu-wu-ban-ben/</id>
+    <published>2023-01-12T12:11:21.000Z</published>
+    <updated>2023-01-14T06:37:39.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="项目开发" scheme="https://zhang159-a.github.io/categories/%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Java后端八股文速记</title>
+    <link href="https://zhang159-a.github.io/2023/01/11/java-hou-duan-ba-gu-wen-su-ji/"/>
+    <id>https://zhang159-a.github.io/2023/01/11/java-hou-duan-ba-gu-wen-su-ji/</id>
+    <published>2023-01-11T07:01:39.000Z</published>
+    <updated>2023-01-11T13:13:21.540Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>算法小抄</title>
@@ -42,7 +258,7 @@
     <link href="https://zhang159-a.github.io/2022/12/27/mysql-xue-xi/"/>
     <id>https://zhang159-a.github.io/2022/12/27/mysql-xue-xi/</id>
     <published>2022-12-27T08:02:57.000Z</published>
-    <updated>2022-12-27T08:04:45.606Z</updated>
+    <updated>2023-01-30T15:53:20.434Z</updated>
     
     
       
@@ -249,250 +465,6 @@
     
     
     <category term="git" scheme="https://zhang159-a.github.io/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maven问题总结</title>
-    <link href="https://zhang159-a.github.io/2022/10/29/maven-wen-ti-zong-jie/"/>
-    <id>https://zhang159-a.github.io/2022/10/29/maven-wen-ti-zong-jie/</id>
-    <published>2022-10-29T03:24:36.000Z</published>
-    <updated>2022-10-29T03:34:15.818Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="https://zhang159-a.github.io/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="Maven" scheme="https://zhang159-a.github.io/tags/Maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Redis学习</title>
-    <link href="https://zhang159-a.github.io/2022/10/28/redis-xue-xi/"/>
-    <id>https://zhang159-a.github.io/2022/10/28/redis-xue-xi/</id>
-    <published>2022-10-28T14:08:26.000Z</published>
-    <updated>2022-10-29T05:23:55.481Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深入理解Java虚拟机</title>
-    <link href="https://zhang159-a.github.io/2022/10/27/shen-ru-li-jie-java-xu-ni-ji/"/>
-    <id>https://zhang159-a.github.io/2022/10/27/shen-ru-li-jie-java-xu-ni-ji/</id>
-    <published>2022-10-27T10:40:45.000Z</published>
-    <updated>2022-10-27T12:22:21.824Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://zhang159-a.github.io/categories/Java/"/>
-    
-    
-    <category term="虚拟机" scheme="https://zhang159-a.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vscode设置</title>
-    <link href="https://zhang159-a.github.io/2022/10/23/vscode-she-zhi/"/>
-    <id>https://zhang159-a.github.io/2022/10/23/vscode-she-zhi/</id>
-    <published>2022-10-23T15:30:22.000Z</published>
-    <updated>2022-10-31T11:47:23.402Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://zhang159-a.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="vscode" scheme="https://zhang159-a.github.io/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端学习中的问题</title>
-    <link href="https://zhang159-a.github.io/2022/10/21/qian-duan-xue-xi-zhong-de-wen-ti/"/>
-    <id>https://zhang159-a.github.io/2022/10/21/qian-duan-xue-xi-zhong-de-wen-ti/</id>
-    <published>2022-10-21T14:37:23.000Z</published>
-    <updated>2022-10-27T01:50:36.062Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="https://zhang159-a.github.io/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="前端" scheme="https://zhang159-a.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AJAX,axios的区别</title>
-    <link href="https://zhang159-a.github.io/2022/10/21/ajax-axios-de-qu-bie/"/>
-    <id>https://zhang159-a.github.io/2022/10/21/ajax-axios-de-qu-bie/</id>
-    <published>2022-10-21T14:36:20.000Z</published>
-    <updated>2022-10-21T15:10:09.232Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="https://zhang159-a.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java函数式编程</title>
-    <link href="https://zhang159-a.github.io/2022/10/20/java-han-shu-shi-bian-cheng/"/>
-    <id>https://zhang159-a.github.io/2022/10/20/java-han-shu-shi-bian-cheng/</id>
-    <published>2022-10-20T05:23:45.000Z</published>
-    <updated>2022-10-20T05:36:51.739Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Java" scheme="https://zhang159-a.github.io/categories/Java/"/>
-    
-    
-    <category term="函数式编程" scheme="https://zhang159-a.github.io/tags/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue学习</title>
-    <link href="https://zhang159-a.github.io/2022/10/18/vue-xue-xi/"/>
-    <id>https://zhang159-a.github.io/2022/10/18/vue-xue-xi/</id>
-    <published>2022-10-18T14:19:04.000Z</published>
-    <updated>2022-11-15T01:34:25.202Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="前端" scheme="https://zhang159-a.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="Vue" scheme="https://zhang159-a.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VMware使用</title>
-    <link href="https://zhang159-a.github.io/2022/10/17/vmware-shi-yong/"/>
-    <id>https://zhang159-a.github.io/2022/10/17/vmware-shi-yong/</id>
-    <published>2022-10-17T07:10:17.000Z</published>
-    <updated>2022-10-17T10:47:43.712Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发问题" scheme="https://zhang159-a.github.io/categories/%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98/"/>
-    
-    
-    <category term="VMware" scheme="https://zhang159-a.github.io/tags/VMware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CLion使用</title>
-    <link href="https://zhang159-a.github.io/2022/10/15/clion-shi-yong/"/>
-    <id>https://zhang159-a.github.io/2022/10/15/clion-shi-yong/</id>
-    <published>2022-10-15T12:42:29.000Z</published>
-    <updated>2022-10-16T08:28:22.536Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="开发工具" scheme="https://zhang159-a.github.io/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="CLion" scheme="https://zhang159-a.github.io/tags/CLion/"/>
     
   </entry>
   
